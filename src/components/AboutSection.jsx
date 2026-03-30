@@ -111,7 +111,7 @@ export default function AboutSection({ isDark, t }) {
             <div className="window-outline w-full max-w-[450px]">
               <div className="window-glass relative overflow-hidden aspect-[3/4]">
                  <img 
-                   src="eu.jpg" 
+                   src="eu.png" 
                    alt="Lucas Santos Magro Portrait" 
                    className="w-full h-full object-cover grayscale-0 contrast-[1.05] transition-all duration-700 hover:scale-105"
                  />

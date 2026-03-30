@@ -106,7 +106,7 @@ export default function LinkHub({ isDark, toggleTheme }) {
       >
         <div className={`w-24 h-24 rounded-full overflow-hidden mb-6 border ${borderColor} p-1`}>
           <img 
-            src="eu.jpg" 
+            src="eu.png" 
             alt="Lucas Magro" 
             className="w-full h-full object-cover rounded-full filter contrast-125"
           />
