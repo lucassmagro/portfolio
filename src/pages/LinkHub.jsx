@@ -108,7 +108,7 @@ export default function LinkHub({ isDark, toggleTheme }) {
           <img 
             src="eu.jpg" 
             alt="Lucas Magro" 
-            className="w-full h-full object-cover rounded-full filter grayscale contrast-125"
+            className="w-full h-full object-cover rounded-full filter contrast-125"
           />
         </div>
         

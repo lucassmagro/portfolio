@@ -113,7 +113,7 @@ export default function AboutSection({ isDark, t }) {
                  <img 
                    src="eu.jpg" 
                    alt="Lucas Santos Magro Portrait" 
-                   className="w-full h-full object-cover transition-all duration-700"
+                   className="w-full h-full object-cover grayscale-0 contrast-[1.05] transition-all duration-700 hover:scale-105"
                  />
                  <div className="shine-wrapper opacity-20">
                     <div className="shine-item w-[40px] left-[20%]" />
