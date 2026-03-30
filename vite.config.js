@@ -7,7 +7,7 @@ export default defineConfig({
 
   // base './' → all asset URLs are relative, so the built index.html
   // works when opened directly as a file without a server.
-  base: './',
+  base: '/portfolio/',
 
   server: {
     // Allow the dev server to reach outside the project root

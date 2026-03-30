@@ -54,7 +54,7 @@ export default function ProjectCard({ project, isDark, index, priority = false }
                 className="absolute inset-0 w-full h-full"
               >
                 <img
-                  src={project.customImage || `/projects/${project.id}.png`}
+                  src={project.customImage || `projects/${project.id}.png`}
                   alt={project.title}
                   className={`w-full h-full object-cover transition-all duration-700 ${
                     hovered ? 'grayscale-0 opacity-100 scale-105' : 'grayscale opacity-60 scale-110'

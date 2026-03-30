@@ -57,7 +57,7 @@ export default function AboutSection({ isDark, t }) {
               {/* Action Buttons: Resume */}
               <div className="pt-10 flex flex-wrap gap-8 items-center">
                  <motion.a 
-                   href="/curriculo_lucas_santos_magro.pdf" 
+                   href="curriculo_lucas_santos_magro.pdf" 
                    download
                    whileHover={{ scale: 1.05 }}
                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -111,7 +111,7 @@ export default function AboutSection({ isDark, t }) {
             <div className="window-outline w-full max-w-[450px]">
               <div className="window-glass relative overflow-hidden aspect-[3/4]">
                  <img 
-                   src="/eu.jpg" 
+                   src="eu.jpg" 
                    alt="Lucas Santos Magro Portrait" 
                    className="w-full h-full object-cover transition-all duration-700"
                  />
