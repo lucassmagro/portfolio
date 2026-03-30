@@ -31,18 +31,18 @@ export const translations = {
       view: 'VER',
       items: [
         {
-          id: 'hotel',
-          title: 'Lumina Hotel',
-          brief: 'Redefinindo a hospitalidade digital através de uma interface minimalista e conversão otimizada. Foco em arquitetura de informação e fluidez narrativa.',
-          tags: ['Hospitalidade', 'UI/UX', 'Business'],
-          href: 'hotel/index.html',
-        },
-        {
           id: 'cafeteria',
           title: 'Artisanal Coffee',
           brief: 'Uma experiência de e-commerce editorial que eleva a jornada do café artesanal. Implementação de micro-interações para engajamento sensorial.',
           tags: ['E-commerce', 'Landing Page', 'Branding'],
           href: 'cafeteria/index.html',
+        },
+        {
+          id: 'hotel',
+          title: 'Lumina Hotel',
+          brief: 'Redefinindo a hospitalidade digital através de uma interface minimalista e conversão otimizada. Foco em arquitetura de informação e fluidez narrativa.',
+          tags: ['Hospitalidade', 'UI/UX', 'Business'],
+          href: 'hotel/index.html',
         },
         {
           id: 'arquitetura',
@@ -111,18 +111,18 @@ export const translations = {
       view: 'VIEW',
       items: [
         {
-          id: 'hotel',
-          title: 'Lumina Hotel',
-          brief: 'Redefining digital hospitality through a minimalist interface and optimized conversion. Focused on information architecture and narrative fluidity.',
-          tags: ['Hospitality', 'UI/UX', 'Business'],
-          href: 'hotel/index.html',
-        },
-        {
           id: 'cafeteria',
           title: 'Artisanal Coffee',
           brief: 'An editorial e-commerce experience that elevates the artisanal coffee journey. Implementation of micro-interactions for sensory engagement.',
           tags: ['E-commerce', 'Landing Page', 'Branding'],
           href: 'cafeteria/index.html',
+        },
+        {
+          id: 'hotel',
+          title: 'Lumina Hotel',
+          brief: 'Redefining digital hospitality through a minimalist interface and optimized conversion. Focused on information architecture and narrative fluidity.',
+          tags: ['Hospitality', 'UI/UX', 'Business'],
+          href: 'hotel/index.html',
         },
         {
           id: 'arquitetura',

@@ -170,21 +170,21 @@ export default function LinkHub({ isDark, toggleTheme }) {
         </div>
 
         <motion.a
-          href="arquitetura/index.html"
+          href="cafeteria/index.html"
           className={`group block relative aspect-video overflow-hidden rounded-[4px] border ${borderColor} ${cardBg} backdrop-blur-3xl`}
           whileHover={{ scale: 1.01 }}
         >
           <img 
-            src="arquitetura-thumb.jpg" 
+            src="projects/cafeteria.png" 
             onError={(e) => {
               e.target.src = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
             }}
-            alt="FORMA Studio"
+            alt="Artisanal Coffee"
             className="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
           />
           <div className={`absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t ${isDark ? 'from-black/80' : 'from-white/80'} to-transparent`}>
-            <h3 className="font-serif italic text-xl mb-1">FORMA Studio</h3>
-            <p className="text-[10px] uppercase tracking-widest opacity-60">Architecture & Design</p>
+            <h3 className="font-serif italic text-xl mb-1">Artisanal Coffee</h3>
+            <p className="text-[10px] uppercase tracking-widest opacity-60">Editorial E-commerce</p>
           </div>
         </motion.a>
       </motion.div>
