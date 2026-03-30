@@ -26,7 +26,7 @@ export const translations = {
       resume: 'Baixar Currículo',
     },
     projects: {
-      section: 'Projetos Selecionados (05)',
+      section: 'Projetos Selecionados (07)',
       title: 'Obras.',
       view: 'VER',
       items: [
@@ -65,6 +65,22 @@ export const translations = {
           tags: ['Personal', 'Branding', 'Social'],
           href: '#/links',
           customImage: 'linkhub-thumb.png'
+        },
+        {
+          id: 'nexus',
+          title: 'Nexus AI',
+          brief: 'Um ecossistema SaaS de inteligência de dados com foco em visualização preditiva e escala enterprise.',
+          tags: ['SaaS', 'AI', 'Enterprise'],
+          href: '#/nexus',
+          customImage: 'nexus-thumb.png'
+        },
+        {
+          id: 'refit',
+          title: 'REFIT',
+          brief: 'Uma landing page de luxo para arquitetura e reforma residencial, com estética premium e interatividade avançada.',
+          tags: ['Architecture', 'Luxury', 'Landing Page'],
+          href: 'refit/index.html',
+          customImage: 'refit-thumb.png'
         },
       ],
     },
@@ -180,7 +196,7 @@ export const translations = {
       resume: 'Download Resume',
     },
     projects: {
-      section: 'Selected Works (05)',
+      section: 'Selected Works (07)',
       title: 'Works.',
       view: 'VIEW',
       items: [
@@ -219,6 +235,22 @@ export const translations = {
           tags: ['Personal', 'Branding', 'Social'],
           href: '#/links',
           customImage: 'linkhub-thumb.png'
+        },
+        {
+          id: 'nexus',
+          title: 'Nexus AI',
+          brief: 'A SaaS data intelligence ecosystem focused on predictive visualization and enterprise scale.',
+          tags: ['SaaS', 'AI', 'Enterprise'],
+          href: '#/nexus',
+          customImage: 'nexus-thumb.png'
+        },
+        {
+          id: 'refit',
+          title: 'REFIT',
+          brief: 'A luxury landing page for architecture and residential renovation, with premium aesthetics and advanced interactivity.',
+          tags: ['Architecture', 'Luxury', 'Landing Page'],
+          href: 'refit/index.html',
+          customImage: 'refit-thumb.png'
         },
       ],
     },

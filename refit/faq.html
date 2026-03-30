@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs | REFIT - Especialista em Reformas</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --bg-hero: #0D0D0D;
+            --bg-white: #FFFFFF;
+            --text-dark: #FFFFFF;
+            --text-light: #0D0D0D;
+            --accent: #C8956C;
+            --accent-hover: #B5845B;
+            --card-bg: #1A1A1A;
+            --card-border: #2A2A2A;
+            --body-grey: #9CA3AF;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--bg-hero); color: var(--text-dark); line-height: 1.6; overflow-x: hidden; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* --- Nav (Shared) --- */
+        nav { position: fixed; top: 0; left: 0; width: 100%; height: 80px; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; z-index: 1000; transition: var(--transition); background: rgba(13, 13, 13, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--card-border); }
+        .logo { font-size: 24px; font-weight: 700; color: var(--text-dark); text-decoration: none; }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-dark); font-size: 14px; font-weight: 400; opacity: 0.8; transition: var(--transition); }
+        .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--accent); }
+        .nav-links a.active { font-weight: 700; }
+        .btn { display: inline-flex; align-items: center; gap: 12px; padding: 16px 32px; background: var(--bg-hero); color: var(--text-dark); border-radius: 100px; text-decoration: none; font-weight: 700; font-size: 16px; transition: var(--transition); border: 1px solid var(--card-border); cursor: pointer; }
+        .btn-icon { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: var(--accent); border-radius: 50%; }
+
+        /* --- Hero --- */
+        .hero-sub { padding: 160px 0 100px; background: var(--bg-hero); text-align: center; }
+        .section-label { display: inline-block; padding: 6px 16px; background: var(--card-bg); border-radius: 100px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 24px; }
+        .page-title { font-size: 64px; font-weight: 700; letter-spacing: -2px; }
+
+        /* --- FAQ Content --- */
+        .faq-section { padding: 100px 0; background: var(--bg-white); color: var(--text-light); }
+        .faq-container { max-width: 900px; margin: 0 auto; }
+        
+        .faq-category-title { font-size: 24px; font-weight: 700; margin: 60px 0 30px; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 8px; }
+        .faq-category-title:first-child { margin-top: 0; }
+
+        .faq-item { border-bottom: 1px solid #E5E7EB; padding: 24px 0; }
+        .faq-question { display: flex; justify-content: space-between; align-items: center; cursor: pointer; width: 100%; background: none; border: none; font-size: 18px; font-weight: 700; text-align: left; padding: 10px 0; color: var(--text-light); transition: var(--transition); }
+        .faq-question:hover { color: var(--accent); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: var(--transition); }
+        .faq-answer p { padding: 20px 0; color: #6B7280; font-size: 16px; }
+        .faq-item.active .faq-answer { max-height: 300px; }
+        .faq-item.active .faq-plus { transform: rotate(45deg); color: var(--accent); }
+
+        /* --- Contact CTA --- */
+        .contact-cta { padding: 120px 0; background: var(--bg-hero); border-top: 1px solid var(--card-border); }
+        .contact-form { max-width: 800px; margin: 60px auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .input-group { display: flex; flex-direction: column; gap: 8px; }
+        .input-group.full { grid-column: span 2; }
+        .input-group label { font-size: 14px; color: var(--body-grey); }
+        .contact-form input, .contact-form select, .contact-form textarea { background: #1A1A1A; border: 1px solid var(--card-border); padding: 16px; border-radius: 12px; color: white; font-size: 15px; outline: none; }
+
+        /* --- Footer --- */
+        footer { padding: 50px 0; background: #0D0D0D; border-top: 1px solid #222; }
+        .footer-content { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+        .copy { text-align: center; color: #4B5563; font-size: 14px; }
+
+        @media (max-width: 768px) { .page-title { font-size: 40px; } .nav-links { display: none; } .contact-form { grid-template-columns: 1fr; } .input-group.full { grid-column: span 1; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="./index.html" class="logo">Refit</a>
+        <ul class="nav-links">
+            <li><a href="./sobre.html">Sobre</a></li>
+            <li><a href="./servicos.html">Serviços</a></li>
+            <li><a href="./projetos.html">Nossos Projetos</a></li>
+            <li><a href="./faq.html" class="active">FAQs</a></li>
+            <li><a href="./contato.html">Contato</a></li>
+        </ul>
+        <a href="./contato.html" class="btn" style="padding: 12px 24px; font-size: 14px;">Solicitar Orçamento</a>
+    </nav>
+
+    <header class="hero-sub">
+        <div class="container">
+            <span class="section-label">Central de Ajuda</span>
+            <h1 class="page-title">Perguntas Frequentes.</h1>
+        </div>
+    </header>
+
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-container">
+                
+                <h3 class="faq-category-title">Geral</h3>
+                <div class="faq-item">
+                    <button class="faq-question">Quais regiões vocês atendem? <i data-lucide="plus" class="faq-plus"></i></button>
+                    <div class="faq-answer"><p>Atendemos prioritariamente a Grande São Paulo, Alphaville, Campinas e região do litoral paulista.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Vocês oferecem orçamentos gratuitos? <i data-lucide="plus" class="faq-plus"></i></button>
+                    <div class="faq-answer"><p>Sim, realizamos uma visita técnica inicial e fornecemos uma estimativa detalhada sem custos para todos os novos projetos.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">A empresa possui seguro de obra? <i data-lucide="plus" class="faq-plus"></i></button>
+                    <div class="faq-answer"><p>Sim, todos os nossos projetos são cobertos por seguro de responsabilidade civil, garantindo total segurança para você e seu patrimônio durante toda a obra.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Posso ficar em casa durante a reforma? <i data-lucide="plus" class="faq-plus"></i></button>
+                    <div class="faq-answer"><p>Sim, é possível. Utilizamos barreiras de poeira e mantemos áreas de trabalho organizadas para minimizar o impacto no seu cotidiano.</p></div>
+                </div>
+
+                <h3 class="faq-category-title">Processo</h3>
+                <div class="faq-item">
+                    <button class="faq-question">Quanto tempo leva uma reforma de cozinha? <i data-lucide="plus" class="faq-plus"></i></button>
+                    <div class="faq-answer"><p>Uma reforma típica de cozinha leva de 3 a 5 semanas, dependendo da complexidade das instalações e escolha dos materiais.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Vocês cuidam da compra de materiais? <i data-lucide="plus" class="faq-plus"></i></button>
+                    <div class="faq-answer"><p>Oferecemos o serviço de "Compras Gerenciadas", onde auxiliamos na seleção e compra de todos os materiais de acabamento para garantir os melhores preços e qualidade.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Vocês oferecem garantia nos serviços? <i data-lucide="plus" class="faq-plus"></i></button>
+                    <div class="faq-answer"><p>Sim, todos os nossos serviços possuem garantia estrutural de 5 anos e garantia de acabamento de 1 ano.</p></div>
+                </div>
+
+                <h3 class="faq-category-title">Pagamento</h3>
+                <div class="faq-item">
+                    <button class="faq-question">Quais as formas de pagamento aceitas? <i data-lucide="plus" class="faq-plus"></i></button>
+                    <div class="faq-answer"><p>Aceitamos transferências bancárias, PIX e parcelamento via cartão de crédito ou boleto bancário (sujeito à análise de crédito).</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Como funciona o parcelamento da obra? <i data-lucide="plus" class="faq-plus"></i></button>
+                    <div class="faq-answer"><p>Geralmente trabalhamos com uma entrada de 40% e o restante parcelado de acordo com a evolução do cronograma da obra.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Existe desconto para pagamento à vista? <i data-lucide="plus" class="faq-plus"></i></button>
+                    <div class="faq-answer"><p>Sim, oferecemos descontos progressivos para pagamentos realizados integralmente no início do projeto.</p></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-cta">
+        <div class="container">
+            <div style="text-align: center;">
+                <span class="section-label">Contato</span>
+                <h2 style="font-size: 40px;">Ainda tem dúvidas?</h2>
+                <p style="color: var(--body-grey); margin-top: 20px;">Envie sua pergunta e responderemos o mais rápido possível.</p>
+            </div>
+            
+            <div class="contact-form">
+                <div class="input-group">
+                    <label>Nome</label>
+                    <input type="text" placeholder="Seu nome">
+                </div>
+                <div class="input-group">
+                    <label>E-mail</label>
+                    <input type="email" placeholder="seu@email.com">
+                </div>
+                <div class="input-group full">
+                    <label>Sua Pergunta</label>
+                    <textarea rows="4" placeholder="Como podemos ajudar hoje?"></textarea>
+                </div>
+                <button class="btn" style="grid-column: span 2; justify-content: center;">
+                    Enviar Pergunta
+                    <div class="btn-icon">
+                        <i data-lucide="send" size="18"></i>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="./index.html" class="logo">Refit</a>
+                <p class="copy">© 2026 REFIT. TODOS OS DIREITOS RESERVADOS.</p>
+            </div>
+            <p style="text-align:center; color:#555; font-size:13px; margin-top:12px;">
+                Feito com ❤️ por 
+                <a href="https://lucassmagro.github.io/portfolio" target="_blank" style="color:#C8956C; text-decoration:none;">
+                    Lucas Santos Magro
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

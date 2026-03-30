@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossos Serviços | REFIT - Especialista em Reformas</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --bg-hero: #0D0D0D;
+            --bg-white: #FFFFFF;
+            --text-dark: #FFFFFF;
+            --text-light: #0D0D0D;
+            --accent: #C8956C;
+            --accent-hover: #B5845B;
+            --card-bg: #1A1A1A;
+            --card-border: #2A2A2A;
+            --body-grey: #9CA3AF;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--bg-hero); color: var(--text-dark); line-height: 1.6; overflow-x: hidden; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* --- Nav (Shared) --- */
+        nav { position: fixed; top: 0; left: 0; width: 100%; height: 80px; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; z-index: 1000; transition: var(--transition); background: rgba(13, 13, 13, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--card-border); }
+        .logo { font-size: 24px; font-weight: 700; color: var(--text-dark); text-decoration: none; }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-dark); font-size: 14px; font-weight: 400; opacity: 0.8; transition: var(--transition); }
+        .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--accent); }
+        .nav-links a.active { font-weight: 700; }
+        .btn { display: inline-flex; align-items: center; gap: 12px; padding: 16px 32px; background: var(--bg-hero); color: var(--text-dark); border-radius: 100px; text-decoration: none; font-weight: 700; font-size: 16px; transition: var(--transition); border: 1px solid var(--card-border); cursor: pointer; }
+        .btn-icon { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: var(--accent); border-radius: 50%; }
+
+        /* --- Hero --- */
+        .hero-sub { padding: 160px 0 100px; background: var(--bg-hero); text-align: center; }
+        .section-label { display: inline-block; padding: 6px 16px; background: var(--card-bg); border-radius: 100px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 24px; }
+        .page-title { font-size: 64px; font-weight: 700; letter-spacing: -2px; }
+
+        /* --- Services Expanded --- */
+        .services-detail { padding: 100px 0; background: var(--bg-white); color: var(--text-light); }
+        .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-top: 60px; }
+        .service-full-card { background: #F9FAFB; padding: 60px; border-radius: 32px; border: 1px solid #E5E7EB; transition: var(--transition); }
+        .service-full-card:hover { transform: translateY(-8px); border-color: var(--accent); }
+        .service-icon { color: var(--accent); margin-bottom: 30px; }
+        .service-price { display: inline-block; padding: 4px 12px; background: #E5E7EB; border-radius: 6px; font-size: 14px; font-weight: 700; margin-bottom: 20px; color: #374151; }
+        .service-full-card h3 { font-size: 28px; margin-bottom: 20px; }
+        .service-full-card p { color: #4B5563; margin-bottom: 32px; font-size: 17px; }
+        .service-steps { list-style: none; }
+        .service-steps li { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; font-size: 15px; color: #374151; }
+        .step-num { width: 24px; height: 24px; background: var(--bg-hero); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; }
+
+        /* --- Contact CTA --- */
+        .contact-cta { padding: 120px 0; background: var(--bg-hero); border-top: 1px solid var(--card-border); }
+        .contact-form { max-width: 800px; margin: 60px auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .input-group { display: flex; flex-direction: column; gap: 8px; }
+        .input-group.full { grid-column: span 2; }
+        .input-group label { font-size: 14px; color: var(--body-grey); }
+        .contact-form input, .contact-form select, .contact-form textarea { background: #1A1A1A; border: 1px solid var(--card-border); padding: 16px; border-radius: 12px; color: white; font-size: 15px; outline: none; }
+
+        /* --- Footer --- */
+        footer { padding: 50px 0; background: #0D0D0D; border-top: 1px solid #222; }
+        .footer-content { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+        .copy { text-align: center; color: #4B5563; font-size: 14px; }
+
+        @media (max-width: 1024px) { .services-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .page-title { font-size: 40px; } .nav-links { display: none; } .contact-form { grid-template-columns: 1fr; } .input-group.full { grid-column: span 1; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="./index.html" class="logo">Refit</a>
+        <ul class="nav-links">
+            <li><a href="./sobre.html">Sobre</a></li>
+            <li><a href="./servicos.html" class="active">Serviços</a></li>
+            <li><a href="./projetos.html">Nossos Projetos</a></li>
+            <li><a href="./faq.html">FAQs</a></li>
+            <li><a href="./contato.html">Contato</a></li>
+        </ul>
+        <a href="./contato.html" class="btn" style="padding: 12px 24px; font-size: 14px;">Solicitar Orçamento</a>
+    </nav>
+
+    <header class="hero-sub">
+        <div class="container">
+            <span class="section-label">O que realizamos</span>
+            <h1 class="page-title">Soluções Completas em<br>Reforma Residencial.</h1>
+        </div>
+    </header>
+
+    <section class="services-detail">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <p style="color: #6B7280; font-size: 20px; max-width: 700px; margin: 0 auto;">Transformamos sonhos em realidade com processos otimizados e materiais de primeira linha em cada especialidade.</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- 1. Cozinha -->
+                <div class="service-full-card">
+                    <i data-lucide="utensils" class="service-icon" size="48"></i>
+                    <span class="service-price">A partir de R$ 15.000</span>
+                    <h3>Remodelação de Cozinhas</h3>
+                    <p>Criamos o coração da sua casa com design ergonômico, marcenaria de luxo e revestimentos resistentes.</p>
+                    <ul class="service-steps">
+                        <li><div class="step-num">1</div> Planejamento & Design 3D</li>
+                        <li><div class="step-num">2</div> Demolição & Infraestrutura</li>
+                        <li><div class="step-num">3</div> Instalação de Bancadas & Louças</li>
+                        <li><div class="step-num">4</div> Finalização de Marcenaria</li>
+                    </ul>
+                </div>
+
+                <!-- 2. Banheiro -->
+                <div class="service-full-card">
+                    <i data-lucide="droplet" class="service-icon" size="48"></i>
+                    <span class="service-price">A partir de R$ 8.000</span>
+                    <h3>Reforma de Banheiros</h3>
+                    <p>Eleve seu nível de conforto com acabamentos em mármore, metais premium e projetos de iluminação relaxantes.</p>
+                    <ul class="service-steps">
+                        <li><div class="step-num">1</div> Impermeabilização Crítica</li>
+                        <li><div class="step-num">2</div> Instalação de Revestimentos</li>
+                        <li><div class="step-num">3</div> Metais & Box de Luxo</li>
+                        <li><div class="step-num">4</div> Entrega Limpa</li>
+                    </ul>
+                </div>
+
+                <!-- 3. Janelas e Portas -->
+                <div class="service-full-card">
+                    <i data-lucide="scan" class="service-icon" size="48"></i>
+                    <span class="service-price">A partir de R$ 3.500</span>
+                    <h3>Janelas & Portas</h3>
+                    <p>Especialistas em esquadrias de alumínio e madeira, focando em isolamento acústico e térmico de alta performance.</p>
+                    <ul class="service-steps">
+                        <li><div class="step-num">1</div> Medição Técnica</li>
+                        <li><div class="step-num">2</div> Seleção de Materiais</li>
+                        <li><div class="step-num">3</div> Instalação com Vedação</li>
+                        <li><div class="step-num">4</div> Ajuste de Ferragens</li>
+                    </ul>
+                </div>
+
+                <!-- 4. Reforma Completa -->
+                <div class="service-full-card">
+                    <i data-lucide="layout" class="service-icon" size="48"></i>
+                    <span class="service-price">A partir de R$ 45.000</span>
+                    <h3>Reforma Completa</h3>
+                    <p>A solução Chave na Mão (Turnkey) que cuida de tudo, da demolição à pintura final, em todo o seu imóvel.</p>
+                    <ul class="service-steps">
+                        <li><div class="step-num">1</div> Projeto Arquitetônico</li>
+                        <li><div class="step-num">2</div> Gestão Integrada de Obras</li>
+                        <li><div class="step-num">3</div> Cronograma de Execução</li>
+                        <li><div class="step-num">4</div> Limpeza & Pós-Obra</li>
+                    </ul>
+                </div>
+
+                <!-- 5. Pintura -->
+                <div class="service-full-card">
+                    <i data-lucide="palette" class="service-icon" size="48"></i>
+                    <span class="service-price">A partir de R$ 2.500</span>
+                    <h3>Pintura & Acabamentos</h3>
+                    <p>Acabamentos finos em gesso, massas e pinturas especiais que trazem o brilho final para cada ambiente.</p>
+                    <ul class="service-steps">
+                        <li><div class="step-num">1</div> Proteção de Pisos & Móveis</li>
+                        <li><div class="step-num">2</div> Preparo de Superfícies</li>
+                        <li><div class="step-num">3</div> Aplicação de Tintas Premium</li>
+                        <li><div class="step-num">4</div> Inspeção de Brilho</li>
+                    </ul>
+                </div>
+
+                <!-- 6. Pisos -->
+                <div class="service-full-card">
+                    <i data-lucide="grid" class="service-icon" size="48"></i>
+                    <span class="service-price">A partir de R$ 4.000</span>
+                    <h3>Pisos & Revestimentos</h3>
+                    <p>Trabalhamos com porcelanatos de grandes formatos, vinílicos e rodapés de alta durabilidade.</p>
+                    <ul class="service-steps">
+                        <li><div class="step-num">1</div> Nivelamento de Contrapiso</li>
+                        <li><div class="step-num">2</div> Paginação Estratégica</li>
+                        <li><div class="step-num">3</div> Aplicação & Rejuntamento</li>
+                        <li><div class="step-num">4</div> Proteção Pós-Instalação</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-cta">
+        <div class="container">
+            <div style="text-align: center;">
+                <span class="section-label">Contato</span>
+                <h2 style="font-size: 40px;">Solicite um Orçamento Personalizado</h2>
+                <p style="color: var(--body-grey); margin-top: 20px;">Nossos consultores estão prontos para analisar seu projeto.</p>
+            </div>
+            
+            <div class="contact-form">
+                <div class="input-group">
+                    <label>Nome</label>
+                    <input type="text" placeholder="Seu nome">
+                </div>
+                <div class="input-group">
+                    <label>E-mail</label>
+                    <input type="email" placeholder="seu@email.com">
+                </div>
+                <div class="input-group full">
+                    <label>Tipo de Serviço Desejado</label>
+                    <select>
+                        <option>Cozinha</option>
+                        <option>Banheiro</option>
+                        <option>Janelas/Portas</option>
+                        <option>Reforma Completa</option>
+                        <option>Pintura/Pisos</option>
+                    </select>
+                </div>
+                <div class="input-group full">
+                    <label>Mensagem</label>
+                    <textarea rows="4" placeholder="Conte-nos os detalhes do serviço"></textarea>
+                </div>
+                <button class="btn" style="grid-column: span 2; justify-content: center;">
+                    Consultar Especialista
+                    <div class="btn-icon">
+                        <i data-lucide="send" size="18"></i>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="./index.html" class="logo">Refit</a>
+                <p class="copy">© 2026 REFIT. TODOS OS DIREITOS RESERVADOS.</p>
+            </div>
+            <p style="text-align:center; color:#555; font-size:13px; margin-top:12px;">
+                Feito com ❤️ por 
+                <a href="https://lucassmagro.github.io/portfolio" target="_blank" style="color:#C8956C; text-decoration:none;">
+                    Lucas Santos Magro
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

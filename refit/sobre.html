@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós | REFIT - Excelência em Reformas</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --bg-hero: #0D0D0D;
+            --bg-white: #FFFFFF;
+            --text-dark: #FFFFFF;
+            --text-light: #0D0D0D;
+            --accent: #C8956C;
+            --accent-hover: #B5845B;
+            --card-bg: #1A1A1A;
+            --card-border: #2A2A2A;
+            --body-grey: #9CA3AF;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-hero);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* --- Header/Nav --- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            z-index: 1000;
+            transition: var(--transition);
+            background: rgba(13, 13, 13, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 14px;
+            font-weight: 400;
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            opacity: 1;
+            color: var(--accent);
+        }
+
+        .nav-links a.active { font-weight: 700; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 32px;
+            background: var(--bg-hero);
+            color: var(--text-dark);
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: var(--transition);
+            border: 1px solid var(--card-border);
+            cursor: pointer;
+        }
+
+        .btn-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        /* --- Hero --- */
+        .hero-sub {
+            padding: 160px 0 100px;
+            background: var(--bg-hero);
+            text-align: center;
+        }
+
+        .section-label {
+            display: inline-block;
+            padding: 6px 16px;
+            background: var(--card-bg);
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+
+        .page-title {
+            font-size: 64px;
+            font-weight: 700;
+            letter-spacing: -2px;
+        }
+
+        /* --- Story --- */
+        .story-section {
+            padding: 100px 0;
+            background: var(--bg-white);
+            color: var(--text-light);
+        }
+
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 20px;
+            line-height: 1.8;
+            color: #374151;
+        }
+
+        .story-content p {
+            margin-bottom: 32px;
+        }
+
+        /* --- Values --- */
+        .values-section {
+            padding: 100px 0;
+            background: var(--bg-hero);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .value-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid var(--card-border);
+        }
+
+        .value-card h3 {
+            color: var(--accent);
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        /* --- Team --- */
+        .team-section {
+            padding: 100px 0;
+            background: var(--bg-white);
+            color: var(--text-light);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .team-card {
+            text-align: center;
+        }
+
+        .team-img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 24px;
+            margin-bottom: 20px;
+            filter: grayscale(1);
+            transition: var(--transition);
+        }
+
+        .team-card:hover .team-img {
+            filter: grayscale(0);
+            transform: scale(1.02);
+        }
+
+        .team-card h4 {
+            font-size: 20px;
+            margin-bottom: 4px;
+        }
+
+        .team-card p {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        /* --- Stats --- */
+        .stats-section {
+            padding: 80px 0;
+            background: var(--bg-hero);
+            border-top: 1px solid var(--card-border);
+        }
+
+        .stats-row {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+
+        .stat-item h4 {
+            font-size: 48px;
+            color: var(--accent);
+        }
+
+        .stat-item p {
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--body-grey);
+        }
+
+        /* --- Contact Form (Shared) --- */
+        .contact-cta {
+            padding: 120px 0;
+            background: var(--bg-hero);
+            border-top: 1px solid var(--card-border);
+        }
+
+        .contact-form {
+            max-width: 800px;
+            margin: 60px auto 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .input-group { display: flex; flex-direction: column; gap: 8px; }
+        .input-group.full { grid-column: span 2; }
+        .input-group label { font-size: 14px; color: var(--body-grey); }
+        .contact-form input, .contact-form select, .contact-form textarea {
+            background: #1A1A1A;
+            border: 1px solid var(--card-border);
+            padding: 16px;
+            border-radius: 12px;
+            color: white;
+            font-size: 15px;
+            outline: none;
+        }
+
+        /* --- Footer (Shared) --- */
+        footer { padding: 50px 0; background: #0D0D0D; border-top: 1px solid #222; }
+        .footer-content { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+        .copy { text-align: center; color: #4B5563; font-size: 14px; }
+
+        /* --- Responsive --- */
+        @media (max-width: 1024px) {
+            .team-grid { grid-template-columns: repeat(2, 1fr); }
+            .values-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .page-title { font-size: 40px; }
+            .stats-row { flex-direction: column; gap: 40px; }
+            .contact-form { grid-template-columns: 1fr; }
+            .input-group.full { grid-column: span 1; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="./index.html" class="logo">Refit</a>
+        <ul class="nav-links">
+            <li><a href="./sobre.html" class="active">Sobre</a></li>
+            <li><a href="./servicos.html">Serviços</a></li>
+            <li><a href="./projetos.html">Nossos Projetos</a></li>
+            <li><a href="./faq.html">FAQs</a></li>
+            <li><a href="./contato.html">Contato</a></li>
+        </ul>
+        <a href="./contato.html" class="btn" style="padding: 12px 24px; font-size: 14px;">Solicitar Orçamento</a>
+    </nav>
+
+    <header class="hero-sub">
+        <div class="container">
+            <span class="section-label">Nossa História</span>
+            <h1 class="page-title">Construindo Sonhos,<br>Entregando Excelência.</h1>
+        </div>
+    </header>
+
+    <section class="story-section">
+        <div class="container">
+            <div class="story-content">
+                <p>Fundada com a visão de elevar o padrão das reformas residenciais em São Paulo, a Refit nasceu da paixão pelo design funcional e pelo artesanato meticuloso. Ao longo de mais de uma década, transformamos centenas de imóveis comuns em residências extraordinárias, sempre priorizando a qualidade dos materiais e a precisão na execução.</p>
+                <p>Nossa jornada é marcada por um compromisso inabalável com a satisfação do cliente. Entendemos que uma reforma é mais do que apenas uma mudança física; é a concretização de um estilo de vida. Por isso, cada projeto é tratado com exclusividade, unindo as tendências globais de arquitetura com a realidade e necessidades de cada família.</p>
+                <p>Hoje, a Refit é referência em reformas de alto padrão, contando com uma equipe multidisciplinar de arquitetos, designers e mestres de obra. Continuamos inovando em processos e tecnologias para garantir que cada entrega seja pontual, limpa e, acima de tudo, impecável em cada detalhe.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="values-section">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <span class="section-label">Nossos Pilares</span>
+                <h2 style="font-size: 40px;">Valores que nos Guiam</h2>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Qualidade</h3>
+                    <p style="color: var(--body-grey);">Utilizamos apenas os melhores materiais e técnicas construtivas para garantir durabilidade e beleza eterna.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Compromisso</h3>
+                    <p style="color: var(--body-grey);">Respeitamos prazos e orçamentos, mantendo uma comunicação transparente durante todo o processo.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Inovação</h3>
+                    <p style="color: var(--body-grey);">Buscamos constantemente novas soluções em design e sustentabilidade para modernizar seu lar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <span class="section-label">Equipe</span>
+                <h2 style="font-size: 40px;">Mentes Criativas</h2>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="./img/team_1.jpg" alt="Equipe" class="team-img">
+                    <h4>Ricardo Salles</h4>
+                    <p>Diretor Executivo</p>
+                </div>
+                <div class="team-card">
+                    <img src="./img/team_2.jpg" alt="Equipe" class="team-img">
+                    <h4>Ana Beatriz</h4>
+                    <p>Diretora de Design</p>
+                </div>
+                <div class="team-card">
+                    <img src="./img/team_3.jpg" alt="Equipe" class="team-img">
+                    <h4>Marcelo Lima</h4>
+                    <p>Gerente de Projetos</p>
+                </div>
+                <div class="team-card">
+                    <img src="./img/team_4.jpg" alt="Equipe" class="team-img">
+                    <h4>Letícia Costa</h4>
+                    <p>Arquiteta Sênior</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-row">
+                <div class="stat-item">
+                    <h4>500+</h4>
+                    <p>Projetos</p>
+                </div>
+                <div class="stat-item">
+                    <h4>12</h4>
+                    <p>Anos de Mercado</p>
+                </div>
+                <div class="stat-item">
+                    <h4>98%</h4>
+                    <p>Satisfação</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-cta">
+        <div class="container">
+            <div style="text-align: center;">
+                <span class="section-label">Contato</span>
+                <h2 style="font-size: 40px;">Pronto para sua Reforma?</h2>
+                <p style="color: var(--body-grey); margin-top: 20px;">Preencha o formulário e nossa equipe entrará em contato.</p>
+            </div>
+            
+            <div class="contact-form">
+                <div class="input-group">
+                    <label>Nome</label>
+                    <input type="text" placeholder="Seu nome">
+                </div>
+                <div class="input-group">
+                    <label>E-mail</label>
+                    <input type="email" placeholder="seu@email.com">
+                </div>
+                <div class="input-group full">
+                    <label>Tipo de Projeto</label>
+                    <select>
+                        <option>Remodelação de Cozinha</option>
+                        <option>Reforma de Banheiro</option>
+                        <option>Reforma Completa</option>
+                    </select>
+                </div>
+                <div class="input-group full">
+                    <label>Mensagem</label>
+                    <textarea rows="4" placeholder="Conte-nos sobre seu projeto"></textarea>
+                </div>
+                <button class="btn" style="grid-column: span 2; justify-content: center;">
+                    Enviar Mensagem
+                    <div class="btn-icon">
+                        <i data-lucide="send" size="18"></i>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="./index.html" class="logo">Refit</a>
+                <p class="copy">© 2026 REFIT. TODOS OS DIREITOS RESERVADOS.</p>
+            </div>
+            <p style="text-align:center; color:#555; font-size:13px; margin-top:12px;">
+                Feito com ❤️ por 
+                <a href="https://lucassmagro.github.io/portfolio" target="_blank" style="color:#C8956C; text-decoration:none;">
+                    Lucas Santos Magro
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

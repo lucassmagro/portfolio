@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossos Projetos | REFIT - Portfólio de Reformas</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --bg-hero: #0D0D0D;
+            --bg-white: #FFFFFF;
+            --text-dark: #FFFFFF;
+            --text-light: #0D0D0D;
+            --accent: #C8956C;
+            --accent-hover: #B5845B;
+            --card-bg: #1A1A1A;
+            --card-border: #2A2A2A;
+            --body-grey: #9CA3AF;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--bg-hero); color: var(--text-dark); line-height: 1.6; overflow-x: hidden; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* --- Nav (Shared) --- */
+        nav { position: fixed; top: 0; left: 0; width: 100%; height: 80px; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; z-index: 1000; transition: var(--transition); background: rgba(13, 13, 13, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--card-border); }
+        .logo { font-size: 24px; font-weight: 700; color: var(--text-dark); text-decoration: none; }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-dark); font-size: 14px; font-weight: 400; opacity: 0.8; transition: var(--transition); }
+        .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--accent); }
+        .nav-links a.active { font-weight: 700; }
+        .btn { display: inline-flex; align-items: center; gap: 12px; padding: 16px 32px; background: var(--bg-hero); color: var(--text-dark); border-radius: 100px; text-decoration: none; font-weight: 700; font-size: 16px; transition: var(--transition); border: 1px solid var(--card-border); cursor: pointer; }
+        .btn-icon { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: var(--accent); border-radius: 50%; }
+
+        /* --- Hero --- */
+        .hero-sub { padding: 160px 0 100px; background: var(--bg-hero); text-align: center; }
+        .section-label { display: inline-block; padding: 6px 16px; background: var(--card-bg); border-radius: 100px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 24px; }
+        .page-title { font-size: 64px; font-weight: 700; letter-spacing: -2px; }
+
+        /* --- Portfolio Grid --- */
+        .portfolio-section { padding: 100px 0; background: var(--bg-white); color: var(--text-light); }
+        
+        /* Filter Pills */
+        .filter-wrapper { display: flex; justify-content: center; gap: 16px; margin-bottom: 60px; flex-wrap: wrap; }
+        .filter-btn { padding: 10px 24px; border-radius: 100px; border: 1px solid #E5E7EB; background: white; cursor: pointer; font-weight: 600; font-size: 14px; transition: var(--transition); }
+        .filter-btn:hover, .filter-btn.active { background: var(--bg-hero); color: white; border-color: var(--bg-hero); }
+
+        .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
+        
+        .project-card { position: relative; border-radius: 32px; overflow: hidden; background: #eee; aspect-ratio: 4/3; cursor: pointer; }
+        .project-card img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+        .project-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(13,13,13,0.9) 20%, transparent 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 40px; opacity: 0; transition: var(--transition); }
+        
+        .project-card:hover img { transform: scale(1.05); }
+        .project-card:hover .project-overlay { opacity: 1; }
+
+        .project-category { color: var(--accent); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .project-name { font-size: 28px; color: white; font-weight: 700; margin-bottom: 4px; }
+        .project-meta { font-size: 14px; color: var(--body-grey); display: flex; gap: 16px; }
+
+        /* --- Contact CTA --- */
+        .contact-cta { padding: 120px 0; background: var(--bg-hero); border-top: 1px solid var(--card-border); }
+        .contact-form { max-width: 800px; margin: 60px auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .input-group { display: flex; flex-direction: column; gap: 8px; }
+        .input-group.full { grid-column: span 2; }
+        .input-group label { font-size: 14px; color: var(--body-grey); }
+        .contact-form input, .contact-form select, .contact-form textarea { background: #1A1A1A; border: 1px solid var(--card-border); padding: 16px; border-radius: 12px; color: white; font-size: 15px; outline: none; }
+
+        /* --- Footer --- */
+        footer { padding: 50px 0; background: #0D0D0D; border-top: 1px solid #222; }
+        .footer-content { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+        .copy { text-align: center; color: #4B5563; font-size: 14px; }
+
+        @media (max-width: 768px) { .projects-grid { grid-template-columns: 1fr; } .page-title { font-size: 40px; } .nav-links { display: none; } .contact-form { grid-template-columns: 1fr; } .input-group.full { grid-column: span 1; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="./index.html" class="logo">Refit</a>
+        <ul class="nav-links">
+            <li><a href="./sobre.html">Sobre</a></li>
+            <li><a href="./servicos.html">Serviços</a></li>
+            <li><a href="./projetos.html" class="active">Nossos Projetos</a></li>
+            <li><a href="./faq.html">FAQs</a></li>
+            <li><a href="./contato.html">Contato</a></li>
+        </ul>
+        <a href="./contato.html" class="btn" style="padding: 12px 24px; font-size: 14px;">Solicitar Orçamento</a>
+    </nav>
+
+    <header class="hero-sub">
+        <div class="container">
+            <span class="section-label">Portfólio</span>
+            <h1 class="page-title">Artesanato em Cada<br>Mera Detalhe.</h1>
+        </div>
+    </header>
+
+    <section class="portfolio-section">
+        <div class="container">
+            <div class="filter-wrapper">
+                <button class="filter-btn active">Todos</button>
+                <button class="filter-btn">Cozinhas</button>
+                <button class="filter-btn">Banheiros</button>
+                <button class="filter-btn">Completas</button>
+                <button class="filter-btn">Acabamentos</button>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- 1 -->
+                <div class="project-card">
+                    <img src="./img/work_1.jpg" alt="Projeto">
+                    <div class="project-overlay">
+                        <span class="project-category">Reforma Completa</span>
+                        <h3 class="project-name">Living Premium</h3>
+                        <div class="project-meta">
+                            <span>São Paulo</span>
+                            <span>2024</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div class="project-card">
+                    <img src="./img/work_2.jpg" alt="Projeto">
+                    <div class="project-overlay">
+                        <span class="project-category">Cozinha</span>
+                        <h3 class="project-name">Cozinha Minimalista</h3>
+                        <div class="project-meta">
+                            <span>Campinas</span>
+                            <span>2023</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div class="project-card">
+                    <img src="./img/work_3.jpg" alt="Projeto">
+                    <div class="project-overlay">
+                        <span class="project-category">Arquitetura</span>
+                        <h3 class="project-name">Escada Arquitetônica</h3>
+                        <div class="project-meta">
+                            <span>Alphaville</span>
+                            <span>2024</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 4 -->
+                <div class="project-card">
+                    <img src="./img/work_4.jpg" alt="Projeto">
+                    <div class="project-overlay">
+                        <span class="project-category">Banheiro</span>
+                        <h3 class="project-name">Suíte Master Spa</h3>
+                        <div class="project-meta">
+                            <span>Santos</span>
+                            <span>2023</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 5 -->
+                <div class="project-card">
+                    <img src="./img/work_5.jpg" alt="Projeto">
+                    <div class="project-overlay">
+                        <span class="project-category">Cozinha</span>
+                        <h3 class="project-name">Cozinha Industrial-Chic</h3>
+                        <div class="project-meta">
+                            <span>São Paulo</span>
+                            <span>2024</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 6 -->
+                <div class="project-card">
+                    <img src="./img/work_6.jpg" alt="Projeto">
+                    <div class="project-overlay">
+                        <span class="project-category">Banheiro</span>
+                        <h3 class="project-name">Banheiro com Rain Shower</h3>
+                        <div class="project-meta">
+                            <span>Sorocaba</span>
+                            <span>2023</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 7 -->
+                <div class="project-card">
+                    <img src="./img/work_7.jpg" alt="Projeto">
+                    <div class="project-overlay">
+                        <span class="project-category">Apartamento</span>
+                        <h3 class="project-name">Open Plan Moderno</h3>
+                        <div class="project-meta">
+                            <span>São Paulo</span>
+                            <span>2024</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 8 -->
+                <div class="project-card">
+                    <img src="./img/work_8.jpg" alt="Projeto">
+                    <div class="project-overlay">
+                        <span class="project-category">Suíte</span>
+                        <h3 class="project-name">Refúgio Minimalista</h3>
+                        <div class="project-meta">
+                            <span>Alphaville</span>
+                            <span>2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-cta">
+        <div class="container">
+            <div style="text-align: center;">
+                <span class="section-label">Contato</span>
+                <h2 style="font-size: 40px;">Inicie seu Projeto Exclusivo</h2>
+                <p style="color: var(--body-grey); margin-top: 20px;">Vamos conversar sobre como elevar o padrão do seu imóvel.</p>
+            </div>
+            
+            <div class="contact-form">
+                <div class="input-group">
+                    <label>Nome</label>
+                    <input type="text" placeholder="Seu nome">
+                </div>
+                <div class="input-group">
+                    <label>E-mail</label>
+                    <input type="email" placeholder="seu@email.com">
+                </div>
+                <div class="input-group full">
+                    <label>Assunto</label>
+                    <input type="text" placeholder="Sobre qual projeto quer conversar?">
+                </div>
+                <div class="input-group full">
+                    <label>Mensagem</label>
+                    <textarea rows="4" placeholder="Algum detalhe especial?"></textarea>
+                </div>
+                <button class="btn" style="grid-column: span 2; justify-content: center;">
+                    Agendar Consultoria
+                    <div class="btn-icon">
+                        <i data-lucide="send" size="18"></i>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="./index.html" class="logo">Refit</a>
+                <p class="copy">© 2026 REFIT. TODOS OS DIREITOS RESERVADOS.</p>
+            </div>
+            <p style="text-align:center; color:#555; font-size:13px; margin-top:12px;">
+                Feito com ❤️ por 
+                <a href="https://lucassmagro.github.io/portfolio" target="_blank" style="color:#C8956C; text-decoration:none;">
+                    Lucas Santos Magro
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
