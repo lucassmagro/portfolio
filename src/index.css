@@ -40,9 +40,9 @@ html.has-scroll-dragging {
   min-height: 100vh;
 }
 
-/* Global Cursor & Base Styles */
+/* Global Base Styles */
 * {
-  cursor: none !important;
+  box-sizing: border-box;
 }
 
 body {

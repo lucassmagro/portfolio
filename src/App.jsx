@@ -3,7 +3,6 @@ import LocomotiveScroll from 'locomotive-scroll'
 import 'locomotive-scroll/dist/locomotive-scroll.css'
 
 import { translations } from './i18n/translations.js'
-import Cursor from './components/Cursor.jsx'
 import Navbar from './components/Navbar.jsx'
 import Hero from './components/Hero.jsx'
 import Gallery from './components/Gallery.jsx'
@@ -12,6 +11,7 @@ import AboutSection from './components/AboutSection.jsx'
 import CtaBanner from './components/CtaBanner.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
 import LinkHub from './pages/LinkHub.jsx'
+import NexusSaaS from './components/NexusSaaS.jsx'
 
 export default function App() {
   const scrollRef = useRef(null)
@@ -90,6 +90,19 @@ export default function App() {
     return <LinkHub isDark={isDark} toggleTheme={toggleTheme} />
   }
 
+  // Render NexusSaaS if hash contains 'nexus'
+  if (currentPath.includes('nexus')) {
+    return (
+      <NexusSaaS 
+        isDark={isDark} 
+        toggleTheme={toggleTheme} 
+        lang={lang} 
+        onLangToggle={toggleLang} 
+        t={translations[lang]} 
+      />
+    )
+  }
+
   return (
     <div
       ref={scrollRef}
@@ -98,7 +111,6 @@ export default function App() {
         isDark ? 'bg-black text-white' : 'bg-white text-black'
       }`}
     >
-      <Cursor viewLabel={t.projects.view} />
       <Navbar 
         isDark={isDark} 
         onToggle={toggleTheme} 
