@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadias & Disponibilidade | Lumina Chapecó</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+</head>
+<body>
+
+    <header class="scrolled"> <!-- Force scrolled style for subpages -->
+        <div class="container nav-container">
+            <a href="index.html" class="logo">LUMINA</a>
+            <nav class="nav-links">
+                <a href="index.html">Início</a>
+                <a href="busca.html">Estadias</a>
+                <a href="gastronomia.html">Gastronomia</a>
+                <a href="wellness.html">Wellness</a>
+                <a href="contato.html">Contato</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Alternar modo escuro">
+                    <span class="icon-moon">☽</span>
+                    <span class="icon-sun">☀</span>
+                </button>
+            </nav>
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-nav-overlay">
+        <div class="mobile-nav-content">
+            <a href="index.html">Início</a>
+            <a href="busca.html">Acomodações</a>
+            <a href="gastronomia.html">Gastronomia</a>
+            <a href="wellness.html">Wellness</a>
+            <a href="contato.html">Contato</a>
+            <button class="theme-toggle" aria-label="Alternar modo escuro">
+                <span class="icon-moon">☽</span>
+                <span class="icon-sun">☀</span>
+            </button>
+        </div>
+    </div>
+
+    <main>
+        <!-- Busca Hero -->
+        <section class="hero sub-hero">
+            <img src="img/quarto-carrossel.png" alt="Acomodações Lumina Hotel" class="hero-img">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <span class="room-category" style="color: #ffffff; text-shadow: 0 1px 4px rgba(0,0,0,0.5);">Resultados da Pesquisa</span>
+                    <h1 class="hero-title">Escolha sua Estadia</h1>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+
+                <div class="booking-bar" style="margin-top: 0; margin-bottom: var(--spacing-3xl); background: var(--surface-container-low);">
+                    <div class="booking-field">
+                        <label>Check-in</label>
+                        <input type="date" value="2026-05-15">
+                    </div>
+                    <div class="booking-field">
+                        <label>Check-out</label>
+                        <input type="date" value="2026-05-20">
+                    </div>
+                    <div class="booking-field">
+                        <label>Hóspedes</label>
+                        <input type="number" value="2">
+                    </div>
+                    <button class="btn btn-primary">ATUALIZAR BUSCA</button>
+                </div>
+
+                <div class="room-grid">
+                    <!-- Suíte Presidencial Chapecó -->
+                    <div class="room-card">
+                        <img src="img/suite-executiva.png" alt="Suíte Presidencial Chapecó">
+                        <div class="room-info">
+                            <span class="room-category">LIDERANÇA & LUXO</span>
+                            <h3 class="room-name">Suíte Presidencial</h3>
+                            <p style="color: var(--on-surface-variant); margin-bottom: var(--spacing-md);">180m² · Sala de Reuniões Privativa · Automação Total</p>
+                            <p class="room-price">R$ 2.450 / noite</p>
+                            <a href="#" class="btn btn-primary" style="width: 100%;">RESERVAR AGORA</a>
+                        </div>
+                    </div>
+
+                    <!-- Suíte Master Urban -->
+                    <div class="room-card">
+                        <img src="img/suite-executiva.png" alt="Suíte Master Urban">
+                        <div class="room-info">
+                            <span class="room-category">VISTA PANORÂMICA</span>
+                            <h3 class="room-name">Suíte Master Urban</h3>
+                            <p style="color: var(--on-surface-variant); margin-bottom: var(--spacing-md);">120m² · Home Office Equipado · City View</p>
+                            <p class="room-price">R$ 980 / noite</p>
+                            <a href="suite-master.html" class="btn btn-primary" style="width: 100%;">RESERVAR AGORA</a>
+                        </div>
+                    </div>
+
+                    <!-- Loft Corporativo -->
+                    <div class="room-card">
+                        <img src="img/loft-corporativo.png" alt="Loft Corporativo">
+                        <div class="room-info">
+                            <span class="room-category">ESTADIAS LONGAS</span>
+                            <h3 class="room-name">Lumina Loft</h3>
+                            <p style="color: var(--on-surface-variant); margin-bottom: var(--spacing-md);">95m² · Cozinha Completa · Design Industrial</p>
+                            <p class="room-price">R$ 520 / noite</p>
+                            <a href="#" class="btn btn-primary" style="width: 100%;">RESERVAR AGORA</a>
+                        </div>
+                    </div>
+
+                    <!-- Quarto Executivo Superior -->
+                    <div class="room-card">
+                        <img src="img/quarto-carrossel.png" alt="Quarto Executivo Superior">
+                        <div class="room-info">
+                            <span class="room-category">EFICIÊNCIA CORPORATIVA</span>
+                            <h3 class="room-name">Quarto Executivo</h3>
+                            <p style="color: var(--on-surface-variant); margin-bottom: var(--spacing-md);">80m² · Cadeira Ergonômica · Isolamento Acústico</p>
+                            <p class="room-price">R$ 650 / noite</p>
+                            <a href="#" class="btn btn-primary" style="width: 100%;">RESERVAR AGORA</a>
+                        </div>
+                    </div>
+
+                    <!-- Estúdio Premium -->
+                    <div class="room-card">
+                        <img src="img/suite-executiva.png" alt="Estúdio Premium">
+                        <div class="room-info">
+                            <span class="room-category">MINIMALISMO URBANO</span>
+                            <h3 class="room-name">Studio Premium</h3>
+                            <p style="color: var(--on-surface-variant); margin-bottom: var(--spacing-md);">55m² · Centro da Cidade · Wi-Fi 6</p>
+                            <p class="room-price">R$ 440 / noite</p>
+                            <a href="#" class="btn btn-primary" style="width: 100%;">RESERVAR AGORA</a>
+                        </div>
+                    </div>
+
+                    <!-- Quarto Business King -->
+                    <div class="room-card">
+                        <img src="img/loft-corporativo.png" alt="Quarto Business King">
+                        <div class="room-info">
+                            <span class="room-category">VERSATILIDADE</span>
+                            <h3 class="room-name">Quarto Business</h3>
+                            <p style="color: var(--on-surface-variant); margin-bottom: var(--spacing-md);">140m² · Próximo ao Centro de Eventos</p>
+                            <p class="room-price">R$ 1.150 / noite</p>
+                            <a href="#" class="btn btn-primary" style="width: 100%;">RESERVAR AGORA</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h5 class="logo" style="color: #ffffff; margin-bottom: var(--spacing-xl);">LUMINA</h5>
+                    <p style="opacity: 0.8;">Hospitalidade de alto padrão e inteligência corporativa no coração de Chapecó.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="busca.html">Estadias</a></li>
+                        <li><a href="gastronomia.html">Gastronomia</a></li>
+                        <li><a href="wellness.html">Wellness</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Localização</h4>
+                    <ul>
+                        <li>Rua Marechal Deodoro, 1234 - Centro</li>
+                        <li>Chapecó, SC - Brasil</li>
+                        <li>contato@luminachapeco.com.br</li>
+                        <li>+55 (49) 3333-3333</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Lumina Hotel Chapecó. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

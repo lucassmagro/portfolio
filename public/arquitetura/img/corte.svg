@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" style="background:#fff; font-family:sans-serif;">
+  <rect width="100%" height="100%" fill="#ffffff" />
+  <!-- Grid lines -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#f0f0f0" stroke-width="1"/>
+  </pattern>
+  <rect width="100%" height="100%" fill="url(#grid)" />
+  
+  <!-- Ground Line -->
+  <line x1="50" y1="450" x2="750" y2="450" stroke="#111" stroke-width="6"/>
+  <!-- Underground hatch -->
+  <path d="M50 455 L80 485 M100 455 L130 485 M150 455 L180 485 M200 455 L230 485 M250 455 L280 485 M300 455 L330 485 M350 455 L380 485 M400 455 L430 485 M450 455 L480 485 M500 455 L530 485 M550 455 L580 485 M600 455 L630 485 M650 455 L680 485 M700 455 L730 485" stroke="#ccc" stroke-width="1"/>
+  
+  <!-- Section Cut Box -->
+  <rect x="150" y="250" width="500" height="200" fill="none" stroke="#222" stroke-width="4"/>
+  <rect x="150" y="150" width="300" height="100" fill="none" stroke="#222" stroke-width="4"/>
+  <line x1="150" y1="250" x2="650" y2="250" stroke="#222" stroke-width="4"/>
+  
+  <!-- Roof structure details -->
+  <rect x="140" y="140" width="320" height="10" fill="#999" />
+  <rect x="440" y="240" width="220" height="10" fill="#999" />
+  
+  <!-- Interior walls cut -->
+  <rect x="250" y="250" width="15" height="200" fill="#555" />
+  <rect x="400" y="250" width="15" height="200" fill="#555" />
+  <rect x="400" y="150" width="15" height="100" fill="#555" />
+  
+  <!-- Stairs -->
+  <path d="M415 450 L415 425 L440 425 L440 400 L465 400 L465 375 L490 375 L490 350 L515 350 L515 325 L540 325 L540 300 L565 300 L565 275 L590 275 L590 250" fill="none" stroke="#222" stroke-width="2"/>
+  
+  <!-- Figures (Scale) -->
+  <path d="M300 370 Q300 360 305 360 Q310 360 310 370 L310 420 L305 450 L300 450 L305 420 Z M305 355 A5 5 0 1 0 305 345 A5 5 0 1 0 305 355" fill="#aaa"/>
+  
+  <!-- Height Kotas (Measurements) -->
+  <line x1="100" y1="450" x2="100" y2="250" stroke="#666" stroke-width="1"/>
+  <line x1="90" y1="250" x2="110" y2="250" stroke="#666" stroke-width="1"/>
+  <text x="80" y="355" font-size="12" fill="#666" text-anchor="end">3.20m</text>
+  
+  <line x1="100" y1="250" x2="100" y2="150" stroke="#666" stroke-width="1"/>
+  <line x1="90" y1="150" x2="110" y2="150" stroke="#666" stroke-width="1"/>
+  <text x="80" y="205" font-size="12" fill="#666" text-anchor="end">2.80m</text>
+  
+  <!-- Labels -->
+  <text x="200" y="420" font-size="14" fill="#666" text-anchor="middle" letter-spacing="2">LIVING</text>
+  <text x="325" y="420" font-size="14" fill="#666" text-anchor="middle" letter-spacing="2">JANTAR</text>
+  <text x="600" y="420" font-size="14" fill="#666" text-anchor="middle" letter-spacing="2">VARANDA</text>
+  <text x="275" y="220" font-size="14" fill="#666" text-anchor="middle" letter-spacing="2">SUÍTE</text>
+  
+  <!-- Title / Scale Bar -->
+  <text x="150" y="530" font-size="14" fill="#222" letter-spacing="2">CORTE LONGITUDINAL AA'</text>
+  <line x1="150" y1="550" x2="250" y2="550" stroke="#222" stroke-width="2"/>
+  <line x1="150" y1="545" x2="150" y2="555" stroke="#222" stroke-width="1"/>
+  <line x1="250" y1="545" x2="250" y2="555" stroke="#222" stroke-width="1"/>
+  <text x="150" y="570" font-size="10" fill="#222" text-anchor="middle">0</text>
+  <text x="250" y="570" font-size="10" fill="#222" text-anchor="middle">2m</text>
+</svg>

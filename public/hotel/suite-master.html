@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suíte Master Urban | Lumina Chapecó</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">LUMINA</a>
+            <nav class="nav-links">
+                <a href="index.html">Início</a>
+                <a href="busca.html">Estadias</a>
+                <a href="gastronomia.html">Gastronomia</a>
+                <a href="wellness.html">Wellness</a>
+                <a href="contato.html">Contato</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Alternar modo escuro">
+                    <span class="icon-moon">☽</span>
+                    <span class="icon-sun">☀</span>
+                </button>
+            </nav>
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-nav-overlay">
+        <div class="mobile-nav-content">
+            <a href="index.html">Início</a>
+            <a href="busca.html">Acomodações</a>
+            <a href="gastronomia.html">Gastronomia</a>
+            <a href="wellness.html">Wellness</a>
+            <a href="contato.html">Contato</a>
+            <button class="theme-toggle" aria-label="Alternar modo escuro">
+                <span class="icon-moon">☽</span>
+                <span class="icon-sun">☀</span>
+            </button>
+        </div>
+    </div>
+
+    <main>
+        <!-- Room Hero -->
+        <section class="hero sub-hero">
+            <img src="img/suite-executiva.png" alt="Suíte Master Urban Hero" class="hero-img">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <span class="room-category" style="color: #ffffff; text-shadow: 0 1px 4px rgba(0,0,0,0.5);">Executive Excellence</span>
+                    <h1 class="hero-title">Suíte Master Urban</h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- Room Details -->
+        <section class="section-padding">
+            <div class="container" style="display: flex; gap: var(--spacing-3xl); position: relative;">
+                
+                <!-- Main Content -->
+                <div style="flex: 2;">
+                    <h2 class="display-style" style="font-size: 2.5rem; margin-bottom: var(--spacing-lg);">Soberania e Produtividade</h2>
+                    <p class="body-lg" style="margin-bottom: var(--spacing-xl);">Projetada para ser o centro de comando do executivo moderno, a Suíte Master Urban oferece 120m² de funcionalidade e design. Com vista para o centro de Chapecó, cada detalhe foi curado para inspirar decisões e garantir o descanso necessário.</p>
+
+                    <div class="editorial-block" style="margin-bottom: var(--spacing-3xl);">
+                        <img src="img/quarto-carrossel.png" alt="Workstation Master" class="editorial-img">
+                        <div class="editorial-content" style="background: var(--surface-container-low); margin-top: 40px;">
+                            <h3 class="display-style" style="margin-bottom: var(--spacing-sm);">Core Workstation</h3>
+                            <p>Uma estação de trabalho ergonômica com Wi-Fi 6 de alta velocidade, múltiplos pontos de conectividade e iluminação natural, perfeita para focar no que importa.</p>
+                        </div>
+                    </div>
+
+                    <div class="editorial-block" style="flex-direction: row-reverse; margin-bottom: var(--spacing-3xl);">
+                        <img src="img/suite-executiva.png" alt="Vista Urbana Master" class="editorial-img" style="box-shadow: -20px 20px 0 var(--surface-container-high);">
+                        <div class="editorial-content">
+                            <h3 class="display-style" style="margin-bottom: var(--spacing-sm);">Urban Horizon</h3>
+                            <p>Relaxe com uma vista estratégica para o centro financeiro da cidade, desfrutando de um lounge particular para networking ou contemplação.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="display-style" style="font-size: 1.5rem; margin-top: var(--spacing-3xl); margin-bottom: var(--spacing-xl);">Comodidades da Suíte</h3>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--spacing-lg); margin-bottom: var(--spacing-3xl);">
+                        <div>• Cama King Size com enxoval 1000 fios</div>
+                        <div>• Máquina de café Nespresso Espresso</div>
+                        <div>• Sistema de som High-End via Bluetooth</div>
+                        <div>• Amenities L'Occitane en Provence</div>
+                        <div>• Frigobar Gourmet Curado</div>
+                        <div>• Serviço de Mordomo 24h</div>
+                    </div>
+                </div>
+
+                <!-- Sticky Booking Sidebar (Resumo de Estadia Flutuante) -->
+                <aside style="flex: 1;">
+                    <div style="position: sticky; top: 120px; background: var(--surface-container-lowest); padding: var(--spacing-xl); border-radius: var(--radius-lg); box-shadow: 0 20px 50px rgba(0,0,0,0.08); border-top: 4px solid var(--secondary);">
+                        <span class="room-category">Resumo de Estadia</span>
+                        <h4 class="display-style" style="font-size: 1.5rem; margin-bottom: var(--spacing-md);">Check-out em Março</h4>
+                        <div style="display: flex; flex-direction: column; gap: var(--spacing-sm); margin-bottom: var(--spacing-xl);">
+                            <p style="display: flex; justify-content: space-between;"><span>Data:</span> <span>15 - 20 Março</span></p>
+                            <p style="display: flex; justify-content: space-between;"><span>Pessoas:</span> <span>2 Adultos</span></p>
+                            <p style="display: flex; justify-content: space-between; font-weight: 700; font-size: 1.25rem; margin-top: var(--spacing-sm);"><span>Total:</span> <span>R$ 12.000</span></p>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%;">RESERVAR AGORA</button>
+                        <p style="font-size: 0.75rem; text-align: center; margin-top: var(--spacing-sm); color: var(--on-surface-variant);">Cancelamento grátis até 7 dias antes.</p>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h5 class="logo" style="color: #ffffff; margin-bottom: var(--spacing-xl);">LUMINA</h5>
+                    <p style="opacity: 0.8;">Hospitalidade de alto padrão e inteligência corporativa no coração de Chapecó.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="busca.html">Estadias</a></li>
+                        <li><a href="gastronomia.html">Gastronomia</a></li>
+                        <li><a href="wellness.html">Wellness</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Localização</h4>
+                    <ul>
+                        <li>Rua Marechal Deodoro, 1234 - Centro</li>
+                        <li>Chapecó, SC - Brasil</li>
+                        <li>reservas@luminachapeco.com.br</li>
+                        <li>+55 (49) 3333-3333</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Lumina Hotel Chapecó. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

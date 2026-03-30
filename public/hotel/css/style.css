@@ -1,0 +1,819 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
+
+/* ═══════════════════════════════════════════════════
+   DESIGN TOKENS — LIGHT MODE (Default)
+   ═══════════════════════════════════════════════════ */
+:root {
+    /* Surfaces */
+    --background: #f9f9f9;
+    --surface: #f9f9f9;
+    --surface-container: #eeeeee;
+    --surface-container-low: #f3f3f3;
+    --surface-container-high: #e8e8e8;
+    --surface-container-highest: #e2e2e2;
+    --surface-container-lowest: #ffffff;
+
+    /* Brand */
+    --primary: #041627;
+    --primary-container: #1a2b3c;
+    --on-primary: #ffffff;
+    
+    --btn-primary-bg: linear-gradient(135deg, #041627 0%, #1a2b3c 100%);
+    --btn-primary-text: #ffffff;
+
+    --secondary: #516354;
+    --on-secondary: #ffffff;
+
+    /* Text */
+    --on-surface: #1a1c1c;
+    --on-surface-variant: #44474c;
+
+    /* Feedback */
+    --error: #ba1a1a;
+
+    /* Glassmorphism */
+    --glass-bg: rgba(255, 255, 255, 0.8);
+    --glass-bg-mobile: rgba(255, 255, 255, 0.7);
+    --glass-shadow: rgba(0, 0, 0, 0.05);
+
+    /* Footer */
+    --footer-bg: #041627;
+    --footer-text: #ffffff;
+
+    /* Booking bar shadow */
+    --booking-shadow: rgba(0, 0, 0, 0.05);
+
+    /* Room card hover */
+    --card-shadow: rgba(0, 0, 0, 0.08);
+
+    /* Typography */
+    --font-display: 'Manrope', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    --spacing-3xl: 64px;
+    --spacing-huge: 80px;
+
+    /* Radius */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.375rem;
+    --radius-lg: 0.5rem;
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ═══════════════════════════════════════════════════
+   DESIGN TOKENS — DARK MODE
+   ═══════════════════════════════════════════════════ */
+[data-theme='dark'] {
+    /* Surfaces — deep navy/charcoal, NOT pure black */
+    --background: #111118;
+    --surface: #111118;
+    --surface-container: #1e1e28;
+    --surface-container-low: #181820;
+    --surface-container-high: #262630;
+    --surface-container-highest: #2e2e3a;
+    --surface-container-lowest: #0c0c12;
+
+    /* Brand — maintained for consistency, or subtle shift */
+    --primary: #c8d8e8;
+    --primary-container: #3a5068;
+    --on-primary: #0a1622;
+
+    /* REFINED: Keep primary button color upscale */
+    --btn-primary-bg: linear-gradient(135deg, #041627 0%, #1a2b3c 100%);
+    --btn-primary-text: #ffffff;
+
+    --secondary: #8fbf96;
+    --on-secondary: #0c1c0e;
+
+    /* Text — soft off-whites, never pure #fff */
+    --on-surface: #e8e8ec;
+    --on-surface-variant: #a0a4b0;
+
+    /* Feedback */
+    --error: #f2b8b5;
+
+    /* Glassmorphism — dark glass */
+    --glass-bg: rgba(18, 18, 26, 0.85);
+    --glass-bg-mobile: rgba(18, 18, 26, 0.9);
+    --glass-shadow: rgba(0, 0, 0, 0.3);
+
+    /* Footer — slightly lighter than body to create depth */
+    --footer-bg: #0c0c12;
+    --footer-text: #e0e0e4;
+
+    /* Booking bar shadow */
+    --booking-shadow: rgba(0, 0, 0, 0.3);
+
+    /* Room card hover */
+    --card-shadow: rgba(0, 0, 0, 0.4);
+}
+
+/* Auto-apply dark mode via OS preference (when no manual override) */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) {
+        --background: #111118;
+        --surface: #111118;
+        --surface-container: #1e1e28;
+        --surface-container-low: #181820;
+        --surface-container-high: #262630;
+        --surface-container-highest: #2e2e3a;
+        --surface-container-lowest: #0c0c12;
+
+        --primary: #c8d8e8;
+        --primary-container: #3a5068;
+        --on-primary: #0a1622;
+
+        --btn-primary-bg: linear-gradient(135deg, #041627 0%, #1a2b3c 100%);
+        --btn-primary-text: #ffffff;
+
+        --secondary: #8fbf96;
+        --on-secondary: #0c1c0e;
+
+        --on-surface: #e8e8ec;
+        --on-surface-variant: #a0a4b0;
+
+        --error: #f2b8b5;
+
+        --glass-bg: rgba(18, 18, 26, 0.85);
+        --glass-bg-mobile: rgba(18, 18, 26, 0.9);
+        --glass-shadow: rgba(0, 0, 0, 0.3);
+
+        --footer-bg: #0c0c12;
+        --footer-text: #e0e0e4;
+
+        --booking-shadow: rgba(0, 0, 0, 0.3);
+        --card-shadow: rgba(0, 0, 0, 0.4);
+    }
+}
+
+/* ═══════════════════════════════════════════════════
+   BASE STYLES
+   ═══════════════════════════════════════════════════ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--on-surface);
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: all 0.4s ease; /* Smooth global transitions */
+}
+
+h1, h2, h3, h4, .display-style {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--on-surface);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-smooth);
+}
+
+a:hover {
+    transform: scale(1.02);
+    filter: brightness(1.1);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* ═══════════════════════════════════════════════════
+   LAYOUT UTILITIES
+   ═══════════════════════════════════════════════════ */
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.section-padding {
+    padding: var(--spacing-huge) 0;
+}
+
+@media (max-width: 768px) {
+    .section-padding {
+        padding: var(--spacing-2xl) 0;
+    }
+}
+
+/* ═══════════════════════════════════════════════════
+   NAVIGATION HEADER
+   ═══════════════════════════════════════════════════ */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: var(--spacing-md) 0;
+    transition: var(--transition-smooth);
+    /* White text by default — readable over dark hero images */
+    color: #ffffff;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 100%);
+}
+
+header .logo {
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+header .nav-links a {
+    color: #ffffff;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+header .hamburger span {
+    background-color: #ffffff;
+}
+
+header .theme-toggle {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.5);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+/* Scrolled state — glassmorphism with theme-aware text */
+header.scrolled {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 4px 30px var(--glass-shadow);
+    padding: var(--spacing-sm) 0;
+    color: var(--on-surface);
+}
+
+header.scrolled .logo {
+    color: var(--primary);
+}
+
+header.scrolled .nav-links a {
+    color: var(--on-surface);
+}
+
+header.scrolled .nav-links a:hover {
+    color: var(--secondary);
+}
+
+header.scrolled .hamburger span {
+    background-color: var(--primary);
+}
+
+header.scrolled .theme-toggle {
+    color: var(--on-surface);
+    border-color: var(--on-surface-variant);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    gap: var(--spacing-xl);
+    align-items: center;
+}
+
+.nav-links a {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--secondary);
+}
+
+/* ─── Dark Mode Toggle ───────────────────────────── */
+.theme-toggle {
+    background: none;
+    border: 1px solid var(--on-surface-variant);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    color: var(--on-surface);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+    background: var(--surface-container-high);
+    border-color: var(--secondary);
+    color: var(--secondary);
+    transform: rotate(20deg);
+}
+
+/* Icons: show/hide based on theme */
+.theme-toggle .icon-moon { display: inline; }
+.theme-toggle .icon-sun  { display: none; }
+
+[data-theme='dark'] .theme-toggle .icon-moon { display: none; }
+[data-theme='dark'] .theme-toggle .icon-sun  { display: inline; }
+
+/* Also handle OS dark mode auto */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) .theme-toggle .icon-moon { display: none; }
+    :root:not([data-theme='light']) .theme-toggle .icon-sun  { display: inline; }
+}
+
+/* ─── Mobile Nav ─────────────────────────────────── */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    z-index: 1002;
+}
+
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--primary);
+    transition: var(--transition-smooth);
+}
+
+.mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--glass-bg-mobile);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    z-index: 1001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    transition: transform 0.6s cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+.mobile-nav-overlay.active {
+    transform: translateY(0);
+}
+
+.mobile-nav-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.mobile-nav-content a {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+@media (max-width: 991px) {
+    .nav-links {
+        display: none;
+    }
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* ═══════════════════════════════════════════════════
+   BUTTONS
+   ═══════════════════════════════════════════════════ */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border-radius: var(--radius-md);
+    font-family: var(--font-display);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    border: none;
+    text-align: center;
+    font-size: 0.875rem;
+}
+
+.btn:hover {
+    transform: scale(1.02);
+    filter: brightness(1.1);
+}
+
+.btn-primary {
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px var(--card-shadow);
+}
+
+.btn-secondary {
+    background: none;
+    color: var(--on-surface);
+    position: relative;
+    padding: 0.75rem 0.5rem;
+}
+
+.btn-secondary::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0.5rem;
+    right: 0.5rem;
+    height: 2px;
+    background-color: var(--secondary);
+    transition: var(--transition-smooth);
+}
+
+.btn-secondary:hover::after {
+    height: 4px;
+}
+
+/* ═══════════════════════════════════════════════════
+   HERO SECTION & CAROUSEL
+   ═══════════════════════════════════════════════════ */
+.hero {
+    height: 100vh;
+    max-height: 900px;
+    min-height: 500px;
+    width: 100%;
+    position: relative;
+    color: #ffffff;
+    overflow: hidden;
+    /* Centered vertically, aligned to start horizontally */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center the container itself */
+}
+
+/* Specific left-alignment for hero-content inside index hero */
+.hero .container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1.5s ease-in-out, visibility 1.5s ease-in-out;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.hero-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Master Overlay Gradient */
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.7));
+    z-index: 0;
+}
+
+.hero-content {
+    max-width: 800px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.hero-title {
+    font-size: clamp(3rem, 10vw, 6rem);
+    line-height: 1.1;
+    margin-bottom: var(--spacing-xl);
+    text-shadow: 0 2px 16px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.3);
+    color: #ffffff;
+}
+
+.hero-content .body-lg,
+.hero-content p {
+    text-shadow: 0 1px 8px rgba(0,0,0,0.4);
+    color: #ffffff;
+}
+
+.hero-content .room-category {
+    text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+}
+
+/* ═══════════════════════════════════════════════════
+   BOOKING FORM BAR
+   ═══════════════════════════════════════════════════ */
+.booking-bar {
+    background: var(--surface-container-lowest);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: flex-end;
+    box-shadow: 0 10px 40px var(--booking-shadow);
+    margin-top: -60px;
+    position: relative;
+    z-index: 10;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.booking-field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.booking-field label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--on-surface-variant);
+    font-weight: 600;
+}
+
+.booking-field input,
+.booking-field textarea {
+    background: var(--surface-container-high);
+    border: none;
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--on-surface);
+    outline: none;
+    transition: var(--transition-smooth);
+}
+
+.booking-field input:focus,
+.booking-field textarea:focus {
+    background: var(--surface-container-highest);
+}
+
+.booking-field input.error {
+    border-bottom: 2px solid var(--error);
+}
+
+/* Textarea in contact form */
+textarea {
+    background: var(--surface-container-high) !important;
+    color: var(--on-surface) !important;
+}
+
+@media (max-width: 991px) {
+    .booking-bar {
+        flex-direction: column;
+        align-items: stretch;
+        margin-top: -30px;
+    }
+}
+
+/* ═══════════════════════════════════════════════════
+   ROOM CARDS
+   ═══════════════════════════════════════════════════ */
+.room-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: var(--spacing-2xl);
+}
+
+.room-card {
+    background: var(--surface-container-lowest);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+.room-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px var(--card-shadow);
+}
+
+.room-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.room-info {
+    padding: var(--spacing-lg);
+}
+
+.room-category {
+    font-size: 0.75rem;
+    color: var(--on-surface-variant);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--spacing-xs);
+}
+
+.room-name {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.room-price {
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: var(--spacing-md);
+}
+
+/* ═══════════════════════════════════════════════════
+   TONAL SECTIONING (No Lines Rule)
+   ═══════════════════════════════════════════════════ */
+.section-alternate {
+    background-color: var(--surface-container-low);
+    transition: background-color 0.4s ease;
+}
+
+/* ═══════════════════════════════════════════════════
+   EDITORIAL / ASYMMETRIC BLOCKS
+   ═══════════════════════════════════════════════════ */
+.editorial-block {
+    display: flex;
+    gap: var(--spacing-3xl);
+    align-items: center;
+    overflow: hidden;
+}
+
+.editorial-img {
+    flex: 1 1 50%;
+    max-width: 50%;
+    min-height: 400px;
+    height: 480px;
+    border-radius: var(--radius-lg);
+    box-shadow: 20px 20px 0 var(--surface-container);
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+}
+
+.editorial-content {
+    flex: 1 1 50%;
+    max-width: 50%;
+    padding: var(--spacing-xl);
+    min-width: 0;
+}
+
+@media (max-width: 768px) {
+    .editorial-block {
+        flex-direction: column;
+    }
+    .editorial-img {
+        flex: 1 1 100%;
+        max-width: 100%;
+        width: 100%;
+        height: 300px;
+        min-height: auto;
+    }
+    .editorial-content {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+/* ═══════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════ */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding: var(--spacing-3xl) 0;
+    transition: background-color 0.4s ease;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-3xl);
+}
+
+.footer-col h4 {
+    margin-bottom: var(--spacing-xl);
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+    color: var(--footer-text);
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer-bottom {
+    margin-top: var(--spacing-3xl);
+    padding-top: var(--spacing-xl);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+    font-size: 0.875rem;
+    opacity: 0.6;
+}
+
+/* ═══════════════════════════════════════════════════
+   SUBPAGE HEROS (50vh centered)
+   ═══════════════════════════════════════════════════ */
+.hero.sub-hero {
+    height: 50vh;
+    min-height: 400px;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero.sub-hero .container {
+    justify-content: center;
+}
+
+.hero.sub-hero .hero-content {
+    align-items: center;
+    text-align: center;
+    max-width: 1000px;
+}
+
+.hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+}
+
+/* ═══════════════════════════════════════════════════
+   MAP IFRAME CONSTRAINT
+   ═══════════════════════════════════════════════════ */
+iframe {
+    max-width: 100%;
+    border: none;
+    border-radius: var(--radius-md);
+}

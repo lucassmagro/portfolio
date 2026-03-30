@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" style="background:#fff; font-family:sans-serif;">
+  <rect width="100%" height="100%" fill="#ffffff" />
+  <!-- Grid -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#f4f4f4" stroke-width="1"/>
+  </pattern>
+  <rect width="100%" height="100%" fill="url(#grid)" />
+  
+  <!-- Ground Line -->
+  <line x1="50" y1="450" x2="750" y2="450" stroke="#111" stroke-width="6"/>
+  
+  <!-- Volumes and depths -->
+  <rect x="150" y="250" width="500" height="200" fill="#fcfcfc" stroke="#222" stroke-width="2"/>
+  <rect x="250" y="150" width="400" height="100" fill="#f8f8f8" stroke="#222" stroke-width="3"/>
+  <rect x="200" y="250" width="300" height="200" fill="#f2f2f2" stroke="#222" stroke-width="3"/>
+  
+  <!-- Wood slats texture for top volume -->
+  <pattern id="wood" width="10" height="10" patternUnits="userSpaceOnUse">
+    <line x1="0" y1="0" x2="0" y2="100" stroke="#ccc" stroke-width="2"/>
+  </pattern>
+  <rect x="250" y="150" width="400" height="100" fill="url(#wood)" />
+  
+  <!-- Glass/Windows -->
+  <rect x="220" y="280" width="80" height="170" fill="#e6f2ff" stroke="#222" stroke-width="2"/>
+  <rect x="320" y="280" width="80" height="170" fill="#e6f2ff" stroke="#222" stroke-width="2"/>
+  <rect x="420" y="280" width="60" height="170" fill="#e6f2ff" stroke="#222" stroke-width="2"/>
+  <line x1="220" y1="350" x2="300" y2="350" stroke="#222" stroke-width="1"/>
+  <line x1="320" y1="350" x2="400" y2="350" stroke="#222" stroke-width="1"/>
+  <line x1="420" y1="350" x2="480" y2="350" stroke="#222" stroke-width="1"/>
+  
+  <!-- Shadow cast (minimalist style) -->
+  <polygon points="500,250 650,250 650,450 500,450 450,250" fill="#000" opacity="0.05" />
+  
+  <!-- Vegetation symbol (abstract) -->
+  <path d="M120 450 Q 110 380 130 350 Q 160 370 140 450 Z" fill="#fff" stroke="#666" stroke-width="1"/>
+  <path d="M680 450 Q 660 320 690 300 Q 730 320 700 450 Z" fill="#fff" stroke="#666" stroke-width="1"/>
+  
+  <!-- Labels and Specs -->
+  <text x="150" y="530" font-size="14" fill="#222" letter-spacing="2">FACHADA PRINCIPAL SUL</text>
+  <line x1="150" y1="550" x2="250" y2="550" stroke="#222" stroke-width="2"/>
+  <line x1="150" y1="545" x2="150" y2="555" stroke="#222" stroke-width="1"/>
+  <line x1="250" y1="545" x2="250" y2="555" stroke="#222" stroke-width="1"/>
+  <text x="150" y="570" font-size="10" fill="#222" text-anchor="middle">0</text>
+  <text x="250" y="570" font-size="10" fill="#222" text-anchor="middle">2m</text>
+  
+  <text x="350" y="205" font-size="10" fill="#222" font-weight="bold" letter-spacing="1">BRISE SOLEIL METÁLICO</text>
+  <text x="560" y="350" font-size="10" fill="#666" letter-spacing="1">CONCRETO APARENTE</text>
+</svg>

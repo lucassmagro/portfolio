@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina Hotel | Business & Design no Centro de Chapecó</title>
+    <meta name="description" content="Sua base de alto padrão em Chapecó. Localização estratégica, conforto executivo e design minimalista para sua estadia de negócios.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">LUMINA</a>
+            <nav class="nav-links">
+                <a href="index.html">Início</a>
+                <a href="busca.html">Estadias</a>
+                <a href="gastronomia.html">Gastronomia</a>
+                <a href="wellness.html">Wellness</a>
+                <a href="contato.html">Contato</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Alternar modo escuro">
+                    <span class="icon-moon">☽</span>
+                    <span class="icon-sun">☀</span>
+                </button>
+            </nav>
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-nav-overlay">
+        <div class="mobile-nav-content">
+            <a href="index.html">Início</a>
+            <a href="busca.html">Acomodações</a>
+            <a href="gastronomia.html">Gastronomia</a>
+            <a href="wellness.html">Wellness</a>
+            <a href="contato.html">Contato</a>
+            <button class="theme-toggle" aria-label="Alternar modo escuro">
+                <span class="icon-moon">☽</span>
+                <span class="icon-sun">☀</span>
+            </button>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-slider">
+                <div class="hero-slide active">
+                    <img src="img/fachada-localizacao.png" alt="Fachada Lumina Hotel Chapecó">
+                </div>
+                <div class="hero-slide">
+                    <img src="img/lobby.png" alt="Lobby Lumina Hotel">
+                </div>
+                <div class="hero-slide">
+                    <img src="img/quarto-carrossel.png" alt="Quarto Premium Lumina">
+                </div>
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Sua base no coração de Chapecó.</h1>
+                    <p class="body-lg" style="margin-bottom: var(--spacing-xl); max-width: 600px;">Localizado estrategicamente no centro financeiro e hub do agronegócio, o Lumina oferece a eficiência executiva que você precisa com o design que você merece.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Bar -->
+        <div class="container">
+            <form id="bookingForm" class="booking-bar">
+                <div class="booking-field">
+                    <label for="checkin">Check-in</label>
+                    <input type="date" id="checkin" required>
+                </div>
+                <div class="booking-field">
+                    <label for="checkout">Check-out</label>
+                    <input type="date" id="checkout" required>
+                </div>
+                <div class="booking-field">
+                    <label for="guests">Hóspedes</label>
+                    <input type="number" id="guests" value="1" min="1" required>
+                </div>
+                <button type="submit" class="btn btn-primary">VER DISPONIBILIDADE</button>
+            </form>
+        </div>
+
+        <!-- Featured Acomodations -->
+        <section class="section-padding">
+            <div class="container">
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: var(--spacing-3xl);">
+                    <div>
+                        <span class="room-category">Nossas Suítes</span>
+                        <h2 class="display-style" style="font-size: 3rem;">Acomodações de Luxo</h2>
+                    </div>
+                    <a href="busca.html" class="btn btn-secondary">VER TODAS AS SUÍTES</a>
+                </div>
+
+                <div class="room-grid">
+                    <div class="room-card">
+                        <img src="img/suite-executiva.png" alt="Suíte Master Urban">
+                        <div class="room-info">
+                            <span class="room-category">VISTA PANORÂMICA DA CIDADE</span>
+                            <h3 class="room-name">Suíte Master Urban</h3>
+                            <p class="room-price">A partir de R$ 980 / noite</p>
+                            <a href="suite-master.html" class="btn btn-primary" style="width: 100%;">RESERVAR AGORA</a>
+                        </div>
+                    </div>
+                    <div class="room-card">
+                        <img src="img/loft-corporativo.png" alt="Quarto Executivo">
+                        <div class="room-info">
+                            <span class="room-category">MESA DE TRABALHO FUNCIONAL</span>
+                            <h3 class="room-name">Quarto Executivo</h3>
+                            <p class="room-price">A partir de R$ 650 / noite</p>
+                            <a href="busca.html" class="btn btn-primary" style="width: 100%;">RESERVAR AGORA</a>
+                        </div>
+                    </div>
+                    <div class="room-card">
+                        <img src="img/quarto-carrossel.png" alt="Lumina Loft">
+                        <div class="room-info">
+                            <span class="room-category">ESTILO CONTEMPORÂNEO</span>
+                            <h3 class="room-name">Lumina Loft</h3>
+                            <p class="room-price">A partir de R$ 520 / noite</p>
+                            <a href="busca.html" class="btn btn-primary" style="width: 100%;">RESERVAR AGORA</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gastronomy Intro -->
+        <section class="section-padding section-alternate">
+            <div class="container mobile-stack">
+                <div class="editorial-block">
+                    <img src="img/restaurante.png" alt="Bistrô Lumina Chapecó" class="editorial-img">
+                    <div class="editorial-content">
+                        <span class="room-category">Gastronomia Executiva</span>
+                        <h2 class="display-style" style="font-size: 2.5rem; margin-bottom: var(--spacing-lg);">Culinária Contemporânea</h2>
+                        <p style="margin-bottom: var(--spacing-xl);">De almoços de negócios rápidos a jantares sofisticados, nosso bistrô oferece o melhor da cozinha internacional com toques regionais.</p>
+                        <a href="gastronomia.html" class="btn btn-secondary">CONHECER O MENU</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wellness Intro -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="editorial-block" style="flex-direction: row-reverse;">
+                    <img src="img/piscina.png" alt="Piscina Rooftop Lumina" class="editorial-img" style="box-shadow: -20px 20px 0 var(--surface-container);">
+                    <div class="editorial-content">
+                        <span class="room-category">Urban Oasis</span>
+                        <h2 class="display-style" style="font-size: 2.5rem; margin-bottom: var(--spacing-lg);">Recarregue sobre a cidade</h2>
+                        <p style="margin-bottom: var(--spacing-xl);">Nossa piscina aquecida no rooftop e spa oferecem o refúgio necessário após um dia intenso de reuniões e decisões.</p>
+                        <a href="wellness.html" class="btn btn-secondary">SPA & WELLNESS</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h5 class="logo" style="color: #ffffff; margin-bottom: var(--spacing-xl);">LUMINA</h5>
+                    <p style="opacity: 0.8;">Hospitalidade de alto padrão e inteligência corporativa no coração de Chapecó.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="busca.html">Estadias</a></li>
+                        <li><a href="gastronomia.html">Gastronomia</a></li>
+                        <li><a href="wellness.html">Wellness</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Localização</h4>
+                    <ul>
+                        <li>Rua Marechal Deodoro, 1234 - Centro</li>
+                        <li>Chapecó, SC - Brasil</li>
+                        <li>contato@luminachapeco.com.br</li>
+                        <li>+55 (49) 3333-3333</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Lumina Hotel Chapecó. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
