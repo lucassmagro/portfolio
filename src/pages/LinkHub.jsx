@@ -8,6 +8,11 @@ const socialLinks = [
     icon: 'home',
   },
   {
+    name: 'Currículo',
+    url: '#/resume',
+    icon: 'file-text',
+  },
+  {
     name: 'GitHub',
     url: 'https://github.com/lucassmagro',
     icon: 'github',
@@ -24,7 +29,7 @@ const socialLinks = [
   },
   {
     name: 'WhatsApp',
-    url: 'https://wa.me/5549999999999',
+    url: 'https://wa.me/5549991259617',
     icon: 'whatsapp',
   },
   {
@@ -106,7 +111,7 @@ export default function LinkHub({ isDark, toggleTheme }) {
       >
         <div className={`w-24 h-24 rounded-full overflow-hidden mb-6 border ${borderColor} p-1`}>
           <img 
-            src="eu1.png" 
+            src="eu1.jpg" 
             alt="Lucas Magro" 
             className="w-full h-full object-cover rounded-full filter contrast-125"
           />
