@@ -155,38 +155,61 @@ export default function LinkHub({ isDark, toggleTheme }) {
         ))}
       </motion.div>
 
-      {/* Latest Project Section */}
+      {/* Latest Projects Section */}
       <motion.div 
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.6, duration: 1 }}
         viewport={{ once: true }}
-        className="w-full max-w-[440px] mt-12"
+        className="w-full max-w-[440px] mt-12 space-y-4"
       >
-        <div className="flex items-center gap-4 mb-4">
+        <div className="flex items-center gap-4 mb-2">
           <div className={`h-[1px] flex-1 ${sublineColor}`}></div>
-          <span className="text-[9px] uppercase tracking-[0.3em] opacity-30 font-bold">Latest Project</span>
+          <span className="text-[9px] uppercase tracking-[0.3em] opacity-30 font-bold">Latest Projects</span>
           <div className={`h-[1px] flex-1 ${sublineColor}`}></div>
         </div>
 
-        <motion.a
-          href="cafeteria/index.html"
-          className={`group block relative aspect-video overflow-hidden rounded-[4px] border ${borderColor} ${cardBg} backdrop-blur-3xl`}
-          whileHover={{ scale: 1.01 }}
-        >
-          <img 
-            src="projects/cafeteria.png" 
-            onError={(e) => {
-              e.target.src = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
-            }}
-            alt="Artisanal Coffee"
-            className="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
-          />
-          <div className={`absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t ${isDark ? 'from-black/80' : 'from-white/80'} to-transparent`}>
-            <h3 className="font-serif italic text-xl mb-1">Artisanal Coffee</h3>
-            <p className="text-[10px] uppercase tracking-widest opacity-60">Editorial E-commerce</p>
-          </div>
-        </motion.a>
+        <div className="space-y-4">
+          {/* Cafeteria */}
+          <motion.a
+            href="cafeteria/index.html"
+            className={`group block relative aspect-video overflow-hidden rounded-[4px] border ${borderColor} ${cardBg} backdrop-blur-3xl`}
+            whileHover={{ scale: 1.01 }}
+          >
+            <img 
+              src="projects/cafeteria.png" 
+              onError={(e) => {
+                e.target.src = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+              }}
+              alt="Artisanal Coffee"
+              className="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+            />
+            <div className={`absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t ${isDark ? 'from-black/80' : 'from-white/80'} to-transparent`}>
+              <h3 className="font-serif italic text-xl mb-1">Artisanal Coffee</h3>
+              <p className="text-[10px] uppercase tracking-widest opacity-60">Editorial E-commerce</p>
+            </div>
+          </motion.a>
+
+          {/* REFIT */}
+          <motion.a
+            href="refit/index.html"
+            className={`group block relative aspect-video overflow-hidden rounded-[4px] border ${borderColor} ${cardBg} backdrop-blur-3xl`}
+            whileHover={{ scale: 1.01 }}
+          >
+            <img 
+              src="refit-thumb.png" 
+              onError={(e) => {
+                e.target.src = "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2070&auto=format&fit=crop"
+              }}
+              alt="REFIT"
+              className="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+            />
+            <div className={`absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t ${isDark ? 'from-black/80' : 'from-white/80'} to-transparent`}>
+              <h3 className="font-serif italic text-xl mb-1">REFIT</h3>
+              <p className="text-[10px] uppercase tracking-widest opacity-60">Luxury Architecture</p>
+            </div>
+          </motion.a>
+        </div>
       </motion.div>
 
       {/* Footer */}

@@ -38,6 +38,14 @@ export const translations = {
           href: 'cafeteria/index.html',
         },
         {
+          id: 'refit',
+          title: 'REFIT',
+          brief: 'Uma landing page de luxo para arquitetura e reforma residencial, com estética premium e interatividade avançada.',
+          tags: ['Architecture', 'Luxury', 'Landing Page'],
+          href: 'refit/index.html',
+          customImage: 'refit-thumb.png'
+        },
+        {
           id: 'hotel',
           title: 'Lumina Hotel',
           brief: 'Redefinindo a hospitalidade digital através de uma interface minimalista e conversão otimizada. Foco em arquitetura de informação e fluidez narrativa.',
@@ -65,14 +73,6 @@ export const translations = {
           tags: ['Personal', 'Branding', 'Social'],
           href: '#/links',
           customImage: 'https://images.unsplash.com/photo-1590381945249-b713d216adea?w=1200'
-        },
-        {
-          id: 'refit',
-          title: 'REFIT',
-          brief: 'Uma landing page de luxo para arquitetura e reforma residencial, com estética premium e interatividade avançada.',
-          tags: ['Architecture', 'Luxury', 'Landing Page'],
-          href: 'refit/index.html',
-          customImage: 'refit-thumb.png'
         },
       ],
     },
@@ -126,6 +126,14 @@ export const translations = {
           href: 'cafeteria/index.html',
         },
         {
+          id: 'refit',
+          title: 'REFIT',
+          brief: 'A luxury landing page for architecture and residential renovation, with premium aesthetics and advanced interactivity.',
+          tags: ['Architecture', 'Luxury', 'Landing Page'],
+          href: 'refit/index.html',
+          customImage: 'refit-thumb.png'
+        },
+        {
           id: 'hotel',
           title: 'Lumina Hotel',
           brief: 'Redefining digital hospitality through a minimalist interface and optimized conversion. Focused on information architecture and narrative fluidity.',
@@ -153,14 +161,6 @@ export const translations = {
           tags: ['Personal', 'Branding', 'Social'],
           href: '#/links',
           customImage: 'https://images.unsplash.com/photo-1590381945249-b713d216adea?w=1200'
-        },
-        {
-          id: 'refit',
-          title: 'REFIT',
-          brief: 'A luxury landing page for architecture and residential renovation, with premium aesthetics and advanced interactivity.',
-          tags: ['Architecture', 'Luxury', 'Landing Page'],
-          href: 'refit/index.html',
-          customImage: 'refit-thumb.png'
         },
       ],
     },
