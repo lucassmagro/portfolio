@@ -11,7 +11,6 @@ import AboutSection from './components/AboutSection.jsx'
 import CtaBanner from './components/CtaBanner.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
 import LinkHub from './pages/LinkHub.jsx'
-import NexusSaaS from './components/NexusSaaS.jsx'
 
 export default function App() {
   const scrollRef = useRef(null)
@@ -90,18 +89,6 @@ export default function App() {
     return <LinkHub isDark={isDark} toggleTheme={toggleTheme} />
   }
 
-  // Render NexusSaaS if hash contains 'nexus'
-  if (currentPath.includes('nexus')) {
-    return (
-      <NexusSaaS 
-        isDark={isDark} 
-        toggleTheme={toggleTheme} 
-        lang={lang} 
-        onLangToggle={toggleLang} 
-        t={translations[lang]} 
-      />
-    )
-  }
 
   return (
     <div
