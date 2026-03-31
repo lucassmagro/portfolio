@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 const socialLinks = [
@@ -58,6 +58,29 @@ const itemVariants = {
 }
 
 export default function LinkHub({ isDark, toggleTheme }) {
+  useEffect(() => {
+    // Dynamic Head Management
+    const originalFavicon = document.querySelector('link[rel="icon"]')?.href;
+    const originalTitle = document.title;
+    
+    // Set LinkHub Assets
+    const favicon = document.querySelector('link[rel="icon"]');
+    if (favicon) {
+      favicon.href = 'eu-linkedin.jpg';
+      favicon.type = 'image/jpeg';
+    }
+    document.title = 'Lucas Magro | LinkHub';
+
+    // Cleanup: Restore Portfolio Assets
+    return () => {
+      if (favicon && originalFavicon) {
+        favicon.href = 'favicon.svg';
+        favicon.type = 'image/svg+xml';
+      }
+      document.title = originalTitle;
+    };
+  }, []);
+
   const bgColor = isDark ? 'bg-black' : 'bg-white'
   const textColor = isDark ? 'text-white' : 'text-black'
   const cardBg = isDark ? 'bg-white/5' : 'bg-black/[0.03]'
@@ -84,7 +107,7 @@ export default function LinkHub({ isDark, toggleTheme }) {
             <line x1="8" y1="0.5" x2="8" y2="2.5" stroke="currentColor" strokeWidth="1.5" />
             <line x1="8" y1="13.5" x2="8" y2="15.5" stroke="currentColor" strokeWidth="1.5" />
             <line x1="0.5" y1="8" x2="2.5" y2="8" stroke="currentColor" strokeWidth="1.5" />
-            <line x1="13.5" y1="8" x2="15.5" y2="8" stroke="currentColor" strokeWidth="1.5" />
+            <line x1="13.5" y1="8" x2="15.5" stroke="currentColor" strokeWidth="1.5" />
             <line x1="2.7" y1="2.7" x2="4.1" y2="4.1" stroke="currentColor" strokeWidth="1.5" />
             <line x1="11.9" y1="11.9" x2="13.3" y2="13.3" stroke="currentColor" strokeWidth="1.5" />
             <line x1="2.7" y1="13.3" x2="4.1" y2="11.9" stroke="currentColor" strokeWidth="1.5" />
