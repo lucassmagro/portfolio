@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
 
 const socialLinks = [
@@ -58,29 +58,6 @@ const itemVariants = {
 }
 
 export default function LinkHub({ isDark, toggleTheme }) {
-  useEffect(() => {
-    // Dynamic Head Management
-    const originalFavicon = document.querySelector('link[rel="icon"]')?.href;
-    const originalTitle = document.title;
-    
-    // Set LinkHub Assets
-    const favicon = document.querySelector('link[rel="icon"]');
-    if (favicon) {
-      favicon.href = 'eu-linkedin.jpg';
-      favicon.type = 'image/jpeg';
-    }
-    document.title = 'Lucas Magro | LinkHub';
-
-    // Cleanup: Restore Portfolio Assets
-    return () => {
-      if (favicon && originalFavicon) {
-        favicon.href = 'favicon.svg';
-        favicon.type = 'image/svg+xml';
-      }
-      document.title = originalTitle;
-    };
-  }, []);
-
   const bgColor = isDark ? 'bg-black' : 'bg-white'
   const textColor = isDark ? 'text-white' : 'text-black'
   const cardBg = isDark ? 'bg-white/5' : 'bg-black/[0.03]'
@@ -129,7 +106,7 @@ export default function LinkHub({ isDark, toggleTheme }) {
       >
         <div className={`w-24 h-24 rounded-full overflow-hidden mb-6 border ${borderColor} p-1`}>
           <img 
-            src="eu.png" 
+            src="eu-linkedin.jpg" 
             alt="Lucas Magro" 
             className="w-full h-full object-cover rounded-full filter contrast-125"
           />
