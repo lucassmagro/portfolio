@@ -64,7 +64,7 @@ export const translations = {
           brief: 'Um hub de branding pessoal de alto nível, otimizado para bios de redes sociais e cartões de visita digitais.',
           tags: ['Personal', 'Branding', 'Social'],
           href: '#/links',
-          customImage: 'https://images.unsplash.com/photo-1614850523296-d8c1af93d400?w=1200'
+          customImage: 'https://images.unsplash.com/photo-1590381945249-b713d216adea?w=1200'
         },
         {
           id: 'refit',
@@ -152,7 +152,7 @@ export const translations = {
           brief: 'A high-end personal branding hub optimized for social media bios and digital business cards.',
           tags: ['Personal', 'Branding', 'Social'],
           href: '#/links',
-          customImage: 'https://images.unsplash.com/photo-1614850523296-d8c1af93d400?w=1200'
+          customImage: 'https://images.unsplash.com/photo-1590381945249-b713d216adea?w=1200'
         },
         {
           id: 'refit',
