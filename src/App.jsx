@@ -11,6 +11,7 @@ import AboutSection from './components/AboutSection.jsx'
 import CtaBanner from './components/CtaBanner.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
 import LinkHub from './pages/LinkHub.jsx'
+import Resume from './pages/Resume.jsx'
 
 export default function App() {
   const scrollRef = useRef(null)
@@ -83,6 +84,11 @@ export default function App() {
 
   const toggleTheme = () => setIsDark((prev) => !prev)
   const toggleLang = () => setLang((prev) => (prev === 'pt' ? 'en' : 'pt'))
+
+  // Render Resume if hash contains 'resume'
+  if (currentPath.includes('resume')) {
+    return <Resume isDark={isDark} t={t.resume} toggleLang={toggleLang} lang={lang} />
+  }
 
   // Render LinkHub if hash contains 'links'
   if (currentPath.includes('links')) {

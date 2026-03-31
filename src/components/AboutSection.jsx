@@ -57,8 +57,7 @@ export default function AboutSection({ isDark, t }) {
               {/* Action Buttons: Resume */}
               <div className="pt-10 flex flex-wrap gap-8 items-center">
                  <motion.a 
-                   href="curriculo_lucas_santos_magro.pdf" 
-                   download
+                   href="#/resume" 
                    whileHover={{ scale: 1.05 }}
                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
                    className="text-[11px] font-bold uppercase tracking-[0.3em] bg-white text-black px-8 py-4 rounded-full hover:bg-neutral-200 transition-colors"

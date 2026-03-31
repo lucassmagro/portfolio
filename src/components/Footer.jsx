@@ -61,8 +61,7 @@ export default function Footer({ isDark, t }) {
               </li>
               <li>
                 <motion.a 
-                  href="curriculo_lucas_santos_magro.pdf" 
-                  download
+                  href="#/resume" 
                   whileHover={{ x: 5 }}
                   className="inline-block text-[12px] font-bold uppercase tracking-[0.3em] border border-current border-opacity-20 px-6 py-3 rounded-full hover:bg-white hover:text-black transition-all"
                 >

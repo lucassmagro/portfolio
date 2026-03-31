@@ -23,7 +23,80 @@ export const translations = {
       skills: ['Estratégia UI/UX', 'Dev Editorial', 'Lógica de Movimento'],
       stack: 'Stack',
       tools: ['React / Vite', 'GSAP / Framer', 'Tailwind CSS'],
-      resume: 'Baixar Currículo',
+      resume: 'Ver Currículo',
+    },
+    resume: {
+      title: 'Currículo',
+      contact: 'Contato',
+      experience: 'Experiência',
+      projects: 'Projetos',
+      education: 'Formação',
+      skills: 'Habilidades',
+      back: 'Voltar',
+      current: 'Presente',
+      location: 'Chapecó, SC, Brasil',
+      download: 'Baixar em PDF',
+      sections: {
+        experience: [
+          {
+            company: 'ATS Jornada by nstech',
+            role: 'Suporte Técnico',
+            period: 'Out. 2025 – Presente',
+            description: 'Atuação com suporte ao cliente e centro de suporte técnico especializado.'
+          },
+          {
+            company: 'Arroba Comunicação',
+            role: 'Gerente de Mídias Sociais',
+            period: 'Maio 2024 – Set. 2024',
+            description: 'Desenvolvimento de estratégias de conteúdo, análise de desempenho e gestão de ferramentas de marketing.'
+          },
+          {
+            company: 'Applique Arquitetura',
+            role: 'Estagiário em Arquitetura',
+            period: 'Jul. 2022 – Dez. 2022',
+            description: 'Elaboração de projetos arquitetônicos, levantamento de dados e renderizações 3D.'
+          },
+          {
+            company: 'CARRAROBERNARDI',
+            role: 'Estagiário em Arquitetura',
+            period: 'Mar. 2021 – Fev. 2022',
+            description: 'Acompanhamento de obras, compatibilização de projetos e pesquisa de normas técnicas.'
+          }
+        ],
+        projects: [
+          {
+            title: 'Aplicações Web e API',
+            period: 'Out. 2025 – Mar. 2026',
+            description: 'Desenvolvimento em Express.js para rotas lógicas e consumo de APIs públicas com JS puro.'
+          },
+          {
+            title: 'Desenvolvimento Front-End',
+            period: 'Ago. 2025',
+            description: 'Design e implementação de portfólio pessoal focado em performance e estética editorial.'
+          },
+          {
+            title: 'Sistemas e Hardware',
+            period: 'Set. 2025 – Nov. 2025',
+            description: 'Modelagem de sistemas UML e documentação LaTeX para integração de hardware e sensores.'
+          }
+        ],
+        education: [
+          {
+            school: 'UNOESC',
+            degree: 'Bacharelado em Sistemas de Informação',
+            period: '2025 – 2028'
+          },
+          {
+            school: 'Unochapecó',
+            degree: 'Bacharelado em Arquitetura e Urbanismo',
+            period: '2017 – 2023'
+          }
+        ],
+        skills: {
+          languages: 'C, C++, Python, JavaScript, HTML/CSS, Assembly',
+          tools: 'Bootstrap, WordPress, Express.js, React, Tailwind'
+        }
+      }
     },
     projects: {
       section: 'Projetos Selecionados (06)',
@@ -111,7 +184,80 @@ export const translations = {
       skills: ['UI/UX Strategy', 'Editorial Dev', 'Motion Logic'],
       stack: 'Stack',
       tools: ['React / Vite', 'GSAP / Framer', 'Tailwind CSS'],
-      resume: 'Download Resume',
+      resume: 'View Resume',
+    },
+    resume: {
+      title: 'Resume',
+      contact: 'Contact',
+      experience: 'Experience',
+      projects: 'Projects',
+      education: 'Education',
+      skills: 'Skills',
+      back: 'Back',
+      current: 'Present',
+      location: 'Chapecó, SC, Brazil',
+      download: 'Download PDF',
+      sections: {
+        experience: [
+          {
+            company: 'ATS Jornada by nstech',
+            role: 'Technical Support',
+            period: 'Oct. 2025 – Present',
+            description: 'Focused on customer success and specialized technical support center operations.'
+          },
+          {
+            company: 'Arroba Comunicação',
+            role: 'Social Media Manager',
+            period: 'May 2024 – Sep. 2024',
+            description: 'Development of content strategies, performance analysis, and marketing tool management.'
+          },
+          {
+            company: 'Applique Arquitetura',
+            role: 'Architecture Intern',
+            period: 'Jul. 2022 – Dec. 2022',
+            description: 'Architectural project design, data collection, and 3D rendering developments.'
+          },
+          {
+            company: 'CARRAROBERNARDI',
+            role: 'Architecture Intern',
+            period: 'Mar. 2021 – Feb. 2022',
+            description: 'Construction monitoring, project coordination, and technical standards research.'
+          }
+        ],
+        projects: [
+          {
+            title: 'Web & API Applications',
+            period: 'Oct. 2025 – Mar. 2026',
+            description: 'Express.js development for logical routing and public API consumption.'
+          },
+          {
+            title: 'Front-End Development',
+            period: 'Aug. 2025',
+            description: 'Design and implementation of a personal portfolio focused on editorial aesthetics.'
+          },
+          {
+            title: 'Systems & Hardware',
+            period: 'Sep. 2025 – Nov. 2025',
+            description: 'UML modeling and LaTeX documentation for sensor-integrated hardware projects.'
+          }
+        ],
+        education: [
+          {
+            school: 'UNOESC',
+            degree: 'B.S. in Information Systems',
+            period: '2025 – 2028'
+          },
+          {
+            school: 'Unochapecó',
+            degree: 'B.S. in Architecture & Urbanism',
+            period: '2017 – 2023'
+          }
+        ],
+        skills: {
+          languages: 'C, C++, Python, JavaScript, HTML/CSS, Assembly',
+          tools: 'Bootstrap, WordPress, Express.js, React, Tailwind'
+        }
+      }
     },
     projects: {
       section: 'Selected Works (06)',
