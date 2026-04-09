@@ -18,11 +18,11 @@ export default function App() {
   const lScroll = useRef(null)
   
   // Hash Routing State
-  const [currentPath, setCurrentPath] = useState(window.location.hash || '#/')
+  const [currentPath, setCurrentPath] = useState(window.location.hash || '#/links')
 
   useEffect(() => {
     const handleHashChange = () => {
-      setCurrentPath(window.location.hash || '#/')
+      setCurrentPath(window.location.hash || '#/links')
     }
     window.addEventListener('hashchange', handleHashChange)
     return () => window.removeEventListener('hashchange', handleHashChange)
