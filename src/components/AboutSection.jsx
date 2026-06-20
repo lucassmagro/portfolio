@@ -35,7 +35,19 @@ export default function AboutSection({ isDark, t }) {
               <p className="text-2xl md:text-3xl font-medium leading-relaxed opacity-70">
                 {t.bio}
               </p>
-              
+
+              {/* Prova social: experiência em empresas reais */}
+              <div className="border-t border-current border-opacity-10 pt-8">
+                <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40 mb-5">{t.trusted}</h4>
+                <div className="flex flex-wrap gap-x-8 gap-y-3">
+                  {t.companies.map((company) => (
+                    <span key={company} className="text-[13px] font-bold uppercase tracking-[0.15em] opacity-70">
+                      {company}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
               <div className="grid grid-cols-2 gap-10">
                 <div>
                   <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40 mb-4">{t.specialty}</h4>
@@ -95,9 +107,11 @@ export default function AboutSection({ isDark, t }) {
           >
             <div className="window-outline w-full max-w-[450px]">
               <div className="window-glass relative overflow-hidden aspect-[3/4]">
-                 <img 
-                   src="eu.png" 
-                   alt="Lucas Santos Magro Portrait" 
+                 <img
+                   src="eu.png"
+                   alt="Retrato de Lucas Santos Magro"
+                   loading="lazy"
+                   decoding="async"
                    className="w-full h-full object-cover grayscale-0 contrast-[1.05] transition-all duration-700 hover:scale-105"
                  />
                  <div className="shine-wrapper opacity-20">
