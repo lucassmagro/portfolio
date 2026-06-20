@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { CONTACT, WHATSAPP_URL } from '../data/site.js'
+import { cx, themeClasses } from '../lib/theme.js'
 
 /**
  * CtaBanner — CTA premium entre o Hero e a galeria.
@@ -13,9 +14,11 @@ export default function CtaBanner({ isDark, t }) {
   const [errors, setErrors] = useState({})
   const [sent, setSent] = useState(false)
 
-  const inputBase = `w-full bg-transparent border-b py-3 text-[15px] outline-none transition-colors ${
-    isDark ? 'border-white/15 focus:border-white/60' : 'border-black/15 focus:border-black/60'
-  }`
+  const s = themeClasses(isDark)
+  const inputBase = cx(
+    'w-full bg-transparent border-b py-3 text-[15px] outline-none transition-colors',
+    isDark ? 'border-white/15 focus:border-white/60' : 'border-black/15 focus:border-black/60',
+  )
 
   const validate = () => {
     const next = {}
@@ -104,9 +107,10 @@ export default function CtaBanner({ isDark, t }) {
               data-cursor-hover
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className={`group inline-flex items-center gap-3 px-10 py-4 rounded-full text-sm font-bold uppercase tracking-[0.3em] transition-all duration-500 ${
-                isDark ? 'bg-white text-black hover:bg-white/90' : 'bg-black text-white hover:bg-black/90'
-              }`}
+              className={cx(
+                'group inline-flex items-center gap-3 px-10 py-4 rounded-full text-sm font-bold uppercase tracking-[0.3em] transition-all duration-500',
+                s.solidBtn,
+              )}
             >
               {sent ? f.sending : f.send}
               <span className="inline-block transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">

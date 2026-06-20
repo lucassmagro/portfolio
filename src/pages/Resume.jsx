@@ -1,14 +1,12 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { SOCIAL_LINKS, CONTACT } from '../data/site.js'
+import { themeClasses } from '../lib/theme.js'
 
-const linkedin = SOCIAL_LINKS.find((s) => s.id === 'linkedin')
+const linkedin = SOCIAL_LINKS.find((item) => item.id === 'linkedin')
 
 export default function Resume({ isDark, t, toggleLang, lang }) {
-  const bgColor = isDark ? 'bg-black' : 'bg-white'
-  const textColor = isDark ? 'text-white' : 'text-black'
-  const borderColor = isDark ? 'border-white/10' : 'border-black/10'
-  const mutedTextColor = isDark ? 'text-white/40' : 'text-black/40'
+  const { bg: bgColor, text: textColor, border: borderColor } = themeClasses(isDark)
 
   return (
     <motion.div 

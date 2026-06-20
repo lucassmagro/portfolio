@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { SOCIAL_LINKS, WHATSAPP_URL, MAILTO_URL } from '../data/site.js'
+import { themeClasses } from '../lib/theme.js'
 
 // Constrói a lista de links a partir da fonte única + textos traduzidos.
 const buildLinks = (t) => {
@@ -40,11 +41,8 @@ const itemVariants = {
 }
 
 export default function LinkHub({ isDark, toggleTheme, toggleLang, t, lang }) {
-  const bgColor = isDark ? 'bg-black' : 'bg-white'
-  const textColor = isDark ? 'text-white' : 'text-black'
-  const cardBg = isDark ? 'bg-white/5' : 'bg-black/[0.03]'
-  const borderColor = isDark ? 'border-white/10' : 'border-black/5'
-  const sublineColor = isDark ? 'bg-white/10' : 'bg-black/10'
+  const s = themeClasses(isDark)
+  const { bg: bgColor, text: textColor, cardBg, borderSoft: borderColor, subline: sublineColor } = s
   const socialLinks = buildLinks(t)
 
   return (

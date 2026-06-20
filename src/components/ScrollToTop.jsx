@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { cx, themeClasses } from '../lib/theme.js'
 
 /**
  * ScrollToTop — Floating button that appears after scrolling down.
@@ -33,11 +34,11 @@ export default function ScrollToTop({ isDark }) {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           data-cursor-hover
-          className={`fixed bottom-8 right-8 z-50 w-12 h-12 flex items-center justify-center rounded-full border backdrop-blur-3xl transition-colors duration-500 ${
-            isDark
-              ? 'border-white/10 bg-white/5 hover:bg-white/10'
-              : 'border-black/10 bg-black/5 hover:bg-black/10'
-          }`}
+          className={cx(
+            'fixed bottom-8 right-8 z-50 w-12 h-12 flex items-center justify-center rounded-full border backdrop-blur-3xl transition-colors duration-500',
+            themeClasses(isDark).border,
+            isDark ? 'bg-white/5 hover:bg-white/10' : 'bg-black/5 hover:bg-black/10',
+          )}
           aria-label="Scroll to top"
         >
           <svg

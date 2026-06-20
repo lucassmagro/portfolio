@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { SOCIAL_LINKS, MAILTO_URL } from '../data/site.js'
+import { cx, themeClasses } from '../lib/theme.js'
 
 /**
  * Footer - Final Polish 2026
@@ -13,9 +14,11 @@ export default function Footer({ isDark, t }) {
     <footer
       id="footer-connect"
       data-scroll-section
-      className={`relative z-10 pt-section pb-12 transition-colors duration-500 ${
-        isDark ? 'bg-black text-white' : 'bg-white text-black'
-      }`}
+      className={cx(
+        'relative z-10 pt-section pb-12 transition-colors duration-500',
+        themeClasses(isDark).bg,
+        themeClasses(isDark).text,
+      )}
     >
       <div className="max-w-[1700px] mx-auto px-6 md:px-10">
         
