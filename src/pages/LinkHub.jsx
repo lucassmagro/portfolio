@@ -174,11 +174,13 @@ export default function LinkHub({ isDark, toggleTheme, toggleLang, t, lang }) {
             whileHover={{ scale: 1.01 }}
           >
             <img 
-              src="projects/cafeteria.png" 
+              src="projects/cafeteria.png"
+              loading="lazy"
+              decoding="async"
               onError={(e) => {
                 e.target.src = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
               }}
-              alt="Artisanal Coffee"
+              alt={t.projects.cafeteria.title}
               className="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
             />
             <div className={`absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t ${isDark ? 'from-black/80' : 'from-white/80'} to-transparent`}>
@@ -194,11 +196,13 @@ export default function LinkHub({ isDark, toggleTheme, toggleLang, t, lang }) {
             whileHover={{ scale: 1.01 }}
           >
             <img 
-              src="refit-thumb.png" 
+              src="refit-thumb.png"
+              loading="lazy"
+              decoding="async"
               onError={(e) => {
                 e.target.src = "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2070&auto=format&fit=crop"
               }}
-              alt="REFIT"
+              alt={t.projects.refit.title}
               className="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
             />
             <div className={`absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t ${isDark ? 'from-black/80' : 'from-white/80'} to-transparent`}>

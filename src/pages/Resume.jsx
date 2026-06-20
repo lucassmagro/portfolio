@@ -15,24 +15,33 @@ export default function Resume({ isDark, t, toggleLang, lang }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className={`min-h-screen ${bgColor} ${textColor} font-sans py-20 px-6 md:px-10 selection:bg-white selection:text-black`}
+      className={`resume-print min-h-screen ${bgColor} ${textColor} font-sans py-20 px-6 md:px-10 selection:bg-white selection:text-black`}
     >
       <div className="max-w-[1000px] mx-auto">
-        
+
         {/* Header Controls */}
-        <div className="flex justify-between items-center mb-24">
-          <a 
-            href="#/" 
+        <div className="no-print flex justify-between items-center mb-24 gap-4">
+          <a
+            href="#/"
             className="text-[11px] font-bold uppercase tracking-[0.3em] opacity-40 hover:opacity-100 transition-opacity flex items-center gap-2"
           >
             <span>←</span> {t.back}
           </a>
-          <button 
-            onClick={toggleLang}
-            className="text-[11px] font-bold uppercase tracking-[0.3em] opacity-40 hover:opacity-100 transition-opacity"
-          >
-            {lang === 'pt' ? 'EN' : 'PT'}
-          </button>
+          <div className="flex items-center gap-6">
+            <button
+              onClick={() => window.print()}
+              className={`text-[11px] font-bold uppercase tracking-[0.3em] px-5 py-2.5 rounded-full border transition-all ${borderColor} hover:opacity-100 opacity-70`}
+            >
+              ↓ {t.download}
+            </button>
+            <button
+              onClick={toggleLang}
+              aria-label={lang === 'pt' ? 'Switch to English' : 'Mudar para Português'}
+              className="text-[11px] font-bold uppercase tracking-[0.3em] opacity-40 hover:opacity-100 transition-opacity"
+            >
+              {lang === 'pt' ? 'EN' : 'PT'}
+            </button>
+          </div>
         </div>
 
         {/* Name Header */}
