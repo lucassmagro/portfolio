@@ -1,5 +1,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { SOCIAL_LINKS, CONTACT } from '../data/site.js'
+
+const linkedin = SOCIAL_LINKS.find((s) => s.id === 'linkedin')
 
 export default function Resume({ isDark, t, toggleLang, lang }) {
   const bgColor = isDark ? 'bg-black' : 'bg-white'
@@ -41,12 +44,12 @@ export default function Resume({ isDark, t, toggleLang, lang }) {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-[11px] font-bold uppercase tracking-[0.2em] opacity-60">
             <div className="space-y-2">
-              <p>lucassmagro@gmail.com</p>
-              <p>Chapecó, SC, Brasil</p>
+              <p>{CONTACT.email}</p>
+              <p>{t.location}</p>
             </div>
             <div className="space-y-2 md:text-right">
-              <a href="https://linkedin.com/in/lucasmagro" target="_blank" rel="noopener noreferrer" className="block hover:opacity-100 uppercase">LinkedIn</a>
-              <a href="https://linktr.ee/lucasmagro" target="_blank" rel="noopener noreferrer" className="block hover:opacity-100 uppercase">Linktree</a>
+              <a href={linkedin.url} target="_blank" rel="noopener noreferrer" className="block hover:opacity-100 uppercase">LinkedIn</a>
+              <a href="https://github.com/lucassmagro" target="_blank" rel="noopener noreferrer" className="block hover:opacity-100 uppercase">GitHub</a>
             </div>
           </div>
         </header>
@@ -120,11 +123,11 @@ export default function Resume({ isDark, t, toggleLang, lang }) {
             </div>
             <div className="space-y-10">
               <div>
-                <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40 mb-4">Linguagens</h4>
+                <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40 mb-4">{t.langLabel}</h4>
                 <p className="text-[14px] font-bold tracking-widest uppercase leading-loose">{t.sections.skills.languages}</p>
               </div>
               <div>
-                <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40 mb-4">Tecnologias</h4>
+                <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40 mb-4">{t.techLabel}</h4>
                 <p className="text-[14px] font-bold tracking-widest uppercase leading-loose">{t.sections.skills.tools}</p>
               </div>
             </div>
@@ -134,7 +137,7 @@ export default function Resume({ isDark, t, toggleLang, lang }) {
         {/* Footer Statement */}
         <footer className="pt-20 border-t border-white/5 text-center">
           <p className="text-[10px] font-bold uppercase tracking-[0.4em] opacity-20">
-            Design & Desenvolvimento © 2026 Lucas Santos Magro
+            {t.footerNote}
           </p>
         </footer>
 

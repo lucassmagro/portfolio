@@ -92,7 +92,7 @@ export default function App() {
 
   // Render LinkHub if hash contains 'links'
   if (currentPath.includes('links')) {
-    return <LinkHub isDark={isDark} toggleTheme={toggleTheme} />
+    return <LinkHub isDark={isDark} toggleTheme={toggleTheme} toggleLang={toggleLang} t={t.linkhub} lang={lang} />
   }
 
 

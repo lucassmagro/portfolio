@@ -67,6 +67,7 @@ export default function Navbar({ isDark, onToggle, lang, onLangToggle, t }) {
           {/* Language Toggle (PT/EN) */}
           <button
             onClick={onLangToggle}
+            aria-label={lang === 'pt' ? 'Switch to English' : 'Mudar para Português'}
             className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-60 hover:opacity-100 transition-opacity border-r border-current pr-4 mr-2"
           >
             {lang === 'pt' ? 'EN' : 'PT'}
@@ -76,7 +77,7 @@ export default function Navbar({ isDark, onToggle, lang, onLangToggle, t }) {
           <button
             onClick={onToggle}
             className="group relative flex items-center justify-center w-5 h-5 focus:outline-none"
-            aria-label="Toggle Theme"
+            aria-label={isDark ? 'Ativar modo claro' : 'Ativar modo escuro'}
           >
             <motion.div
               animate={{

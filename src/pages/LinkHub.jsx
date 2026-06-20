@@ -1,43 +1,20 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { SOCIAL_LINKS, WHATSAPP_URL, MAILTO_URL } from '../data/site.js'
 
-const socialLinks = [
-  {
-    name: 'Portfolio',
-    url: '#/',
-    icon: 'home',
-  },
-  {
-    name: 'Currículo',
-    url: '#/resume',
-    icon: 'file-text',
-  },
-  {
-    name: 'GitHub',
-    url: 'https://github.com/lucassmagro',
-    icon: 'github',
-  },
-  {
-    name: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/lucassmagro/',
-    icon: 'linkedin',
-  },
-  {
-    name: 'Instagram',
-    url: 'https://instagram.com/lucassmagro',
-    icon: 'instagram',
-  },
-  {
-    name: 'WhatsApp',
-    url: 'https://wa.me/5549991259617',
-    icon: 'whatsapp',
-  },
-  {
-    name: 'E-mail',
-    url: 'mailto:lucassmagro@gmail.com',
-    icon: 'mail',
-  },
-]
+// Constrói a lista de links a partir da fonte única + textos traduzidos.
+const buildLinks = (t) => {
+  const social = Object.fromEntries(SOCIAL_LINKS.map((s) => [s.id, s.url]))
+  return [
+    { name: t.links.portfolio, url: '#/' },
+    { name: t.links.resume, url: '#/resume' },
+    { name: t.links.github, url: social.github },
+    { name: t.links.linkedin, url: social.linkedin },
+    { name: t.links.instagram, url: social.instagram },
+    { name: t.links.whatsapp, url: WHATSAPP_URL },
+    { name: t.links.email, url: MAILTO_URL },
+  ]
+}
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -62,23 +39,38 @@ const itemVariants = {
   },
 }
 
-export default function LinkHub({ isDark, toggleTheme }) {
+export default function LinkHub({ isDark, toggleTheme, toggleLang, t, lang }) {
   const bgColor = isDark ? 'bg-black' : 'bg-white'
   const textColor = isDark ? 'text-white' : 'text-black'
   const cardBg = isDark ? 'bg-white/5' : 'bg-black/[0.03]'
   const borderColor = isDark ? 'border-white/10' : 'border-black/5'
   const sublineColor = isDark ? 'bg-white/10' : 'bg-black/10'
+  const socialLinks = buildLinks(t)
 
   return (
     <div
       className={`linkhub-page min-h-screen ${bgColor} ${textColor} font-sans flex flex-col items-center py-16 px-4 transition-colors duration-700 relative`}
     >
       
+      {/* Controles fixos: idioma + tema */}
+      <motion.button
+        onClick={toggleLang}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        aria-label={lang === 'pt' ? 'Switch to English' : 'Mudar para Português'}
+        className={`fixed top-8 right-20 z-50 w-10 h-10 flex items-center justify-center rounded-full border text-[10px] font-bold tracking-[0.2em] ${borderColor} ${cardBg} backdrop-blur-3xl`}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+      >
+        {lang === 'pt' ? 'EN' : 'PT'}
+      </motion.button>
+
       {/* Theme Toggle Button */}
       <motion.button
         onClick={toggleTheme}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
+        aria-label={isDark ? 'Ativar modo claro' : 'Ativar modo escuro'}
         className={`fixed top-8 right-8 z-50 w-10 h-10 flex items-center justify-center rounded-full border ${borderColor} ${cardBg} backdrop-blur-3xl`}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
@@ -124,7 +116,7 @@ export default function LinkHub({ isDark, toggleTheme }) {
         </h1>
         
         <p className="text-[10px] sm:text-[11px] tracking-[0.4em] uppercase opacity-40 font-medium mt-4">
-          DESIGNER & DESENVOLVEDOR WEB
+          {t.role}
         </p>
       </motion.div>
 
@@ -170,7 +162,7 @@ export default function LinkHub({ isDark, toggleTheme }) {
       >
         <div className="flex items-center gap-4 mb-2">
           <div className={`h-[1px] flex-1 ${sublineColor}`}></div>
-          <span className="text-[9px] uppercase tracking-[0.3em] opacity-30 font-bold">Latest Projects</span>
+          <span className="text-[9px] uppercase tracking-[0.3em] opacity-30 font-bold">{t.latest}</span>
           <div className={`h-[1px] flex-1 ${sublineColor}`}></div>
         </div>
 
@@ -190,8 +182,8 @@ export default function LinkHub({ isDark, toggleTheme }) {
               className="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
             />
             <div className={`absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t ${isDark ? 'from-black/80' : 'from-white/80'} to-transparent`}>
-              <h3 className="font-serif italic text-xl mb-1">Artisanal Coffee</h3>
-              <p className="text-[10px] uppercase tracking-widest opacity-60">Editorial E-commerce</p>
+              <h3 className="font-serif italic text-xl mb-1">{t.projects.cafeteria.title}</h3>
+              <p className="text-[10px] uppercase tracking-widest opacity-60">{t.projects.cafeteria.sub}</p>
             </div>
           </motion.a>
 
@@ -210,8 +202,8 @@ export default function LinkHub({ isDark, toggleTheme }) {
               className="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
             />
             <div className={`absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t ${isDark ? 'from-black/80' : 'from-white/80'} to-transparent`}>
-              <h3 className="font-serif italic text-xl mb-1">REFIT</h3>
-              <p className="text-[10px] uppercase tracking-widest opacity-60">Luxury Architecture</p>
+              <h3 className="font-serif italic text-xl mb-1">{t.projects.refit.title}</h3>
+              <p className="text-[10px] uppercase tracking-widest opacity-60">{t.projects.refit.sub}</p>
             </div>
           </motion.a>
         </div>
@@ -219,7 +211,7 @@ export default function LinkHub({ isDark, toggleTheme }) {
 
       {/* Footer */}
       <footer className="mt-20 text-[9px] uppercase tracking-[0.2em] opacity-20 font-medium">
-        © 2026 Lucas santos Magro
+        {t.copyright}
       </footer>
     </div>
   )
