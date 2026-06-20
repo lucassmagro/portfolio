@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion'
+import { SOCIAL_LINKS, MAILTO_URL } from '../data/site.js'
 
 /**
  * Footer - Final Polish 2026
- * - 4-Column flexible grid.
- * - Real Social Links (hardcoded).
- * - Resume Download Button.
- * - i18n Support.
+ * - Grid flexível de 4 colunas.
+ * - Links sociais vindos de uma fonte única (data/site.js).
+ * - Botão de download do currículo.
+ * - Totalmente traduzido via i18n.
  */
 export default function Footer({ isDark, t }) {
   return (
@@ -33,14 +34,18 @@ export default function Footer({ isDark, t }) {
           <div>
             <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] opacity-40 mb-10">{t.nav}</h4>
             <ul className="space-y-4">
-              {['Home', 'Trabalhos', 'Info'].map(link => (
-                <li key={link}>
-                  <a 
-                    href={`#${link === 'Home' ? 'home' : link === 'Trabalhos' ? 'projects' : 'about'}`} 
+              {[
+                { label: t.links.home, target: 'home' },
+                { label: t.links.work, target: 'projects' },
+                { label: t.links.about, target: 'about' },
+              ].map((link) => (
+                <li key={link.target}>
+                  <a
+                    href={`#${link.target}`}
                     data-scroll-to
                     className="text-[14px] font-bold uppercase tracking-[0.2em] hover:opacity-50 transition-opacity"
                   >
-                    {link}
+                    {link.label}
                   </a>
                 </li>
               ))}
@@ -52,11 +57,11 @@ export default function Footer({ isDark, t }) {
             <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] opacity-40 mb-10">{t.contact}</h4>
             <ul className="space-y-6">
                <li>
-                <a 
-                  href="mailto:lucas.magro@email.com" 
+                <a
+                  href={MAILTO_URL}
                   className="text-[14px] font-bold uppercase tracking-[0.2em] hover:opacity-50 transition-opacity"
                 >
-                  E-mail
+                  {t.emailLabel}
                 </a>
               </li>
               <li>
@@ -79,30 +84,18 @@ export default function Footer({ isDark, t }) {
                 {t.availability}
               </p>
               <div className="flex gap-8">
-                <a 
-                  href="https://linkedin.com/in/lucasmagro/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-[12px] font-bold opacity-40 hover:opacity-100 transition-opacity"
-                >
-                  IN
-                </a>
-                <a 
-                  href="https://instagram.com/lucassmagro" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-[12px] font-bold opacity-40 hover:opacity-100 transition-opacity"
-                >
-                  IG
-                </a>
-                <a 
-                  href="https://github.com/lucassmagro" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-[12px] font-bold opacity-40 hover:opacity-100 transition-opacity"
-                >
-                  GH
-                </a>
+                {SOCIAL_LINKS.map((social) => (
+                  <a
+                    key={social.id}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.name}
+                    className="text-[12px] font-bold opacity-40 hover:opacity-100 transition-opacity"
+                  >
+                    {social.label}
+                  </a>
+                ))}
               </div>
             </div>
           </div>

@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion'
+import { SOCIAL_LINKS } from '../data/site.js'
 
 /**
  * AboutSection 'Info' - Final Polish 2026
- * - i18n Bio & Details.
- * - Magnetic 'Download Resume' Button.
- * - 200px Spacing Gap to Footer.
+ * - Bio e detalhes via i18n.
+ * - Botão magnético de 'Ver Currículo'.
+ * - Links sociais vindos da fonte única (data/site.js).
  */
 export default function AboutSection({ isDark, t }) {
   return (
@@ -67,33 +68,18 @@ export default function AboutSection({ isDark, t }) {
                  </motion.a>
 
                 <div className="flex gap-8">
-                  <a 
-                    href="https://linkedin.com/in/lucasmagro/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    data-cursor-hover
-                    className="text-[11px] font-bold uppercase tracking-[0.2em] opacity-40 hover:opacity-100 transition-opacity"
-                  >
-                    LinkedIn
-                  </a>
-                  <a 
-                    href="https://instagram.com/lucassmagro" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    data-cursor-hover
-                    className="text-[11px] font-bold uppercase tracking-[0.2em] opacity-40 hover:opacity-100 transition-opacity"
-                  >
-                    Instagram
-                  </a>
-                  <a 
-                    href="https://github.com/lucassmagro" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    data-cursor-hover
-                    className="text-[11px] font-bold uppercase tracking-[0.2em] opacity-40 hover:opacity-100 transition-opacity"
-                  >
-                    GitHub
-                  </a>
+                  {SOCIAL_LINKS.map((social) => (
+                    <a
+                      key={social.id}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-cursor-hover
+                      className="text-[11px] font-bold uppercase tracking-[0.2em] opacity-40 hover:opacity-100 transition-opacity"
+                    >
+                      {social.name}
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>
