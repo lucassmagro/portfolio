@@ -21,10 +21,8 @@ export default function Footer({ isDark, t }) {
       )}
     >
       <div className="max-w-[1700px] mx-auto px-6 md:px-10">
-        
         {/* Main Footer Grid (4-Column) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-20 mb-32">
-          
           {/* Column 1: Logo & Statement */}
           <div className="flex flex-col items-start">
             <div className="text-3xl font-black tracking-perry mb-8">LSM.</div>
@@ -35,7 +33,9 @@ export default function Footer({ isDark, t }) {
 
           {/* Column 2: Navigation */}
           <div>
-            <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] opacity-40 mb-10">{t.nav}</h4>
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] opacity-40 mb-10">
+              {t.nav}
+            </h4>
             <ul className="space-y-4">
               {[
                 { label: t.links.home, target: 'home' },
@@ -57,9 +57,11 @@ export default function Footer({ isDark, t }) {
 
           {/* Column 3: Contact & Resume */}
           <div>
-            <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] opacity-40 mb-10">{t.contact}</h4>
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] opacity-40 mb-10">
+              {t.contact}
+            </h4>
             <ul className="space-y-6">
-               <li>
+              <li>
                 <a
                   href={MAILTO_URL}
                   className="text-[14px] font-bold uppercase tracking-[0.2em] hover:opacity-50 transition-opacity"
@@ -68,8 +70,8 @@ export default function Footer({ isDark, t }) {
                 </a>
               </li>
               <li>
-                <motion.a 
-                  href="#/resume" 
+                <motion.a
+                  href="#/resume"
                   whileHover={{ x: 5 }}
                   className="inline-block text-[12px] font-bold uppercase tracking-[0.3em] border border-current border-opacity-20 px-6 py-3 rounded-full hover:bg-white hover:text-black transition-all"
                 >
@@ -81,9 +83,11 @@ export default function Footer({ isDark, t }) {
 
           {/* Column 4: Social / Future */}
           <div>
-            <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] opacity-40 mb-10">{t.social}</h4>
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] opacity-40 mb-10">
+              {t.social}
+            </h4>
             <div className="space-y-8">
-               <p className="text-[13px] font-bold uppercase tracking-[0.2em] opacity-30 italic leading-relaxed">
+              <p className="text-[13px] font-bold uppercase tracking-[0.2em] opacity-30 italic leading-relaxed">
                 {t.availability}
               </p>
               <div className="flex gap-8">

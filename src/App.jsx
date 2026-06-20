@@ -68,9 +68,16 @@ export default function App() {
 
   // Render LinkHub if hash contains 'links'
   if (currentPath.includes('links')) {
-    return <LinkHub isDark={isDark} toggleTheme={toggleTheme} toggleLang={toggleLang} t={t.linkhub} lang={lang} />
+    return (
+      <LinkHub
+        isDark={isDark}
+        toggleTheme={toggleTheme}
+        toggleLang={toggleLang}
+        t={t.linkhub}
+        lang={lang}
+      />
+    )
   }
-
 
   return (
     <div
@@ -88,18 +95,18 @@ export default function App() {
       <Cursor />
 
       <Navbar
-        isDark={isDark} 
-        onToggle={toggleTheme} 
-        lang={lang} 
-        onLangToggle={toggleLang} 
-        t={t.navbar} 
+        isDark={isDark}
+        onToggle={toggleTheme}
+        lang={lang}
+        onLangToggle={toggleLang}
+        t={t.navbar}
       />
 
       <main id="main-content">
-        <Hero isDark={isDark} t={t.hero} />
+        <Hero t={t.hero} />
         <CtaBanner isDark={isDark} t={t.cta} />
         <Gallery t={t.projects} isDark={isDark} />
-        <AboutSection isDark={isDark} t={t.about} />
+        <AboutSection t={t.about} />
       </main>
 
       <ScrollToTop isDark={isDark} />

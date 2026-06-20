@@ -11,13 +11,12 @@ import ProjectCard from './ProjectCard.jsx'
 export default function Gallery({ t, isDark }) {
   const { items: projects, title, section: sectionLabel } = t
   return (
-    <section 
-      id="projects" 
-      data-scroll-section 
+    <section
+      id="projects"
+      data-scroll-section
       className="relative z-10 py-section flex flex-col items-center"
     >
       <div className="max-w-[1700px] mx-auto px-6 md:px-10 w-full mb-40">
-        
         {/* Section Headline */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -38,13 +37,8 @@ export default function Gallery({ t, isDark }) {
       {/* Strictly Vertical Single-Column Project Stack */}
       <div className="w-full flex flex-col items-center gap-y-32 md:gap-y-44 px-6 md:px-10">
         {projects.map((project, i) => (
-          <div 
-            key={project.id}
-            className="w-full max-w-5xl"
-            data-scroll
-            data-scroll-speed="0.6"
-          >
-             <ProjectCard
+          <div key={project.id} className="w-full max-w-5xl" data-scroll data-scroll-speed="0.6">
+            <ProjectCard
               project={project}
               labels={t}
               isDark={isDark}

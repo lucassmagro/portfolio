@@ -6,15 +6,14 @@ import { motion } from 'framer-motion'
  * - Massive typographic headline (15vw).
  * - Vertical markers updated to 2026.
  */
-export default function Hero({ isDark, t }) {
+export default function Hero({ t }) {
   return (
-    <section 
-      id="home" 
+    <section
+      id="home"
       data-scroll-section
       className="relative min-h-screen flex flex-col justify-center pt-32 pb-40 overflow-hidden"
     >
       <div className="max-w-[1700px] mx-auto px-6 md:px-10 w-full relative z-10">
-        
         {/* The Window Component */}
         <motion.div
           initial={{ opacity: 0, scale: 0.98, y: 20 }}
@@ -23,7 +22,6 @@ export default function Hero({ isDark, t }) {
           className="window-outline w-full"
         >
           <div className="window-glass relative overflow-hidden p-1">
-            
             {/* Top Bar with Traffic Lights */}
             <div className="flex items-center gap-2 px-6 py-5 border-b border-white border-opacity-5">
               <div className="flex gap-2">
@@ -48,14 +46,12 @@ export default function Hero({ isDark, t }) {
                   <span className="font-gloock normal-case italic opacity-95">Santos</span> <br />
                   MAGRO
                 </h1>
-                
+
                 <div className="mt-16 max-w-2xl mx-auto">
                   <p className="text-[12px] font-bold uppercase tracking-[0.4em] mb-6 opacity-30">
                     {t.tag}
                   </p>
-                  <p className="text-xl md:text-2xl leading-relaxed opacity-60">
-                    {t.intro}
-                  </p>
+                  <p className="text-xl md:text-2xl leading-relaxed opacity-60">{t.intro}</p>
                 </div>
               </div>
             </div>

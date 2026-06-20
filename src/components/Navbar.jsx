@@ -32,11 +32,7 @@ export default function Navbar({ isDark, onToggle, lang, onLangToggle, t }) {
     >
       <div className="max-w-[1700px] mx-auto px-6 md:px-10 py-8 flex items-center justify-between">
         {/* Logo */}
-        <a 
-          href="#home" 
-          data-scroll-to
-          className="text-xl font-black tracking-perry select-none"
-        >
+        <a href="#home" data-scroll-to className="text-xl font-black tracking-perry select-none">
           LSM.
         </a>
 

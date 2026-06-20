@@ -49,7 +49,6 @@ export default function LinkHub({ isDark, toggleTheme, toggleLang, t, lang }) {
     <div
       className={`linkhub-page min-h-screen ${bgColor} ${textColor} font-sans flex flex-col items-center py-16 px-4 transition-colors duration-700 relative`}
     >
-      
       {/* Controles fixos: idioma + tema */}
       <motion.button
         onClick={toggleLang}
@@ -74,7 +73,13 @@ export default function LinkHub({ isDark, toggleTheme, toggleLang, t, lang }) {
         whileTap={{ scale: 0.9 }}
       >
         {isDark ? (
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <circle cx="8" cy="8" r="3.5" stroke="currentColor" strokeWidth="1.5" />
             <line x1="8" y1="0.5" x2="8" y2="2.5" stroke="currentColor" strokeWidth="1.5" />
             <line x1="8" y1="13.5" x2="8" y2="15.5" stroke="currentColor" strokeWidth="1.5" />
@@ -86,40 +91,57 @@ export default function LinkHub({ isDark, toggleTheme, toggleLang, t, lang }) {
             <line x1="11.9" y1="4.1" x2="13.3" y2="2.7" stroke="currentColor" strokeWidth="1.5" />
           </svg>
         ) : (
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13 9.5A6.5 6.5 0 1 1 4.5 1 5 5 0 0 0 13 9.5Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13 9.5A6.5 6.5 0 1 1 4.5 1 5 5 0 0 0 13 9.5Z"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinejoin="round"
+            />
           </svg>
         )}
       </motion.button>
 
       {/* Profile Header */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="flex flex-col items-center mb-12 text-center"
       >
         <div className={`w-24 h-24 rounded-full overflow-hidden mb-6 border ${borderColor} p-1`}>
-          <img 
-            src="eu1.jpg" 
-            alt="Lucas Magro" 
+          <img
+            src="eu1.jpg"
+            alt="Lucas Magro"
             className="w-full h-full object-cover rounded-full filter contrast-125"
           />
         </div>
-        
+
         <h1 className="flex flex-col items-center gap-y-1 mb-4">
-          <span className="text-4xl sm:text-5xl font-sans font-black uppercase tracking-perry leading-[0.8] mb-1">LUCAS</span>
-          <span className="text-3xl sm:text-4xl font-serif italic lowercase opacity-90 leading-[0.8] mb-1">santos</span>
-          <span className="text-4xl sm:text-5xl font-sans font-black uppercase tracking-perry leading-[0.8]">MAGRO</span>
+          <span className="text-4xl sm:text-5xl font-sans font-black uppercase tracking-perry leading-[0.8] mb-1">
+            LUCAS
+          </span>
+          <span className="text-3xl sm:text-4xl font-serif italic lowercase opacity-90 leading-[0.8] mb-1">
+            santos
+          </span>
+          <span className="text-4xl sm:text-5xl font-sans font-black uppercase tracking-perry leading-[0.8]">
+            MAGRO
+          </span>
         </h1>
-        
+
         <p className="text-[10px] sm:text-[11px] tracking-[0.4em] uppercase opacity-40 font-medium mt-4">
           {t.role}
         </p>
       </motion.div>
 
       {/* Link Stack */}
-      <motion.div 
+      <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -129,17 +151,20 @@ export default function LinkHub({ isDark, toggleTheme, toggleLang, t, lang }) {
           <motion.a
             key={link.name}
             href={link.url}
-            target={link.url.startsWith('http') ? "_blank" : "_self"}
-            rel={link.url.startsWith('http') ? "noopener noreferrer" : ""}
+            target={link.url.startsWith('http') ? '_blank' : '_self'}
+            rel={link.url.startsWith('http') ? 'noopener noreferrer' : ''}
             variants={itemVariants}
-            whileHover={{ scale: 1.01, backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)' }}
+            whileHover={{
+              scale: 1.01,
+              backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)',
+            }}
             whileTap={{ scale: 0.98 }}
             className={`group block p-5 flex items-center justify-between transition-all duration-300 rounded-[4px] border ${borderColor} ${cardBg} backdrop-blur-3xl`}
           >
             <span className="text-sm font-bold tracking-widest uppercase opacity-80 group-hover:opacity-100 transition-opacity">
               {link.name}
             </span>
-            <motion.span 
+            <motion.span
               initial={{ x: 0, y: 0 }}
               whileHover={{ x: 3, y: -3 }}
               className="text-lg opacity-40 group-hover:opacity-100 transition-opacity"
@@ -151,7 +176,7 @@ export default function LinkHub({ isDark, toggleTheme, toggleLang, t, lang }) {
       </motion.div>
 
       {/* Latest Projects Section */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.6, duration: 1 }}
@@ -160,7 +185,9 @@ export default function LinkHub({ isDark, toggleTheme, toggleLang, t, lang }) {
       >
         <div className="flex items-center gap-4 mb-2">
           <div className={`h-[1px] flex-1 ${sublineColor}`}></div>
-          <span className="text-[9px] uppercase tracking-[0.3em] opacity-30 font-bold">{t.latest}</span>
+          <span className="text-[9px] uppercase tracking-[0.3em] opacity-30 font-bold">
+            {t.latest}
+          </span>
           <div className={`h-[1px] flex-1 ${sublineColor}`}></div>
         </div>
 
@@ -171,19 +198,24 @@ export default function LinkHub({ isDark, toggleTheme, toggleLang, t, lang }) {
             className={`group block relative aspect-video overflow-hidden rounded-[4px] border ${borderColor} ${cardBg} backdrop-blur-3xl`}
             whileHover={{ scale: 1.01 }}
           >
-            <img 
+            <img
               src="projects/cafeteria.png"
               loading="lazy"
               decoding="async"
               onError={(e) => {
-                e.target.src = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+                e.target.src =
+                  'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop'
               }}
               alt={t.projects.cafeteria.title}
               className="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
             />
-            <div className={`absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t ${isDark ? 'from-black/80' : 'from-white/80'} to-transparent`}>
+            <div
+              className={`absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t ${isDark ? 'from-black/80' : 'from-white/80'} to-transparent`}
+            >
               <h3 className="font-serif italic text-xl mb-1">{t.projects.cafeteria.title}</h3>
-              <p className="text-[10px] uppercase tracking-widest opacity-60">{t.projects.cafeteria.sub}</p>
+              <p className="text-[10px] uppercase tracking-widest opacity-60">
+                {t.projects.cafeteria.sub}
+              </p>
             </div>
           </motion.a>
 
@@ -193,19 +225,24 @@ export default function LinkHub({ isDark, toggleTheme, toggleLang, t, lang }) {
             className={`group block relative aspect-video overflow-hidden rounded-[4px] border ${borderColor} ${cardBg} backdrop-blur-3xl`}
             whileHover={{ scale: 1.01 }}
           >
-            <img 
+            <img
               src="refit-thumb.png"
               loading="lazy"
               decoding="async"
               onError={(e) => {
-                e.target.src = "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2070&auto=format&fit=crop"
+                e.target.src =
+                  'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2070&auto=format&fit=crop'
               }}
               alt={t.projects.refit.title}
               className="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
             />
-            <div className={`absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t ${isDark ? 'from-black/80' : 'from-white/80'} to-transparent`}>
+            <div
+              className={`absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t ${isDark ? 'from-black/80' : 'from-white/80'} to-transparent`}
+            >
               <h3 className="font-serif italic text-xl mb-1">{t.projects.refit.title}</h3>
-              <p className="text-[10px] uppercase tracking-widest opacity-60">{t.projects.refit.sub}</p>
+              <p className="text-[10px] uppercase tracking-widest opacity-60">
+                {t.projects.refit.sub}
+              </p>
             </div>
           </motion.a>
         </div>

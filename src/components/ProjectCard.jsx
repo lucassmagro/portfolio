@@ -8,7 +8,7 @@ import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
  * - Ações: ver projeto, ver versão reformulada (teste_alteracoes) e ver original.
  * - Projetos sem link (comingSoon) renderizam um selo "em breve" — nunca href="#".
  */
-export default function ProjectCard({ project, labels, isDark, index, priority = false }) {
+export default function ProjectCard({ project, labels, isDark, priority = false }) {
   const containerRef = useRef(null)
   const [hovered, setHovered] = useState(false)
 
@@ -40,9 +40,17 @@ export default function ProjectCard({ project, labels, isDark, index, priority =
 
         <div className="project-card-bg relative overflow-hidden rounded-[16px]">
           {/* Camada de imagem imersiva (link primário quando houver) */}
-          <CardMedia href={href} isExternal={isExternal(href)} title={project.title} labels={labels}>
+          <CardMedia
+            href={href}
+            isExternal={isExternal(href)}
+            title={project.title}
+            labels={labels}
+          >
             <div className="relative overflow-hidden aspect-[16/9] lg:aspect-[16/8] bg-neutral-900 border-b border-white border-opacity-5">
-              <motion.div style={{ y: smoothY, scale: 1.1 }} className="absolute inset-0 w-full h-full">
+              <motion.div
+                style={{ y: smoothY, scale: 1.1 }}
+                className="absolute inset-0 w-full h-full"
+              >
                 <img
                   src={imageSrc}
                   alt={`Pré-visualização do projeto ${project.title}`}
@@ -90,7 +98,9 @@ export default function ProjectCard({ project, labels, isDark, index, priority =
                         <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-perry opacity-40 mb-3">
                           {labels.challengeLabel}
                         </h4>
-                        <p className="text-[13px] leading-relaxed text-perry opacity-70">{project.challenge}</p>
+                        <p className="text-[13px] leading-relaxed text-perry opacity-70">
+                          {project.challenge}
+                        </p>
                       </div>
                     )}
                     {project.solution && (
@@ -98,7 +108,9 @@ export default function ProjectCard({ project, labels, isDark, index, priority =
                         <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-perry opacity-40 mb-3">
                           {labels.solutionLabel}
                         </h4>
-                        <p className="text-[13px] leading-relaxed text-perry opacity-70">{project.solution}</p>
+                        <p className="text-[13px] leading-relaxed text-perry opacity-70">
+                          {project.solution}
+                        </p>
                       </div>
                     )}
                   </div>
@@ -106,7 +118,10 @@ export default function ProjectCard({ project, labels, isDark, index, priority =
 
                 <div className="flex flex-wrap gap-5">
                   {project.tags.map((tag) => (
-                    <span key={tag} className="text-[11px] uppercase tracking-[0.4em] font-bold text-perry opacity-40">
+                    <span
+                      key={tag}
+                      className="text-[11px] uppercase tracking-[0.4em] font-bold text-perry opacity-40"
+                    >
                       {tag}
                     </span>
                   ))}
@@ -124,7 +139,9 @@ export default function ProjectCard({ project, labels, isDark, index, priority =
                   data-cursor-text={labels.view}
                   className="flex items-center justify-center w-16 h-16 rounded-full border border-current border-opacity-10 group-hover:border-opacity-100 transition-all duration-700 group-hover:scale-110 shrink-0"
                 >
-                  <span className="text-3xl transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform text-perry">↗</span>
+                  <span className="text-3xl transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform text-perry">
+                    ↗
+                  </span>
                 </a>
               )}
             </div>
@@ -139,7 +156,9 @@ export default function ProjectCard({ project, labels, isDark, index, priority =
                     rel={isExternal(href) ? 'noopener noreferrer' : ''}
                     data-cursor-hover
                     className={`text-[11px] font-bold uppercase tracking-[0.25em] px-6 py-3 rounded-full transition-colors ${
-                      isDark ? 'bg-white text-black hover:bg-neutral-200' : 'bg-black text-white hover:bg-neutral-800'
+                      isDark
+                        ? 'bg-white text-black hover:bg-neutral-200'
+                        : 'bg-black text-white hover:bg-neutral-800'
                     }`}
                   >
                     {labels.view} ↗

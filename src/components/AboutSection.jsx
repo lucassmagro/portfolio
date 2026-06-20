@@ -7,15 +7,14 @@ import { SOCIAL_LINKS } from '../data/site.js'
  * - Botão magnético de 'Ver Currículo'.
  * - Links sociais vindos da fonte única (data/site.js).
  */
-export default function AboutSection({ isDark, t }) {
+export default function AboutSection({ t }) {
   return (
-    <section 
-      id="about" 
-      data-scroll-section 
+    <section
+      id="about"
+      data-scroll-section
       className="relative z-10 py-section pb-48 overflow-hidden" // pb-48 for ~200px gap
     >
       <div className="max-w-[1700px] mx-auto px-6 md:px-10">
-        
         {/* Section Title */}
         <div className="mb-24 flex flex-col items-start">
           <span className="text-[11px] font-bold uppercase tracking-[0.4em] opacity-30 mb-4">
@@ -28,20 +27,22 @@ export default function AboutSection({ isDark, t }) {
 
         {/* Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_500px] gap-20 lg:gap-32 items-end">
-          
           {/* Bio & Details */}
           <div className="order-2 lg:order-1">
             <div className="space-y-12 max-w-2xl">
-              <p className="text-2xl md:text-3xl font-medium leading-relaxed opacity-70">
-                {t.bio}
-              </p>
+              <p className="text-2xl md:text-3xl font-medium leading-relaxed opacity-70">{t.bio}</p>
 
               {/* Prova social: experiência em empresas reais */}
               <div className="border-t border-current border-opacity-10 pt-8">
-                <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40 mb-5">{t.trusted}</h4>
+                <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40 mb-5">
+                  {t.trusted}
+                </h4>
                 <div className="flex flex-wrap gap-x-8 gap-y-3">
                   {t.companies.map((company) => (
-                    <span key={company} className="text-[13px] font-bold uppercase tracking-[0.15em] opacity-70">
+                    <span
+                      key={company}
+                      className="text-[13px] font-bold uppercase tracking-[0.15em] opacity-70"
+                    >
                       {company}
                     </span>
                   ))}
@@ -50,7 +51,9 @@ export default function AboutSection({ isDark, t }) {
 
               <div className="grid grid-cols-2 gap-10">
                 <div>
-                  <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40 mb-4">{t.specialty}</h4>
+                  <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40 mb-4">
+                    {t.specialty}
+                  </h4>
                   <ul className="text-[14px] font-bold space-y-2 uppercase tracking-widest">
                     {t.skills.map((skill, i) => (
                       <li key={i}>{skill}</li>
@@ -58,7 +61,9 @@ export default function AboutSection({ isDark, t }) {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40 mb-4">{t.stack}</h4>
+                  <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40 mb-4">
+                    {t.stack}
+                  </h4>
                   <ul className="text-[14px] font-bold space-y-2 uppercase tracking-widest">
                     {t.tools.map((tool, i) => (
                       <li key={i}>{tool}</li>
@@ -69,15 +74,15 @@ export default function AboutSection({ isDark, t }) {
 
               {/* Action Buttons: Resume */}
               <div className="pt-10 flex flex-wrap gap-8 items-center">
-                 <motion.a 
-                   href="#/resume" 
-                   whileHover={{ scale: 1.05 }}
-                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                   className="text-[11px] font-bold uppercase tracking-[0.3em] bg-white text-black px-8 py-4 rounded-full hover:bg-neutral-200 transition-colors"
-                   data-cursor-hover
-                 >
-                   {t.resume}
-                 </motion.a>
+                <motion.a
+                  href="#/resume"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+                  className="text-[11px] font-bold uppercase tracking-[0.3em] bg-white text-black px-8 py-4 rounded-full hover:bg-neutral-200 transition-colors"
+                  data-cursor-hover
+                >
+                  {t.resume}
+                </motion.a>
 
                 <div className="flex gap-8">
                   {SOCIAL_LINKS.map((social) => (
@@ -101,23 +106,23 @@ export default function AboutSection({ isDark, t }) {
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 1.2, ease: [0.165, 0.84, 0.44, 1] }}
             className="order-1 lg:order-2"
           >
             <div className="window-outline w-full max-w-[450px]">
               <div className="window-glass relative overflow-hidden aspect-[3/4]">
-                 <img
-                   src="eu.png"
-                   alt="Retrato de Lucas Santos Magro"
-                   loading="lazy"
-                   decoding="async"
-                   className="w-full h-full object-cover grayscale-0 contrast-[1.05] transition-all duration-700 hover:scale-105"
-                 />
-                 <div className="shine-wrapper opacity-20">
-                    <div className="shine-item w-[40px] left-[20%]" />
-                    <div className="shine-item w-[10px] left-[50%]" />
-                 </div>
+                <img
+                  src="eu.png"
+                  alt="Retrato de Lucas Santos Magro"
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover grayscale-0 contrast-[1.05] transition-all duration-700 hover:scale-105"
+                />
+                <div className="shine-wrapper opacity-20">
+                  <div className="shine-item w-[40px] left-[20%]" />
+                  <div className="shine-item w-[10px] left-[50%]" />
+                </div>
               </div>
             </div>
           </motion.div>

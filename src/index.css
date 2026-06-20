@@ -51,13 +51,19 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  transition: background-color 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), color 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition:
+    background-color 0.8s cubic-bezier(0.165, 0.84, 0.44, 1),
+    color 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 /* Window & Glass Physics */
 
 .window-outline {
-  background-image: radial-gradient(circle farthest-side at 50% 0, var(--perry-window-outline), transparent);
+  background-image: radial-gradient(
+    circle farthest-side at 50% 0,
+    var(--perry-window-outline),
+    transparent
+  );
   border-radius: 24px;
   outline: 1px solid var(--perry-window-outline);
   padding: 8px;
@@ -88,7 +94,14 @@ body {
   left: 5%;
   width: 90%;
   height: 1px;
-  background-image: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.6) 30%, #fff 50%, rgba(255, 255, 255, 0.6) 70%, transparent 100%);
+  background-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.6) 30%,
+    #fff 50%,
+    rgba(255, 255, 255, 0.6) 70%,
+    transparent 100%
+  );
   z-index: 10;
 }
 
@@ -116,7 +129,9 @@ body {
 .project-card-bg {
   background: var(--perry-card-bg);
   border: 1px solid var(--perry-card-border);
-  transition: border 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), background 0.6s ease;
+  transition:
+    border 0.6s cubic-bezier(0.165, 0.84, 0.44, 1),
+    background 0.6s ease;
 }
 
 .project-card-bg:hover {
@@ -155,7 +170,7 @@ body {
 }
 
 .noise-bg::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;

@@ -86,7 +86,10 @@ export default function CtaBanner({ isDark, t }) {
             className={inputBase}
           />
           <div>
-            <label htmlFor="cta-message" className="block text-[11px] font-bold uppercase tracking-[0.3em] opacity-50 mb-3">
+            <label
+              htmlFor="cta-message"
+              className="block text-[11px] font-bold uppercase tracking-[0.3em] opacity-50 mb-3"
+            >
               {f.message}
             </label>
             <textarea
@@ -150,7 +153,10 @@ export default function CtaBanner({ isDark, t }) {
 function Field({ id, name, type = 'text', label, value, error, onChange, className }) {
   return (
     <div>
-      <label htmlFor={id} className="block text-[11px] font-bold uppercase tracking-[0.3em] opacity-50 mb-3">
+      <label
+        htmlFor={id}
+        className="block text-[11px] font-bold uppercase tracking-[0.3em] opacity-50 mb-3"
+      >
         {label}
       </label>
       <input

@@ -19,5 +19,7 @@ export const themeClasses = (isDark) => ({
   muted: isDark ? 'text-white/40' : 'text-black/40',
   subline: isDark ? 'bg-white/10' : 'bg-black/10',
   // Botão sólido invertido (preto no claro, branco no escuro).
-  solidBtn: isDark ? 'bg-white text-black hover:bg-white/90' : 'bg-black text-white hover:bg-black/90',
+  solidBtn: isDark
+    ? 'bg-white text-black hover:bg-white/90'
+    : 'bg-black text-white hover:bg-black/90',
 })

@@ -7,7 +7,8 @@ export const translations = {
     },
     hero: {
       tag: 'Desenvolvedor Front-End & Design Editorial',
-      intro: 'Arquiteto de formação, desenvolvedor front-end por escolha. Transformo esse olhar espacial em sites rápidos, com estética editorial e foco em conversão — para estúdios, marcas e negócios que se recusam a parecer template.',
+      intro:
+        'Arquiteto de formação, desenvolvedor front-end por escolha. Transformo esse olhar espacial em sites rápidos, com estética editorial e foco em conversão — para estúdios, marcas e negócios que se recusam a parecer template.',
       marker: 'CHAPECÓ, BRASIL / FRONT-END & DESIGN / PORTFÓLIO 2026',
     },
     cta: {
@@ -63,61 +64,68 @@ export const translations = {
             company: 'ATS Jornada by nstech',
             role: 'Suporte Técnico',
             period: 'Out. 2025 – Presente',
-            description: 'Atuação com suporte ao cliente e centro de suporte técnico especializado.'
+            description:
+              'Atuação com suporte ao cliente e centro de suporte técnico especializado.',
           },
           {
             company: 'Arroba Comunicação',
             role: 'Gerente de Mídias Sociais',
             period: 'Maio 2024 – Set. 2024',
-            description: 'Desenvolvimento de estratégias de conteúdo, análise de desempenho e gestão de ferramentas de marketing.'
+            description:
+              'Desenvolvimento de estratégias de conteúdo, análise de desempenho e gestão de ferramentas de marketing.',
           },
           {
             company: 'Applique Arquitetura',
             role: 'Estagiário em Arquitetura',
             period: 'Jul. 2022 – Dez. 2022',
-            description: 'Elaboração de projetos arquitetônicos, levantamento de dados e renderizações 3D.'
+            description:
+              'Elaboração de projetos arquitetônicos, levantamento de dados e renderizações 3D.',
           },
           {
             company: 'CARRAROBERNARDI',
             role: 'Estagiário em Arquitetura',
             period: 'Mar. 2021 – Fev. 2022',
-            description: 'Acompanhamento de obras, compatibilização de projetos e pesquisa de normas técnicas.'
-          }
+            description:
+              'Acompanhamento de obras, compatibilização de projetos e pesquisa de normas técnicas.',
+          },
         ],
         projects: [
           {
             title: 'Aplicações Web e API',
             period: 'Out. 2025 – Mar. 2026',
-            description: 'Desenvolvimento em Express.js para rotas lógicas e consumo de APIs públicas com JS puro.'
+            description:
+              'Desenvolvimento em Express.js para rotas lógicas e consumo de APIs públicas com JS puro.',
           },
           {
             title: 'Desenvolvimento Front-End',
             period: 'Ago. 2025',
-            description: 'Design e implementação de portfólio pessoal focado em performance e estética editorial.'
+            description:
+              'Design e implementação de portfólio pessoal focado em performance e estética editorial.',
           },
           {
             title: 'Sistemas e Hardware',
             period: 'Set. 2025 – Nov. 2025',
-            description: 'Modelagem de sistemas UML e documentação LaTeX para integração de hardware e sensores.'
-          }
+            description:
+              'Modelagem de sistemas UML e documentação LaTeX para integração de hardware e sensores.',
+          },
         ],
         education: [
           {
             school: 'UNOESC',
             degree: 'Bacharelado em Sistemas de Informação',
-            period: '2025 – 2028'
+            period: '2025 – 2028',
           },
           {
             school: 'Unochapecó',
             degree: 'Bacharelado em Arquitetura e Urbanismo',
-            period: '2017 – 2023'
-          }
+            period: '2017 – 2023',
+          },
         ],
         skills: {
           languages: 'C, C++, Python, JavaScript, HTML/CSS, Assembly',
-          tools: 'Bootstrap, WordPress, Express.js, React, Tailwind'
-        }
-      }
+          tools: 'Bootstrap, WordPress, Express.js, React, Tailwind',
+        },
+      },
     },
     projects: {
       section: 'Projetos Selecionados (06)',
@@ -132,35 +140,41 @@ export const translations = {
         {
           id: 'cafeteria',
           title: 'Artisanal Coffee',
-          brief: 'Uma experiência de e-commerce editorial que eleva a jornada do café artesanal. Implementação de micro-interações para engajamento sensorial.',
+          brief:
+            'Uma experiência de e-commerce editorial que eleva a jornada do café artesanal. Implementação de micro-interações para engajamento sensorial.',
           challenge: 'Cafés artesanais disputam atenção em vitrines digitais genéricas.',
-          solution: 'Loja editorial com micro-interações que transmitem o ritual do café e guiam até a compra.',
+          solution:
+            'Loja editorial com micro-interações que transmitem o ritual do café e guiam até a compra.',
           tags: ['E-commerce', 'Landing Page', 'Branding'],
           href: 'cafeteria/index.html',
         },
         {
           id: 'refit',
           title: 'REFIT',
-          brief: 'Uma landing page de luxo para arquitetura e reforma residencial, com estética premium e interatividade avançada.',
+          brief:
+            'Uma landing page de luxo para arquitetura e reforma residencial, com estética premium e interatividade avançada.',
           challenge: 'Reformas de alto padrão sem uma vitrine à altura do serviço.',
           solution: 'Landing premium com galeria filtrável e narrativa de antes/depois.',
           tags: ['Arquitetura', 'Luxo', 'Landing Page'],
           href: 'refit/index.html',
-          customImage: 'refit-thumb.png'
+          customImage: 'refit-thumb.png',
         },
         {
           id: 'hotel',
           title: 'Lumina Hotel',
-          brief: 'Redefinindo a hospitalidade digital através de uma interface minimalista e conversão otimizada. Foco em arquitetura de informação e fluidez narrativa.',
+          brief:
+            'Redefinindo a hospitalidade digital através de uma interface minimalista e conversão otimizada. Foco em arquitetura de informação e fluidez narrativa.',
           challenge: 'Reservar um hotel costuma ser burocrático e impessoal.',
-          solution: 'Fluxo guiado de busca → quarto → confirmação, com estética calma e minimalista.',
+          solution:
+            'Fluxo guiado de busca → quarto → confirmação, com estética calma e minimalista.',
           tags: ['Hospitalidade', 'UI/UX', 'Negócios'],
           href: 'hotel/index.html',
         },
         {
           id: 'arquitetura',
           title: 'FORMA Studio',
-          brief: 'Portfolio de arquitetura com foco em minimalismo extremo e grid dinâmico. Um estudo sobre espaço negativo e hierarquia tipográfica.',
+          brief:
+            'Portfolio de arquitetura com foco em minimalismo extremo e grid dinâmico. Um estudo sobre espaço negativo e hierarquia tipográfica.',
           challenge: 'Portfólios de arquitetura poluídos acabam escondendo a própria obra.',
           solution: 'Grid minimalista que deixa o espaço negativo e os projetos falarem.',
           tags: ['Editorial', 'Minimalismo', 'Portfolio'],
@@ -169,22 +183,24 @@ export const translations = {
         {
           id: 'catedra',
           title: 'Cátedra Política',
-          brief: 'Um portal de notícias e blog focado em análise política, com arquitetura de alto desempenho e foco em legibilidade editorial.',
+          brief:
+            'Um portal de notícias e blog focado em análise política, com arquitetura de alto desempenho e foco em legibilidade editorial.',
           challenge: 'Análise política densa exige leitura confortável e carregamento veloz.',
           solution: 'Portal editorial com tipografia legível e performance alta.',
           tags: ['Portal', 'Editorial', 'Política'],
           comingSoon: true,
-          customImage: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1200'
+          customImage: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1200',
         },
         {
           id: 'links',
           title: 'LinkHub / Bio Links',
-          brief: 'Um hub de branding pessoal de alto nível, otimizado para bios de redes sociais e cartões de visita digitais.',
+          brief:
+            'Um hub de branding pessoal de alto nível, otimizado para bios de redes sociais e cartões de visita digitais.',
           challenge: 'Bio de redes sociais dispersa em vários links soltos.',
           solution: 'Hub único de marca pessoal, rápido e com troca de tema.',
           tags: ['Pessoal', 'Branding', 'Social'],
           href: '#/links',
-          customImage: 'https://images.unsplash.com/photo-1590381945249-b713d216adea?w=1200'
+          customImage: 'https://images.unsplash.com/photo-1590381945249-b713d216adea?w=1200',
         },
       ],
     },
@@ -217,7 +233,7 @@ export const translations = {
         refit: { title: 'REFIT', sub: 'Arquitetura de Luxo' },
       },
       copyright: '© 2026 Lucas Santos Magro',
-    }
+    },
   },
   en: {
     navbar: {
@@ -227,7 +243,8 @@ export const translations = {
     },
     hero: {
       tag: 'Front-End Developer & Editorial Design',
-      intro: 'Architect by training, front-end developer by choice. I turn that spatial eye into fast, editorial websites built to convert — for studios, brands and businesses that refuse to look like a template.',
+      intro:
+        'Architect by training, front-end developer by choice. I turn that spatial eye into fast, editorial websites built to convert — for studios, brands and businesses that refuse to look like a template.',
       marker: 'CHAPECÓ, BRAZIL / FRONT-END & DESIGN / 2026 PORTFOLIO',
     },
     cta: {
@@ -283,61 +300,67 @@ export const translations = {
             company: 'ATS Jornada by nstech',
             role: 'Technical Support',
             period: 'Oct. 2025 – Present',
-            description: 'Focused on customer success and specialized technical support center operations.'
+            description:
+              'Focused on customer success and specialized technical support center operations.',
           },
           {
             company: 'Arroba Comunicação',
             role: 'Social Media Manager',
             period: 'May 2024 – Sep. 2024',
-            description: 'Development of content strategies, performance analysis, and marketing tool management.'
+            description:
+              'Development of content strategies, performance analysis, and marketing tool management.',
           },
           {
             company: 'Applique Arquitetura',
             role: 'Architecture Intern',
             period: 'Jul. 2022 – Dec. 2022',
-            description: 'Architectural project design, data collection, and 3D rendering developments.'
+            description:
+              'Architectural project design, data collection, and 3D rendering developments.',
           },
           {
             company: 'CARRAROBERNARDI',
             role: 'Architecture Intern',
             period: 'Mar. 2021 – Feb. 2022',
-            description: 'Construction monitoring, project coordination, and technical standards research.'
-          }
+            description:
+              'Construction monitoring, project coordination, and technical standards research.',
+          },
         ],
         projects: [
           {
             title: 'Web & API Applications',
             period: 'Oct. 2025 – Mar. 2026',
-            description: 'Express.js development for logical routing and public API consumption.'
+            description: 'Express.js development for logical routing and public API consumption.',
           },
           {
             title: 'Front-End Development',
             period: 'Aug. 2025',
-            description: 'Design and implementation of a personal portfolio focused on editorial aesthetics.'
+            description:
+              'Design and implementation of a personal portfolio focused on editorial aesthetics.',
           },
           {
             title: 'Systems & Hardware',
             period: 'Sep. 2025 – Nov. 2025',
-            description: 'UML modeling and LaTeX documentation for sensor-integrated hardware projects.'
-          }
+            description:
+              'UML modeling and LaTeX documentation for sensor-integrated hardware projects.',
+          },
         ],
         education: [
           {
             school: 'UNOESC',
             degree: 'B.S. in Information Systems',
-            period: '2025 – 2028'
+            period: '2025 – 2028',
           },
           {
             school: 'Unochapecó',
             degree: 'B.S. in Architecture & Urbanism',
-            period: '2017 – 2023'
-          }
+            period: '2017 – 2023',
+          },
         ],
         skills: {
           languages: 'C, C++, Python, JavaScript, HTML/CSS, Assembly',
-          tools: 'Bootstrap, WordPress, Express.js, React, Tailwind'
-        }
-      }
+          tools: 'Bootstrap, WordPress, Express.js, React, Tailwind',
+        },
+      },
     },
     projects: {
       section: 'Selected Works (06)',
@@ -352,26 +375,31 @@ export const translations = {
         {
           id: 'cafeteria',
           title: 'Artisanal Coffee',
-          brief: 'An editorial e-commerce experience that elevates the artisanal coffee journey. Implementation of micro-interactions for sensory engagement.',
+          brief:
+            'An editorial e-commerce experience that elevates the artisanal coffee journey. Implementation of micro-interactions for sensory engagement.',
           challenge: 'Artisanal coffee competes inside generic digital storefronts.',
-          solution: 'An editorial store with micro-interactions that convey the coffee ritual and guide to purchase.',
+          solution:
+            'An editorial store with micro-interactions that convey the coffee ritual and guide to purchase.',
           tags: ['E-commerce', 'Landing Page', 'Branding'],
           href: 'cafeteria/index.html',
         },
         {
           id: 'refit',
           title: 'REFIT',
-          brief: 'A luxury landing page for architecture and residential renovation, with premium aesthetics and advanced interactivity.',
+          brief:
+            'A luxury landing page for architecture and residential renovation, with premium aesthetics and advanced interactivity.',
           challenge: 'High-end renovations without a showcase worthy of the service.',
-          solution: 'A premium landing page with a filterable gallery and before/after storytelling.',
+          solution:
+            'A premium landing page with a filterable gallery and before/after storytelling.',
           tags: ['Architecture', 'Luxury', 'Landing Page'],
           href: 'refit/index.html',
-          customImage: 'refit-thumb.png'
+          customImage: 'refit-thumb.png',
         },
         {
           id: 'hotel',
           title: 'Lumina Hotel',
-          brief: 'Redefining digital hospitality through a minimalist interface and optimized conversion. Focused on information architecture and narrative fluidity.',
+          brief:
+            'Redefining digital hospitality through a minimalist interface and optimized conversion. Focused on information architecture and narrative fluidity.',
           challenge: 'Booking a hotel tends to feel bureaucratic and impersonal.',
           solution: 'A guided search → room → confirmation flow with a calm, minimalist aesthetic.',
           tags: ['Hospitality', 'UI/UX', 'Business'],
@@ -380,7 +408,8 @@ export const translations = {
         {
           id: 'arquitetura',
           title: 'FORMA Studio',
-          brief: 'Architecture portfolio focused on extreme minimalism and dynamic grid. A study on negative space and typographic hierarchy.',
+          brief:
+            'Architecture portfolio focused on extreme minimalism and dynamic grid. A study on negative space and typographic hierarchy.',
           challenge: 'Cluttered architecture portfolios end up hiding the work itself.',
           solution: 'A minimalist grid that lets negative space and the projects speak.',
           tags: ['Editorial', 'Minimalism', 'Portfolio'],
@@ -389,22 +418,24 @@ export const translations = {
         {
           id: 'catedra',
           title: 'Cátedra Política',
-          brief: 'A news portal and blog focused on political analysis, featuring high-performance architecture and a focus on editorial readability.',
+          brief:
+            'A news portal and blog focused on political analysis, featuring high-performance architecture and a focus on editorial readability.',
           challenge: 'Dense political analysis demands comfortable reading and fast loads.',
           solution: 'An editorial portal with readable typography and high performance.',
           tags: ['Portal', 'Editorial', 'Politics'],
           comingSoon: true,
-          customImage: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1200'
+          customImage: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1200',
         },
         {
           id: 'links',
           title: 'LinkHub / Bio Links',
-          brief: 'A high-end personal branding hub optimized for social media bios and digital business cards.',
+          brief:
+            'A high-end personal branding hub optimized for social media bios and digital business cards.',
           challenge: 'A social bio scattered across many loose links.',
           solution: 'A single personal-brand hub, fast and with theme switching.',
           tags: ['Personal', 'Branding', 'Social'],
           href: '#/links',
-          customImage: 'https://images.unsplash.com/photo-1590381945249-b713d216adea?w=1200'
+          customImage: 'https://images.unsplash.com/photo-1590381945249-b713d216adea?w=1200',
         },
       ],
     },
@@ -437,6 +468,6 @@ export const translations = {
         refit: { title: 'REFIT', sub: 'Luxury Architecture' },
       },
       copyright: '© 2026 Lucas Santos Magro',
-    }
-  }
+    },
+  },
 }

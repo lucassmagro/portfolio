@@ -97,11 +97,11 @@ export default function Cursor() {
       }}
     >
       {isHovered && cursorText && (
-        <span 
+        <span
           className="text-[10px] font-bold tracking-[0.2em] text-black uppercase opacity-0 animate-fade-in"
-          style={{ 
+          style={{
             animation: 'fadeIn 0.3s forwards 0.2s',
-            filter: 'invert(1)' 
+            filter: 'invert(1)',
           }}
         >
           {cursorText}
