@@ -10,6 +10,8 @@ import Footer from './components/Footer.jsx'
 import AboutSection from './components/AboutSection.jsx'
 import CtaBanner from './components/CtaBanner.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
+import ParticleCanvas from './components/ParticleCanvas.jsx'
+import Cursor from './components/Cursor.jsx'
 import LinkHub from './pages/LinkHub.jsx'
 import Resume from './pages/Resume.jsx'
 
@@ -82,6 +84,11 @@ export default function App() {
     localStorage.setItem('lsm-theme', isDark ? 'dark' : 'light')
   }, [isDark])
 
+  // Sincroniza o atributo lang do <html> com o idioma ativo (a11y/SEO)
+  useEffect(() => {
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en'
+  }, [lang])
+
   const toggleTheme = () => setIsDark((prev) => !prev)
   const toggleLang = () => setLang((prev) => (prev === 'pt' ? 'en' : 'pt'))
 
@@ -104,7 +111,14 @@ export default function App() {
         isDark ? 'bg-black text-white' : 'bg-white text-black'
       }`}
     >
-      <Navbar 
+      <a href="#main-content" className="skip-link">
+        {lang === 'pt' ? 'Pular para o conteúdo' : 'Skip to content'}
+      </a>
+
+      <ParticleCanvas isDark={isDark} />
+      <Cursor />
+
+      <Navbar
         isDark={isDark} 
         onToggle={toggleTheme} 
         lang={lang} 
@@ -112,7 +126,7 @@ export default function App() {
         t={t.navbar} 
       />
 
-      <main>
+      <main id="main-content">
         <Hero isDark={isDark} t={t.hero} />
         <CtaBanner isDark={isDark} t={t.cta} />
         <Gallery t={t.projects} isDark={isDark} />

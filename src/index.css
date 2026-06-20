@@ -176,6 +176,12 @@ body {
   -webkit-backdrop-filter: blur(64px);
 }
 
+/* Cursor customizado ativo: esconde o cursor do sistema só quando aplicável */
+.cursor-none,
+.cursor-none * {
+  cursor: none !important;
+}
+
 /* LinkHub: restore system cursor */
 .linkhub-page,
 .linkhub-page * {
@@ -185,4 +191,56 @@ body {
 .linkhub-page a,
 .linkhub-page button {
   cursor: pointer !important;
+}
+
+/* Link "pular para o conteúdo" — visível só ao receber foco via teclado */
+.skip-link {
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 10001;
+  padding: 0.75rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: #fff;
+  color: #000;
+  transform: translateY(-200%);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+  outline: 2px solid currentColor;
+}
+
+/* ── Estilos de impressão (currículo em PDF) ── */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  html.has-scroll-smooth,
+  .has-scroll-smooth body {
+    overflow: visible !important;
+  }
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .resume-print {
+    background: #fff !important;
+    color: #000 !important;
+    padding: 0 !important;
+  }
+  .resume-print * {
+    color: #000 !important;
+    opacity: 1 !important;
+    box-shadow: none !important;
+  }
+  .resume-print section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
 }

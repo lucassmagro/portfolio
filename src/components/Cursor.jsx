@@ -1,17 +1,25 @@
 import { useEffect, useRef, useState } from 'react'
+import { useReducedMotion } from 'framer-motion'
 
 const LERP_FACTOR = 0.18
 
+// Detecta dispositivos de toque/sem ponteiro fino (mobile/tablet).
+const isTouchDevice = () =>
+  typeof window !== 'undefined' &&
+  (window.matchMedia?.('(hover: none), (pointer: coarse)').matches ||
+    'ontouchstart' in window ||
+    navigator.maxTouchPoints > 0)
+
 /**
- * High-Performance Custom Cursor (rAF + Lerp)
- * Logic:
- * 1. Track raw mouse coordinates.
- * 2. Animate a 'lerped' position inside requestAnimationFrame (60fps+).
- * 3. Use mix-blend-mode: difference for total visibility.
+ * Cursor customizado de alta performance (rAF + lerp).
+ * Só é montado em dispositivos com ponteiro fino e sem prefers-reduced-motion;
+ * caso contrário não renderiza e mantém o cursor do sistema (UX correto no mobile).
  */
 export default function Cursor() {
   const [isHovered, setIsHovered] = useState(false)
   const [cursorText, setCursorText] = useState('')
+  const prefersReducedMotion = useReducedMotion()
+  const [enabled] = useState(() => !isTouchDevice())
 
   // Refs for animation performance
   const mousePos = useRef({ x: 0, y: 0 })
@@ -19,7 +27,17 @@ export default function Cursor() {
   const requestRef = useRef(null)
   const cursorRef = useRef(null)
 
+  const active = enabled && !prefersReducedMotion
+
+  // Esconde o cursor do sistema apenas quando o customizado está ativo.
   useEffect(() => {
+    if (!active) return
+    document.body.classList.add('cursor-none')
+    return () => document.body.classList.remove('cursor-none')
+  }, [active])
+
+  useEffect(() => {
+    if (!active) return
     const onMove = (e) => {
       mousePos.current = { x: e.clientX, y: e.clientY }
     }
@@ -64,7 +82,10 @@ export default function Cursor() {
       document.removeEventListener('mouseout', onOut)
       cancelAnimationFrame(requestRef.current)
     }
-  }, [])
+  }, [active])
+
+  // Em toque ou reduced-motion: não renderiza nada e mantém o cursor do sistema.
+  if (!active) return null
 
   return (
     <div
