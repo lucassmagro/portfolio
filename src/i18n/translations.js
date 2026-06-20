@@ -6,9 +6,9 @@ export const translations = {
       contact: 'Contato',
     },
     hero: {
-      tag: 'Diretor Criativo & Arquiteto UI/UX',
-      intro: 'Transformando ideias em experiências digitais de classe mundial através de design editorial e tecnologia de ponta.',
-      marker: 'BRASIL / DEV CRIATIVO / PORTFÓLIO 2026',
+      tag: 'Desenvolvedor Front-End & Design Editorial',
+      intro: 'Arquiteto de formação, desenvolvedor front-end por escolha. Transformo esse olhar espacial em sites rápidos, com estética editorial e foco em conversão — para estúdios, marcas e negócios que se recusam a parecer template.',
+      marker: 'CHAPECÓ, BRASIL / FRONT-END & DESIGN / PORTFÓLIO 2026',
     },
     cta: {
       headline: 'Vamos criar algo extraordinário?',
@@ -36,6 +36,9 @@ export const translations = {
       current: 'Presente',
       location: 'Chapecó, SC, Brasil',
       download: 'Baixar em PDF',
+      langLabel: 'Linguagens',
+      techLabel: 'Tecnologias',
+      footerNote: 'Design & Desenvolvimento © 2026 Lucas Santos Magro',
       sections: {
         experience: [
           {
@@ -102,11 +105,18 @@ export const translations = {
       section: 'Projetos Selecionados (06)',
       title: 'Obras.',
       view: 'VER',
+      reworked: 'Ver versão reformulada',
+      original: 'Ver original',
+      soon: 'Estudo de caso em breve',
+      challengeLabel: 'Desafio',
+      solutionLabel: 'Solução',
       items: [
         {
           id: 'cafeteria',
           title: 'Artisanal Coffee',
           brief: 'Uma experiência de e-commerce editorial que eleva a jornada do café artesanal. Implementação de micro-interações para engajamento sensorial.',
+          challenge: 'Cafés artesanais disputam atenção em vitrines digitais genéricas.',
+          solution: 'Loja editorial com micro-interações que transmitem o ritual do café e guiam até a compra.',
           tags: ['E-commerce', 'Landing Page', 'Branding'],
           href: 'cafeteria/index.html',
         },
@@ -114,7 +124,9 @@ export const translations = {
           id: 'refit',
           title: 'REFIT',
           brief: 'Uma landing page de luxo para arquitetura e reforma residencial, com estética premium e interatividade avançada.',
-          tags: ['Architecture', 'Luxury', 'Landing Page'],
+          challenge: 'Reformas de alto padrão sem uma vitrine à altura do serviço.',
+          solution: 'Landing premium com galeria filtrável e narrativa de antes/depois.',
+          tags: ['Arquitetura', 'Luxo', 'Landing Page'],
           href: 'refit/index.html',
           customImage: 'refit-thumb.png'
         },
@@ -122,13 +134,17 @@ export const translations = {
           id: 'hotel',
           title: 'Lumina Hotel',
           brief: 'Redefinindo a hospitalidade digital através de uma interface minimalista e conversão otimizada. Foco em arquitetura de informação e fluidez narrativa.',
-          tags: ['Hospitalidade', 'UI/UX', 'Business'],
+          challenge: 'Reservar um hotel costuma ser burocrático e impessoal.',
+          solution: 'Fluxo guiado de busca → quarto → confirmação, com estética calma e minimalista.',
+          tags: ['Hospitalidade', 'UI/UX', 'Negócios'],
           href: 'hotel/index.html',
         },
         {
           id: 'arquitetura',
           title: 'FORMA Studio',
           brief: 'Portfolio de arquitetura com foco em minimalismo extremo e grid dinâmico. Um estudo sobre espaço negativo e hierarquia tipográfica.',
+          challenge: 'Portfólios de arquitetura poluídos acabam escondendo a própria obra.',
+          solution: 'Grid minimalista que deixa o espaço negativo e os projetos falarem.',
           tags: ['Editorial', 'Minimalismo', 'Portfolio'],
           href: 'arquitetura/index.html',
         },
@@ -136,14 +152,19 @@ export const translations = {
           id: 'catedra',
           title: 'Cátedra Política',
           brief: 'Um portal de notícias e blog focado em análise política, com arquitetura de alto desempenho e foco em legibilidade editorial.',
-          tags: ['Portal', 'Editorial', 'Políticas'],
+          challenge: 'Análise política densa exige leitura confortável e carregamento veloz.',
+          solution: 'Portal editorial com tipografia legível e performance alta.',
+          tags: ['Portal', 'Editorial', 'Política'],
+          comingSoon: true,
           customImage: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1200'
         },
         {
           id: 'links',
           title: 'LinkHub / Bio Links',
           brief: 'Um hub de branding pessoal de alto nível, otimizado para bios de redes sociais e cartões de visita digitais.',
-          tags: ['Personal', 'Branding', 'Social'],
+          challenge: 'Bio de redes sociais dispersa em vários links soltos.',
+          solution: 'Hub único de marca pessoal, rápido e com troca de tema.',
+          tags: ['Pessoal', 'Branding', 'Social'],
           href: '#/links',
           customImage: 'https://images.unsplash.com/photo-1590381945249-b713d216adea?w=1200'
         },
@@ -152,12 +173,32 @@ export const translations = {
     footer: {
       statement: 'Especializado em interfaces narrativas de alto impacto.',
       nav: 'Principal',
+      links: { home: 'Início', work: 'Trabalhos', about: 'Info' },
       contact: 'Contato',
+      emailLabel: 'E-mail',
       social: 'Social',
       availability: 'Abertura para novos projetos em Abril 2026.',
       copyright: '© 2026 LUCAS SANTOS MAGRO. TODOS OS DIREITOS RESERVADOS.',
       madeBy: 'Feito com ❤ por Lucas Santos Magro',
       resume: 'Baixar Currículo',
+    },
+    linkhub: {
+      role: 'Designer & Desenvolvedor Web',
+      latest: 'Projetos Recentes',
+      links: {
+        portfolio: 'Portfólio',
+        resume: 'Currículo',
+        github: 'GitHub',
+        linkedin: 'LinkedIn',
+        instagram: 'Instagram',
+        whatsapp: 'WhatsApp',
+        email: 'E-mail',
+      },
+      projects: {
+        cafeteria: { title: 'Artisanal Coffee', sub: 'E-commerce Editorial' },
+        refit: { title: 'REFIT', sub: 'Arquitetura de Luxo' },
+      },
+      copyright: '© 2026 Lucas Santos Magro',
     }
   },
   en: {
@@ -167,9 +208,9 @@ export const translations = {
       contact: 'Contact',
     },
     hero: {
-      tag: 'Creative Director & UI/UX Architect',
-      intro: 'Transforming ideas into world-class digital experiences through editorial design and cutting-edge technology.',
-      marker: 'BRAZIL / CREATIVE DEV / 2026 PORTFOLIO',
+      tag: 'Front-End Developer & Editorial Design',
+      intro: 'Architect by training, front-end developer by choice. I turn that spatial eye into fast, editorial websites built to convert — for studios, brands and businesses that refuse to look like a template.',
+      marker: 'CHAPECÓ, BRAZIL / FRONT-END & DESIGN / 2026 PORTFOLIO',
     },
     cta: {
       headline: "Let's create something extraordinary?",
@@ -197,6 +238,9 @@ export const translations = {
       current: 'Present',
       location: 'Chapecó, SC, Brazil',
       download: 'Download PDF',
+      langLabel: 'Languages',
+      techLabel: 'Technologies',
+      footerNote: 'Design & Development © 2026 Lucas Santos Magro',
       sections: {
         experience: [
           {
@@ -263,11 +307,18 @@ export const translations = {
       section: 'Selected Works (06)',
       title: 'Works.',
       view: 'VIEW',
+      reworked: 'See reworked version',
+      original: 'See original',
+      soon: 'Case study coming soon',
+      challengeLabel: 'Challenge',
+      solutionLabel: 'Solution',
       items: [
         {
           id: 'cafeteria',
           title: 'Artisanal Coffee',
           brief: 'An editorial e-commerce experience that elevates the artisanal coffee journey. Implementation of micro-interactions for sensory engagement.',
+          challenge: 'Artisanal coffee competes inside generic digital storefronts.',
+          solution: 'An editorial store with micro-interactions that convey the coffee ritual and guide to purchase.',
           tags: ['E-commerce', 'Landing Page', 'Branding'],
           href: 'cafeteria/index.html',
         },
@@ -275,6 +326,8 @@ export const translations = {
           id: 'refit',
           title: 'REFIT',
           brief: 'A luxury landing page for architecture and residential renovation, with premium aesthetics and advanced interactivity.',
+          challenge: 'High-end renovations without a showcase worthy of the service.',
+          solution: 'A premium landing page with a filterable gallery and before/after storytelling.',
           tags: ['Architecture', 'Luxury', 'Landing Page'],
           href: 'refit/index.html',
           customImage: 'refit-thumb.png'
@@ -283,6 +336,8 @@ export const translations = {
           id: 'hotel',
           title: 'Lumina Hotel',
           brief: 'Redefining digital hospitality through a minimalist interface and optimized conversion. Focused on information architecture and narrative fluidity.',
+          challenge: 'Booking a hotel tends to feel bureaucratic and impersonal.',
+          solution: 'A guided search → room → confirmation flow with a calm, minimalist aesthetic.',
           tags: ['Hospitality', 'UI/UX', 'Business'],
           href: 'hotel/index.html',
         },
@@ -290,6 +345,8 @@ export const translations = {
           id: 'arquitetura',
           title: 'FORMA Studio',
           brief: 'Architecture portfolio focused on extreme minimalism and dynamic grid. A study on negative space and typographic hierarchy.',
+          challenge: 'Cluttered architecture portfolios end up hiding the work itself.',
+          solution: 'A minimalist grid that lets negative space and the projects speak.',
           tags: ['Editorial', 'Minimalism', 'Portfolio'],
           href: 'arquitetura/index.html',
         },
@@ -297,13 +354,18 @@ export const translations = {
           id: 'catedra',
           title: 'Cátedra Política',
           brief: 'A news portal and blog focused on political analysis, featuring high-performance architecture and a focus on editorial readability.',
+          challenge: 'Dense political analysis demands comfortable reading and fast loads.',
+          solution: 'An editorial portal with readable typography and high performance.',
           tags: ['Portal', 'Editorial', 'Politics'],
+          comingSoon: true,
           customImage: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1200'
         },
         {
           id: 'links',
           title: 'LinkHub / Bio Links',
           brief: 'A high-end personal branding hub optimized for social media bios and digital business cards.',
+          challenge: 'A social bio scattered across many loose links.',
+          solution: 'A single personal-brand hub, fast and with theme switching.',
           tags: ['Personal', 'Branding', 'Social'],
           href: '#/links',
           customImage: 'https://images.unsplash.com/photo-1590381945249-b713d216adea?w=1200'
@@ -313,12 +375,32 @@ export const translations = {
     footer: {
       statement: 'Specialized in high-impact narrative interfaces.',
       nav: 'Main',
+      links: { home: 'Home', work: 'Work', about: 'Info' },
       contact: 'Contact',
+      emailLabel: 'E-mail',
       social: 'Social',
       availability: 'Open for new projects in April 2026.',
       copyright: '© 2026 LUCAS SANTOS MAGRO. ALL RIGHTS RESERVED.',
       madeBy: 'Made with ❤ by Lucas Santos Magro',
       resume: 'Download Resume',
+    },
+    linkhub: {
+      role: 'Web Designer & Developer',
+      latest: 'Latest Projects',
+      links: {
+        portfolio: 'Portfolio',
+        resume: 'Resume',
+        github: 'GitHub',
+        linkedin: 'LinkedIn',
+        instagram: 'Instagram',
+        whatsapp: 'WhatsApp',
+        email: 'E-mail',
+      },
+      projects: {
+        cafeteria: { title: 'Artisanal Coffee', sub: 'Editorial E-commerce' },
+        refit: { title: 'REFIT', sub: 'Luxury Architecture' },
+      },
+      copyright: '© 2026 Lucas Santos Magro',
     }
   }
 }
