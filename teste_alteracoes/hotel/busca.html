@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estadias &amp; Disponibilidade | Lumina Hotel Chapecó</title>
+    <meta
+      name="description"
+      content="Veja as suítes disponíveis no Lumina Hotel: filtre por categoria, confira preços por noite e simule sua reserva em poucos passos."
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container nav-container">
+        <a href="index.html" class="logo">LUMINA</a>
+        <nav class="nav-links">
+          <a href="index.html">Início</a>
+          <a href="busca.html" class="active">Estadias</a>
+          <a href="gastronomia.html">Gastronomia</a>
+          <a href="wellness.html">Wellness</a>
+          <a href="contato.html">Contato</a>
+          <button class="theme-toggle" aria-label="Alternar tema">
+            <span class="icon-moon">☾</span><span class="icon-sun">☀</span>
+          </button>
+        </nav>
+        <button class="hamburger" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+
+    <nav class="mobile-nav" aria-label="Menu mobile">
+      <a href="index.html">Início</a>
+      <a href="busca.html">Estadias</a>
+      <a href="gastronomia.html">Gastronomia</a>
+      <a href="wellness.html">Wellness</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+
+    <main>
+      <section class="hero sub-hero">
+        <img src="/hotel/img/quarto-carrossel.png" alt="Acomodações do Lumina Hotel" class="hero-img" />
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+          <span class="eyebrow">Resultados da busca</span>
+          <h1 class="hero-title">Escolha sua estadia</h1>
+        </div>
+      </section>
+
+      <section class="section-padding">
+        <div class="container">
+          <!-- Resumo da busca -->
+          <div class="summary-bar">
+            <div class="item"><small>Período</small><strong id="sumCheck">—</strong></div>
+            <div class="item"><small>Hóspedes</small><strong id="sumGuests">2 hóspede(s)</strong></div>
+            <div class="item"><small>Estadia</small><strong id="sumNights">1 noite(s)</strong></div>
+            <a href="index.html" class="btn btn-secondary" style="margin-left: auto">Alterar busca</a>
+          </div>
+
+          <!-- Filtros -->
+          <div class="filters">
+            <button class="chip active" data-cat="all">Todas</button>
+            <button class="chip" data-cat="suite">Suítes</button>
+            <button class="chip" data-cat="executivo">Executivos</button>
+            <button class="chip" data-cat="loft">Lofts &amp; Studios</button>
+          </div>
+
+          <!-- Resultados -->
+          <div class="room-grid" id="roomGrid">
+            <article class="room-card" data-cat="suite" data-name="Suíte Presidencial" data-price="2450">
+              <div class="room-media"><img src="/hotel/img/suite-executiva.png" alt="Suíte Presidencial" loading="lazy" /></div>
+              <div class="room-info">
+                <span class="eyebrow">Liderança &amp; luxo</span>
+                <h3 class="room-name">Suíte Presidencial</h3>
+                <p class="room-meta">180m² · Sala de reuniões privativa · Automação total</p>
+                <p class="room-price">R$ 2.450 <span>/ noite</span></p>
+                <button class="btn btn-primary btn-block" data-reserve>Reservar</button>
+              </div>
+            </article>
+
+            <article class="room-card" data-cat="suite" data-name="Suíte Master Urban" data-price="980">
+              <div class="room-media"><img src="/hotel/img/suite-executiva.png" alt="Suíte Master Urban" loading="lazy" /></div>
+              <div class="room-info">
+                <span class="eyebrow">Vista panorâmica</span>
+                <h3 class="room-name">Suíte Master Urban</h3>
+                <p class="room-meta">120m² · Home office equipado · City view</p>
+                <p class="room-price">R$ 980 <span>/ noite</span></p>
+                <a href="suite-master.html" class="btn btn-secondary btn-block">Ver detalhes</a>
+              </div>
+            </article>
+
+            <article class="room-card" data-cat="loft" data-name="Lumina Loft" data-price="520">
+              <div class="room-media"><img src="/hotel/img/loft-corporativo.png" alt="Lumina Loft" loading="lazy" /></div>
+              <div class="room-info">
+                <span class="eyebrow">Estadias longas</span>
+                <h3 class="room-name">Lumina Loft</h3>
+                <p class="room-meta">95m² · Cozinha completa · Design industrial</p>
+                <p class="room-price">R$ 520 <span>/ noite</span></p>
+                <button class="btn btn-primary btn-block" data-reserve>Reservar</button>
+              </div>
+            </article>
+
+            <article class="room-card" data-cat="executivo" data-name="Quarto Executivo" data-price="650">
+              <div class="room-media"><img src="/hotel/img/quarto-carrossel.png" alt="Quarto Executivo Superior" loading="lazy" /></div>
+              <div class="room-info">
+                <span class="eyebrow">Eficiência corporativa</span>
+                <h3 class="room-name">Quarto Executivo</h3>
+                <p class="room-meta">80m² · Cadeira ergonômica · Isolamento acústico</p>
+                <p class="room-price">R$ 650 <span>/ noite</span></p>
+                <button class="btn btn-primary btn-block" data-reserve>Reservar</button>
+              </div>
+            </article>
+
+            <article class="room-card" data-cat="loft" data-name="Studio Premium" data-price="440">
+              <div class="room-media"><img src="/hotel/img/suite-executiva.png" alt="Studio Premium" loading="lazy" /></div>
+              <div class="room-info">
+                <span class="eyebrow">Minimalismo urbano</span>
+                <h3 class="room-name">Studio Premium</h3>
+                <p class="room-meta">55m² · Centro da cidade · Wi-Fi 6</p>
+                <p class="room-price">R$ 440 <span>/ noite</span></p>
+                <button class="btn btn-primary btn-block" data-reserve>Reservar</button>
+              </div>
+            </article>
+
+            <article class="room-card" data-cat="executivo" data-name="Quarto Business" data-price="1150">
+              <div class="room-media"><img src="/hotel/img/loft-corporativo.png" alt="Quarto Business King" loading="lazy" /></div>
+              <div class="room-info">
+                <span class="eyebrow">Versatilidade</span>
+                <h3 class="room-name">Quarto Business</h3>
+                <p class="room-meta">140m² · Próximo ao centro de eventos</p>
+                <p class="room-price">R$ 1.150 <span>/ noite</span></p>
+                <button class="btn btn-primary btn-block" data-reserve>Reservar</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Modal de reserva (fluxo simulado: dados → confirmação) -->
+    <div class="modal" id="bookingModal" role="dialog" aria-modal="true" aria-label="Reserva">
+      <div class="modal-card">
+        <div class="modal-steps"><span class="dot on"></span><span class="dot"></span></div>
+
+        <!-- Passo 1: dados do hóspede -->
+        <div data-step="1">
+          <span class="eyebrow">Confirme sua reserva</span>
+          <h3 id="mRoom">Quarto</h3>
+          <p class="room-meta">Total estimado: <strong id="mTotal">—</strong></p>
+          <div class="form-grid">
+            <div class="field">
+              <label for="gName">Nome completo</label>
+              <input type="text" id="gName" placeholder="Seu nome" />
+              <span class="error-msg"></span>
+            </div>
+            <div class="field">
+              <label for="gEmail">E-mail</label>
+              <input type="email" id="gEmail" placeholder="seu@email.com" />
+              <span class="error-msg"></span>
+            </div>
+          </div>
+          <div class="modal-actions">
+            <button class="btn btn-secondary" data-close>Cancelar</button>
+            <button class="btn btn-primary" id="mConfirm">Confirmar reserva</button>
+          </div>
+        </div>
+
+        <!-- Passo 2: confirmação -->
+        <div data-step="2" class="hidden center">
+          <div class="confirm-icon" style="margin: 0 auto">✓</div>
+          <h3>Reserva confirmada!</h3>
+          <p>Obrigado, <strong id="mGuestName"></strong>. Sua reserva no <strong id="mRoom2"></strong> está pré-confirmada.</p>
+          <div class="confirm-code" id="mCode">LUM-00000</div>
+          <p class="sim-note">
+            Demonstração de fluxo — nenhuma cobrança é feita. Em produção, este passo iria para um
+            gateway de pagamento e e-mail de confirmação.
+          </p>
+          <div class="mt-lg"><button class="btn btn-primary" data-close>Concluir</button></div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="footer-logo">LUMINA</div>
+            <p>Hospitalidade de alto padrão e inteligência corporativa no coração de Chapecó.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Navegação</h4>
+            <ul>
+              <li><a href="index.html">Início</a></li>
+              <li><a href="busca.html">Estadias</a></li>
+              <li><a href="gastronomia.html">Gastronomia</a></li>
+              <li><a href="wellness.html">Wellness</a></li>
+              <li><a href="contato.html">Contato</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contato</h4>
+            <ul>
+              <li>Rua Marechal Deodoro, 1234 — Centro</li>
+              <li>Chapecó, SC — Brasil</li>
+              <li><a href="mailto:contato@luminachapeco.com.br">contato@luminachapeco.com.br</a></li>
+              <li><a href="tel:+554933333333">+55 (49) 3333-3333</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 Lumina Hotel Chapecó. Todos os direitos reservados.</span>
+          <span>Versão reformulada · <a href="/hotel/index.html">ver original</a></span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

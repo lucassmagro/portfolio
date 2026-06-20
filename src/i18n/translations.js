@@ -169,6 +169,7 @@ export const translations = {
             'Fluxo guiado de busca → quarto → confirmação, com estética calma e minimalista.',
           tags: ['Hospitalidade', 'UI/UX', 'Negócios'],
           href: 'hotel/index.html',
+          reworkedHref: 'teste_alteracoes/hotel/index.html',
         },
         {
           id: 'arquitetura',
@@ -404,6 +405,7 @@ export const translations = {
           solution: 'A guided search → room → confirmation flow with a calm, minimalist aesthetic.',
           tags: ['Hospitality', 'UI/UX', 'Business'],
           href: 'hotel/index.html',
+          reworkedHref: 'teste_alteracoes/hotel/index.html',
         },
         {
           id: 'arquitetura',

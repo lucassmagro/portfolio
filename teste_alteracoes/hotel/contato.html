@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contato &amp; Localização | Lumina Hotel Chapecó</title>
+    <meta
+      name="description"
+      content="Fale com o Lumina Hotel: reservas, eventos corporativos e parcerias. Endereço no centro de Chapecó, telefone, e-mail e mapa para chegar até nós."
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container nav-container">
+        <a href="index.html" class="logo">LUMINA</a>
+        <nav class="nav-links">
+          <a href="index.html">Início</a>
+          <a href="busca.html">Estadias</a>
+          <a href="gastronomia.html">Gastronomia</a>
+          <a href="wellness.html">Wellness</a>
+          <a href="contato.html" class="active">Contato</a>
+          <button class="theme-toggle" aria-label="Alternar tema"><span class="icon-moon">☾</span><span class="icon-sun">☀</span></button>
+        </nav>
+        <button class="hamburger" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+    <nav class="mobile-nav" aria-label="Menu mobile">
+      <a href="index.html">Início</a><a href="busca.html">Estadias</a><a href="gastronomia.html">Gastronomia</a><a href="wellness.html">Wellness</a><a href="contato.html">Contato</a>
+    </nav>
+
+    <main>
+      <section class="hero sub-hero">
+        <img src="/hotel/img/reunioes.png" alt="Sala de reuniões do Lumina" class="hero-img" />
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+          <span class="eyebrow">Corporate hub</span>
+          <h1 class="hero-title">Contato</h1>
+        </div>
+      </section>
+
+      <section class="section-padding">
+        <div class="container">
+          <div class="editorial">
+            <!-- Formulário -->
+            <div class="editorial-content">
+              <span class="eyebrow">Fale conosco</span>
+              <h2 class="display" style="font-size: 2.4rem; margin-bottom: 1rem">Sua base em Chapecó</h2>
+              <p class="lead" style="margin-bottom: 2rem">
+                Reserva executiva, evento corporativo ou suporte logístico: nossa equipe de concierge
+                responde em até um dia útil.
+              </p>
+
+              <form id="contactForm" novalidate>
+                <div class="field" style="margin-bottom: 1rem">
+                  <label for="name">Nome completo</label>
+                  <input type="text" id="name" placeholder="Seu nome" />
+                  <span class="error-msg"></span>
+                </div>
+                <div class="field" style="margin-bottom: 1rem">
+                  <label for="email">E-mail</label>
+                  <input type="email" id="email" placeholder="seu@email.com" />
+                  <span class="error-msg"></span>
+                </div>
+                <div class="field" style="margin-bottom: 1rem">
+                  <label for="message">Mensagem</label>
+                  <textarea id="message" placeholder="Como podemos ajudar?"></textarea>
+                  <span class="error-msg"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+                <p class="form-status"></p>
+              </form>
+            </div>
+
+            <!-- Localização -->
+            <div class="info-card">
+              <iframe
+                class="map-frame"
+                title="Mapa da localização do Lumina Hotel em Chapecó"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14197.873523425946!2d-52.617156!3d-27.100277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e4b423c90714c3%3A0xe7261a86ed6a25b2!2sR.%20Mal.%20Deodoro%2C%20Chapec%C3%B3%20-%20SC!5e0!3m2!1spt!2sbr!4v1711738000000!5m2!1spt!2sbr"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+              <div>
+                <h4>Endereço</h4>
+                <p class="room-meta">Rua Marechal Deodoro, 1234 — Centro, Chapecó — SC, Brasil</p>
+              </div>
+              <div>
+                <h4>Telefone &amp; e-mail</h4>
+                <p class="room-meta"><a href="tel:+554933333333">+55 (49) 3333-3333</a></p>
+                <p class="room-meta"><a href="mailto:contato@luminachapeco.com.br">contato@luminachapeco.com.br</a></p>
+              </div>
+              <div>
+                <h4>Departamentos</h4>
+                <p class="room-meta">Reservas, eventos e imprensa são atendidos pelo mesmo e-mail central acima — sua mensagem é direcionada internamente.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="footer-logo">LUMINA</div>
+            <p>Hospitalidade de alto padrão e inteligência corporativa no coração de Chapecó.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Navegação</h4>
+            <ul>
+              <li><a href="index.html">Início</a></li>
+              <li><a href="busca.html">Estadias</a></li>
+              <li><a href="gastronomia.html">Gastronomia</a></li>
+              <li><a href="wellness.html">Wellness</a></li>
+              <li><a href="contato.html">Contato</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contato</h4>
+            <ul>
+              <li>Rua Marechal Deodoro, 1234 — Centro</li>
+              <li>Chapecó, SC — Brasil</li>
+              <li><a href="mailto:contato@luminachapeco.com.br">contato@luminachapeco.com.br</a></li>
+              <li><a href="tel:+554933333333">+55 (49) 3333-3333</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 Lumina Hotel Chapecó. Todos os direitos reservados.</span>
+          <span>Versão reformulada · <a href="/hotel/index.html">ver original</a></span>
+        </div>
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>
