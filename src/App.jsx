@@ -115,7 +115,7 @@ export default function App() {
       <main>
         <Hero isDark={isDark} t={t.hero} />
         <CtaBanner isDark={isDark} t={t.cta} />
-        <Gallery projects={t.projects.items} title={t.projects.title} sectionLabel={t.projects.section} isDark={isDark} />
+        <Gallery t={t.projects} isDark={isDark} />
         <AboutSection isDark={isDark} t={t.about} />
       </main>
 

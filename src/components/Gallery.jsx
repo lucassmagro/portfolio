@@ -8,7 +8,8 @@ import ProjectCard from './ProjectCard.jsx'
  * - Massive gap-y-48 (~192px).
  * - Consistent professional width (max-w-5xl).
  */
-export default function Gallery({ projects, title, sectionLabel, isDark }) {
+export default function Gallery({ t, isDark }) {
+  const { items: projects, title, section: sectionLabel } = t
   return (
     <section 
       id="projects" 
@@ -45,6 +46,7 @@ export default function Gallery({ projects, title, sectionLabel, isDark }) {
           >
              <ProjectCard
               project={project}
+              labels={t}
               isDark={isDark}
               index={i}
               priority={i === 0}
