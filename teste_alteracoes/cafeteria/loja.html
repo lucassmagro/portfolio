@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loja | Artisanal Editorial Coffee</title>
+    <meta
+      name="description"
+      content="Compre grãos de origem única e acessórios de preparo da Artisanal. Adicione ao carrinho e finalize o pedido direto com a torrefação."
+    />
+    <meta name="theme-color" content="#f5ecd7" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container nav-container">
+        <a href="index.html" class="nav-logo">Artisanal.</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="cardapio.html">Cardápio</a></li>
+          <li><a href="loja.html" class="active">Loja</a></li>
+          <li><a href="nossa-historia.html">Nossa História</a></li>
+          <li><a href="localizacao.html">Localização</a></li>
+          <li><a href="guia-de-preparo.html">Guia de Preparo</a></li>
+        </ul>
+        <div class="controls">
+          <button class="theme-toggle" aria-label="Alternar tema">
+            <svg class="icon-sun" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10m0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6M12 1l2.39 3.42A7 7 0 0 0 12 4a7 7 0 0 0-2.39.42z"/></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24"><path d="M19 15.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27-3.91 3.93-10.24 3.93-14.14 0-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02s5.15 3.15 8.02 2.89"/></svg>
+          </button>
+          <button class="cart-btn" data-checkout>Finalizar<span class="cart-count">0</span></button>
+          <div class="hamburger"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+    </nav>
+    <div class="drawer">
+      <a href="index.html">Início</a><a href="cardapio.html">Cardápio</a><a href="loja.html">Loja</a><a href="nossa-historia.html">Nossa História</a><a href="localizacao.html">Localização</a><a href="guia-de-preparo.html">Guia de Preparo</a>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="head reveal">
+          <span class="label">Loja</span>
+          <h1 class="display display-lg">Leve a torra para casa</h1>
+          <p class="lead">Adicione ao carrinho e finalize: seu pedido é enviado direto à nossa torrefação.</p>
+        </div>
+
+        <div class="shop-grid">
+          <article class="product reveal" data-name="Colombia Geisha 250g" data-price="89">
+            <div class="product-media"><img src="/cafeteria/img/colombia_geisha.png" alt="Colombia Geisha" loading="lazy" /></div>
+            <div class="product-body">
+              <h3>Colombia Geisha</h3>
+              <p class="notes">250g · Floral, jasmim, bergamota · Coado</p>
+              <p class="price">R$ 89,00</p>
+              <button class="btn btn-primary btn-block" data-add>Adicionar ao carrinho</button>
+            </div>
+          </article>
+          <article class="product reveal" data-name="French Press 600ml" data-price="159">
+            <div class="product-media"><img src="/cafeteria/img/french_press.png" alt="Kit French Press" loading="lazy" /></div>
+            <div class="product-body">
+              <h3>Kit French Press</h3>
+              <p class="notes">600ml · Vidro borossilicato · Aço inox</p>
+              <p class="price">R$ 159,00</p>
+              <button class="btn btn-primary btn-block" data-add>Adicionar ao carrinho</button>
+            </div>
+          </article>
+          <article class="product reveal" data-name="Blend da Casa 500g" data-price="72">
+            <div class="product-media"><img src="/cafeteria/img/colombia_geisha.png" alt="Blend da Casa" loading="lazy" /></div>
+            <div class="product-body">
+              <h3>Blend da Casa</h3>
+              <p class="notes">500g · Chocolate, caramelo, nozes · Espresso</p>
+              <p class="price">R$ 72,00</p>
+              <button class="btn btn-primary btn-block" data-add>Adicionar ao carrinho</button>
+            </div>
+          </article>
+          <article class="product reveal" data-name="Assinatura mensal" data-price="120">
+            <div class="product-media"><img src="/cafeteria/img/french_press.png" alt="Clube de assinatura" loading="lazy" /></div>
+            <div class="product-body">
+              <h3>Clube de assinatura</h3>
+              <p class="notes">1 saco/mês · Curadoria do mestre de torra</p>
+              <p class="price">R$ 120,00<span class="notes"> /mês</span></p>
+              <button class="btn btn-primary btn-block" data-add>Assinar</button>
+            </div>
+          </article>
+        </div>
+
+        <p class="lead" style="margin-top: 2rem; font-size: 0.9rem">
+          Carrinho simulado para demonstração — ao finalizar, abrimos seu e-mail com o resumo do
+          pedido. Sem cobrança automática.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <a href="index.html" class="footer-logo">Artisanal.</a>
+        <p class="footer-info">Rua Editorial, 124 — Vila Madalena, São Paulo — SP</p>
+        <p class="footer-info">Seg–Sex 7h–20h · Sáb–Dom 8h–21h</p>
+        <p class="footer-info"><a href="mailto:contato@artisanaleditorial.com.br">contato@artisanaleditorial.com.br</a> · (11) 99999-0000</p>
+        <p class="footer-copy">© 2026 Artisanal Editorial Coffee. · Versão reformulada · <a href="/cafeteria/index.html">ver original</a></p>
+      </div>
+    </footer>
+  </body>
+</html>

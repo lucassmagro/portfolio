@@ -147,6 +147,7 @@ export const translations = {
             'Loja editorial com micro-interações que transmitem o ritual do café e guiam até a compra.',
           tags: ['E-commerce', 'Landing Page', 'Branding'],
           href: 'cafeteria/index.html',
+          reworkedHref: 'teste_alteracoes/cafeteria/index.html',
         },
         {
           id: 'refit',
@@ -383,6 +384,7 @@ export const translations = {
             'An editorial store with micro-interactions that convey the coffee ritual and guide to purchase.',
           tags: ['E-commerce', 'Landing Page', 'Branding'],
           href: 'cafeteria/index.html',
+          reworkedHref: 'teste_alteracoes/cafeteria/index.html',
         },
         {
           id: 'refit',
