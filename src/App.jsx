@@ -2,7 +2,8 @@ import { useState, useEffect, useRef } from 'react'
 import LocomotiveScroll from 'locomotive-scroll'
 import 'locomotive-scroll/dist/locomotive-scroll.css'
 
-import { translations } from './i18n/translations.js'
+import { useTheme } from './context/ThemeContext.jsx'
+import { useI18n } from './context/I18nContext.jsx'
 import Navbar from './components/Navbar.jsx'
 import Hero from './components/Hero.jsx'
 import Gallery from './components/Gallery.jsx'
@@ -18,7 +19,10 @@ import Resume from './pages/Resume.jsx'
 export default function App() {
   const scrollRef = useRef(null)
   const lScroll = useRef(null)
-  
+
+  const { isDark, toggleTheme } = useTheme()
+  const { lang, t, toggleLang } = useI18n()
+
   // Hash Routing State
   const [currentPath, setCurrentPath] = useState(window.location.hash || '#/links')
 
@@ -29,20 +33,6 @@ export default function App() {
     window.addEventListener('hashchange', handleHashChange)
     return () => window.removeEventListener('hashchange', handleHashChange)
   }, [])
-
-  // Theme State
-  const [isDark, setIsDark] = useState(() => {
-    return localStorage.getItem('lsm-theme') !== 'light'
-  })
-
-  // i18n State
-  const [lang, setLang] = useState(() => {
-    const saved = localStorage.getItem('lsm-lang')
-    if (saved) return saved
-    return navigator.language.startsWith('pt') ? 'pt' : 'en'
-  })
-
-  const t = translations[lang]
 
   // Locomotive Scroll Initialization
   useEffect(() => {
@@ -63,34 +53,13 @@ export default function App() {
     }
   }, [])
 
-  // Sync scroll on language change to prevent glitches
+  // Sincroniza o Locomotive Scroll ao trocar de idioma (evita glitches de altura).
+  // O estado de tema/idioma e sua persistência vivem nos providers de contexto.
   useEffect(() => {
     if (lScroll.current) {
-      setTimeout(() => {
-        lScroll.current.update()
-      }, 100)
+      setTimeout(() => lScroll.current.update(), 100)
     }
-    localStorage.setItem('lsm-lang', lang)
   }, [lang])
-
-  // Theme effect
-  useEffect(() => {
-    const root = document.documentElement
-    if (isDark) {
-      root.classList.add('dark')
-    } else {
-      root.classList.remove('dark')
-    }
-    localStorage.setItem('lsm-theme', isDark ? 'dark' : 'light')
-  }, [isDark])
-
-  // Sincroniza o atributo lang do <html> com o idioma ativo (a11y/SEO)
-  useEffect(() => {
-    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en'
-  }, [lang])
-
-  const toggleTheme = () => setIsDark((prev) => !prev)
-  const toggleLang = () => setLang((prev) => (prev === 'pt' ? 'en' : 'pt'))
 
   // Render Resume if hash contains 'resume'
   if (currentPath.includes('resume')) {
