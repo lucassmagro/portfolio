@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfólio | FORMA Studio Arquitetura</title>
+    <meta
+      name="description"
+      content="Portfólio da FORMA Studio: residências, coberturas e casas de litoral com linguagem minimalista. Filtre por tipo e amplie cada projeto."
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <header class="scrolled">
+      <div class="nav-container">
+        <a href="index.html" class="logo">F.</a>
+        <nav class="nav-links">
+          <a href="index.html">Início</a>
+          <a href="portfolio.html" class="active">Portfólio</a>
+          <a href="servicos.html">Serviços</a>
+          <a href="sobre.html">Sobre</a>
+          <a href="contato.html">Contato</a>
+        </nav>
+        <div class="controls">
+          <button class="theme-toggle" aria-label="Alternar tema"><span class="icon-moon">☾</span><span class="icon-sun">☀</span></button>
+          <div class="hamburger"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+    </header>
+    <nav class="mobile-menu" aria-label="Menu mobile">
+      <a href="index.html">Início</a><a href="portfolio.html">Portfólio</a><a href="servicos.html">Serviços</a><a href="sobre.html">Sobre</a><a href="contato.html">Contato</a>
+    </nav>
+
+    <main>
+      <section class="section" style="padding-top: 160px">
+        <div class="container">
+          <div class="reveal" style="margin-bottom: 40px">
+            <span class="label">Trabalho selecionado</span>
+            <h1 class="display h-xl" style="margin-top: 14px">Portfólio</h1>
+          </div>
+
+          <div class="filters reveal">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="residencia">Residências</button>
+            <button class="filter-btn" data-filter="cobertura">Coberturas</button>
+            <button class="filter-btn" data-filter="litoral">Litoral</button>
+          </div>
+
+          <div class="gallery reveal">
+            <article class="g-item" data-cat="residencia"><div class="g-media"><img src="/arquitetura/img/portfolio_1.png" alt="Casa Serrinha" loading="lazy" /></div><h3>Casa Serrinha</h3><p class="meta">São Paulo, SP · 2023</p></article>
+            <article class="g-item" data-cat="residencia"><div class="g-media"><img src="/arquitetura/img/portfolio_2.png" alt="Residência Vale Verde" loading="lazy" /></div><h3>Residência Vale Verde</h3><p class="meta">Campinas, SP · 2022</p></article>
+            <article class="g-item" data-cat="litoral"><div class="g-media"><img src="/arquitetura/img/portfolio_3.png" alt="Villa Atlântica" loading="lazy" /></div><h3>Villa Atlântica</h3><p class="meta">Rio de Janeiro, RJ · 2024</p></article>
+            <article class="g-item" data-cat="cobertura"><div class="g-media"><img src="/arquitetura/img/portfolio_4.png" alt="Cobertura Paulistana" loading="lazy" /></div><h3>Cobertura Paulistana</h3><p class="meta">São Paulo, SP · 2023</p></article>
+            <article class="g-item" data-cat="residencia"><div class="g-media"><img src="/arquitetura/img/portfolio_5.png" alt="Casa Bosque" loading="lazy" /></div><h3>Casa Bosque</h3><p class="meta">Mairiporã, SP · 2021</p></article>
+            <article class="g-item" data-cat="residencia"><div class="g-media"><img src="/arquitetura/img/projeto_casa_serrinha_int.png" alt="Casa Serrinha — interior" loading="lazy" /></div><h3>Casa Serrinha · Interior</h3><p class="meta">Estudo de luz natural</p></article>
+            <article class="g-item" data-cat="litoral"><div class="g-media"><img src="/arquitetura/img/gallery_2.png" alt="Estudo litoral" loading="lazy" /></div><h3>Casa Mar Aberto</h3><p class="meta">Ubatuba, SP · 2024</p></article>
+            <article class="g-item" data-cat="cobertura"><div class="g-media"><img src="/arquitetura/img/gallery_3.png" alt="Cobertura jardim" loading="lazy" /></div><h3>Cobertura Jardins</h3><p class="meta">São Paulo, SP · 2022</p></article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <a href="index.html" class="logo">FORMA</a>
+          <nav class="footer-nav"><a href="portfolio.html">Portfólio</a><a href="servicos.html">Serviços</a><a href="sobre.html">Sobre</a><a href="contato.html">Contato</a></nav>
+        </div>
+        <div class="line" style="margin-bottom: 30px"></div>
+        <div class="copy"><span>© 2026 FORMA Studio · Arquitetura</span><span>Versão reformulada · <a href="/arquitetura/index.html">ver original</a></span></div>
+      </div>
+    </footer>
+
+    <div class="lightbox" id="lightbox"><button class="close" aria-label="Fechar">&times;</button><img src="" alt="" /></div>
+  </body>
+</html>

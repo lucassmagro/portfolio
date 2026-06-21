@@ -182,6 +182,7 @@ export const translations = {
           solution: 'Grid minimalista que deixa o espaço negativo e os projetos falarem.',
           tags: ['Editorial', 'Minimalismo', 'Portfolio'],
           href: 'arquitetura/index.html',
+          reworkedHref: 'teste_alteracoes/arquitetura/index.html',
         },
         {
           id: 'catedra',
@@ -420,6 +421,7 @@ export const translations = {
           solution: 'A minimalist grid that lets negative space and the projects speak.',
           tags: ['Editorial', 'Minimalism', 'Portfolio'],
           href: 'arquitetura/index.html',
+          reworkedHref: 'teste_alteracoes/arquitetura/index.html',
         },
         {
           id: 'catedra',

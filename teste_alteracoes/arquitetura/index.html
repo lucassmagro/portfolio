@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FORMA Studio | Arquitetura minimalista e residências autorais</title>
+    <meta
+      name="description"
+      content="Estúdio de arquitetura focado em minimalismo, formas puras e luz natural. Conheça residências autorais em São Paulo, Campinas e litoral — FORMA Studio."
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="nav-container">
+        <a href="index.html" class="logo">F.</a>
+        <nav class="nav-links">
+          <a href="index.html" class="active">Início</a>
+          <a href="portfolio.html">Portfólio</a>
+          <a href="servicos.html">Serviços</a>
+          <a href="sobre.html">Sobre</a>
+          <a href="contato.html">Contato</a>
+        </nav>
+        <div class="controls">
+          <button class="theme-toggle" aria-label="Alternar tema"><span class="icon-moon">☾</span><span class="icon-sun">☀</span></button>
+          <div class="hamburger"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="mobile-menu" aria-label="Menu mobile">
+      <a href="index.html">Início</a>
+      <a href="portfolio.html">Portfólio</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+
+    <main>
+      <section class="hero">
+        <div class="slide active">
+          <img src="/arquitetura/img/hero.png" alt="Casa Serrinha" />
+          <div class="overlay"></div>
+          <div class="info"><div class="container"><span class="pname">Casa Serrinha</span><span class="pmeta">São Paulo, SP · 2023</span></div></div>
+        </div>
+        <div class="slide">
+          <img src="/arquitetura/img/portfolio_2.png" alt="Residência Vale Verde" />
+          <div class="overlay"></div>
+          <div class="info"><div class="container"><span class="pname">Residência Vale Verde</span><span class="pmeta">Campinas, SP · 2022</span></div></div>
+        </div>
+        <div class="slide">
+          <img src="/arquitetura/img/portfolio_3.png" alt="Villa Atlântica" />
+          <div class="overlay"></div>
+          <div class="info"><div class="container"><span class="pname">Villa Atlântica</span><span class="pmeta">Rio de Janeiro, RJ · 2024</span></div></div>
+        </div>
+        <div class="carousel-dots">
+          <button class="on" aria-label="Slide 1"></button>
+          <button aria-label="Slide 2"></button>
+          <button aria-label="Slide 3"></button>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container split">
+          <div class="reveal">
+            <span class="label">O estúdio</span>
+            <h2 class="display h-lg" style="margin: 18px 0 24px">Forma, luz e o essencial.</h2>
+            <p class="lead" style="margin-bottom: 32px">
+              Projetamos residências que removem o supérfluo até restar só o essencial: volumes
+              limpos, materiais honestos e a luz natural como protagonista.
+            </p>
+            <a href="sobre.html" class="btn">Sobre o estúdio</a>
+          </div>
+          <img src="/arquitetura/img/sobre.png" alt="Interior projetado pela FORMA" loading="lazy" class="reveal" />
+        </div>
+      </section>
+
+      <section class="section" style="padding-top: 0">
+        <div class="container">
+          <div class="reveal" style="margin-bottom: 40px">
+            <span class="label">Selecionados</span>
+            <h2 class="display h-lg" style="margin-top: 14px">Projetos</h2>
+          </div>
+          <div class="reveal">
+            <a href="portfolio.html" class="proj-row"><span class="num">01</span><span class="name">Casa Serrinha</span><span class="meta">São Paulo · 2023</span></a>
+            <a href="portfolio.html" class="proj-row"><span class="num">02</span><span class="name">Residência Vale Verde</span><span class="meta">Campinas · 2022</span></a>
+            <a href="portfolio.html" class="proj-row"><span class="num">03</span><span class="name">Villa Atlântica</span><span class="meta">Rio de Janeiro · 2024</span></a>
+            <a href="portfolio.html" class="proj-row"><span class="num">04</span><span class="name">Cobertura Paulistana</span><span class="meta">São Paulo · 2023</span></a>
+            <a href="portfolio.html" class="proj-row"><span class="num">05</span><span class="name">Casa Bosque</span><span class="meta">Mairiporã · 2021</span></a>
+          </div>
+          <div class="reveal" style="margin-top: 50px">
+            <a href="portfolio.html" class="btn btn-solid">Ver portfólio completo</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <a href="index.html" class="logo">FORMA</a>
+          <nav class="footer-nav">
+            <a href="portfolio.html">Portfólio</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="contato.html">Contato</a>
+          </nav>
+        </div>
+        <div class="line" style="margin-bottom: 30px"></div>
+        <div class="copy">
+          <span>© 2026 FORMA Studio · Arquitetura</span>
+          <span>Versão reformulada · <a href="/arquitetura/index.html">ver original</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
