@@ -158,6 +158,7 @@ export const translations = {
           solution: 'Landing premium com galeria filtrável e narrativa de antes/depois.',
           tags: ['Arquitetura', 'Luxo', 'Landing Page'],
           href: 'refit/index.html',
+          reworkedHref: 'teste_alteracoes/refit/index.html',
           customImage: 'refit-thumb.png',
         },
         {
@@ -396,6 +397,7 @@ export const translations = {
             'A premium landing page with a filterable gallery and before/after storytelling.',
           tags: ['Architecture', 'Luxury', 'Landing Page'],
           href: 'refit/index.html',
+          reworkedHref: 'teste_alteracoes/refit/index.html',
           customImage: 'refit-thumb.png',
         },
         {

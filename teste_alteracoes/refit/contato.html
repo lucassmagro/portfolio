@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contato | REFIT Reformas de Alto Padrão</title>
+    <meta
+      name="description"
+      content="Fale com a REFIT para orçar sua reforma em São Paulo. Formulário, telefone, e-mail e endereço na Av. Paulista. Visita técnica e estimativa sem custo."
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <nav id="navbar" class="scrolled">
+      <a href="index.html" class="logo">Refit</a>
+      <ul class="nav-links">
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contato.html" class="active">Contato</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="contato.html" class="btn btn-sm btn-accent">Fale conosco</a>
+        <button class="menu-btn" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+    <div class="mobile-menu">
+      <button class="close" aria-label="Fechar menu">&times;</button>
+      <a href="sobre.html">Sobre</a><a href="servicos.html">Serviços</a><a href="projetos.html">Projetos</a><a href="faq.html">FAQ</a><a href="contato.html">Contato</a>
+    </div>
+
+    <section class="section-dark" style="padding-top: 140px">
+      <div class="container">
+        <div class="services-header fade-in">
+          <div class="section-label">Contato</div>
+          <h1 class="section-title">Vamos trabalhar juntos</h1>
+        </div>
+
+        <div class="contact-split">
+          <form class="contact-form fade-in" id="contactForm" novalidate>
+            <div class="input-group">
+              <label for="name">Nome completo</label>
+              <input type="text" id="name" placeholder="Seu nome" />
+              <span class="err"></span>
+            </div>
+            <div class="input-group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" placeholder="seu@email.com" />
+              <span class="err"></span>
+            </div>
+            <div class="input-group">
+              <label for="phone">Telefone</label>
+              <input type="tel" id="phone" placeholder="(11) 99999-9999" />
+            </div>
+            <div class="input-group">
+              <label for="type">Tipo de projeto</label>
+              <select id="type">
+                <option>Cozinha</option>
+                <option>Banheiro</option>
+                <option>Reforma completa</option>
+                <option>Outros</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label for="message">Mensagem</label>
+              <textarea id="message" rows="5" placeholder="Como podemos ajudar?"></textarea>
+              <span class="err"></span>
+            </div>
+            <button type="submit" class="btn btn-accent" style="justify-content: center">
+              Enviar mensagem <span class="btn-icon"><i data-lucide="send"></i></span>
+            </button>
+            <p class="form-status"></p>
+          </form>
+
+          <div class="contact-info fade-in">
+            <div class="info-item">
+              <h4>Endereço</h4>
+              <p>Av. Paulista, 1000 — Bela Vista<br />São Paulo, SP — Brasil</p>
+            </div>
+            <div class="info-item">
+              <h4>Contato</h4>
+              <a href="tel:+5511999999999">(11) 99999-9999</a>
+              <a href="mailto:contato@refit.com.br">contato@refit.com.br</a>
+            </div>
+            <div class="info-item">
+              <h4>Horário</h4>
+              <p>Segunda a sexta · 08h às 18h</p>
+            </div>
+            <div class="social-icons">
+              <a href="https://instagram.com/refit.reformas" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+              <a href="https://www.linkedin.com/company/refit-reformas" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+              <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="WhatsApp"><i data-lucide="phone"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <a href="index.html" class="logo">Refit</a>
+          <ul class="footer-links">
+            <li><a href="sobre.html">Sobre</a></li><li><a href="servicos.html">Serviços</a></li><li><a href="projetos.html">Projetos</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contato.html">Contato</a></li>
+          </ul>
+          <div class="social-icons">
+            <a href="https://instagram.com/refit.reformas" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+            <a href="https://www.linkedin.com/company/refit-reformas" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+            <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="WhatsApp"><i data-lucide="phone"></i></a>
+          </div>
+        </div>
+        <p class="copy">© 2026 REFIT. Todos os direitos reservados. · Versão reformulada · <a href="/refit/index.html">ver original</a></p>
+      </div>
+    </footer>
+
+    <a href="https://wa.me/5511999999999" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i data-lucide="phone"></i></a>
+  </body>
+</html>
