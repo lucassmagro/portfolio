@@ -34,20 +34,20 @@ export default function LinkHub({ isDark, toggleTheme, toggleLang, t, lang }) {
 
   const projectCards = [
     {
-      href: '#/',
-      img: 'portfolio-thumb.png',
-      fallback:
-        'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=2070&auto=format&fit=crop',
-      title: t.projects.portfolio.title,
-      sub: t.projects.portfolio.sub,
-    },
-    {
       href: 'cafeteria/index.html',
       img: 'projects/cafeteria.png',
       fallback:
         'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop',
       title: t.projects.cafeteria.title,
       sub: t.projects.cafeteria.sub,
+    },
+    {
+      href: '#/',
+      img: 'portfolio-thumb.png',
+      fallback:
+        'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=2070&auto=format&fit=crop',
+      title: t.projects.portfolio.title,
+      sub: t.projects.portfolio.sub,
     },
     {
       href: 'refit/index.html',
