@@ -10,6 +10,7 @@ const buildLinks = (t) => {
     { name: t.links.github, url: social.github },
     { name: t.links.linkedin, url: social.linkedin },
     { name: t.links.instagram, url: social.instagram },
+    { name: t.links.spotify, url: social.spotify },
     { name: t.links.whatsapp, url: WHATSAPP_URL },
     { name: t.links.email, url: MAILTO_URL },
   ]
