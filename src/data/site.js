@@ -12,6 +12,8 @@ export const SITE_URL = 'https://lucasmagro.vercel.app'
 
 export const CONTACT = {
   email: 'lucassmagro@gmail.com',
+  // Destinatários do formulário de contato (recebem as mensagens enviadas).
+  formEmails: ['lucasmagrodev@gmail.com', 'lucassmagro@gmail.com'],
   // WhatsApp em formato internacional, sem símbolos (usado em links wa.me).
   whatsapp: '5549991259617',
   whatsappDisplay: '+55 (49) 99125-9617',

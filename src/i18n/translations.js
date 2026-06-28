@@ -17,6 +17,7 @@ export const translations = {
       scroll: 'Role',
     },
     cta: {
+      section: 'Contato',
       headline: 'Quer tirar um projeto do papel?',
       sub: 'Estou aceitando trabalhos novos. Me conta rápido o que você precisa e eu respondo em pouco tempo.',
       button: 'Iniciar Conversa',
@@ -239,6 +240,7 @@ export const translations = {
       scroll: 'Scroll',
     },
     cta: {
+      section: 'Contact',
       headline: 'Got a project in mind?',
       sub: "I'm taking on new work. Tell me briefly what you need and I'll get back to you soon.",
       button: 'Start a Conversation',

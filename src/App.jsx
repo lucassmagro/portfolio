@@ -7,6 +7,7 @@ import Hero from './components/Hero.jsx'
 import Gallery from './components/Gallery.jsx'
 import Footer from './components/Footer.jsx'
 import AboutSection from './components/AboutSection.jsx'
+import ContactSection from './components/ContactSection.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
 import LinkHub from './pages/LinkHub.jsx'
 import Resume from './pages/Resume.jsx'
@@ -62,6 +63,7 @@ export default function App() {
         <Hero t={t.hero} />
         <Gallery t={t.projects} />
         <AboutSection t={t.about} />
+        <ContactSection t={t.cta} />
       </main>
 
       <ScrollToTop isDark={isDark} />

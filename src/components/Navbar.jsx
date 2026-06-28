@@ -18,7 +18,7 @@ export default function Navbar({ isDark, onToggle, lang, onLangToggle, t }) {
   const links = [
     { href: '#projects', label: t.work },
     { href: '#about', label: t.about },
-    { href: '#footer-connect', label: t.contact },
+    { href: '#contact', label: t.contact },
   ]
 
   return (
