@@ -19,7 +19,8 @@ export const translations = {
     cta: {
       section: 'Contato',
       headline: 'Quer tirar um projeto do papel?',
-      sub: 'Estou aceitando trabalhos novos. Me conta rápido o que você precisa e eu respondo em pouco tempo.',
+      sub: 'Estou aceitando trabalhos novos. Me chama no WhatsApp e a gente conversa.',
+      whatsappCta: 'Falar no WhatsApp',
       button: 'Iniciar Conversa',
       form: {
         name: 'Nome',
@@ -242,7 +243,8 @@ export const translations = {
     cta: {
       section: 'Contact',
       headline: 'Got a project in mind?',
-      sub: "I'm taking on new work. Tell me briefly what you need and I'll get back to you soon.",
+      sub: "I'm taking on new work. Message me on WhatsApp and let's talk.",
+      whatsappCta: 'Message me on WhatsApp',
       button: 'Start a Conversation',
       form: {
         name: 'Name',
