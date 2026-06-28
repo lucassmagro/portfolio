@@ -6,7 +6,7 @@ export const translations = {
       contact: 'Contato',
     },
     hero: {
-      tag: 'Desenvolvedor de Software · Arquiteto de formação',
+      tag: 'Desenvolvedor de Software · Estudante de Sistemas de Informação',
       intro:
         'Arquiteto de formação que migrou para a tecnologia. Estou no terceiro semestre de Sistemas de Informação e trabalho como analista de suporte júnior, caminhando para o desenvolvimento full-stack. A bagagem da arquitetura molda meu jeito de pensar design e de resolver problemas no código.',
       marker: 'Chapecó, Brasil',
@@ -192,7 +192,7 @@ export const translations = {
       ],
     },
     footer: {
-      statement: 'Desenvolvedor de software e arquiteto de formação, em Chapecó, SC.',
+      statement: 'Desenvolvedor de software e estudante de Sistemas de Informação, em Chapecó, SC.',
       nav: 'Principal',
       links: { home: 'Início', work: 'Trabalhos', about: 'Info' },
       contact: 'Contato',
@@ -230,7 +230,7 @@ export const translations = {
       contact: 'Contact',
     },
     hero: {
-      tag: 'Software Developer · Former Architect',
+      tag: 'Software Developer · Information Systems Student',
       intro:
         'An architect who moved into tech. I am in my third semester of Information Systems and work as a junior support analyst while building toward full-stack development. My architecture background shapes how I think about design and how I solve problems in code.',
       marker: 'Chapecó, Brazil',
@@ -416,7 +416,7 @@ export const translations = {
       ],
     },
     footer: {
-      statement: 'Software developer and former architect, based in Chapecó, Brazil.',
+      statement: 'Software developer and Information Systems student, based in Chapecó, Brazil.',
       nav: 'Main',
       links: { home: 'Home', work: 'Work', about: 'Info' },
       contact: 'Contact',
