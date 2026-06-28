@@ -218,6 +218,7 @@ export const translations = {
         email: 'E-mail',
       },
       projects: {
+        portfolio: { title: 'Portfólio', sub: 'Front-end & Design' },
         cafeteria: { title: 'Artisanal Coffee', sub: 'E-commerce Editorial' },
         refit: { title: 'REFIT', sub: 'Arquitetura de Luxo' },
       },
@@ -443,6 +444,7 @@ export const translations = {
         email: 'E-mail',
       },
       projects: {
+        portfolio: { title: 'Portfolio', sub: 'Front-end & Design' },
         cafeteria: { title: 'Artisanal Coffee', sub: 'Editorial E-commerce' },
         refit: { title: 'REFIT', sub: 'Luxury Architecture' },
       },
