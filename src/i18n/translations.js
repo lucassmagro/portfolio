@@ -205,7 +205,7 @@ export const translations = {
       resume: 'Baixar Currículo',
     },
     linkhub: {
-      role: 'Designer & Desenvolvedor Web',
+      role: 'Desenvolvedor de Software · Estudante de Sistemas de Informação',
       latest: 'Projetos Recentes',
       links: {
         portfolio: 'Portfólio',
@@ -431,7 +431,7 @@ export const translations = {
       resume: 'Download Resume',
     },
     linkhub: {
-      role: 'Web Designer & Developer',
+      role: 'Software Developer · Information Systems Student',
       latest: 'Latest Projects',
       links: {
         portfolio: 'Portfolio',
