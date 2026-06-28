@@ -1,87 +1,59 @@
 import { motion } from 'framer-motion'
 
 /**
- * Hero Component - Final Polish March 2026
- * - Mac-style window with translated i18n content.
- * - Massive typographic headline (15vw).
- * - Vertical markers updated to 2026.
+ * Hero — centralizado, no estilo do design de referência enviado.
+ * - Saudação + nome em destaque (cor de acento), tagline e parágrafo curto.
+ * - CTA em pílula e indicador de "Role" animado no rodapé da seção.
  */
 export default function Hero({ t }) {
   return (
     <section
       id="home"
-      data-scroll-section
-      className="relative min-h-screen flex flex-col justify-center pt-32 pb-40 overflow-hidden"
+      className="relative min-h-screen flex flex-col items-center justify-center text-center px-6"
     >
-      <div className="max-w-[1700px] mx-auto px-6 md:px-10 w-full relative z-10">
-        {/* The Window Component */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.98, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: [0.165, 0.84, 0.44, 1] }}
-          className="window-outline w-full"
-        >
-          <div className="window-glass relative overflow-hidden p-1">
-            {/* Top Bar with Traffic Lights */}
-            <div className="flex items-center gap-2 px-6 py-5 border-b border-white border-opacity-5">
-              <div className="flex gap-2">
-                <div className="w-3 h-3 rounded-full bg-[#f46b5d] shadow-[0_0_15px_rgba(244,107,93,0.4)]" />
-                <div className="w-3 h-3 rounded-full bg-[#f9bd4e] shadow-[0_0_15px_rgba(249,189,78,0.4)]" />
-                <div className="w-3 h-3 rounded-full bg-[#57c353] shadow-[0_0_15px_rgba(87,195,83,0.4)]" />
-              </div>
-            </div>
-
-            {/* Window Content */}
-            <div className="relative pt-24 pb-32 px-6 md:px-16 text-center">
-              {/* Shine Overlay */}
-              <div className="shine-wrapper opacity-10">
-                <div className="shine-item w-[60px] left-[30%]" />
-                <div className="shine-item w-[15px] left-[54%]" />
-              </div>
-
-              {/* Massive Typographic Headline */}
-              <div className="relative z-10 flex flex-col items-center">
-                <h1 className="text-[clamp(3.5rem,15vw,14rem)] font-black leading-perry tracking-perry uppercase">
-                  LUCAS <br />
-                  <span className="font-gloock normal-case italic opacity-95">Santos</span> <br />
-                  MAGRO
-                </h1>
-
-                <div className="mt-16 max-w-2xl mx-auto">
-                  <p className="text-[12px] font-bold uppercase tracking-[0.4em] mb-6 opacity-30">
-                    {t.tag}
-                  </p>
-                  <p className="text-xl md:text-2xl leading-relaxed opacity-60">{t.intro}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      </div>
-
-      {/* Decorative vertical markers */}
-      <div className="absolute right-10 top-1/2 -translate-y-1/2 hidden lg:block overflow-hidden h-[360px]">
-        <span className="text-[10px] font-bold uppercase tracking-[0.6em] opacity-10 vertical-text block h-full">
-          {t.marker}
-        </span>
-      </div>
-
-      {/* Scroll Down Arrow */}
       <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+        className="max-w-3xl"
+      >
+        <h1 className="font-display font-normal text-edtext leading-[1.05] tracking-[-0.02em] text-[clamp(2.5rem,6.5vw,5rem)]">
+          {t.greeting} <span className="text-accent italic">Lucas Santos Magro</span>
+        </h1>
+
+        <p className="mt-6 text-lg md:text-xl text-edbody">{t.tag}</p>
+
+        <p className="mt-5 mx-auto max-w-xl text-[0.95rem] leading-[1.75] text-edsecondary">
+          {t.intro}
+        </p>
+
+        <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
+          <a href="#projects" className="btn-ed btn-ed--pill">
+            {t.ctaWork}
+          </a>
+          <a href="#footer-connect" className="btn-ed btn-ed--outline">
+            {t.ctaContact}
+          </a>
+        </div>
+      </motion.div>
+
+      {/* Indicador de scroll */}
+      <motion.a
+        href="#projects"
+        aria-label={t.scroll}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
+        transition={{ delay: 1.2, duration: 0.8 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-edmuted hover:text-accent transition-colors"
       >
+        <span className="text-[0.7rem] uppercase tracking-[0.2em]">{t.scroll}</span>
         <motion.svg
-          width="20"
-          height="20"
+          width="18"
+          height="18"
           viewBox="0 0 20 20"
           fill="none"
-          xmlns="http://www.w3.org/2000/svg"
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-          className="opacity-30"
         >
           <path
             d="M4 7L10 13L16 7"
@@ -91,7 +63,7 @@ export default function Hero({ t }) {
             strokeLinejoin="round"
           />
         </motion.svg>
-      </motion.div>
+      </motion.a>
     </section>
   )
 }

@@ -1,97 +1,99 @@
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
 
 /**
- * Navbar 'Perry Wang' Style 2026
- * - Ultra-minimal logos and links.
- * - Language Toggle (PT/EN).
- * - Monochromatic theme toggle.
- * - Translated nav links.
+ * Navbar — editorial, thin (estilo "Editorial Zen").
+ * - Barra fixa com fundo creme translúcido e blur.
+ * - Wordmark serif (Fraunces), links uppercase pequenos com hover azul.
+ * - Toggle de idioma (PT/EN) e de tema (sol/lua) minimalistas.
  */
 export default function Navbar({ isDark, onToggle, lang, onLangToggle, t }) {
-  const [hidden, setHidden] = useState(false)
-  const [lastY, setLastY] = useState(0)
+  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => {
-      const y = window.scrollY
-      setHidden(y > lastY && y > 100)
-      setLastY(y)
-    }
+    const onScroll = () => setScrolled(window.scrollY > 8)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
-  }, [lastY])
+  }, [])
+
+  const links = [
+    { href: '#projects', label: t.work },
+    { href: '#about', label: t.about },
+    { href: '#footer-connect', label: t.contact },
+  ]
 
   return (
-    <motion.nav
-      animate={{ y: hidden ? '-100%' : '0%' }}
-      transition={{ duration: 0.6, ease: [0.165, 0.84, 0.44, 1] }}
-      className={`fixed top-0 left-0 w-full z-50 transition-colors duration-500 ${
-        isDark ? 'text-white' : 'text-black'
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 h-16 border-b transition-colors duration-300 ${
+        scrolled ? 'border-edborderfaint' : 'border-transparent'
       }`}
+      style={{
+        backgroundColor: 'color-mix(in srgb, var(--ed-paper) 92%, transparent)',
+        backdropFilter: 'blur(12px) saturate(1.6)',
+        WebkitBackdropFilter: 'blur(12px) saturate(1.6)',
+      }}
     >
-      <div className="max-w-[1700px] mx-auto px-6 md:px-10 py-8 flex items-center justify-between">
-        {/* Logo */}
-        <a href="#home" data-scroll-to className="text-xl font-black tracking-perry select-none">
+      <div className="max-w-[1100px] mx-auto h-full px-6 md:px-8 flex items-center justify-between">
+        {/* Wordmark */}
+        <a
+          href="#home"
+          data-scroll-to
+          className="font-display text-xl text-edtext select-none tracking-[-0.02em]"
+        >
           LSM.
         </a>
 
-        {/* Navigation */}
-        <div className="flex items-center gap-6 md:gap-14">
-          <a
-            href="#projects"
-            data-scroll-to
-            className="hidden md:block text-[11px] font-bold uppercase tracking-[0.2em] opacity-40 hover:opacity-100 transition-opacity"
-          >
-            {t.work}
-          </a>
-          <a
-            href="#about"
-            data-scroll-to
-            className="hidden md:block text-[11px] font-bold uppercase tracking-[0.2em] opacity-40 hover:opacity-100 transition-opacity"
-          >
-            {t.about}
-          </a>
-          <a
-            href="#footer-connect"
-            data-scroll-to
-            className="hidden md:block text-[11px] font-bold uppercase tracking-[0.2em] opacity-40 hover:opacity-100 transition-opacity"
-          >
-            {t.contact}
-          </a>
+        {/* Links */}
+        <div className="hidden md:flex items-center gap-10">
+          {links.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              data-scroll-to
+              className="text-[0.8rem] uppercase tracking-[0.1em] text-edsecondary hover:text-accent transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
 
-          {/* Language Toggle (PT/EN) */}
+        {/* Controls */}
+        <div className="flex items-center gap-4">
           <button
             onClick={onLangToggle}
             aria-label={lang === 'pt' ? 'Switch to English' : 'Mudar para Português'}
-            className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-60 hover:opacity-100 transition-opacity border-r border-current pr-4 mr-2"
+            className="text-[0.7rem] font-medium uppercase tracking-[0.15em] text-edsecondary hover:text-accent transition-colors"
           >
             {lang === 'pt' ? 'EN' : 'PT'}
           </button>
 
-          {/* Minimalist Theme Toggle */}
           <button
             onClick={onToggle}
-            className="group relative flex items-center justify-center w-5 h-5 focus:outline-none"
             aria-label={isDark ? 'Ativar modo claro' : 'Ativar modo escuro'}
+            className="flex items-center justify-center w-8 h-8 rounded-full border border-edborder text-edsecondary hover:border-edtext hover:text-edtext hover:scale-110 transition-all"
           >
-            <motion.div
-              animate={{
-                scale: isDark ? 1 : 0.4,
-                backgroundColor: isDark ? '#fff' : '#000',
-              }}
-              className="w-full h-full rounded-full"
-            />
-            <motion.div
-              animate={{
-                opacity: isDark ? 0 : 1,
-                scale: isDark ? 0 : 1.2,
-              }}
-              className="absolute inset-0 border border-current rounded-full"
-            />
+            {isDark ? (
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="4.5" stroke="currentColor" strokeWidth="1.5" />
+                <path
+                  d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8l1.8-1.8M18 6l1.8-1.8"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                />
+              </svg>
+            ) : (
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            )}
           </button>
         </div>
       </div>
-    </motion.nav>
+    </nav>
   )
 }

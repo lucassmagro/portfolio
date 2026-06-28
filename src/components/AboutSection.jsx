@@ -2,128 +2,95 @@ import { motion } from 'framer-motion'
 import { SOCIAL_LINKS } from '../data/site.js'
 
 /**
- * AboutSection 'Info' - Final Polish 2026
- * - Bio e detalhes via i18n.
- * - Botão magnético de 'Ver Currículo'.
- * - Links sociais vindos da fonte única (data/site.js).
+ * AboutSection — editorial ("Editorial Zen").
+ * - Grid de duas colunas: texto/bio + retrato em moldura limpa.
+ * - Blocos de Especialidade/Stack, prova social e CTA de currículo.
+ * - Bio e detalhes via i18n; links sociais da fonte única (data/site.js).
  */
 export default function AboutSection({ t }) {
   return (
-    <section
-      id="about"
-      data-scroll-section
-      className="relative z-10 py-section pb-48 overflow-hidden" // pb-48 for ~200px gap
-    >
-      <div className="max-w-[1700px] mx-auto px-6 md:px-10">
-        {/* Section Title */}
-        <div className="mb-24 flex flex-col items-start">
-          <span className="text-[11px] font-bold uppercase tracking-[0.4em] opacity-30 mb-4">
-            {t.section}
-          </span>
-          <h2 className="text-4xl md:text-6xl font-black italic tracking-perry font-gloock">
-            {t.title}
-          </h2>
-        </div>
-
-        {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_500px] gap-20 lg:gap-32 items-end">
-          {/* Bio & Details */}
+    <section id="about" data-scroll-section className="relative py-24 md:py-32 bg-cream">
+      <div className="max-w-[1100px] mx-auto px-6 md:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start">
+          {/* Texto */}
           <div className="order-2 lg:order-1">
-            <div className="space-y-12 max-w-2xl">
-              <p className="text-2xl md:text-3xl font-medium leading-relaxed opacity-70">{t.bio}</p>
+            <span className="section-label mb-4">{t.section}</span>
+            <h2 className="font-display font-normal text-edtext text-[clamp(1.8rem,4vw,2.8rem)] tracking-[-0.01em]">
+              {t.title}
+            </h2>
+            <span className="ed-divider mt-6 mb-8" />
 
-              {/* Prova social: experiência em empresas reais */}
-              <div className="border-t border-current border-opacity-10 pt-8">
-                <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40 mb-5">
-                  {t.trusted}
-                </h4>
-                <div className="flex flex-wrap gap-x-8 gap-y-3">
-                  {t.companies.map((company) => (
-                    <span
-                      key={company}
-                      className="text-[13px] font-bold uppercase tracking-[0.15em] opacity-70"
-                    >
-                      {company}
-                    </span>
-                  ))}
-                </div>
+            <p className="text-[0.95rem] leading-[1.8] text-edbody">{t.bio}</p>
+
+            {/* Prova social */}
+            <div className="mt-10 border-t border-edborder pt-6">
+              <h4 className="section-label mb-4">{t.trusted}</h4>
+              <div className="flex flex-wrap gap-x-6 gap-y-2">
+                {t.companies.map((company) => (
+                  <span key={company} className="text-[0.85rem] font-medium text-edbody">
+                    {company}
+                  </span>
+                ))}
               </div>
+            </div>
 
-              <div className="grid grid-cols-2 gap-10">
-                <div>
-                  <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40 mb-4">
-                    {t.specialty}
-                  </h4>
-                  <ul className="text-[14px] font-bold space-y-2 uppercase tracking-widest">
-                    {t.skills.map((skill, i) => (
-                      <li key={i}>{skill}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40 mb-4">
-                    {t.stack}
-                  </h4>
-                  <ul className="text-[14px] font-bold space-y-2 uppercase tracking-widest">
-                    {t.tools.map((tool, i) => (
-                      <li key={i}>{tool}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              {/* Action Buttons: Resume */}
-              <div className="pt-10 flex flex-wrap gap-8 items-center">
-                <motion.a
-                  href="#/resume"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-                  className="text-[11px] font-bold uppercase tracking-[0.3em] bg-white text-black px-8 py-4 rounded-full hover:bg-neutral-200 transition-colors"
-                  data-cursor-hover
-                >
-                  {t.resume}
-                </motion.a>
-
-                <div className="flex gap-8">
-                  {SOCIAL_LINKS.map((social) => (
-                    <a
-                      key={social.id}
-                      href={social.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      data-cursor-hover
-                      className="text-[11px] font-bold uppercase tracking-[0.2em] opacity-40 hover:opacity-100 transition-opacity"
-                    >
-                      {social.name}
-                    </a>
+            {/* Especialidade / Stack */}
+            <div className="mt-8 grid grid-cols-2 gap-8">
+              <div>
+                <h4 className="section-label mb-3">{t.specialty}</h4>
+                <ul className="space-y-1.5 text-[0.9rem] text-edbody">
+                  {t.skills.map((skill, i) => (
+                    <li key={i}>{skill}</li>
                   ))}
-                </div>
+                </ul>
+              </div>
+              <div>
+                <h4 className="section-label mb-3">{t.stack}</h4>
+                <ul className="space-y-1.5 text-[0.9rem] text-edbody">
+                  {t.tools.map((tool, i) => (
+                    <li key={i}>{tool}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Ações */}
+            <div className="mt-10 flex flex-wrap items-center gap-6">
+              <a href="#/resume" className="btn-ed btn-ed--primary">
+                {t.resume}
+              </a>
+              <div className="flex gap-5">
+                {SOCIAL_LINKS.map((social) => (
+                  <a
+                    key={social.id}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[0.75rem] uppercase tracking-[0.12em] text-edsecondary hover:text-accent transition-colors"
+                  >
+                    {social.name}
+                  </a>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* Professional Portrait (eu.jpg) */}
+          {/* Retrato */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 1.2, ease: [0.165, 0.84, 0.44, 1] }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="order-1 lg:order-2"
           >
-            <div className="window-outline w-full max-w-[450px]">
-              <div className="window-glass relative overflow-hidden aspect-[3/4]">
-                <img
-                  src="eu.png"
-                  alt="Retrato de Lucas Santos Magro"
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover grayscale-0 contrast-[1.05] transition-all duration-700 hover:scale-105"
-                />
-                <div className="shine-wrapper opacity-20">
-                  <div className="shine-item w-[40px] left-[20%]" />
-                  <div className="shine-item w-[10px] left-[50%]" />
-                </div>
-              </div>
+            <div className="overflow-hidden rounded-ed border border-edborder bg-paper">
+              <img
+                src="eu.png"
+                alt="Retrato de Lucas Santos Magro"
+                loading="lazy"
+                decoding="async"
+                className="w-full aspect-[3/4] object-cover"
+              />
             </div>
           </motion.div>
         </div>

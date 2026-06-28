@@ -1,185 +1,106 @@
-import { useState, useRef } from 'react'
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 /**
- * ProjectCard — estudo de caso 2026
- * - Enquadramento Desafio -> Solução em vez de tile de folheto.
- * - Screenshots reais de public/projects/*.
- * - Ações: ver projeto, ver versão reformulada (teste_alteracoes) e ver original.
- * - Projetos sem link (comingSoon) renderizam um selo "em breve" — nunca href="#".
+ * ProjectCard — card de projeto editorial ("Editorial Zen").
+ * Superfície clara com borda fina que ganha a cor de acento no hover, com leve
+ * translateY. A imagem aplica zoom sutil no hover e o corpo traz o enquadramento
+ * Desafio/Solução. Projetos sem link (comingSoon) exibem o selo "em breve".
  */
-export default function ProjectCard({ project, labels, isDark, priority = false }) {
-  const containerRef = useRef(null)
-  const [hovered, setHovered] = useState(false)
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['start end', 'end start'],
-  })
-
-  const y = useTransform(scrollYProgress, [0, 1], ['-12%', '12%'])
-  const smoothY = useSpring(y, { stiffness: 100, damping: 30 })
-
+export default function ProjectCard({ project, labels, index = 0, priority = false }) {
   const isExternal = (href) => href?.startsWith('http') || href?.startsWith('mailto')
   const href = project.comingSoon ? null : project.href
   const imageSrc = project.customImage || `projects/${project.id}.png`
 
   return (
     <motion.article
-      ref={containerRef}
-      initial={{ opacity: 0, scale: 0.98, y: 40 }}
-      whileInView={{ opacity: 1, scale: 1, y: 0 }}
-      viewport={{ once: true, margin: '-100px' }}
-      transition={{ duration: 1.2, delay: priority ? 0 : 0.1, ease: [0.165, 0.84, 0.44, 1] }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className="relative group w-full"
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-80px' }}
+      transition={{ duration: 0.7, delay: priority ? 0 : (index % 2) * 0.08, ease: [0.16, 1, 0.3, 1] }}
+      className="group h-full"
     >
-      <div className="window-outline p-1.5 overflow-hidden">
-        <div className="glare-top opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+      <div className="flex h-full flex-col overflow-hidden rounded-ed border border-edborder bg-cream transition-[transform,border-color] duration-200 hover:-translate-y-1 hover:border-accent">
+        {/* Mídia */}
+        <CardMedia href={href} isExternal={isExternal(href)} title={project.title} labels={labels}>
+          <div className="relative aspect-[16/10] overflow-hidden bg-paper">
+            <img
+              src={imageSrc}
+              alt={`Pré-visualização do projeto ${project.title}`}
+              width="1200"
+              height="750"
+              loading={priority ? 'eager' : 'lazy'}
+              decoding="async"
+              className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+            />
+            {project.comingSoon && (
+              <span className="absolute left-4 top-4 z-10 rounded-edsm bg-black/70 px-3 py-1.5 text-[0.65rem] font-medium uppercase tracking-[0.12em] text-white backdrop-blur-sm">
+                {labels.soon}
+              </span>
+            )}
+          </div>
+        </CardMedia>
 
-        <div className="project-card-bg relative overflow-hidden rounded-[16px]">
-          {/* Camada de imagem imersiva (link primário quando houver) */}
-          <CardMedia
-            href={href}
-            isExternal={isExternal(href)}
-            title={project.title}
-            labels={labels}
-          >
-            <div className="relative overflow-hidden aspect-[16/9] lg:aspect-[16/8] bg-neutral-900 border-b border-white border-opacity-5">
-              <motion.div
-                style={{ y: smoothY, scale: 1.1 }}
-                className="absolute inset-0 w-full h-full"
-              >
-                <img
-                  src={imageSrc}
-                  alt={`Pré-visualização do projeto ${project.title}`}
-                  width="1200"
-                  height="675"
-                  loading={priority ? 'eager' : 'lazy'}
-                  decoding="async"
-                  className={`w-full h-full object-cover transition-all duration-700 ${
-                    hovered ? 'grayscale-0 opacity-100 scale-105' : 'grayscale opacity-60 scale-110'
-                  }`}
-                />
-              </motion.div>
+        {/* Corpo */}
+        <div className="flex flex-1 flex-col p-6 md:p-8">
+          <h3 className="font-display text-2xl font-normal text-edtext tracking-[-0.01em]">
+            {project.title}
+          </h3>
 
-              {project.comingSoon && (
-                <span className="absolute top-5 left-5 z-20 text-[10px] font-bold uppercase tracking-[0.3em] px-4 py-2 rounded-full bg-black/60 text-white backdrop-blur-md border border-white/20">
-                  {labels.soon}
-                </span>
-              )}
+          <p className="mt-3 text-[0.9rem] leading-[1.65] text-edsecondary">{project.brief}</p>
 
-              <div
-                className={`absolute inset-0 transition-opacity duration-1000 pointer-events-none ${
-                  hovered ? 'opacity-20' : 'opacity-0'
-                } bg-gradient-to-tr from-white via-transparent to-white`}
-              />
-            </div>
-          </CardMedia>
-
-          {/* Painel de informação — contraste forçado para legibilidade */}
-          <div className="p-10 md:p-14 lg:p-16 relative z-20 bg-white bg-opacity-[0.02] backdrop-blur-3xl">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
-              <div className="max-w-2xl px-2">
-                <h3 className="text-4xl md:text-6xl font-black italic tracking-perry font-gloock mb-6 uppercase text-perry">
-                  {project.title}
-                </h3>
-
-                <p className="text-[15px] md:text-[16px] leading-relaxed mb-8 text-perry opacity-70">
-                  {project.brief}
-                </p>
-
-                {/* Bloco Desafio -> Solução */}
-                {(project.challenge || project.solution) && (
-                  <div className="grid sm:grid-cols-2 gap-6 mb-10 border-t border-current border-opacity-10 pt-8">
-                    {project.challenge && (
-                      <div>
-                        <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-perry opacity-40 mb-3">
-                          {labels.challengeLabel}
-                        </h4>
-                        <p className="text-[13px] leading-relaxed text-perry opacity-70">
-                          {project.challenge}
-                        </p>
-                      </div>
-                    )}
-                    {project.solution && (
-                      <div>
-                        <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-perry opacity-40 mb-3">
-                          {labels.solutionLabel}
-                        </h4>
-                        <p className="text-[13px] leading-relaxed text-perry opacity-70">
-                          {project.solution}
-                        </p>
-                      </div>
-                    )}
-                  </div>
-                )}
-
-                <div className="flex flex-wrap gap-5">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-[11px] uppercase tracking-[0.4em] font-bold text-perry opacity-40"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+          {(project.challenge || project.solution) && (
+            <div className="mt-6 grid gap-5 border-t border-edborderfaint pt-6 sm:grid-cols-2">
+              {project.challenge && (
+                <div>
+                  <h4 className="mb-2 text-[0.65rem] font-medium uppercase tracking-[0.14em] text-accent">
+                    {labels.challengeLabel}
+                  </h4>
+                  <p className="text-[0.8rem] leading-relaxed text-edbody">{project.challenge}</p>
                 </div>
-              </div>
+              )}
+              {project.solution && (
+                <div>
+                  <h4 className="mb-2 text-[0.65rem] font-medium uppercase tracking-[0.14em] text-accent">
+                    {labels.solutionLabel}
+                  </h4>
+                  <p className="text-[0.8rem] leading-relaxed text-edbody">{project.solution}</p>
+                </div>
+              )}
+            </div>
+          )}
 
-              {/* Círculo de ação */}
+          {/* Tags */}
+          <div className="mt-6 flex flex-wrap gap-x-4 gap-y-2">
+            {project.tags.map((tag) => (
+              <span
+                key={tag}
+                className="text-[0.65rem] uppercase tracking-[0.16em] text-edmuted"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          {/* Ações */}
+          {(href || project.reworkedHref) && (
+            <div className="mt-6 flex flex-wrap items-center gap-3 border-t border-edborderfaint pt-6">
               {href && (
                 <a
                   href={href}
                   target={isExternal(href) ? '_blank' : '_self'}
                   rel={isExternal(href) ? 'noopener noreferrer' : ''}
-                  aria-label={`${labels.view} — ${project.title}`}
-                  data-cursor-hover
-                  data-cursor-text={labels.view}
-                  className="flex items-center justify-center w-16 h-16 rounded-full border border-current border-opacity-10 group-hover:border-opacity-100 transition-all duration-700 group-hover:scale-110 shrink-0"
+                  className="btn-ed btn-ed--primary"
                 >
-                  <span className="text-3xl transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform text-perry">
-                    ↗
-                  </span>
+                  {labels.view} ↗
+                </a>
+              )}
+              {project.reworkedHref && (
+                <a href={project.reworkedHref} className="btn-ed btn-ed--outline">
+                  {labels.reworked}
                 </a>
               )}
             </div>
-
-            {/* Linha de ações: ver projeto / versão reformulada / original */}
-            {(href || project.reworkedHref) && (
-              <div className="flex flex-wrap items-center gap-4 mt-10 pt-8 border-t border-current border-opacity-10">
-                {href && (
-                  <a
-                    href={href}
-                    target={isExternal(href) ? '_blank' : '_self'}
-                    rel={isExternal(href) ? 'noopener noreferrer' : ''}
-                    data-cursor-hover
-                    className={`text-[11px] font-bold uppercase tracking-[0.25em] px-6 py-3 rounded-full transition-colors ${
-                      isDark
-                        ? 'bg-white text-black hover:bg-neutral-200'
-                        : 'bg-black text-white hover:bg-neutral-800'
-                    }`}
-                  >
-                    {labels.view} ↗
-                  </a>
-                )}
-                {project.reworkedHref && (
-                  <a
-                    href={project.reworkedHref}
-                    data-cursor-hover
-                    className="text-[11px] font-bold uppercase tracking-[0.25em] px-6 py-3 rounded-full border border-current border-opacity-30 hover:border-opacity-100 transition-all text-perry"
-                  >
-                    ✦ {labels.reworked}
-                  </a>
-                )}
-              </div>
-            )}
-          </div>
-
-          {/* Textura/grão sutil */}
-          <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
-          <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-[0.04] transition-opacity duration-1000 pointer-events-none" />
+          )}
         </div>
       </div>
     </motion.article>
@@ -194,9 +115,7 @@ function CardMedia({ href, isExternal, title, labels, children }) {
       href={href}
       target={isExternal ? '_blank' : '_self'}
       rel={isExternal ? 'noopener noreferrer' : ''}
-      aria-label={`${labels.view} — ${title}`}
-      data-cursor-hover
-      data-cursor-text={labels.view}
+      aria-label={`${labels.view}: ${title}`}
       className="block"
     >
       {children}

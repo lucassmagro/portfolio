@@ -23,21 +23,120 @@
   --perry-window-outline: rgba(242, 242, 242, 0.1);
 }
 
-/* Locomotive Scroll Base */
-html.has-scroll-smooth {
-  overflow: hidden;
+/* ============================================
+   Editorial Zen design tokens (portfolio landing)
+   Inspired by the falecomestagiario.com / Opaque aesthetic.
+   Theme-aware: light by default, dark via .dark on <html>.
+   ============================================ */
+:root {
+  --ed-paper: #faf9f6;
+  --ed-cream: #f5f2ed;
+  --ed-ink: #1a1a1a;
+  --ed-text: #1a1a1a;
+  --ed-body: #3d3d3d;
+  --ed-secondary: #7a7a7a;
+  --ed-muted: #a8a8a0;
+  --ed-border: #e0dcd5;
+  --ed-border-faint: #eae6df;
+  --ed-accent: #e2571e;
 }
 
-html.has-scroll-dragging {
-  user-select: none;
+.dark {
+  --ed-paper: #141412;
+  --ed-cream: #1e1c1a;
+  --ed-ink: #0d0c0b;
+  --ed-text: #f0ece4;
+  --ed-body: #c8c4bc;
+  --ed-secondary: #8c8880;
+  --ed-muted: #6a6660;
+  --ed-border: #2e2c29;
+  --ed-border-faint: #252320;
+  --ed-accent: #ff6a37;
 }
 
-.has-scroll-smooth body {
-  overflow: hidden;
+/* Seleção de texto em laranja (claro e escuro) */
+::selection {
+  background: var(--ed-accent);
+  color: #fff;
+}
+::-moz-selection {
+  background: var(--ed-accent);
+  color: #fff;
 }
 
-.has-scroll-smooth [data-scroll-container] {
-  min-height: 100vh;
+/* Rolagem nativa + suave nos âncoras, com barra nas cores do site */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--ed-accent) var(--ed-cream);
+}
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ed-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ed-accent);
+  border-radius: 9999px;
+  border: 3px solid var(--ed-cream);
+}
+::-webkit-scrollbar-thumb:hover {
+  filter: brightness(1.1);
+}
+
+/* Editorial reusable components */
+@layer components {
+  .font-display {
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+  }
+
+  /* Buttons — refined, minimal (uppercase, tight tracking) */
+  .btn-ed {
+    @apply inline-flex items-center gap-2 text-[0.8rem] font-medium uppercase tracking-[0.08em] px-6 py-3 rounded-ed transition-all duration-200;
+  }
+
+  /* Primário inverte com o tema: escuro no claro, claro no escuro. */
+  .btn-ed--primary {
+    background: var(--ed-text);
+    color: var(--ed-paper);
+  }
+  .btn-ed--primary:hover {
+    background: var(--ed-accent);
+    color: #fff;
+  }
+
+  /* Variante pílula (CTA do hero) */
+  .btn-ed--pill {
+    border-radius: 9999px;
+    background: var(--ed-accent);
+    color: #fff;
+    padding: 14px 32px;
+  }
+  .btn-ed--pill:hover {
+    filter: brightness(1.08);
+  }
+
+  .btn-ed--outline {
+    border: 1px solid var(--ed-border);
+    color: var(--ed-body);
+  }
+  .btn-ed--outline:hover {
+    border-color: var(--ed-accent);
+    color: var(--ed-accent);
+  }
+
+  /* Small uppercase section/eyebrow label */
+  .section-label {
+    @apply block text-[0.7rem] font-normal uppercase tracking-[0.2em] text-edmuted;
+  }
+
+  /* Thin 40px divider used under section headers */
+  .ed-divider {
+    @apply block h-px w-10 bg-edborder;
+  }
 }
 
 /* Global Base Styles */
@@ -46,8 +145,8 @@ html.has-scroll-dragging {
 }
 
 body {
-  background-color: var(--perry-bg);
-  color: var(--perry-text);
+  background-color: var(--ed-paper);
+  color: var(--ed-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;

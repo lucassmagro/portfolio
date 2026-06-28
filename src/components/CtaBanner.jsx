@@ -1,24 +1,20 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { CONTACT, WHATSAPP_URL } from '../data/site.js'
-import { cx, themeClasses } from '../lib/theme.js'
 
 /**
- * CtaBanner — CTA premium entre o Hero e a galeria.
+ * CtaBanner — CTA editorial entre o Hero e a galeria ("Editorial Zen").
  * Form de contato com validação client-side. Sem backend, o envio
  * compõe um mailto: (caminho funcional e honesto) e há atalho de WhatsApp.
  */
-export default function CtaBanner({ isDark, t }) {
+export default function CtaBanner({ t }) {
   const f = t.form
   const [values, setValues] = useState({ name: '', email: '', message: '' })
   const [errors, setErrors] = useState({})
   const [sent, setSent] = useState(false)
 
-  const s = themeClasses(isDark)
-  const inputBase = cx(
-    'w-full bg-transparent border-b py-3 text-[15px] outline-none transition-colors',
-    isDark ? 'border-white/15 focus:border-white/60' : 'border-black/15 focus:border-black/60',
-  )
+  const inputBase =
+    'w-full bg-transparent border-b border-edborder py-3 text-[0.95rem] text-edtext outline-none transition-colors focus:border-accent placeholder:text-edmuted'
 
   const validate = () => {
     const next = {}
@@ -36,36 +32,34 @@ export default function CtaBanner({ isDark, t }) {
   const handleSubmit = (e) => {
     e.preventDefault()
     if (!validate()) return
-    const body = `${values.message}\n\n— ${values.name} (${values.email})`
+    const body = `${values.message}\n\nEnviado por ${values.name} (${values.email})`
     const mailto = `mailto:${CONTACT.email}?subject=${encodeURIComponent(
-      `${f.subject} — ${values.name}`,
+      `${f.subject}: ${values.name}`,
     )}&body=${encodeURIComponent(body)}`
     window.location.href = mailto
     setSent(true)
   }
 
   return (
-    <section
-      data-scroll-section
-      className="relative z-10 flex flex-col items-center justify-center py-32 md:py-44 px-6"
-    >
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-80px' }}
-        transition={{ duration: 1, ease: [0.165, 0.84, 0.44, 1] }}
-        className="flex flex-col items-center text-center w-full max-w-2xl"
-      >
-        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black italic font-gloock tracking-perry mb-6 text-perry">
-          {t.headline}
-        </h2>
-
-        <p className="text-[14px] md:text-[16px] leading-relaxed opacity-50 mb-12 max-w-lg text-perry">
-          {t.sub}
-        </p>
+    <section data-scroll-section className="relative py-24 md:py-32">
+      <div className="max-w-[640px] mx-auto px-6 md:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="text-center"
+        >
+          <h2 className="font-display font-normal text-edtext text-[clamp(1.8rem,4.5vw,3rem)] tracking-[-0.01em]">
+            {t.headline}
+          </h2>
+          <p className="mt-5 mx-auto max-w-md text-[0.95rem] leading-[1.7] text-edsecondary">
+            {t.sub}
+          </p>
+        </motion.div>
 
         {/* Form de contato */}
-        <form onSubmit={handleSubmit} noValidate className="w-full max-w-lg text-left space-y-8">
+        <form onSubmit={handleSubmit} noValidate className="mt-12 text-left space-y-8">
           <Field
             id="cta-name"
             name="name"
@@ -88,7 +82,7 @@ export default function CtaBanner({ isDark, t }) {
           <div>
             <label
               htmlFor="cta-message"
-              className="block text-[11px] font-bold uppercase tracking-[0.3em] opacity-50 mb-3"
+              className="block text-[0.7rem] font-medium uppercase tracking-[0.16em] text-edsecondary mb-3"
             >
               {f.message}
             </label>
@@ -101,34 +95,21 @@ export default function CtaBanner({ isDark, t }) {
               aria-invalid={!!errors.message}
               className={`${inputBase} resize-none`}
             />
-            {errors.message && <p className="mt-2 text-[12px] text-red-400">{errors.message}</p>}
+            {errors.message && <p className="mt-2 text-[0.75rem] text-red-500">{errors.message}</p>}
           </div>
 
           <div className="flex flex-col sm:flex-row items-center gap-6 pt-2">
-            <motion.button
-              type="submit"
-              data-cursor-hover
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className={cx(
-                'group inline-flex items-center gap-3 px-10 py-4 rounded-full text-sm font-bold uppercase tracking-[0.3em] transition-all duration-500',
-                s.solidBtn,
-              )}
-            >
-              {sent ? f.sending : f.send}
-              <span className="inline-block transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
-                ↗
-              </span>
-            </motion.button>
+            <button type="submit" className="btn-ed btn-ed--primary">
+              {sent ? f.sending : f.send} ↗
+            </button>
 
-            <p className="text-[12px] uppercase tracking-[0.2em] opacity-50">
+            <p className="text-[0.8rem] text-edsecondary">
               {f.or}{' '}
               <a
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                data-cursor-hover
-                className="font-bold underline underline-offset-4 hover:opacity-100"
+                className="font-medium text-edtext underline underline-offset-4 hover:text-accent transition-colors"
               >
                 {f.whatsapp}
               </a>
@@ -136,15 +117,15 @@ export default function CtaBanner({ isDark, t }) {
           </div>
 
           {sent && (
-            <p role="status" className="text-[13px] text-green-400 pt-2">
+            <p role="status" className="text-[0.85rem] text-brand-green pt-2">
               {f.success}
             </p>
           )}
         </form>
-      </motion.div>
+      </div>
 
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[1700px] px-6 md:px-10">
-        <div className="h-px w-full bg-current opacity-5" />
+      <div className="max-w-[1100px] mx-auto px-6 md:px-8 mt-24">
+        <div className="h-px w-full bg-edborder" />
       </div>
     </section>
   )
@@ -155,7 +136,7 @@ function Field({ id, name, type = 'text', label, value, error, onChange, classNa
     <div>
       <label
         htmlFor={id}
-        className="block text-[11px] font-bold uppercase tracking-[0.3em] opacity-50 mb-3"
+        className="block text-[0.7rem] font-medium uppercase tracking-[0.16em] text-edsecondary mb-3"
       >
         {label}
       </label>
@@ -168,7 +149,7 @@ function Field({ id, name, type = 'text', label, value, error, onChange, classNa
         aria-invalid={!!error}
         className={className}
       />
-      {error && <p className="mt-2 text-[12px] text-red-400">{error}</p>}
+      {error && <p className="mt-2 text-[0.75rem] text-red-500">{error}</p>}
     </div>
   )
 }

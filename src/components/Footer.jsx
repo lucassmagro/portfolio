@@ -1,42 +1,34 @@
-import { motion } from 'framer-motion'
 import { SOCIAL_LINKS, MAILTO_URL } from '../data/site.js'
-import { cx, themeClasses } from '../lib/theme.js'
 
 /**
- * Footer - Final Polish 2026
- * - Grid flexível de 4 colunas.
- * - Links sociais vindos de uma fonte única (data/site.js).
- * - Botão de download do currículo.
- * - Totalmente traduzido via i18n.
+ * Footer — editorial escuro ("Editorial Zen").
+ * - Fundo ink (escuro mesmo no tema claro, como a referência).
+ * - Grid de colunas: marca/statement, navegação, contato+currículo, social.
+ * - Links sociais e e-mail vindos da fonte única (data/site.js).
  */
-export default function Footer({ isDark, t }) {
+export default function Footer({ t }) {
   return (
     <footer
       id="footer-connect"
       data-scroll-section
-      className={cx(
-        'relative z-10 pt-section pb-12 transition-colors duration-500',
-        themeClasses(isDark).bg,
-        themeClasses(isDark).text,
-      )}
+      className="relative bg-ink text-ondark pt-24 pb-8"
     >
-      <div className="max-w-[1700px] mx-auto px-6 md:px-10">
-        {/* Main Footer Grid (4-Column) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-20 mb-32">
-          {/* Column 1: Logo & Statement */}
-          <div className="flex flex-col items-start">
-            <div className="text-3xl font-black tracking-perry mb-8">LSM.</div>
-            <p className="text-[13px] font-bold uppercase tracking-[0.3em] opacity-30 leading-relaxed max-w-[200px]">
+      <div className="max-w-[1100px] mx-auto px-6 md:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr] gap-12 lg:gap-16 mb-16">
+          {/* Marca */}
+          <div>
+            <div className="font-display text-2xl tracking-[-0.02em]">LSM.</div>
+            <p className="mt-4 max-w-[280px] text-[0.85rem] leading-[1.65] text-ondark/50">
               {t.statement}
             </p>
           </div>
 
-          {/* Column 2: Navigation */}
+          {/* Navegação */}
           <div>
-            <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] opacity-40 mb-10">
+            <h4 className="text-[0.7rem] font-medium uppercase tracking-[0.15em] text-ondark/30 mb-5">
               {t.nav}
             </h4>
-            <ul className="space-y-4">
+            <ul className="space-y-2">
               {[
                 { label: t.links.home, target: 'home' },
                 { label: t.links.work, target: 'projects' },
@@ -46,7 +38,7 @@ export default function Footer({ isDark, t }) {
                   <a
                     href={`#${link.target}`}
                     data-scroll-to
-                    className="text-[14px] font-bold uppercase tracking-[0.2em] hover:opacity-50 transition-opacity"
+                    className="text-[0.85rem] text-ondark/60 hover:text-ondark transition-colors"
                   >
                     {link.label}
                   </a>
@@ -55,65 +47,50 @@ export default function Footer({ isDark, t }) {
             </ul>
           </div>
 
-          {/* Column 3: Contact & Resume */}
+          {/* Contato + Social */}
           <div>
-            <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] opacity-40 mb-10">
+            <h4 className="text-[0.7rem] font-medium uppercase tracking-[0.15em] text-ondark/30 mb-5">
               {t.contact}
             </h4>
-            <ul className="space-y-6">
+            <ul className="space-y-2 mb-6">
               <li>
                 <a
                   href={MAILTO_URL}
-                  className="text-[14px] font-bold uppercase tracking-[0.2em] hover:opacity-50 transition-opacity"
+                  className="text-[0.85rem] text-ondark/60 hover:text-ondark transition-colors"
                 >
                   {t.emailLabel}
                 </a>
               </li>
               <li>
-                <motion.a
+                <a
                   href="#/resume"
-                  whileHover={{ x: 5 }}
-                  className="inline-block text-[12px] font-bold uppercase tracking-[0.3em] border border-current border-opacity-20 px-6 py-3 rounded-full hover:bg-white hover:text-black transition-all"
+                  className="text-[0.85rem] text-ondark/60 hover:text-ondark transition-colors"
                 >
                   {t.resume}
-                </motion.a>
+                </a>
               </li>
             </ul>
-          </div>
-
-          {/* Column 4: Social / Future */}
-          <div>
-            <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] opacity-40 mb-10">
-              {t.social}
-            </h4>
-            <div className="space-y-8">
-              <p className="text-[13px] font-bold uppercase tracking-[0.2em] opacity-30 italic leading-relaxed">
-                {t.availability}
-              </p>
-              <div className="flex gap-8">
-                {SOCIAL_LINKS.map((social) => (
-                  <a
-                    key={social.id}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={social.name}
-                    className="text-[12px] font-bold opacity-40 hover:opacity-100 transition-opacity"
-                  >
-                    {social.label}
-                  </a>
-                ))}
-              </div>
+            <div className="flex gap-4">
+              {SOCIAL_LINKS.map((social) => (
+                <a
+                  key={social.id}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.name}
+                  className="text-[0.75rem] font-medium uppercase tracking-[0.1em] text-ondark/40 hover:text-ondark transition-colors"
+                >
+                  {social.label}
+                </a>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar: Copyright */}
-        <div className="pt-8 border-t border-white border-opacity-5 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-20">
-            {t.copyright}
-          </p>
-          <p className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40 italic">
+        {/* Barra inferior */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-3 border-t border-ondark/10 pt-6">
+          <p className="text-[0.7rem] uppercase tracking-[0.12em] text-ondark/30">{t.copyright}</p>
+          <p className="text-[0.7rem] uppercase tracking-[0.12em] text-ondark/40 italic">
             {t.madeBy}
           </p>
         </div>

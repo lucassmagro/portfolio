@@ -17,9 +17,33 @@ describe('ThemeProvider', () => {
   beforeEach(() => {
     localStorage.clear()
     document.documentElement.classList.remove('dark')
+    window.location.hash = ''
   })
 
-  it('começa em modo escuro por padrão e aplica a classe dark', () => {
+  it('abre claro por padrão na landing de portfólio', () => {
+    window.location.hash = '#/portfolio'
+    render(
+      <ThemeProvider>
+        <Probe />
+      </ThemeProvider>,
+    )
+    expect(screen.getByTestId('dark').textContent).toBe('false')
+    expect(document.documentElement).not.toHaveClass('dark')
+  })
+
+  it('abre claro por padrão no LinkHub', () => {
+    window.location.hash = '#/links'
+    render(
+      <ThemeProvider>
+        <Probe />
+      </ThemeProvider>,
+    )
+    expect(screen.getByTestId('dark').textContent).toBe('false')
+    expect(document.documentElement).not.toHaveClass('dark')
+  })
+
+  it('mantém o modo escuro por padrão no currículo', () => {
+    window.location.hash = '#/resume'
     render(
       <ThemeProvider>
         <Probe />
@@ -30,6 +54,7 @@ describe('ThemeProvider', () => {
   })
 
   it('alterna o tema e persiste a escolha', async () => {
+    window.location.hash = '#/resume' // começa no escuro para alternar p/ claro
     render(
       <ThemeProvider>
         <Probe />

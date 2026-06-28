@@ -7,7 +7,14 @@ const ThemeContext = createContext(null)
  * localStorage e a classe `dark` no <html>, tirando essa responsabilidade do App.
  */
 export function ThemeProvider({ children }) {
-  const [isDark, setIsDark] = useState(() => localStorage.getItem('lsm-theme') !== 'light')
+  const [isDark, setIsDark] = useState(() => {
+    const stored = localStorage.getItem('lsm-theme')
+    if (stored) return stored === 'dark'
+    // Sem preferência salva: portfólio e LinkHub abrem claros (estética editorial);
+    // apenas o currículo mantém o padrão escuro.
+    const hash = window.location.hash || ''
+    return hash.includes('resume')
+  })
 
   useEffect(() => {
     const root = document.documentElement
