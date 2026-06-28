@@ -1,21 +1,25 @@
 import { motion } from 'framer-motion'
+import StarsCanvas from './StarsCanvas.jsx'
 
 /**
  * Hero — centralizado, no estilo do design de referência enviado.
  * - Saudação + nome em destaque (cor de acento), tagline e parágrafo curto.
  * - CTA em pílula e indicador de "Role" animado no rodapé da seção.
+ * - Campo de estrelas/cometas ao fundo, somente no modo escuro.
  */
 export default function Hero({ t }) {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col items-center justify-center text-center px-6"
+      className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden"
     >
+      <StarsCanvas />
+
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-        className="max-w-3xl"
+        className="relative z-10 max-w-3xl"
       >
         <h1 className="font-display font-normal text-edtext leading-[1.1] tracking-[-0.02em] whitespace-nowrap text-[clamp(1.25rem,5vw,3.75rem)]">
           {t.greeting} <span className="text-accent italic">Lucas Santos Magro</span>
@@ -41,7 +45,7 @@ export default function Hero({ t }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.8 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-edmuted hover:text-accent transition-colors"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-edmuted hover:text-accent transition-colors"
       >
         <span className="text-[0.7rem] uppercase tracking-[0.2em]">{t.scroll}</span>
         <motion.svg

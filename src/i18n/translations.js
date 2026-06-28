@@ -139,6 +139,7 @@ export const translations = {
       reworked: 'Ver versão reformulada',
       original: 'Ver original',
       soon: 'Estudo de caso em breve',
+      conceptLabel: 'Marca fictícia',
       challengeLabel: 'Desafio',
       solutionLabel: 'Solução',
       items: [
@@ -152,6 +153,7 @@ export const translations = {
             'Páginas com fotos grandes, textos curtos e um caminho de compra direto, sem etapas demais.',
           tags: ['E-commerce', 'Landing Page', 'Branding'],
           href: 'cafeteria/index.html',
+          concept: true,
         },
         {
           id: 'refit',
@@ -163,6 +165,7 @@ export const translations = {
           tags: ['Arquitetura', 'Reforma', 'Landing Page'],
           href: 'refit/index.html',
           customImage: 'refit-thumb.png',
+          concept: true,
         },
         {
           id: 'catedra',
@@ -359,6 +362,7 @@ export const translations = {
       reworked: 'See reworked version',
       original: 'See original',
       soon: 'Case study coming soon',
+      conceptLabel: 'Fictional brand',
       challengeLabel: 'Challenge',
       solutionLabel: 'Solution',
       items: [
@@ -372,6 +376,7 @@ export const translations = {
             'Pages with large photos, short copy and a direct path to checkout, without extra steps.',
           tags: ['E-commerce', 'Landing Page', 'Branding'],
           href: 'cafeteria/index.html',
+          concept: true,
         },
         {
           id: 'refit',
@@ -384,6 +389,7 @@ export const translations = {
           tags: ['Architecture', 'Renovation', 'Landing Page'],
           href: 'refit/index.html',
           customImage: 'refit-thumb.png',
+          concept: true,
         },
         {
           id: 'catedra',
