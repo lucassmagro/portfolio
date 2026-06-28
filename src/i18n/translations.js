@@ -172,7 +172,7 @@ export const translations = {
           challenge: 'Texto político é denso e pede leitura confortável sem fazer o leitor esperar a página carregar.',
           solution: 'Tipografia pensada para textos longos e páginas leves, que abrem rápido até no celular.',
           tags: ['Portal', 'Editorial', 'Política'],
-          comingSoon: true,
+          href: 'https://blog-maria.vercel.app/',
           customImage: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1200',
         },
         {
@@ -393,7 +393,7 @@ export const translations = {
           challenge: 'Political writing is dense and needs comfortable reading without making the reader wait for the page.',
           solution: 'Typography built for long reads and light pages that open quickly, even on a phone.',
           tags: ['Portal', 'Editorial', 'Politics'],
-          comingSoon: true,
+          href: 'https://blog-maria.vercel.app/',
           customImage: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1200',
         },
         {

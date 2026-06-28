@@ -28,7 +28,7 @@ export default function App() {
 
   // Render Resume if hash contains 'resume'
   if (currentPath.includes('resume')) {
-    return <Resume isDark={isDark} t={t.resume} toggleLang={toggleLang} lang={lang} />
+    return <Resume t={t.resume} toggleLang={toggleLang} lang={lang} />
   }
 
   // Render LinkHub if hash contains 'links'

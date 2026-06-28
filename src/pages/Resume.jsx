@@ -1,68 +1,65 @@
-import React from 'react'
 import { motion } from 'framer-motion'
 import { SOCIAL_LINKS, CONTACT } from '../data/site.js'
-import { themeClasses } from '../lib/theme.js'
 
 const linkedin = SOCIAL_LINKS.find((item) => item.id === 'linkedin')
 
-export default function Resume({ isDark, t, toggleLang, lang }) {
-  const { bg: bgColor, text: textColor, border: borderColor } = themeClasses(isDark)
+/** Cabeçalho de seção editorial: rótulo pequeno + linha fina. */
+function SectionTitle({ children }) {
+  return (
+    <div className="flex items-center gap-5 mb-10">
+      <h2 className="section-label whitespace-nowrap">{children}</h2>
+      <div className="h-px w-full bg-edborder" />
+    </div>
+  )
+}
 
+export default function Resume({ t, toggleLang, lang }) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className={`resume-print min-h-screen ${bgColor} ${textColor} font-sans py-20 px-6 md:px-10 selection:bg-white selection:text-black`}
+      className="resume-print min-h-screen bg-paper text-edtext font-body py-16 px-6 md:px-10"
     >
       <div className="max-w-[1000px] mx-auto">
-        {/* Header Controls */}
-        <div className="no-print flex justify-between items-center mb-24 gap-4">
+        {/* Controles */}
+        <div className="no-print flex justify-between items-center mb-20 gap-4">
           <a
             href="#/"
-            className="text-[11px] font-bold uppercase tracking-[0.3em] opacity-40 hover:opacity-100 transition-opacity flex items-center gap-2"
+            className="text-[0.75rem] uppercase tracking-[0.15em] text-edsecondary hover:text-accent transition-colors flex items-center gap-2"
           >
             <span>←</span> {t.back}
           </a>
-          <div className="flex items-center gap-6">
-            <button
-              onClick={() => window.print()}
-              className={`text-[11px] font-bold uppercase tracking-[0.3em] px-5 py-2.5 rounded-full border transition-all ${borderColor} hover:opacity-100 opacity-70`}
-            >
+          <div className="flex items-center gap-5">
+            <button onClick={() => window.print()} className="btn-ed btn-ed--outline">
               ↓ {t.download}
             </button>
             <button
               onClick={toggleLang}
               aria-label={lang === 'pt' ? 'Switch to English' : 'Mudar para Português'}
-              className="text-[11px] font-bold uppercase tracking-[0.3em] opacity-40 hover:opacity-100 transition-opacity"
+              className="text-[0.7rem] font-medium uppercase tracking-[0.15em] text-edsecondary hover:text-accent transition-colors"
             >
               {lang === 'pt' ? 'EN' : 'PT'}
             </button>
           </div>
         </div>
 
-        {/* Name Header */}
-        <header className="mb-32">
-          <h1 className="flex flex-col gap-2 mb-12">
-            <span className="text-5xl md:text-8xl font-black uppercase tracking-perry leading-none">
-              LUCAS SANTOS
-            </span>
-            <span className="text-4xl md:text-7xl font-serif italic lowercase opacity-90 leading-none ml-0 md:ml-20">
-              magro
-            </span>
+        {/* Nome */}
+        <header className="mb-24">
+          <h1 className="font-display font-normal tracking-[-0.02em] leading-[1.02] text-[clamp(2.8rem,7vw,5.5rem)] mb-10">
+            Lucas <em className="italic">Santos</em> Magro
           </h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-[11px] font-bold uppercase tracking-[0.2em] opacity-60">
-            <div className="space-y-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-[0.8rem] text-edsecondary">
+            <div className="space-y-1.5">
               <p>{CONTACT.email}</p>
               <p>{t.location}</p>
             </div>
-            <div className="space-y-2 md:text-right">
+            <div className="space-y-1.5 md:text-right">
               <a
                 href={linkedin.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block hover:opacity-100 uppercase"
+                className="block hover:text-accent transition-colors"
               >
                 LinkedIn
               </a>
@@ -70,7 +67,7 @@ export default function Resume({ isDark, t, toggleLang, lang }) {
                 href="https://github.com/lucassmagro"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block hover:opacity-100 uppercase"
+                className="block hover:text-accent transition-colors"
               >
                 GitHub
               </a>
@@ -78,27 +75,21 @@ export default function Resume({ isDark, t, toggleLang, lang }) {
           </div>
         </header>
 
-        {/* Experience Section */}
-        <section className="mb-32">
-          <div className="flex items-center gap-6 mb-12">
-            <h2 className="text-[10px] font-bold uppercase tracking-[0.5em] opacity-30 whitespace-nowrap">
-              {t.experience}
-            </h2>
-            <div className={`h-[1px] w-full ${borderColor}`}></div>
-          </div>
-
-          <div className="space-y-20">
+        {/* Experiência */}
+        <section className="mb-24">
+          <SectionTitle>{t.experience}</SectionTitle>
+          <div className="space-y-12">
             {t.sections.experience.map((exp, i) => (
-              <div key={i} className="grid grid-cols-1 md:grid-cols-[250px_1fr] gap-8">
-                <div className="text-[11px] font-bold uppercase tracking-[0.2em] opacity-40">
+              <div key={i} className="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-6">
+                <div className="text-[0.75rem] uppercase tracking-[0.12em] text-edmuted">
                   {exp.period}
                 </div>
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight mb-2">
+                  <h3 className="font-display text-2xl text-edtext tracking-[-0.01em]">
                     {exp.company}
                   </h3>
-                  <p className="text-lg font-serif italic mb-6 opacity-80">{exp.role}</p>
-                  <p className="text-[14px] leading-relaxed opacity-60 max-w-xl">
+                  <p className="text-[0.95rem] italic text-edsecondary mt-1 mb-4">{exp.role}</p>
+                  <p className="text-[0.9rem] leading-relaxed text-edbody max-w-xl">
                     {exp.description}
                   </p>
                 </div>
@@ -107,73 +98,51 @@ export default function Resume({ isDark, t, toggleLang, lang }) {
           </div>
         </section>
 
-        {/* Projects Section */}
-        <section className="mb-32">
-          <div className="flex items-center gap-6 mb-12">
-            <h2 className="text-[10px] font-bold uppercase tracking-[0.5em] opacity-30 whitespace-nowrap">
-              {t.projects}
-            </h2>
-            <div className={`h-[1px] w-full ${borderColor}`}></div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+        {/* Projetos */}
+        <section className="mb-24">
+          <SectionTitle>{t.projects}</SectionTitle>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {t.sections.projects.map((proj, i) => (
               <div key={i}>
-                <div className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-40 mb-4">
+                <div className="text-[0.7rem] uppercase tracking-[0.12em] text-edmuted mb-3">
                   {proj.period}
                 </div>
-                <h3 className="text-xl font-black uppercase tracking-tight mb-4">{proj.title}</h3>
-                <p className="text-[14px] leading-relaxed opacity-60">{proj.description}</p>
+                <h3 className="font-display text-lg text-edtext mb-2">{proj.title}</h3>
+                <p className="text-[0.9rem] leading-relaxed text-edbody">{proj.description}</p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Education & Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-32 mb-40">
-          {/* Education */}
+        {/* Formação & Habilidades */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 mb-28">
           <section>
-            <div className="flex items-center gap-6 mb-12">
-              <h2 className="text-[10px] font-bold uppercase tracking-[0.5em] opacity-30 whitespace-nowrap">
-                {t.education}
-              </h2>
-              <div className={`h-[1px] w-full ${borderColor}`}></div>
-            </div>
-            <div className="space-y-12">
+            <SectionTitle>{t.education}</SectionTitle>
+            <div className="space-y-8">
               {t.sections.education.map((edu, i) => (
                 <div key={i}>
-                  <div className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-40 mb-2">
+                  <div className="text-[0.7rem] uppercase tracking-[0.12em] text-edmuted mb-2">
                     {edu.period}
                   </div>
-                  <h3 className="text-lg font-black uppercase mb-1">{edu.school}</h3>
-                  <p className="text-[13px] font-serif italic opacity-60">{edu.degree}</p>
+                  <h3 className="font-display text-lg text-edtext">{edu.school}</h3>
+                  <p className="text-[0.9rem] italic text-edsecondary mt-0.5">{edu.degree}</p>
                 </div>
               ))}
             </div>
           </section>
 
-          {/* Skills */}
           <section>
-            <div className="flex items-center gap-6 mb-12">
-              <h2 className="text-[10px] font-bold uppercase tracking-[0.5em] opacity-30 whitespace-nowrap">
-                {t.skills}
-              </h2>
-              <div className={`h-[1px] w-full ${borderColor}`}></div>
-            </div>
-            <div className="space-y-10">
+            <SectionTitle>{t.skills}</SectionTitle>
+            <div className="space-y-8">
               <div>
-                <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40 mb-4">
-                  {t.langLabel}
-                </h4>
-                <p className="text-[14px] font-bold tracking-widest uppercase leading-loose">
+                <h4 className="section-label mb-3">{t.langLabel}</h4>
+                <p className="text-[0.95rem] leading-relaxed text-edbody">
                   {t.sections.skills.languages}
                 </p>
               </div>
               <div>
-                <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40 mb-4">
-                  {t.techLabel}
-                </h4>
-                <p className="text-[14px] font-bold tracking-widest uppercase leading-loose">
+                <h4 className="section-label mb-3">{t.techLabel}</h4>
+                <p className="text-[0.95rem] leading-relaxed text-edbody">
                   {t.sections.skills.tools}
                 </p>
               </div>
@@ -181,11 +150,9 @@ export default function Resume({ isDark, t, toggleLang, lang }) {
           </section>
         </div>
 
-        {/* Footer Statement */}
-        <footer className="pt-20 border-t border-white/5 text-center">
-          <p className="text-[10px] font-bold uppercase tracking-[0.4em] opacity-20">
-            {t.footerNote}
-          </p>
+        {/* Rodapé */}
+        <footer className="pt-12 border-t border-edborder text-center">
+          <p className="text-[0.7rem] uppercase tracking-[0.2em] text-edmuted">{t.footerNote}</p>
         </footer>
       </div>
     </motion.div>

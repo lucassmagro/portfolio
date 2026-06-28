@@ -9,11 +9,9 @@ const ThemeContext = createContext(null)
 export function ThemeProvider({ children }) {
   const [isDark, setIsDark] = useState(() => {
     const stored = localStorage.getItem('lsm-theme')
-    if (stored) return stored === 'dark'
-    // Sem preferência salva: portfólio e LinkHub abrem claros (estética editorial);
-    // apenas o currículo mantém o padrão escuro.
-    const hash = window.location.hash || ''
-    return hash.includes('resume')
+    // Sem preferência salva, todo o site abre claro (estética editorial);
+    // o usuário pode alternar para o escuro, e a escolha é persistida.
+    return stored === 'dark'
   })
 
   useEffect(() => {
