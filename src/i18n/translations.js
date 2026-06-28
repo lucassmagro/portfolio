@@ -6,9 +6,9 @@ export const translations = {
       contact: 'Contato',
     },
     hero: {
-      tag: 'Desenvolvedor Front-End e Design',
+      tag: 'Desenvolvedor de Software · Arquiteto de formação',
       intro:
-        'Sou arquiteto de formação e hoje trabalho com front-end. Uso o que aprendi desenhando espaços para montar sites rápidos e bem resolvidos, do tipo que pequenos negócios e estúdios usam quando cansam de parecer template pronto.',
+        'Arquiteto de formação que migrou para a tecnologia. Estou no terceiro semestre de Sistemas de Informação e trabalho como analista de suporte júnior, caminhando para o desenvolvimento full-stack. A bagagem da arquitetura molda meu jeito de pensar design e de resolver problemas no código.',
       marker: 'Chapecó, Brasil',
       ctaWork: 'Ver trabalhos',
       ctaContact: 'Contato',
@@ -40,13 +40,13 @@ export const translations = {
     about: {
       section: 'Perfil (04)',
       title: 'Quem eu sou.',
-      bio: 'Comecei na arquitetura, desenhando casas e acompanhando obras, e acabei migrando para o desenvolvimento front-end. Trouxe comigo o costume de cuidar de proporção, espaço e dos detalhes que ninguém repara à primeira vista. Hoje monto interfaces em React tentando equilibrar o que é bonito com o que carrega rápido e funciona.',
+      bio: 'Comecei na arquitetura, desenhando casas e acompanhando obras, e acabei migrando para a tecnologia. Hoje curso Sistemas de Informação e trabalho como analista de suporte júnior, enquanto avanço para o desenvolvimento full-stack. Da arquitetura trouxe o costume de cuidar de proporção, espaço e dos detalhes que ninguém repara à primeira vista, e levo isso para a forma como escrevo código e penso interfaces.',
       trusted: 'Experiência em',
       companies: ['nstech', 'Arroba Comunicação', 'Applique Arquitetura', 'CARRAROBERNARDI'],
       specialty: 'Especialidade',
-      skills: ['Interfaces em React', 'Layout e tipografia', 'Animação sutil'],
+      skills: ['Front-end com React', 'Design e UI', 'Resolução de problemas'],
       stack: 'Stack',
-      tools: ['React / Vite', 'GSAP / Framer', 'Tailwind CSS'],
+      tools: ['React / Next.js', 'Node.js / Python', 'TypeScript / MySQL'],
       resume: 'Ver Currículo',
     },
     resume: {
@@ -189,7 +189,7 @@ export const translations = {
       ],
     },
     footer: {
-      statement: 'Front-end e design para quem leva a própria marca a sério.',
+      statement: 'Desenvolvedor de software e arquiteto de formação, em Chapecó, SC.',
       nav: 'Principal',
       links: { home: 'Início', work: 'Trabalhos', about: 'Info' },
       contact: 'Contato',
@@ -226,9 +226,9 @@ export const translations = {
       contact: 'Contact',
     },
     hero: {
-      tag: 'Front-End Developer and Design',
+      tag: 'Software Developer · Former Architect',
       intro:
-        'I trained as an architect and now work with front-end. I use what I learned designing spaces to build fast, well-resolved websites, the kind small businesses and studios reach for when they are tired of looking like a stock template.',
+        'An architect who moved into tech. I am in my third semester of Information Systems and work as a junior support analyst while building toward full-stack development. My architecture background shapes how I think about design and how I solve problems in code.',
       marker: 'Chapecó, Brazil',
       ctaWork: 'View work',
       ctaContact: 'Contact',
@@ -260,13 +260,13 @@ export const translations = {
     about: {
       section: 'Profile (04)',
       title: 'Who I am.',
-      bio: 'I started in architecture, designing houses and following construction sites, and ended up moving into front-end development. I kept the habit of caring about proportion, space and the small details no one notices at first glance. Today I build React interfaces, trying to balance what looks good with what loads fast and actually works.',
+      bio: 'I started in architecture, designing houses and following construction sites, and ended up moving into tech. I am now studying Information Systems and working as a junior support analyst while moving toward full-stack development. From architecture I kept the habit of caring about proportion, space and the details no one notices at first, and I bring that into how I write code and think about interfaces.',
       trusted: 'Experience at',
       companies: ['nstech', 'Arroba Comunicação', 'Applique Arquitetura', 'CARRAROBERNARDI'],
       specialty: 'Specialty',
-      skills: ['React interfaces', 'Layout and type', 'Subtle motion'],
+      skills: ['Front-end with React', 'Design and UI', 'Problem solving'],
       stack: 'Stack',
-      tools: ['React / Vite', 'GSAP / Framer', 'Tailwind CSS'],
+      tools: ['React / Next.js', 'Node.js / Python', 'TypeScript / MySQL'],
       resume: 'View Resume',
     },
     resume: {
@@ -409,7 +409,7 @@ export const translations = {
       ],
     },
     footer: {
-      statement: 'Front-end and design for people who take their own brand seriously.',
+      statement: 'Software developer and former architect, based in Chapecó, Brazil.',
       nav: 'Main',
       links: { home: 'Home', work: 'Work', about: 'Info' },
       contact: 'Contact',

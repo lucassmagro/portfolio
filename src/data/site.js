@@ -27,7 +27,7 @@ export const SOCIAL_LINKS = [
     id: 'linkedin',
     name: 'LinkedIn',
     label: 'IN',
-    url: 'https://www.linkedin.com/in/lucassmagro/',
+    url: 'https://www.linkedin.com/in/lucasmagro/',
   },
   {
     id: 'instagram',

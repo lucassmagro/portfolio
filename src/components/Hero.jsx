@@ -27,12 +27,9 @@ export default function Hero({ t }) {
           {t.intro}
         </p>
 
-        <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
+        <div className="mt-9 flex justify-center">
           <a href="#projects" className="btn-ed btn-ed--pill">
             {t.ctaWork}
-          </a>
-          <a href="#footer-connect" className="btn-ed btn-ed--outline">
-            {t.ctaContact}
           </a>
         </div>
       </motion.div>
