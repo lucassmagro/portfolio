@@ -17,7 +17,7 @@ export default function Hero({ t }) {
         transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
         className="max-w-3xl"
       >
-        <h1 className="font-display font-normal text-edtext leading-[1.05] tracking-[-0.02em] text-[clamp(2.5rem,6.5vw,5rem)]">
+        <h1 className="font-display font-normal text-edtext leading-[1.1] tracking-[-0.02em] whitespace-nowrap text-[clamp(1.25rem,5vw,3.75rem)]">
           {t.greeting} <span className="text-accent italic">Lucas Santos Magro</span>
         </h1>
 
