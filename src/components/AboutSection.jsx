@@ -22,20 +22,8 @@ export default function AboutSection({ t }) {
 
             <p className="text-[0.95rem] leading-[1.8] text-edbody">{t.bio}</p>
 
-            {/* Prova social */}
-            <div className="mt-10 border-t border-edborder pt-6">
-              <h4 className="section-label mb-4">{t.trusted}</h4>
-              <div className="flex flex-wrap gap-x-6 gap-y-2">
-                {t.companies.map((company) => (
-                  <span key={company} className="text-[0.85rem] font-medium text-edbody">
-                    {company}
-                  </span>
-                ))}
-              </div>
-            </div>
-
             {/* Especialidade / Stack */}
-            <div className="mt-8 grid grid-cols-2 gap-8">
+            <div className="mt-10 grid grid-cols-2 gap-8">
               <div>
                 <h4 className="section-label mb-3">{t.specialty}</h4>
                 <ul className="space-y-1.5 text-[0.9rem] text-edbody">
