@@ -39,7 +39,7 @@ export default function ProjectCard({ project, labels, index = 0, priority = fal
             )}
 
             {project.concept && (
-              <span className="absolute left-4 top-4 z-10 rounded-edsm border border-edborder bg-paper/90 px-3 py-1.5 text-[0.6rem] font-medium uppercase tracking-[0.12em] text-edbody backdrop-blur-sm">
+              <span className="absolute left-4 top-4 z-10 rounded-edsm border border-edborder bg-paper px-3 py-1.5 text-[0.6rem] font-medium uppercase tracking-[0.12em] text-edbody shadow-sm">
                 {labels.conceptLabel}
               </span>
             )}
