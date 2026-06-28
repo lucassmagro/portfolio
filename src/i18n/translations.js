@@ -21,6 +21,7 @@ export const translations = {
       headline: 'Quer tirar um projeto do papel?',
       sub: 'Estou aceitando trabalhos novos. Me chama no WhatsApp e a gente conversa.',
       whatsappCta: 'Falar no WhatsApp',
+      orEmail: 'ou por e-mail:',
       button: 'Iniciar Conversa',
       form: {
         name: 'Nome',
@@ -245,6 +246,7 @@ export const translations = {
       headline: 'Got a project in mind?',
       sub: "I'm taking on new work. Message me on WhatsApp and let's talk.",
       whatsappCta: 'Message me on WhatsApp',
+      orEmail: 'or by email:',
       button: 'Start a Conversation',
       form: {
         name: 'Name',

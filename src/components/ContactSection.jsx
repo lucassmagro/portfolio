@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { WHATSAPP_URL } from '../data/site.js'
+import { WHATSAPP_URL, MAILTO_URL, CONTACT } from '../data/site.js'
 
 /**
  * ContactSection — contato direto via WhatsApp, ao final da página.
@@ -36,6 +36,16 @@ export default function ContactSection({ t }) {
               {t.whatsappCta}
             </a>
           </div>
+
+          <p className="mt-5 text-[0.8rem] text-edsecondary">
+            {t.orEmail}{' '}
+            <a
+              href={MAILTO_URL}
+              className="font-medium text-edtext underline underline-offset-4 hover:text-accent transition-colors"
+            >
+              {CONTACT.email}
+            </a>
+          </p>
         </motion.div>
       </div>
     </section>
