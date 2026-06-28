@@ -41,7 +41,7 @@ export const translations = {
       },
     },
     about: {
-      section: 'Perfil (04)',
+      section: 'Perfil',
       title: 'Quem eu sou.',
       bio: 'Comecei na arquitetura, desenhando casas e acompanhando obras, e acabei migrando para a tecnologia. Hoje curso Sistemas de Informação e trabalho como analista de suporte júnior, enquanto avanço para o desenvolvimento full-stack. Da arquitetura trouxe o costume de cuidar de proporção, espaço e dos detalhes que ninguém repara à primeira vista, e levo isso para a forma como escrevo código e penso interfaces.',
       specialty: 'Especialidade',
@@ -134,7 +134,7 @@ export const translations = {
       },
     },
     projects: {
-      section: 'Projetos Selecionados (04)',
+      section: 'Projetos Selecionados',
       title: 'Projetos.',
       view: 'VER',
       reworked: 'Ver versão reformulada',
@@ -266,7 +266,7 @@ export const translations = {
       },
     },
     about: {
-      section: 'Profile (04)',
+      section: 'Profile',
       title: 'Who I am.',
       bio: 'I started in architecture, designing houses and following construction sites, and ended up moving into tech. I am now studying Information Systems and working as a junior support analyst while moving toward full-stack development. From architecture I kept the habit of caring about proportion, space and the details no one notices at first, and I bring that into how I write code and think about interfaces.',
       specialty: 'Specialty',
@@ -358,7 +358,7 @@ export const translations = {
       },
     },
     projects: {
-      section: 'Selected Works (04)',
+      section: 'Selected Works',
       title: 'Projects.',
       view: 'VIEW',
       reworked: 'See reworked version',
