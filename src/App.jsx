@@ -66,7 +66,7 @@ export default function App() {
         <ContactSection t={t.cta} />
       </main>
 
-      <ScrollToTop isDark={isDark} />
+      <ScrollToTop />
       <Footer t={t.footer} />
     </div>
   )

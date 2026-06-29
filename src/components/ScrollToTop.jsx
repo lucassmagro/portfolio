@@ -1,25 +1,21 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { cx, themeClasses } from '../lib/theme.js'
 
 /**
- * ScrollToTop — Floating button that appears after scrolling down.
- * Minimalist flat design matching the portfolio DNA.
+ * ScrollToTop — botão flutuante que aparece após rolar a página.
+ * Fundo de acento sólido com ícone branco, para boa visibilidade sobre
+ * qualquer seção (inclusive o rodapé escuro) nos dois temas.
  */
-export default function ScrollToTop({ isDark }) {
+export default function ScrollToTop() {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      setVisible(window.scrollY > 600)
-    }
+    const handleScroll = () => setVisible(window.scrollY > 600)
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const scrollUp = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
+  const scrollUp = () => window.scrollTo({ top: 0, behavior: 'smooth' })
 
   return (
     <AnimatePresence>
@@ -33,25 +29,14 @@ export default function ScrollToTop({ isDark }) {
           transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          data-cursor-hover
-          className={cx(
-            'fixed bottom-8 right-8 z-50 w-12 h-12 flex items-center justify-center rounded-full border backdrop-blur-3xl transition-colors duration-500',
-            themeClasses(isDark).border,
-            isDark ? 'bg-white/5 hover:bg-white/10' : 'bg-black/5 hover:bg-black/10',
-          )}
-          aria-label="Scroll to top"
+          className="fixed bottom-8 right-8 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-accent text-white shadow-lg shadow-black/25"
+          aria-label="Voltar ao topo"
         >
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M3 10L8 5L13 10"
               stroke="currentColor"
-              strokeWidth="1.5"
+              strokeWidth="1.75"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
