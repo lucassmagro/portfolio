@@ -19,6 +19,21 @@ export default function App() {
   // Hash Routing State
   const [currentPath, setCurrentPath] = useState(window.location.hash || '#/links')
 
+  // No carregamento/refresh, começa sempre no topo (hero). Desativa a
+  // restauração de scroll do navegador e neutraliza âncoras de seção
+  // (#projects, #about, ...) para não cair no meio da página ao atualizar.
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual'
+    }
+    const sectionAnchors = ['#home', '#projects', '#about', '#contact', '#footer-connect']
+    if (sectionAnchors.includes(window.location.hash)) {
+      window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}#/`)
+    }
+    window.scrollTo(0, 0)
+    requestAnimationFrame(() => window.scrollTo(0, 0))
+  }, [])
+
   useEffect(() => {
     const handleHashChange = () => {
       setCurrentPath(window.location.hash || '#/links')
