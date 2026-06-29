@@ -27,6 +27,15 @@ export default function App() {
     return () => window.removeEventListener('hashchange', handleHashChange)
   }, [])
 
+  // Ao trocar de página (rotas "#/..."), volta ao topo. Âncoras internas
+  // (#projects, #about, ...) mantêm a rolagem nativa até a seção.
+  useEffect(() => {
+    const hash = window.location.hash
+    if (hash === '' || hash.startsWith('#/')) {
+      window.scrollTo(0, 0)
+    }
+  }, [currentPath])
+
   // Render Resume if hash contains 'resume'
   if (currentPath.includes('resume')) {
     return <Resume t={t.resume} toggleLang={toggleLang} lang={lang} />

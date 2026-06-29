@@ -3,8 +3,9 @@ import { useTheme } from '../context/ThemeContext.jsx'
 
 /**
  * StarsCanvas — campo de estrelas com cometas ocasionais.
- * Renderiza apenas no modo escuro (fundo do hero). Respeita
- * prefers-reduced-motion (desenha estrelas estáticas, sem cometas).
+ * Renderiza apenas no modo escuro (fundo do hero). A animação é pausada
+ * quando o hero sai da tela e redesenhada ao voltar (evita falhas de
+ * repaint e economiza CPU). Respeita prefers-reduced-motion.
  */
 export default function StarsCanvas() {
   const { isDark } = useTheme()
@@ -106,16 +107,33 @@ export default function StarsCanvas() {
       }
     }
 
-    resize()
-    window.addEventListener('resize', resize)
-    if (reduce) {
-      draw(0)
-    } else {
-      raf = requestAnimationFrame(draw)
+    const start = () => {
+      if (raf) return
+      if (reduce) draw(0)
+      else raf = requestAnimationFrame(draw)
+    }
+    const stop = () => {
+      if (!raf) return
+      cancelAnimationFrame(raf)
+      raf = 0
     }
 
+    resize()
+    window.addEventListener('resize', resize)
+
+    // Só anima enquanto o hero está visível; ao voltar, redesenha.
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) start()
+        else stop()
+      },
+      { threshold: 0 },
+    )
+    io.observe(canvas)
+
     return () => {
-      cancelAnimationFrame(raf)
+      stop()
+      io.disconnect()
       window.removeEventListener('resize', resize)
     }
   }, [isDark])
@@ -125,7 +143,7 @@ export default function StarsCanvas() {
     <canvas
       ref={canvasRef}
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0 h-full w-full"
+      className="pointer-events-none absolute inset-0 z-0 h-full w-full"
     />
   )
 }
