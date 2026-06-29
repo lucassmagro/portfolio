@@ -23,14 +23,14 @@ export default function Footer({ t }) {
             >
               LSM.
             </a>
-            <p className="mt-4 max-w-[280px] text-[0.85rem] leading-[1.65] text-ondark/50">
+            <p className="mt-4 max-w-[280px] text-[0.85rem] leading-[1.65] text-ondark/70">
               {t.statement}
             </p>
           </div>
 
           {/* Navegação */}
           <div>
-            <h4 className="text-[0.7rem] font-medium uppercase tracking-[0.15em] text-ondark/30 mb-5">
+            <h4 className="text-[0.7rem] font-medium uppercase tracking-[0.15em] text-ondark/55 mb-5">
               {t.nav}
             </h4>
             <ul className="space-y-2">
@@ -54,7 +54,7 @@ export default function Footer({ t }) {
 
           {/* Contato + Social */}
           <div>
-            <h4 className="text-[0.7rem] font-medium uppercase tracking-[0.15em] text-ondark/30 mb-5">
+            <h4 className="text-[0.7rem] font-medium uppercase tracking-[0.15em] text-ondark/55 mb-5">
               {t.contact}
             </h4>
             <ul className="space-y-2 mb-6">
@@ -83,7 +83,7 @@ export default function Footer({ t }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.name}
-                  className="text-[0.75rem] font-medium uppercase tracking-[0.1em] text-ondark/40 hover:text-ondark transition-colors"
+                  className="text-[0.75rem] font-medium uppercase tracking-[0.1em] text-ondark/65 hover:text-ondark transition-colors"
                 >
                   {social.label}
                 </a>
@@ -94,10 +94,10 @@ export default function Footer({ t }) {
 
         {/* Barra inferior */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-3 border-t border-ondark/10 pt-6">
-          <p className="text-[0.7rem] uppercase tracking-[0.12em] text-ondark/30">{t.copyright}</p>
+          <p className="text-[0.7rem] uppercase tracking-[0.12em] text-ondark/55">{t.copyright}</p>
           <a
             href={WEBSITE_URL}
-            className="text-[0.7rem] uppercase tracking-[0.12em] text-ondark/40 italic hover:text-ondark transition-colors"
+            className="text-[0.7rem] uppercase tracking-[0.12em] text-ondark/65 italic hover:text-ondark transition-colors"
           >
             {t.madeBy}
           </a>

@@ -73,8 +73,10 @@ export default function AboutSection({ t }) {
           >
             <div className="overflow-hidden rounded-ed border border-edborder bg-paper">
               <img
-                src="eu.png"
+                src="eu.webp"
                 alt="Retrato de Lucas Santos Magro"
+                width="900"
+                height="1200"
                 loading="lazy"
                 decoding="async"
                 className="w-full aspect-[3/4] object-cover"

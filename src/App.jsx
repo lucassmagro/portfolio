@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, lazy, Suspense } from 'react'
 
 import { useTheme } from './context/ThemeContext.jsx'
 import { useI18n } from './context/I18nContext.jsx'
@@ -9,15 +9,17 @@ import Footer from './components/Footer.jsx'
 import AboutSection from './components/AboutSection.jsx'
 import ContactSection from './components/ContactSection.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
-import LinkHub from './pages/LinkHub.jsx'
-import Resume from './pages/Resume.jsx'
+
+// Páginas secundárias carregadas sob demanda (reduz o bundle inicial).
+const LinkHub = lazy(() => import('./pages/LinkHub.jsx'))
+const Resume = lazy(() => import('./pages/Resume.jsx'))
 
 export default function App() {
   const { isDark, toggleTheme } = useTheme()
   const { lang, t, toggleLang } = useI18n()
 
   // Hash Routing State
-  const [currentPath, setCurrentPath] = useState(window.location.hash || '#/links')
+  const [currentPath, setCurrentPath] = useState(window.location.hash || '#/')
 
   // No carregamento/refresh, começa sempre no topo (hero). Desativa a
   // restauração de scroll do navegador e neutraliza âncoras de seção
@@ -36,7 +38,7 @@ export default function App() {
 
   useEffect(() => {
     const handleHashChange = () => {
-      setCurrentPath(window.location.hash || '#/links')
+      setCurrentPath(window.location.hash || '#/')
     }
     window.addEventListener('hashchange', handleHashChange)
     return () => window.removeEventListener('hashchange', handleHashChange)
@@ -53,19 +55,25 @@ export default function App() {
 
   // Render Resume if hash contains 'resume'
   if (currentPath.includes('resume')) {
-    return <Resume t={t.resume} toggleLang={toggleLang} lang={lang} />
+    return (
+      <Suspense fallback={<div className="min-h-screen bg-paper" />}>
+        <Resume t={t.resume} toggleLang={toggleLang} lang={lang} />
+      </Suspense>
+    )
   }
 
   // Render LinkHub if hash contains 'links'
   if (currentPath.includes('links')) {
     return (
-      <LinkHub
-        isDark={isDark}
-        toggleTheme={toggleTheme}
-        toggleLang={toggleLang}
-        t={t.linkhub}
-        lang={lang}
-      />
+      <Suspense fallback={<div className="min-h-screen bg-paper" />}>
+        <LinkHub
+          isDark={isDark}
+          toggleTheme={toggleTheme}
+          toggleLang={toggleLang}
+          t={t.linkhub}
+          lang={lang}
+        />
+      </Suspense>
     )
   }
 

@@ -155,7 +155,7 @@ export const translations = {
             'Páginas de empreendimento com fotos grandes, informações claras e contato direto por WhatsApp, passando a solidez de quem está há 20 anos no mercado.',
           tags: ['Imobiliária', 'Institucional', 'Cliente real'],
           href: 'https://www.mgincorporacoes.com.br/',
-          customImage: 'imobiliaria-mg-thumbnail.jpg',
+          customImage: 'imobiliaria-mg-thumbnail.webp',
         },
         {
           id: 'cafeteria',
@@ -167,6 +167,7 @@ export const translations = {
             'Páginas com fotos grandes, textos curtos e um caminho de compra direto, sem etapas demais.',
           tags: ['E-commerce', 'Landing Page', 'Branding'],
           href: 'cafeteria/index.html',
+          customImage: 'projects/cafeteria.webp',
           concept: true,
         },
         {
@@ -178,7 +179,7 @@ export const translations = {
           solution: 'Galeria que dá para filtrar por tipo de obra e blocos de antes e depois para o cliente entender o trabalho.',
           tags: ['Arquitetura', 'Reforma', 'Landing Page'],
           href: 'refit/index.html',
-          customImage: 'refit-thumb.png',
+          customImage: 'refit-thumb.webp',
           concept: true,
         },
         {
@@ -394,7 +395,7 @@ export const translations = {
             'Project pages with large photos, clear information and direct WhatsApp contact, conveying the trust of a company with 20 years in the market.',
           tags: ['Real Estate', 'Corporate', 'Real client'],
           href: 'https://www.mgincorporacoes.com.br/',
-          customImage: 'imobiliaria-mg-thumbnail.jpg',
+          customImage: 'imobiliaria-mg-thumbnail.webp',
         },
         {
           id: 'cafeteria',
@@ -406,6 +407,7 @@ export const translations = {
             'Pages with large photos, short copy and a direct path to checkout, without extra steps.',
           tags: ['E-commerce', 'Landing Page', 'Branding'],
           href: 'cafeteria/index.html',
+          customImage: 'projects/cafeteria.webp',
           concept: true,
         },
         {
@@ -418,7 +420,7 @@ export const translations = {
             'A gallery you can filter by type of work, plus before-and-after blocks so clients understand the job.',
           tags: ['Architecture', 'Renovation', 'Landing Page'],
           href: 'refit/index.html',
-          customImage: 'refit-thumb.png',
+          customImage: 'refit-thumb.webp',
           concept: true,
         },
         {

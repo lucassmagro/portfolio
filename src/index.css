@@ -1,27 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Gloock&family=Inter:wght@100..900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  /* Default: Light Mode (Override later if needed) */
-  --perry-bg: #ffffff;
-  --perry-text: #000000;
-  --perry-text-muted: rgba(0, 0, 0, 0.4);
-  --perry-card-bg: rgba(255, 255, 255, 0.05);
-  --perry-card-border: rgba(0, 0, 0, 0.1);
-  --perry-window-outline: rgba(0, 0, 0, 0.08);
-}
-
-.dark {
-  --perry-bg: #000000;
-  --perry-text: #ffffff;
-  --perry-text-muted: rgba(255, 255, 255, 0.4);
-  --perry-card-bg: linear-gradient(190deg, #181818, #050505);
-  --perry-card-border: #252525;
-  --perry-window-outline: rgba(242, 242, 242, 0.1);
-}
 
 /* ============================================
    Editorial Zen design tokens (portfolio landing)
@@ -34,8 +13,8 @@
   --ed-ink: #1a1a1a;
   --ed-text: #1a1a1a;
   --ed-body: #3d3d3d;
-  --ed-secondary: #7a7a7a;
-  --ed-muted: #a8a8a0;
+  --ed-secondary: #5f5d57;
+  --ed-muted: #6e6c64;
   --ed-border: #e0dcd5;
   --ed-border-faint: #eae6df;
   --ed-accent: #e2571e;
@@ -47,8 +26,8 @@
   --ed-ink: #0d0c0b;
   --ed-text: #f0ece4;
   --ed-body: #c8c4bc;
-  --ed-secondary: #8c8880;
-  --ed-muted: #6a6660;
+  --ed-secondary: #9a958c;
+  --ed-muted: #8c887e;
   --ed-border: #2e2c29;
   --ed-border-faint: #252320;
   --ed-accent: #ff6a37;
@@ -85,6 +64,20 @@ html {
 }
 ::-webkit-scrollbar-thumb:hover {
   filter: brightness(1.1);
+}
+
+/* Respeita usuários que preferem menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
 
 /* Editorial reusable components */
@@ -159,158 +152,6 @@ body {
   transition:
     background-color 0.8s cubic-bezier(0.165, 0.84, 0.44, 1),
     color 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-/* Window & Glass Physics */
-
-.window-outline {
-  background-image: radial-gradient(
-    circle farthest-side at 50% 0,
-    var(--perry-window-outline),
-    transparent
-  );
-  border-radius: 24px;
-  outline: 1px solid var(--perry-window-outline);
-  padding: 8px;
-  box-shadow: 0 40px 140px rgba(0, 0, 0, 0.2);
-}
-
-.dark .window-outline {
-  box-shadow: 0 60px 180px rgba(0, 0, 0, 0.8);
-}
-
-.window-glass {
-  backdrop-filter: blur(28px) saturate(180%);
-  -webkit-backdrop-filter: blur(28px) saturate(180%);
-  border: 1px solid var(--perry-card-border);
-  border-radius: 16px;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
-  background: rgba(255, 255, 255, 0.03);
-}
-
-.dark .window-glass {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.glare-top {
-  position: absolute;
-  top: 0;
-  left: 5%;
-  width: 90%;
-  height: 1px;
-  background-image: linear-gradient(
-    to right,
-    transparent 0%,
-    rgba(255, 255, 255, 0.6) 30%,
-    #fff 50%,
-    rgba(255, 255, 255, 0.6) 70%,
-    transparent 100%
-  );
-  z-index: 10;
-}
-
-.shine-wrapper {
-  position: absolute;
-  top: -20%;
-  left: -20%;
-  width: 140%;
-  height: 140%;
-  overflow: hidden;
-  pointer-events: none;
-  opacity: 0.12;
-  filter: blur(25px);
-  transform: rotate(15deg);
-}
-
-.shine-item {
-  position: absolute;
-  background: white;
-  height: 300%;
-  top: -100%;
-}
-
-/* Project Card Adaptability */
-.project-card-bg {
-  background: var(--perry-card-bg);
-  border: 1px solid var(--perry-card-border);
-  transition:
-    border 0.6s cubic-bezier(0.165, 0.84, 0.44, 1),
-    background 0.6s ease;
-}
-
-.project-card-bg:hover {
-  border-color: rgba(125, 125, 125, 0.4);
-}
-
-/* High-Contrast Helpers */
-.text-perry {
-  color: var(--perry-text);
-}
-
-.text-perry-muted {
-  color: var(--perry-text-muted);
-}
-
-.font-gloock {
-  font-family: 'Gloock', serif;
-}
-
-.tracking-perry {
-  letter-spacing: -0.05em;
-}
-
-.leading-perry {
-  line-height: 0.9;
-}
-
-.vertical-text {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-}
-
-/* LinkHub Noise Overlay (3%) */
-.noise-bg {
-  position: relative;
-}
-
-.noise-bg::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  opacity: 0.03;
-  z-index: 50;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-}
-
-/* Base Radius for LinkHub Cards */
-.link-card {
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(64px);
-  -webkit-backdrop-filter: blur(64px);
-}
-
-/* Cursor customizado ativo: esconde o cursor do sistema só quando aplicável */
-.cursor-none,
-.cursor-none * {
-  cursor: none !important;
-}
-
-/* LinkHub: restore system cursor */
-.linkhub-page,
-.linkhub-page * {
-  cursor: auto !important;
-}
-
-.linkhub-page a,
-.linkhub-page button {
-  cursor: pointer !important;
 }
 
 /* Link "pular para o conteúdo" — visível só ao receber foco via teclado */

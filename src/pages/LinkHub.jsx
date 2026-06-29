@@ -35,7 +35,7 @@ export default function LinkHub({ isDark, toggleTheme, toggleLang, t, lang }) {
   const projectCards = [
     {
       href: 'https://www.mgincorporacoes.com.br/',
-      img: 'imobiliaria-mg-thumbnail.jpg',
+      img: 'imobiliaria-mg-thumbnail.webp',
       fallback:
         'https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=2070&auto=format&fit=crop',
       title: t.projects.mg.title,
@@ -43,7 +43,7 @@ export default function LinkHub({ isDark, toggleTheme, toggleLang, t, lang }) {
     },
     {
       href: 'cafeteria/index.html',
-      img: 'projects/cafeteria.png',
+      img: 'projects/cafeteria.webp',
       fallback:
         'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop',
       title: t.projects.cafeteria.title,
@@ -51,7 +51,7 @@ export default function LinkHub({ isDark, toggleTheme, toggleLang, t, lang }) {
     },
     {
       href: '#/',
-      img: 'portfolio-thumb.png',
+      img: 'portfolio-thumb.webp',
       fallback:
         'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=2070&auto=format&fit=crop',
       title: t.projects.portfolio.title,
@@ -59,7 +59,7 @@ export default function LinkHub({ isDark, toggleTheme, toggleLang, t, lang }) {
     },
     {
       href: 'refit/index.html',
-      img: 'refit-thumb.png',
+      img: 'refit-thumb.webp',
       fallback:
         'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2070&auto=format&fit=crop',
       title: t.projects.refit.title,
@@ -113,7 +113,13 @@ export default function LinkHub({ isDark, toggleTheme, toggleLang, t, lang }) {
         className="flex flex-col items-center mb-10 text-center"
       >
         <div className="w-24 h-24 rounded-full overflow-hidden mb-6 border border-edborder">
-          <img src="eu1.jpg" alt="Lucas Santos Magro" className="w-full h-full object-cover" />
+          <img
+            src="eu1.webp"
+            alt="Lucas Santos Magro"
+            width="96"
+            height="96"
+            className="w-full h-full object-cover"
+          />
         </div>
 
         <h1 className="font-display font-normal text-edtext text-3xl sm:text-4xl tracking-[-0.02em]">
@@ -173,6 +179,8 @@ export default function LinkHub({ isDark, toggleTheme, toggleLang, t, lang }) {
               <div className="relative aspect-video overflow-hidden bg-paper">
                 <img
                   src={p.img}
+                  width="640"
+                  height="360"
                   loading="lazy"
                   decoding="async"
                   onError={(e) => {

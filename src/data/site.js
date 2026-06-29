@@ -8,7 +8,7 @@
 
 // Domínio absoluto usado para Open Graph, canonical e sitemap.
 // Ajuste aqui caso o domínio de produção mude.
-export const SITE_URL = 'https://lucasmagro.vercel.app'
+export const SITE_URL = 'https://lucassmagro.com.br'
 
 export const CONTACT = {
   email: 'lucassmagro@gmail.com',
