@@ -155,7 +155,7 @@ export const translations = {
             'Páginas de empreendimento com fotos grandes, informações claras e contato direto por WhatsApp, passando a solidez de quem está há 20 anos no mercado.',
           tags: ['Imobiliária', 'Institucional', 'Cliente real'],
           href: 'https://www.mgincorporacoes.com.br/',
-          customImage: 'imobiliaria-mg-thumbnail.png',
+          customImage: 'imobiliaria-mg-thumbnail.jpg',
         },
         {
           id: 'cafeteria',
@@ -394,7 +394,7 @@ export const translations = {
             'Project pages with large photos, clear information and direct WhatsApp contact, conveying the trust of a company with 20 years in the market.',
           tags: ['Real Estate', 'Corporate', 'Real client'],
           href: 'https://www.mgincorporacoes.com.br/',
-          customImage: 'imobiliaria-mg-thumbnail.png',
+          customImage: 'imobiliaria-mg-thumbnail.jpg',
         },
         {
           id: 'cafeteria',

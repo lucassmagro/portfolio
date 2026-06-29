@@ -35,7 +35,7 @@ export default function LinkHub({ isDark, toggleTheme, toggleLang, t, lang }) {
   const projectCards = [
     {
       href: 'https://www.mgincorporacoes.com.br/',
-      img: 'imobiliaria-mg-thumbnail.png',
+      img: 'imobiliaria-mg-thumbnail.jpg',
       fallback:
         'https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=2070&auto=format&fit=crop',
       title: t.projects.mg.title,
