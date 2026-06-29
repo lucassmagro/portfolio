@@ -114,16 +114,9 @@ html {
     background: var(--ed-accent);
     color: #fff;
     padding: 14px 32px;
-    box-shadow: 0 6px 18px -6px color-mix(in srgb, var(--ed-accent) 55%, transparent);
   }
   .btn-ed--pill:hover {
-    background: color-mix(in srgb, var(--ed-accent) 88%, #000);
-    transform: translateY(-2px);
-    box-shadow: 0 14px 30px -8px color-mix(in srgb, var(--ed-accent) 70%, transparent);
-  }
-  .btn-ed--pill:active {
-    transform: translateY(0);
-    box-shadow: 0 4px 12px -6px color-mix(in srgb, var(--ed-accent) 55%, transparent);
+    background: #ff6a2c;
   }
 
   .btn-ed--outline {
