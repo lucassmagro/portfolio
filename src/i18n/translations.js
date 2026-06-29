@@ -145,6 +145,19 @@ export const translations = {
       solutionLabel: 'Solução',
       items: [
         {
+          id: 'mgincorporacoes',
+          title: 'MG Incorporações',
+          brief:
+            'Site para uma construtora e incorporadora de Chapecó, com mais de 20 anos de mercado. Vitrine dos empreendimentos comerciais e residenciais, com destaque para o Valley Business Center.',
+          challenge:
+            'Apresentar empreendimentos de alto padrão e gerar contato qualificado, sem o site parecer um classificado genérico.',
+          solution:
+            'Páginas de empreendimento com fotos grandes, informações claras e contato direto por WhatsApp, passando a solidez de quem está há 20 anos no mercado.',
+          tags: ['Imobiliária', 'Institucional', 'Cliente real'],
+          href: 'https://www.mgincorporacoes.com.br/',
+          customImage: 'imobiliaria-mg-thumbnail.png',
+        },
+        {
           id: 'cafeteria',
           title: 'Artisanal Coffee',
           brief:
@@ -218,6 +231,7 @@ export const translations = {
         email: 'E-mail',
       },
       projects: {
+        mg: { title: 'MG Incorporações', sub: 'Construtora & Incorporadora' },
         portfolio: { title: 'Portfólio', sub: 'Front-end & Design' },
         cafeteria: { title: 'Artisanal Coffee', sub: 'E-commerce Editorial' },
         refit: { title: 'REFIT', sub: 'Arquitetura de Luxo' },
@@ -370,6 +384,19 @@ export const translations = {
       solutionLabel: 'Solution',
       items: [
         {
+          id: 'mgincorporacoes',
+          title: 'MG Incorporações',
+          brief:
+            'A site for a real estate developer in Chapecó with over 20 years in the market. A showcase of its commercial and residential projects, led by the Valley Business Center.',
+          challenge:
+            'Present high-end developments and bring in qualified leads without the site feeling like a generic listing.',
+          solution:
+            'Project pages with large photos, clear information and direct WhatsApp contact, conveying the trust of a company with 20 years in the market.',
+          tags: ['Real Estate', 'Corporate', 'Real client'],
+          href: 'https://www.mgincorporacoes.com.br/',
+          customImage: 'imobiliaria-mg-thumbnail.png',
+        },
+        {
           id: 'cafeteria',
           title: 'Artisanal Coffee',
           brief:
@@ -444,6 +471,7 @@ export const translations = {
         email: 'E-mail',
       },
       projects: {
+        mg: { title: 'MG Incorporações', sub: 'Real Estate Developer' },
         portfolio: { title: 'Portfolio', sub: 'Front-end & Design' },
         cafeteria: { title: 'Artisanal Coffee', sub: 'Editorial E-commerce' },
         refit: { title: 'REFIT', sub: 'Luxury Architecture' },

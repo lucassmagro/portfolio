@@ -34,6 +34,14 @@ export default function LinkHub({ isDark, toggleTheme, toggleLang, t, lang }) {
 
   const projectCards = [
     {
+      href: 'https://www.mgincorporacoes.com.br/',
+      img: 'imobiliaria-mg-thumbnail.png',
+      fallback:
+        'https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=2070&auto=format&fit=crop',
+      title: t.projects.mg.title,
+      sub: t.projects.mg.sub,
+    },
+    {
       href: 'cafeteria/index.html',
       img: 'projects/cafeteria.png',
       fallback:
@@ -158,6 +166,8 @@ export default function LinkHub({ isDark, toggleTheme, toggleLang, t, lang }) {
             <motion.a
               key={p.href}
               href={p.href}
+              target={p.href.startsWith('http') ? '_blank' : '_self'}
+              rel={p.href.startsWith('http') ? 'noopener noreferrer' : undefined}
               className="group block overflow-hidden rounded-ed border border-edborder bg-cream transition-[transform,border-color] duration-200 hover:-translate-y-0.5 hover:border-accent"
             >
               <div className="relative aspect-video overflow-hidden bg-paper">
