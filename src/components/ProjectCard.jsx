@@ -34,7 +34,7 @@ export default function ProjectCard({ project, labels, index = 0, priority = fal
               alt={`Pré-visualização do projeto ${project.title}`}
               width="1200"
               height="750"
-              loading={priority ? 'eager' : 'lazy'}
+              loading="lazy"
               decoding="async"
               className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
             />
