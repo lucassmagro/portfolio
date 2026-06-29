@@ -119,6 +119,11 @@ html {
     background: #1a1a1a;
     color: #fff;
   }
+  /* No modo escuro, inverte para claro (melhor contraste sobre o hero escuro) */
+  .dark .btn-ed--pill:hover {
+    background: #faf9f6;
+    color: #1a1a1a;
+  }
 
   .btn-ed--outline {
     border: 1px solid var(--ed-border);
