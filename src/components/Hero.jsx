@@ -21,8 +21,9 @@ export default function Hero({ t }) {
         transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
         className="relative z-10 max-w-3xl"
       >
-        <h1 className="font-display font-normal text-edtext tracking-[-0.02em] leading-[1.05] text-[clamp(2.5rem,10vw,3.5rem)] md:leading-[1.1] md:whitespace-nowrap md:text-[clamp(1.5rem,5vw,3.75rem)]">
-          {t.greeting} <span className="text-accent italic">Lucas Santos Magro</span>
+        <h1 className="font-display font-normal text-edtext tracking-[-0.02em] leading-[1.08] text-[clamp(2rem,8.5vw,3.5rem)] md:leading-[1.1] md:whitespace-nowrap md:text-[clamp(1.5rem,5vw,3.75rem)]">
+          {t.greeting}{' '}
+          <span className="text-accent italic block md:inline">Lucas Santos Magro</span>
         </h1>
 
         <p className="mt-6 text-lg md:text-xl text-edbody">{t.tag}</p>
