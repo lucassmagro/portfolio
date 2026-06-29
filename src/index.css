@@ -116,7 +116,8 @@ html {
     padding: 14px 32px;
   }
   .btn-ed--pill:hover {
-    background: #ff6a2c;
+    background: #1a1a1a;
+    color: #fff;
   }
 
   .btn-ed--outline {
