@@ -51,6 +51,9 @@ export const SOCIAL_LINKS = [
   },
 ]
 
+// Domínio pessoal (marca/crédito).
+export const WEBSITE_URL = 'https://lucassmagro.com.br'
+
 // Link direto de WhatsApp reutilizável.
 export const WHATSAPP_URL = `https://wa.me/${CONTACT.whatsapp}`
 export const MAILTO_URL = `mailto:${CONTACT.email}`

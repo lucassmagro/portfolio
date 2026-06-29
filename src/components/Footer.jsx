@@ -1,4 +1,4 @@
-import { SOCIAL_LINKS, MAILTO_URL } from '../data/site.js'
+import { SOCIAL_LINKS, MAILTO_URL, WEBSITE_URL } from '../data/site.js'
 
 /**
  * Footer — editorial escuro ("Editorial Zen").
@@ -17,7 +17,12 @@ export default function Footer({ t }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr] gap-12 lg:gap-16 mb-16">
           {/* Marca */}
           <div>
-            <div className="font-display text-2xl tracking-[-0.02em]">LSM.</div>
+            <a
+              href={WEBSITE_URL}
+              className="font-display text-2xl tracking-[-0.02em] hover:text-accent transition-colors"
+            >
+              LSM.
+            </a>
             <p className="mt-4 max-w-[280px] text-[0.85rem] leading-[1.65] text-ondark/50">
               {t.statement}
             </p>
@@ -90,9 +95,12 @@ export default function Footer({ t }) {
         {/* Barra inferior */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-3 border-t border-ondark/10 pt-6">
           <p className="text-[0.7rem] uppercase tracking-[0.12em] text-ondark/30">{t.copyright}</p>
-          <p className="text-[0.7rem] uppercase tracking-[0.12em] text-ondark/40 italic">
+          <a
+            href={WEBSITE_URL}
+            className="text-[0.7rem] uppercase tracking-[0.12em] text-ondark/40 italic hover:text-ondark transition-colors"
+          >
             {t.madeBy}
-          </p>
+          </a>
         </div>
       </div>
     </footer>
