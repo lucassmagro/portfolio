@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { useInView } from '../hooks/useInView.js'
 
 /**
  * ProjectCard — card de projeto editorial ("Editorial Zen").
@@ -9,15 +9,19 @@ import { motion } from 'framer-motion'
 export default function ProjectCard({ project, labels, index = 0, priority = false }) {
   const isExternal = (href) => href?.startsWith('http') || href?.startsWith('mailto')
   const href = project.comingSoon ? null : project.href
-  const imageSrc = project.customImage || `projects/${project.id}.png`
+  const imageSrc = project.customImage || `projects/${project.id}.webp`
+  // srcset para imagens locais .webp (há uma variante -640 ao lado da 1200).
+  const isLocalWebp = imageSrc.endsWith('.webp') && !imageSrc.startsWith('http')
+  const srcSet = isLocalWebp
+    ? `${imageSrc.replace(/\.webp$/, '-640.webp')} 640w, ${imageSrc} 1200w`
+    : undefined
+  const [ref, inView] = useInView()
 
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.7, delay: priority ? 0 : (index % 2) * 0.08, ease: [0.16, 1, 0.3, 1] }}
-      className="group h-full"
+    <article
+      ref={ref}
+      className={`group h-full reveal ${inView ? 'is-visible' : ''}`}
+      style={{ transitionDelay: priority ? '0ms' : `${(index % 2) * 80}ms` }}
     >
       <div className="flex h-full flex-col overflow-hidden rounded-ed border border-edborder bg-cream transition-[transform,border-color] duration-200 hover:-translate-y-1 hover:border-accent">
         {/* Mídia */}
@@ -25,6 +29,8 @@ export default function ProjectCard({ project, labels, index = 0, priority = fal
           <div className="relative aspect-[16/10] overflow-hidden bg-paper">
             <img
               src={imageSrc}
+              srcSet={srcSet}
+              sizes="(max-width: 640px) 100vw, 540px"
               alt={`Pré-visualização do projeto ${project.title}`}
               width="1200"
               height="750"
@@ -109,7 +115,7 @@ export default function ProjectCard({ project, labels, index = 0, priority = fal
           )}
         </div>
       </div>
-    </motion.article>
+    </article>
   )
 }
 

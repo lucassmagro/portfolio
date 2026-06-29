@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import StarsCanvas from './StarsCanvas.jsx'
 
 /**
@@ -15,12 +14,7 @@ export default function Hero({ t }) {
     >
       <StarsCanvas />
 
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-        className="relative z-10 max-w-3xl"
-      >
+      <div className="relative z-10 max-w-3xl anim-fade-up">
         <h1 className="font-display font-normal text-edtext tracking-[-0.02em] leading-[1.08] text-[clamp(2rem,8.5vw,3.5rem)] md:leading-[1.1] md:whitespace-nowrap md:text-[clamp(1.5rem,5vw,3.75rem)]">
           {t.greeting}{' '}
           <span className="text-accent italic block md:inline">Lucas Santos Magro</span>
@@ -37,26 +31,17 @@ export default function Hero({ t }) {
             {t.ctaWork}
           </a>
         </div>
-      </motion.div>
+      </div>
 
       {/* Indicador de scroll */}
-      <motion.a
+      <a
         href="#projects"
         aria-label={t.scroll}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.8 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-edmuted hover:text-accent transition-colors"
+        className="anim-fade-in absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-edmuted hover:text-accent transition-colors"
+        style={{ animationDelay: '1s' }}
       >
         <span className="text-[0.7rem] uppercase tracking-[0.2em]">{t.scroll}</span>
-        <motion.svg
-          width="18"
-          height="18"
-          viewBox="0 0 20 20"
-          fill="none"
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-        >
+        <svg className="anim-bounce" width="18" height="18" viewBox="0 0 20 20" fill="none">
           <path
             d="M4 7L10 13L16 7"
             stroke="currentColor"
@@ -64,8 +49,8 @@ export default function Hero({ t }) {
             strokeLinecap="round"
             strokeLinejoin="round"
           />
-        </motion.svg>
-      </motion.a>
+        </svg>
+      </a>
     </section>
   )
 }

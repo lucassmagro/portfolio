@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion'
 import { SOCIAL_LINKS, WHATSAPP_URL, MAILTO_URL } from '../data/site.js'
+import { useInView } from '../hooks/useInView.js'
 
 // Constrói a lista de links a partir da fonte única + textos traduzidos.
 const buildLinks = (t) => {
@@ -16,21 +16,9 @@ const buildLinks = (t) => {
   ]
 }
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.08, delayChildren: 0.25 },
-  },
-}
-
-const itemVariants = {
-  hidden: { y: 16, opacity: 0 },
-  visible: { y: 0, opacity: 1, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } },
-}
-
 export default function LinkHub({ isDark, toggleTheme, toggleLang, t, lang }) {
   const socialLinks = buildLinks(t)
+  const [projRef, projIn] = useInView({ margin: '0px' })
 
   const projectCards = [
     {
@@ -106,12 +94,7 @@ export default function LinkHub({ isDark, toggleTheme, toggleLang, t, lang }) {
       </button>
 
       {/* Cabeçalho de perfil */}
-      <motion.div
-        initial={{ opacity: 0, y: -16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        className="flex flex-col items-center mb-10 text-center"
-      >
+      <div className="anim-fade-up flex flex-col items-center mb-10 text-center">
         <div className="w-24 h-24 rounded-full overflow-hidden mb-6 border border-edborder">
           <img
             src="eu1.webp"
@@ -127,39 +110,31 @@ export default function LinkHub({ isDark, toggleTheme, toggleLang, t, lang }) {
         </h1>
 
         <p className="section-label mt-4">{t.role}</p>
-      </motion.div>
+      </div>
 
       {/* Lista de links */}
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="w-full max-w-[440px] space-y-3"
-      >
-        {socialLinks.map((link) => (
-          <motion.a
+      <div className="w-full max-w-[440px] space-y-3">
+        {socialLinks.map((link, i) => (
+          <a
             key={link.name}
             href={link.url}
             target={link.url.startsWith('http') ? '_blank' : '_self'}
             rel={link.url.startsWith('http') ? 'noopener noreferrer' : ''}
-            variants={itemVariants}
-            className="group flex items-center justify-between rounded-ed border border-edborder bg-cream px-5 py-4 transition-[transform,border-color] duration-200 hover:-translate-y-0.5 hover:border-accent"
+            style={{ animationDelay: `${0.2 + i * 0.05}s` }}
+            className="anim-fade-up group flex items-center justify-between rounded-ed border border-edborder bg-cream px-5 py-4 transition-[transform,border-color] duration-200 hover:-translate-y-0.5 hover:border-accent"
           >
             <span className="text-[0.8rem] font-medium uppercase tracking-[0.12em] text-edbody group-hover:text-edtext transition-colors">
               {link.name}
             </span>
             <span className="text-edmuted group-hover:text-accent transition-colors">↗</span>
-          </motion.a>
+          </a>
         ))}
-      </motion.div>
+      </div>
 
       {/* Projetos recentes */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.4, duration: 0.8 }}
-        viewport={{ once: true }}
-        className="w-full max-w-[440px] mt-12"
+      <div
+        ref={projRef}
+        className={`w-full max-w-[440px] mt-12 reveal ${projIn ? 'is-visible' : ''}`}
       >
         <div className="flex items-center gap-4 mb-5">
           <div className="h-px flex-1 bg-edborder" />
@@ -169,7 +144,7 @@ export default function LinkHub({ isDark, toggleTheme, toggleLang, t, lang }) {
 
         <div className="space-y-4">
           {projectCards.map((p) => (
-            <motion.a
+            <a
               key={p.href}
               href={p.href}
               target={p.href.startsWith('http') ? '_blank' : '_self'}
@@ -179,11 +154,14 @@ export default function LinkHub({ isDark, toggleTheme, toggleLang, t, lang }) {
               <div className="relative aspect-video overflow-hidden bg-paper">
                 <img
                   src={p.img}
+                  srcSet={`${p.img.replace(/\.webp$/, '-640.webp')} 640w, ${p.img} 1200w`}
+                  sizes="(max-width: 480px) 100vw, 408px"
                   width="640"
                   height="360"
                   loading="lazy"
                   decoding="async"
                   onError={(e) => {
+                    e.target.srcset = ''
                     e.target.src = p.fallback
                   }}
                   alt={p.title}
@@ -194,10 +172,10 @@ export default function LinkHub({ isDark, toggleTheme, toggleLang, t, lang }) {
                 <h3 className="font-display text-lg text-edtext">{p.title}</h3>
                 <p className="text-[0.65rem] uppercase tracking-[0.14em] text-edmuted">{p.sub}</p>
               </div>
-            </motion.a>
+            </a>
           ))}
         </div>
-      </motion.div>
+      </div>
 
       {/* Rodapé */}
       <footer className="mt-16 text-[0.65rem] uppercase tracking-[0.18em] text-edmuted">

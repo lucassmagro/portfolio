@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion'
 import { SOCIAL_LINKS } from '../data/site.js'
+import { useInView } from '../hooks/useInView.js'
 
 /**
  * AboutSection — editorial ("Editorial Zen").
@@ -8,6 +8,7 @@ import { SOCIAL_LINKS } from '../data/site.js'
  * - Bio e detalhes via i18n; links sociais da fonte única (data/site.js).
  */
 export default function AboutSection({ t }) {
+  const [portraitRef, portraitIn] = useInView()
   return (
     <section id="about" data-scroll-section className="relative py-24 md:py-32 bg-cream">
       <div className="max-w-[1100px] mx-auto px-6 md:px-8">
@@ -64,16 +65,15 @@ export default function AboutSection({ t }) {
           </div>
 
           {/* Retrato */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="order-1 lg:order-2"
+          <div
+            ref={portraitRef}
+            className={`order-1 lg:order-2 reveal ${portraitIn ? 'is-visible' : ''}`}
           >
             <div className="overflow-hidden rounded-ed border border-edborder bg-paper">
               <img
                 src="eu.webp"
+                srcSet="eu-450.webp 450w, eu.webp 900w"
+                sizes="(max-width: 1024px) 100vw, 450px"
                 alt="Retrato de Lucas Santos Magro"
                 width="900"
                 height="1200"
@@ -82,7 +82,7 @@ export default function AboutSection({ t }) {
                 className="w-full aspect-[3/4] object-cover"
               />
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

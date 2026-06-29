@@ -1,20 +1,16 @@
-import { motion } from 'framer-motion'
 import { WHATSAPP_URL, MAILTO_URL, CONTACT } from '../data/site.js'
+import { useInView } from '../hooks/useInView.js'
 
 /**
  * ContactSection — contato direto via WhatsApp, ao final da página.
  * Sem formulário: cabeçalho editorial + botão que abre a conversa no WhatsApp.
  */
 export default function ContactSection({ t }) {
+  const [ref, inView] = useInView()
   return (
     <section id="contact" className="relative py-24 md:py-32 bg-cream">
       <div className="max-w-[640px] mx-auto px-6 md:px-8 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        >
+        <div ref={ref} className={`reveal ${inView ? 'is-visible' : ''}`}>
           <span className="section-label mb-4">{t.section}</span>
           <h2 className="font-display font-normal text-edtext text-[clamp(1.8rem,4.5vw,3rem)] tracking-[-0.01em]">
             {t.headline}
@@ -46,7 +42,7 @@ export default function ContactSection({ t }) {
               {CONTACT.email}
             </a>
           </p>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

@@ -21,14 +21,17 @@
     <meta property="og:url" content="https://lucassmagro.com.br/" />
     <meta property="og:title" content="Lucas Santos Magro | Desenvolvedor de Software" />
     <meta property="og:description" content="Desenvolvedor de software e arquiteto de formação. Sites e interfaces rápidas em React, com estética editorial." />
-    <meta property="og:image" content="https://lucassmagro.com.br/portfolio-thumb.png" />
+    <meta property="og:image" content="https://lucassmagro.com.br/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Lucas Santos Magro — Desenvolvedor de Software" />
     <meta property="og:locale" content="pt_BR" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Lucas Santos Magro | Desenvolvedor de Software" />
     <meta name="twitter:description" content="Desenvolvedor de software e arquiteto de formação. Sites e interfaces rápidas em React, com estética editorial." />
-    <meta name="twitter:image" content="https://lucassmagro.com.br/portfolio-thumb.png" />
+    <meta name="twitter:image" content="https://lucassmagro.com.br/og-image.png" />
 
     <!-- JSON-LD: Person / Portfolio -->
     <script type="application/ld+json">
@@ -54,10 +57,14 @@
       }
     </script>
 
-    <!-- Fonts -->
+    <!-- Fonts (carregamento não render-blocking) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=DM+Sans:wght@300;400;500&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=DM+Sans:wght@300;400;500&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=DM+Sans:wght@300;400;500&display=swap">
+    </noscript>
 
     <style>
       body {

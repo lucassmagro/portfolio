@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import { SOCIAL_LINKS, CONTACT } from '../data/site.js'
 
 const linkedin = SOCIAL_LINKS.find((item) => item.id === 'linkedin')
@@ -15,11 +14,7 @@ function SectionTitle({ children }) {
 
 export default function Resume({ t, toggleLang, lang }) {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      className="resume-print min-h-screen bg-paper text-edtext font-body py-16 px-6 md:px-10"
-    >
+    <div className="resume-print anim-fade-in min-h-screen bg-paper text-edtext font-body py-16 px-6 md:px-10">
       <div className="max-w-[1000px] mx-auto">
         {/* Controles */}
         <div className="no-print flex justify-between items-center mb-20 gap-4">
@@ -155,6 +150,6 @@ export default function Resume({ t, toggleLang, lang }) {
           <p className="text-[0.7rem] uppercase tracking-[0.2em] text-edmuted">{t.footerNote}</p>
         </footer>
       </div>
-    </motion.div>
+    </div>
   )
 }
