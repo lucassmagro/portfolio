@@ -143,6 +143,11 @@ export const translations = {
       conceptLabel: 'Marca fictícia',
       challengeLabel: 'Desafio',
       solutionLabel: 'Solução',
+      comingSoon: {
+        title: 'Novos projetos em breve',
+        text: 'Estou sempre desenvolvendo novos trabalhos. Em breve mais projetos por aqui.',
+        cta: 'Quero ser avisado',
+      },
       items: [
         {
           id: 'mgincorporacoes',
@@ -383,6 +388,11 @@ export const translations = {
       conceptLabel: 'Fictional brand',
       challengeLabel: 'Challenge',
       solutionLabel: 'Solution',
+      comingSoon: {
+        title: 'New projects coming soon',
+        text: "I'm always building something new. More work is on the way.",
+        cta: 'Keep me posted',
+      },
       items: [
         {
           id: 'mgincorporacoes',

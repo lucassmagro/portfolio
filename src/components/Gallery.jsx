@@ -1,4 +1,5 @@
 import ProjectCard from './ProjectCard.jsx'
+import ComingSoonCard from './ComingSoonCard.jsx'
 import { useInView } from '../hooks/useInView.js'
 
 /**
@@ -32,6 +33,9 @@ export default function Gallery({ t }) {
               priority={i === 0}
             />
           ))}
+          {t.comingSoon && (
+            <ComingSoonCard copy={t.comingSoon} index={projects.length} />
+          )}
         </div>
       </div>
     </section>
