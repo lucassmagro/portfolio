@@ -135,12 +135,6 @@ export default function Resume({ t, toggleLang, lang }) {
                   {t.sections.skills.languages}
                 </p>
               </div>
-              <div>
-                <h4 className="section-label mb-3">{t.techLabel}</h4>
-                <p className="text-[0.95rem] leading-relaxed text-edbody">
-                  {t.sections.skills.tools}
-                </p>
-              </div>
             </div>
           </section>
         </div>

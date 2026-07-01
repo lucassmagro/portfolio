@@ -62,7 +62,6 @@ export const translations = {
       location: 'Chapecó, SC, Brasil',
       download: 'Baixar em PDF',
       langLabel: 'Linguagens',
-      techLabel: 'Tecnologias',
       footerNote: 'Design & Desenvolvimento © 2026 Lucas Santos Magro',
       sections: {
         experience: [
@@ -128,8 +127,7 @@ export const translations = {
           },
         ],
         skills: {
-          languages: 'C, C++, Python, JavaScript, HTML/CSS, Assembly',
-          tools: 'Bootstrap, WordPress, Express.js, React, Tailwind',
+          languages: 'C, C++, Python, JavaScript, HTML/CSS',
         },
       },
     },
@@ -308,7 +306,6 @@ export const translations = {
       location: 'Chapecó, SC, Brazil',
       download: 'Download PDF',
       langLabel: 'Languages',
-      techLabel: 'Technologies',
       footerNote: 'Design & Development © 2026 Lucas Santos Magro',
       sections: {
         experience: [
@@ -373,8 +370,7 @@ export const translations = {
           },
         ],
         skills: {
-          languages: 'C, C++, Python, JavaScript, HTML/CSS, Assembly',
-          tools: 'Bootstrap, WordPress, Express.js, React, Tailwind',
+          languages: 'C, C++, Python, JavaScript, HTML/CSS',
         },
       },
     },
