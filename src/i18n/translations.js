@@ -197,6 +197,17 @@ export const translations = {
           customImage: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&auto=format&q=70&fit=crop',
         },
         {
+          id: 'wikiestudos',
+          title: 'Wiki de Estudos',
+          brief:
+            'Central de conhecimento pessoal que reúne matérias da faculdade, anotações no estilo Obsidian e projetos de estudo, tudo organizado e com busca.',
+          challenge: 'Anotações e materiais de estudo espalhados em vários lugares, difíceis de encontrar depois.',
+          solution: 'Uma wiki única com navegação lateral, busca e um painel que mostra tudo o que estou estudando em um só lugar.',
+          tags: ['Documentação', 'Wiki', 'Pessoal'],
+          href: 'https://www.lucasmagrodocs.com.br/',
+          customImage: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&auto=format&q=70&fit=crop',
+        },
+        {
           id: 'links',
           title: 'LinkHub / Bio Links',
           brief:
@@ -439,6 +450,17 @@ export const translations = {
           tags: ['Portal', 'Editorial', 'Politics'],
           href: 'https://blog-maria.vercel.app/',
           customImage: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&auto=format&q=70&fit=crop',
+        },
+        {
+          id: 'wikiestudos',
+          title: 'Wiki de Estudos',
+          brief:
+            'A personal knowledge hub gathering university coursework, Obsidian-style notes and study projects, all organized and searchable.',
+          challenge: 'Study notes and materials scattered across many places, hard to find later.',
+          solution: 'A single wiki with a sidebar, search and a dashboard that shows everything I am studying in one place.',
+          tags: ['Documentation', 'Wiki', 'Personal'],
+          href: 'https://www.lucasmagrodocs.com.br/',
+          customImage: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&auto=format&q=70&fit=crop',
         },
         {
           id: 'links',
