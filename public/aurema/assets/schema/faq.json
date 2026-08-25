@@ -1,0 +1,31 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "A primeira avaliação tem custo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Não. A avaliação inicial é sem compromisso e serve para entender seu caso antes de qualquer indicação de tratamento." }
+    },
+    {
+      "@type": "Question",
+      "name": "Os procedimentos doem?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A maioria dos protocolos causa desconforto leve e passageiro. Sempre explicamos o que esperar antes de iniciar, e usamos recursos de conforto quando indicado." }
+    },
+    {
+      "@type": "Question",
+      "name": "Em quanto tempo aparece resultado?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Isso varia de acordo com o protocolo e o objetivo. Pode aparecer em poucos dias ou só depois de alguns ciclos. A gente detalha isso na avaliação, junto com o número estimado de sessões." }
+    },
+    {
+      "@type": "Question",
+      "name": "Preciso levar exames para a consulta?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Não é obrigatório para a avaliação inicial. Se for necessário algum exame complementar, nossa equipe orienta você antes da sessão." }
+    },
+    {
+      "@type": "Question",
+      "name": "Vocês emitem nota fiscal?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim, todos os atendimentos são registrados e emitidos com nota fiscal." }
+    }
+  ]
+}

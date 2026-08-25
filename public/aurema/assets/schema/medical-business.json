@@ -1,0 +1,23 @@
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "Aurema Clínica de Estética e Bem-Estar",
+  "image": "https://www.clinicaaurema.com.br/assets/img/og-image.png",
+  "url": "https://www.clinicaaurema.com.br/",
+  "telephone": "+5511940028922",
+  "email": "contato@clinicaaurema.com.br",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Doutor Ovídio Pires, 148, sala 32",
+    "addressLocality": "São Paulo",
+    "addressRegion": "SP",
+    "postalCode": "01423-000",
+    "addressCountry": "BR"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "19:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "09:00", "closes": "14:00" }
+  ],
+  "sameAs": ["https://instagram.com/clinicaaurema"]
+}

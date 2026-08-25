@@ -186,6 +186,20 @@ export const translations = {
           concept: true,
         },
         {
+          id: 'aurema',
+          title: 'Aurema',
+          brief:
+            'Site para uma clínica fictícia de estética e bem-estar em São Paulo. Agendamento direto pelo WhatsApp, FAQ e uma base técnica pensada para um cliente pagante de verdade, não só uma demo bonita.',
+          challenge:
+            'Clínica de saúde e estética pede confiança visual e conformidade com a LGPD, não só uma página bonita.',
+          solution:
+            'Fontes hospedadas localmente, banner de consentimento real, Schema.org (inclusive FAQPage) e testes automatizados cobrindo o agendamento e o carrossel de depoimentos.',
+          tags: ['Saúde & Estética', 'Landing Page', 'LGPD'],
+          href: 'aurema/index.html',
+          customImage: 'projects/aurema.webp',
+          concept: true,
+        },
+        {
           id: 'catedra',
           title: 'Cátedra Política',
           brief:
@@ -438,6 +452,20 @@ export const translations = {
           tags: ['Architecture', 'Renovation', 'Landing Page'],
           href: 'refit/index.html',
           customImage: 'refit-thumb.webp',
+          concept: true,
+        },
+        {
+          id: 'aurema',
+          title: 'Aurema',
+          brief:
+            'Website for a fictional aesthetics and wellness clinic in São Paulo. Direct WhatsApp booking, an FAQ, and an engineering foundation built for a real paying client, not just a pretty demo.',
+          challenge:
+            'A health and aesthetics clinic needs visual trust and real privacy compliance, not just a nice page.',
+          solution:
+            'Self-hosted fonts, a real consent banner, Schema.org markup (including FAQPage), and automated tests covering the booking flow and testimonial carousel.',
+          tags: ['Health & Aesthetics', 'Landing Page', 'Privacy'],
+          href: 'aurema/index.html',
+          customImage: 'projects/aurema.webp',
           concept: true,
         },
         {
