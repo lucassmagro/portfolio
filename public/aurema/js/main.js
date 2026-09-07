@@ -5,8 +5,8 @@
     showFloatingWhatsapp: true,
     autoplayDepoimentos: true,
     autoplayIntervalMs: 7000,
-    // Defina o domínio real (ex: "clinicaaurema.com.br") para carregar o
-    // Plausible Analytics depois que o usuário aceitar cookies no banner.
+    // Defina o domínio real do site (o mesmo cadastrado no Plausible) para
+    // carregar o Plausible Analytics depois que o usuário aceitar no banner.
     // Plausible não usa cookies nem coleta dado pessoal. Preferimos ele aqui
     // por ser um site de saúde e estética, mas ainda assim ele só carrega
     // depois do consentimento, pra combinar com o texto do banner.
@@ -18,6 +18,10 @@
     return `https://wa.me/${digits}?text=${encodeURIComponent(message || CONFIG.whatsappMessage)}`;
   }
 
+  // O link real do wa.me já está escrito no HTML de cada [data-wa-link], para o
+  // caminho de conversão funcionar sem JS (bloqueador, falha de rede, crawler).
+  // Aqui ele é reescrito a partir do CONFIG, que segue sendo a fonte única para
+  // quem for customizar o site: basta trocar o número/mensagem em um lugar.
   function initWhatsappLinks() {
     const link = buildWaLink();
     document.querySelectorAll("[data-wa-link]").forEach((el) => {
@@ -28,6 +32,35 @@
     if (floating && !CONFIG.showFloatingWhatsapp) {
       floating.style.display = "none";
     }
+  }
+
+  // O mapa do Google grava cookies de terceiros. Carregar sob demanda mantém
+  // verdadeira, no carregamento da página, a promessa da política de
+  // privacidade — e transforma o mapa numa escolha informada do visitante.
+  function initMap() {
+    const container = document.querySelector("[data-map]");
+    if (!container) return;
+    const button = container.querySelector("[data-map-load]");
+    if (!button || !container.dataset.mapSrc) return;
+
+    // O botão nasce hidden no HTML: sem JS ele não carregaria nada, e o que
+    // sobra é o link "Ver no Google Maps", que funciona sozinho.
+    button.hidden = false;
+
+    button.addEventListener("click", () => {
+      const iframe = document.createElement("iframe");
+      iframe.src = container.dataset.mapSrc;
+      iframe.title = "Mapa com a localização da Aurema";
+      iframe.loading = "lazy";
+      iframe.referrerPolicy = "no-referrer-when-downgrade";
+      iframe.allowFullscreen = true;
+      container.replaceChildren(iframe);
+      // O foco estava no botão que acabou de sumir. Mandá-lo para dentro do
+      // iframe de terceiro é desorientador: o foco vai para o container, e o
+      // leitor de tela segue dali para o iframe, que tem title próprio.
+      container.tabIndex = -1;
+      container.focus();
+    });
   }
 
   function initTestimonials() {
@@ -161,6 +194,7 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     initWhatsappLinks();
+    initMap();
     initTestimonials();
     initScrollReveal();
     initCookieConsent();
