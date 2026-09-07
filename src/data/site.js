@@ -8,7 +8,7 @@
 
 // Domínio absoluto usado para Open Graph, canonical e sitemap.
 // Ajuste aqui caso o domínio de produção mude.
-export const SITE_URL = 'https://lucassmagro.com.br'
+export const SITE_URL = 'https://www.lucassmagro.com.br'
 
 export const CONTACT = {
   email: 'lucassmagro@gmail.com',
@@ -50,7 +50,7 @@ export const SOCIAL_LINKS = [
 ]
 
 // Domínio pessoal (marca/crédito).
-export const WEBSITE_URL = 'https://lucassmagro.com.br'
+export const WEBSITE_URL = 'https://www.lucassmagro.com.br'
 
 // Link direto de WhatsApp reutilizável.
 export const WHATSAPP_URL = `https://wa.me/${CONTACT.whatsapp}`

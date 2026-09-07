@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lucassmagro.com.br/sitemap.xml
+Sitemap: https://www.lucassmagro.com.br/sitemap.xml
 Sitemap: https://www.lucassmagro.com.br/aurema/sitemap.xml

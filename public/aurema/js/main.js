@@ -11,6 +11,12 @@
     // por ser um site de saúde e estética, mas ainda assim ele só carrega
     // depois do consentimento, pra combinar com o texto do banner.
     plausibleDomain: "",
+    // Deixe vazio para o formulário montar a mensagem e abrir no WhatsApp,
+    // sem back-end nenhum. Preenchendo com a URL de um serviço de formulário
+    // (Formspree, Basin, a Function do próprio host), o envio passa a ser um
+    // POST para lá e o WhatsApp vira só o plano B em caso de falha. Se usar,
+    // libere o domínio no connect-src do CSP em _headers e vercel.json.
+    contactFormEndpoint: "",
   };
 
   function buildWaLink(message) {
@@ -60,6 +66,157 @@
       // leitor de tela segue dali para o iframe, que tem title próprio.
       container.tabIndex = -1;
       container.focus();
+    });
+  }
+
+  function formatPhoneBR(value) {
+    const digits = value.replace(/\D/g, "").slice(0, 11);
+    if (digits.length <= 2) return digits;
+    if (digits.length <= 6) return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+    if (digits.length <= 10) return `(${digits.slice(0, 2)}) ${digits.slice(2, 6)}-${digits.slice(6)}`;
+    return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
+  }
+
+  const FIELD_MESSAGES = {
+    valueMissing: "Este campo é obrigatório.",
+    typeMismatch: "Formato inválido.",
+    tooShort: "Muito curto, complete um pouco mais.",
+  };
+
+  function messageFor(field) {
+    const validity = field.validity;
+    if (validity.valid) return "";
+    for (const key of Object.keys(FIELD_MESSAGES)) {
+      if (validity[key]) return FIELD_MESSAGES[key];
+    }
+    return "Verifique este campo.";
+  }
+
+  function setFieldError(field, message) {
+    const wrapper = field.closest(".field");
+    const errorEl = document.querySelector(`[data-error-for="${field.id}"]`);
+    if (wrapper) wrapper.classList.toggle("is-invalid", Boolean(message));
+    if (errorEl) errorEl.textContent = message;
+  }
+
+  // Monta a mensagem já organizada, para a clínica receber os mesmos campos
+  // que receberia por e-mail em vez de um texto solto.
+  function buildContactMessage(data) {
+    return [
+      "Olá! Vim pelo site da Aurema.",
+      "",
+      `Nome: ${data.nome}`,
+      `Telefone: ${data.telefone}`,
+      `E-mail: ${data.email}`,
+      `Assunto: ${data.assunto}`,
+      "",
+      data.mensagem,
+    ].join("\n");
+  }
+
+  function initContactForm() {
+    const form = document.getElementById("contact-form");
+    const fallback = document.querySelector("[data-contact-fallback]");
+    if (!form) return;
+
+    // o formulário só existe de verdade com JS; a alternativa some agora
+    form.hidden = false;
+    if (fallback) fallback.hidden = true;
+
+    const phoneInput = form.querySelector("#cf-telefone");
+    if (phoneInput) {
+      phoneInput.addEventListener("input", () => {
+        phoneInput.value = formatPhoneBR(phoneInput.value);
+      });
+    }
+
+    const messageInput = form.querySelector("#cf-mensagem");
+    const charCount = form.querySelector("[data-char-count]");
+    if (messageInput && charCount) {
+      messageInput.addEventListener("input", () => {
+        charCount.textContent = String(messageInput.value.length);
+      });
+    }
+
+    const statusEl = form.querySelector("[data-form-status]");
+    const fields = Array.from(form.querySelectorAll("input, select, textarea")).filter(
+      (el) => el.name !== "empresa"
+    );
+
+    function validateAll() {
+      let firstInvalid = null;
+      fields.forEach((field) => {
+        const message = messageFor(field);
+        setFieldError(field, message);
+        if (message && !firstInvalid) firstInvalid = field;
+      });
+      return firstInvalid;
+    }
+
+    fields.forEach((field) => {
+      field.addEventListener("blur", () => setFieldError(field, messageFor(field)));
+    });
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      // honeypot: bot preenche campo oculto — finge sucesso sem enviar nada
+      const honeypot = form.querySelector("#cf-empresa");
+      if (honeypot && honeypot.value) {
+        form.reset();
+        return;
+      }
+
+      const firstInvalid = validateAll();
+      if (firstInvalid) {
+        firstInvalid.focus();
+        if (statusEl) {
+          statusEl.dataset.state = "error";
+          statusEl.textContent = "Verifique os campos destacados antes de enviar.";
+        }
+        return;
+      }
+
+      const data = Object.fromEntries(new FormData(form).entries());
+
+      if (CONFIG.contactFormEndpoint) {
+        const submitButton = form.querySelector('button[type="submit"]');
+        if (submitButton) submitButton.disabled = true;
+        if (statusEl) {
+          statusEl.dataset.state = "";
+          statusEl.textContent = "Enviando...";
+        }
+        try {
+          const response = await fetch(CONFIG.contactFormEndpoint, {
+            method: "POST",
+            headers: { Accept: "application/json" },
+            body: new FormData(form),
+          });
+          if (!response.ok) throw new Error("request failed");
+          if (statusEl) {
+            statusEl.dataset.state = "success";
+            statusEl.textContent = "Mensagem enviada! Retornaremos em breve.";
+          }
+          form.reset();
+          if (charCount) charCount.textContent = "0";
+          return;
+        } catch (err) {
+          if (statusEl) {
+            statusEl.dataset.state = "error";
+            statusEl.textContent = "Não foi possível enviar. Abrindo o WhatsApp...";
+          }
+        } finally {
+          if (submitButton) submitButton.disabled = false;
+        }
+      }
+
+      // Sem endpoint (ou se ele falhou): abre o WhatsApp com tudo preenchido.
+      // Nada é enviado daqui — quem aperta enviar é o visitante, no app dele.
+      window.open(buildWaLink(buildContactMessage(data)), "_blank", "noopener");
+      if (statusEl) {
+        statusEl.dataset.state = "success";
+        statusEl.textContent = "Abrimos o WhatsApp com sua mensagem pronta.";
+      }
     });
   }
 
@@ -194,6 +351,7 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     initWhatsappLinks();
+    initContactForm();
     initMap();
     initTestimonials();
     initScrollReveal();
