@@ -1,7 +1,7 @@
 {
   "name": "Lucas Santos Magro",
   "short_name": "LSM",
-  "description": "Portfólio de Lucas Santos Magro — desenvolvedor de software e arquiteto de formação.",
+  "description": "Portfólio de Lucas Santos Magro: design UI/UX e dados, com formação em Arquitetura e Urbanismo.",
   "icons": [
     { "src": "/favicon-32.png", "sizes": "32x32", "type": "image/png" },
     { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }

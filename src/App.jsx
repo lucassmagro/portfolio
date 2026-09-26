@@ -9,6 +9,7 @@ import Footer from './components/Footer.jsx'
 import AboutSection from './components/AboutSection.jsx'
 import ContactSection from './components/ContactSection.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
+import DesignPortfolioButton from './components/DesignPortfolioButton.jsx'
 
 // Páginas secundárias carregadas sob demanda (reduz o bundle inicial).
 const LinkHub = lazy(() => import('./pages/LinkHub.jsx'))
@@ -98,6 +99,7 @@ export default function App() {
         <ContactSection t={t.cta} />
       </main>
 
+      <DesignPortfolioButton t={t.designCta} />
       <ScrollToTop />
       <Footer t={t.footer} />
     </div>

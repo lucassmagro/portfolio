@@ -1,14 +1,18 @@
 export const translations = {
   pt: {
+    designCta: {
+      label: 'Ver portfólio de design',
+      short: 'Ver design',
+    },
     navbar: {
       work: 'Trabalhos',
       about: 'Info',
       contact: 'Contato',
     },
     hero: {
-      tag: 'Desenvolvedor de Software · Estudante de Sistemas de Informação',
+      tag: 'Design UI/UX e Dados · Estudante de Sistemas de Informação',
       intro:
-        'Arquiteto de formação que migrou para a tecnologia. Estou no terceiro semestre de Sistemas de Informação e trabalho como analista de suporte júnior, caminhando para o desenvolvimento full-stack. A bagagem da arquitetura molda meu jeito de pensar design e de resolver problemas no código.',
+        'Estudante de Sistemas de Informação, trabalho com dados e estudo design UI/UX. Me formei em Arquitetura e Urbanismo, e é de lá que vem meu olhar para fluxo, espaço e detalhe.',
       marker: 'Chapecó, Brasil',
       ctaWork: 'Ver trabalhos',
       ctaContact: 'Contato',
@@ -43,11 +47,11 @@ export const translations = {
     about: {
       section: 'Perfil',
       title: 'Quem eu sou.',
-      bio: 'Comecei na arquitetura, desenhando casas e acompanhando obras, e acabei migrando para a tecnologia. Hoje curso Sistemas de Informação e trabalho como analista de suporte júnior, enquanto avanço para o desenvolvimento full-stack. Da arquitetura trouxe o costume de cuidar de proporção, espaço e dos detalhes que ninguém repara à primeira vista, e levo isso para a forma como escrevo código e penso interfaces.',
+      bio: 'Me formei em Arquitetura e Urbanismo, desenhando casas e acompanhando obras, e escolhi seguir na tecnologia. Hoje curso Sistemas de Informação, trabalho com dados e estudo design UI/UX. Da arquitetura trouxe o costume de cuidar de proporção, espaço e dos detalhes que ninguém repara à primeira vista, e levo isso para a forma como penso interfaces e organizo dados.',
       specialty: 'Especialidade',
-      skills: ['Front-end', 'Back-end', 'Design e UI', 'Resolução de problemas'],
-      stack: 'Stack',
-      tools: ['React / Next.js', 'Node.js / Python', 'TypeScript / MySQL'],
+      skills: ['Design UI/UX', 'Análise de dados', 'Interfaces web', 'Resolução de problemas'],
+      stack: 'Ferramentas',
+      tools: ['Figma', 'Python / MySQL', 'HTML / CSS / React'],
       resume: 'Ver Currículo',
     },
     resume: {
@@ -248,7 +252,7 @@ export const translations = {
       ],
     },
     footer: {
-      statement: 'Desenvolvedor de software e estudante de Sistemas de Informação, em Chapecó, SC.',
+      statement: 'Design UI/UX e dados. Estudante de Sistemas de Informação em Chapecó, SC.',
       nav: 'Principal',
       links: { home: 'Início', work: 'Trabalhos', about: 'Info' },
       contact: 'Contato',
@@ -260,7 +264,7 @@ export const translations = {
       resume: 'Baixar Currículo',
     },
     linkhub: {
-      role: 'Desenvolvedor de Software · Estudante de Sistemas de Informação',
+      role: 'Design UI/UX e Dados · Estudante de Sistemas de Informação',
       latest: 'Projetos Recentes',
       links: {
         portfolio: 'Portfólio',
@@ -282,15 +286,19 @@ export const translations = {
     },
   },
   en: {
+    designCta: {
+      label: 'See design portfolio',
+      short: 'See design',
+    },
     navbar: {
       work: 'Work',
       about: 'Info',
       contact: 'Contact',
     },
     hero: {
-      tag: 'Software Developer · Information Systems Student',
+      tag: 'UI/UX Design & Data · Information Systems Student',
       intro:
-        'An architect who moved into tech. I am in my third semester of Information Systems and work as a junior support analyst while building toward full-stack development. My architecture background shapes how I think about design and how I solve problems in code.',
+        'Information Systems student working with data and studying UI/UX design. I trained in architecture and urban planning, and that is where my eye for flow, space and detail comes from.',
       marker: 'Chapecó, Brazil',
       ctaWork: 'View work',
       ctaContact: 'Contact',
@@ -325,11 +333,11 @@ export const translations = {
     about: {
       section: 'Profile',
       title: 'Who I am.',
-      bio: 'I started in architecture, designing houses and following construction sites, and ended up moving into tech. I am now studying Information Systems and working as a junior support analyst while moving toward full-stack development. From architecture I kept the habit of caring about proportion, space and the details no one notices at first, and I bring that into how I write code and think about interfaces.',
+      bio: 'I trained in architecture and urban planning, designing houses and following construction sites, and chose to move into tech. I now study Information Systems, work with data and study UI/UX design. From architecture I kept the habit of caring about proportion, space and the details no one notices at first, and I bring that into how I think about interfaces and organize data.',
       specialty: 'Specialty',
-      skills: ['Front-end', 'Back-end', 'Design and UI', 'Problem solving'],
-      stack: 'Stack',
-      tools: ['React / Next.js', 'Node.js / Python', 'TypeScript / MySQL'],
+      skills: ['UI/UX design', 'Data analysis', 'Web interfaces', 'Problem solving'],
+      stack: 'Tools',
+      tools: ['Figma', 'Python / MySQL', 'HTML / CSS / React'],
       resume: 'View Resume',
     },
     resume: {
@@ -530,7 +538,7 @@ export const translations = {
       ],
     },
     footer: {
-      statement: 'Software developer and Information Systems student, based in Chapecó, Brazil.',
+      statement: 'UI/UX design and data. Information Systems student based in Chapecó, Brazil.',
       nav: 'Main',
       links: { home: 'Home', work: 'Work', about: 'Info' },
       contact: 'Contact',
@@ -542,7 +550,7 @@ export const translations = {
       resume: 'Download Resume',
     },
     linkhub: {
-      role: 'Software Developer · Information Systems Student',
+      role: 'UI/UX Design & Data · Information Systems Student',
       latest: 'Latest Projects',
       links: {
         portfolio: 'Portfolio',
