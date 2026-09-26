@@ -200,6 +200,19 @@ export const translations = {
           concept: true,
         },
         {
+          id: 'portfolio-ui-ux',
+          title: 'Portfólio Interativo',
+          brief:
+            'Uma versão experimental do meu portfólio em grade, com dois modos visuais (profissional e criativo), painéis que se expandem a partir dos cards e microinterações em cada canto.',
+          challenge:
+            'Estudar motion design na web recriando do zero as interações de um portfólio de referência (bohdana.design).',
+          solution:
+            'Next.js e Tailwind, animações feitas só com transições CSS e easing personalizado, troca de modo com destaque do card em foco e um kanban arrastável que termina em confete.',
+          tags: ['UI/UX', 'Motion', 'Next.js'],
+          href: 'portfolio-ui-ux/index.html',
+          customImage: 'projects/portfolio-ui-ux.webp',
+        },
+        {
           id: 'catedra',
           title: 'Cátedra Política',
           brief:
@@ -467,6 +480,19 @@ export const translations = {
           href: 'aurema/index.html',
           customImage: 'projects/aurema.webp',
           concept: true,
+        },
+        {
+          id: 'portfolio-ui-ux',
+          title: 'Interactive Portfolio',
+          brief:
+            'An experimental grid version of my portfolio, with two visual modes (professional and creative), panels that expand out of the cards, and micro-interactions in every corner.',
+          challenge:
+            'Study web motion design by rebuilding the interactions of a reference portfolio (bohdana.design) from scratch.',
+          solution:
+            'Next.js and Tailwind, animations built with plain CSS transitions and custom easing, a mode switch that spotlights the hovered card, and a draggable kanban that ends in confetti.',
+          tags: ['UI/UX', 'Motion', 'Next.js'],
+          href: 'portfolio-ui-ux/index.html',
+          customImage: 'projects/portfolio-ui-ux.webp',
         },
         {
           id: 'catedra',
