@@ -1,4 +1,4 @@
-import { WHATSAPP_URL, MAILTO_URL, CONTACT } from '../data/site.js'
+import { whatsappComMensagem, MAILTO_URL, CONTACT } from '../data/site.js'
 import { useInView } from '../hooks/useInView.js'
 
 /**
@@ -21,7 +21,7 @@ export default function ContactSection({ t }) {
 
           <div className="mt-9 flex justify-center">
             <a
-              href={WHATSAPP_URL}
+              href={whatsappComMensagem(t.whatsappMessage)}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-ed btn-ed--pill inline-flex items-center gap-2"

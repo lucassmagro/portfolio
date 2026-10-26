@@ -7,13 +7,16 @@ export const translations = {
     navbar: {
       work: 'Trabalhos',
       offer: 'Seu site',
-      about: 'Info',
+      about: 'Sobre',
+      quote: 'Orçamento',
       contact: 'Contato',
     },
     hero: {
       tag: 'Design UI/UX e Dados · Estudante de Sistemas de Informação',
+      title: 'Sites profissionais para negócios de Chapecó e região',
       intro:
-        'Estudante de Sistemas de Informação, trabalho com dados e estudo design UI/UX. Me formei em Arquitetura e Urbanismo, e é de lá que vem meu olhar para fluxo, espaço e detalhe.',
+        'Prontos em até 7 dias úteis, feitos para o celular e com contato direto no seu WhatsApp. Você fala comigo, sem agência no meio.',
+      ctaClient: 'Quero meu site',
       marker: 'Chapecó, Brasil',
       ctaWork: 'Ver trabalhos',
       ctaContact: 'Contato',
@@ -23,9 +26,10 @@ export const translations = {
     },
     cta: {
       section: 'Contato',
-      headline: 'Quer tirar um projeto do papel?',
-      sub: 'Estou aceitando trabalhos novos. Me chama no WhatsApp e a gente conversa.',
-      whatsappCta: 'Falar no WhatsApp',
+      headline: 'Quer um site para o seu negócio?',
+      sub: 'Me conta o que você faz e para quem. Eu respondo pelo WhatsApp com como ficaria o seu site e o valor.',
+      whatsappCta: 'Pedir orçamento no WhatsApp',
+      whatsappMessage: 'Olá, Lucas! Vim pelo seu portfólio e quero conversar sobre um site para o meu negócio.',
       orEmail: 'ou por e-mail:',
       button: 'Iniciar Conversa',
       form: {
@@ -47,25 +51,36 @@ export const translations = {
     },
     offer: {
       section: 'Para o seu negócio',
-      title: 'Um site como o Aurema, com o nome do seu negócio',
-      sub: 'Para clínicas, consultórios e negócios locais que precisam de um site bonito no celular e que transforma visita em mensagem no WhatsApp.',
+      title: 'Um site profissional para o seu negócio, pronto em até 7 dias úteis',
+      sub: 'Para quem vende serviço ou produto e quer ser encontrado e chamado no WhatsApp: prestadores de serviço, comércio, clínicas, construtoras, escritórios e restaurantes.',
       includedTitle: 'O que você recebe',
       included: [
-        'Site completo no padrão do modelo: página inicial, serviços com valores, uma página para cada serviço, equipe, mapa e dúvidas frequentes',
-        'Adaptado com o seu nome, textos, fotos e cores',
-        'Todo botão de agendar abre o seu WhatsApp com a mensagem pronta',
-        'Pensado primeiro para o celular, rápido de abrir',
+        'Site completo: página inicial, serviços ou produtos, sobre, contato e mapa',
+        'Com os seus textos, fotos, cores e identidade',
+        'Botões que levam direto ao seu WhatsApp, com a mensagem pronta',
+        'Pensado primeiro para o celular e rápido de abrir',
+        'Pronto para o Google: título, descrição e dados da empresa configurados',
       ],
       stepsTitle: 'Como funciona',
       steps: [
-        { title: 'Você me conta', text: 'Serviços, valores, endereço, fotos e logo, pelo WhatsApp.' },
+        { title: 'Você me conta', text: 'O que vende, para quem, fotos e logo, pelo WhatsApp.' },
         { title: 'Eu monto', text: 'O site fica pronto em até 7 dias úteis, já no ar.' },
         { title: 'A gente ajusta', text: 'Por 30 dias, mudo textos e fotos sem custo.' },
       ],
-      previewTitle: 'Veja como ficaria o seu',
-      previewSub: 'Digite o nome do seu negócio e abra o site modelo com ele.',
-      previewPlaceholder: 'Ex.: Clínica Bem Viver',
-      previewCta: 'Ver prévia',
+      examplesTitle: 'Exemplos',
+      caseReal: {
+        label: 'Cliente real · Chapecó',
+        title: 'MG Incorporações',
+        text: 'Site da construtora e incorporadora, com mais de 20 anos de mercado: empreendimentos com fotos grandes, informações claras e contato direto pelo WhatsApp.',
+        cta: 'Ver o site no ar ↗',
+        href: 'https://www.mgincorporacoes.com.br/',
+        image: 'imobiliaria-mg-thumbnail-640.webp',
+      },
+      examples: [
+        { title: 'Aurema', sub: 'Clínica de estética', href: 'aurema/index.html', image: 'projects/aurema-640.webp' },
+        { title: 'REFIT', sub: 'Reforma residencial', href: 'refit/index.html', image: 'refit-thumb-640.webp' },
+        { title: 'Artisanal Coffee', sub: 'Loja de café', href: 'cafeteria/index.html', image: 'projects/cafeteria-640.webp' },
+      ],
       priceLabel: 'Preço de lançamento',
       price: 'R$ 500',
       priceNote: 'Pagamento único',
@@ -73,22 +88,23 @@ export const translations = {
       priceIncludes: [
         'Domínio e hospedagem no 1º ano',
         '30 dias de ajustes depois de publicar',
-        'Agendamento pelo WhatsApp',
+        'Contato direto pelo WhatsApp',
       ],
       cta: 'Quero o meu site',
-      whatsappMessage: 'Olá, Lucas! Vi a oferta de site por R$ 500 no seu portfólio e quero o meu.',
-      modelLink: 'Ver o site modelo',
+      whatsappMessage: 'Olá, Lucas! Vi a oferta de site no seu portfólio e quero um para o meu negócio.',
+      projectsLink: 'Ver todos os projetos',
       maintenance:
         'Manutenção mensal opcional, para atualizações depois dos 30 dias. Valor sob consulta.',
     },
     about: {
       section: 'Perfil',
       title: 'Quem eu sou.',
-      bio: 'Me formei em Arquitetura e Urbanismo, desenhando casas e acompanhando obras, e escolhi seguir na tecnologia. Hoje curso Sistemas de Informação, trabalho com dados e estudo design UI/UX. Da arquitetura trouxe o costume de cuidar de proporção, espaço e dos detalhes que ninguém repara à primeira vista, e levo isso para a forma como penso interfaces e organizo dados.',
-      specialty: 'Especialidade',
-      skills: ['Design UI/UX', 'Análise de dados', 'Interfaces web', 'Resolução de problemas'],
-      stack: 'Ferramentas',
-      tools: ['Figma', 'Python / MySQL', 'HTML / CSS / React'],
+      bio: 'Sou de Chapecó, me formei em Arquitetura e Urbanismo e hoje curso Sistemas de Informação. Da arquitetura trouxe o cuidado com proporção e detalhe; da tecnologia, sites rápidos e que funcionam de verdade. Faço cada site direto com o dono do negócio, do primeiro esboço até o site no ar.',
+      specialty: 'O que eu faço',
+      skills: ['Sites institucionais', 'Páginas de serviço e produto', 'Lojas e catálogos', 'Design de interfaces'],
+      stack: 'Como eu trabalho',
+      tools: ['Atendimento direto comigo', 'Entrega em até 7 dias úteis', 'Feito primeiro para o celular', 'Ajustes depois de publicar'],
+      designLink: 'Ver portfólio de design',
       resume: 'Ver Currículo',
     },
     resume: {
@@ -173,8 +189,10 @@ export const translations = {
       },
     },
     projects: {
-      section: 'Projetos Selecionados',
-      title: 'Projetos.',
+      section: 'Trabalhos',
+      title: 'Sites que eu fiz.',
+      othersSection: 'Outros projetos',
+      othersTitle: 'Estudos e projetos pessoais',
       view: 'VER',
       reworked: 'Ver versão reformulada',
       original: 'Ver original',
@@ -190,6 +208,7 @@ export const translations = {
       items: [
         {
           id: 'mgincorporacoes',
+          featured: true,
           title: 'MG Incorporações',
           brief:
             'Site para uma construtora e incorporadora de Chapecó, com mais de 20 anos de mercado. Vitrine dos empreendimentos comerciais e residenciais, com destaque para o Valley Business Center.',
@@ -203,6 +222,7 @@ export const translations = {
         },
         {
           id: 'cafeteria',
+          featured: true,
           title: 'Artisanal Coffee',
           brief:
             'Loja virtual para uma marca de café especial. A ideia foi dar à navegação o mesmo capricho do produto, do primeiro scroll até o carrinho.',
@@ -216,6 +236,7 @@ export const translations = {
         },
         {
           id: 'refit',
+          featured: true,
           title: 'REFIT',
           brief:
             'Landing page para um estúdio de reforma residencial de alto padrão, com galeria de antes e depois e um pedido de orçamento simples.',
@@ -228,6 +249,7 @@ export const translations = {
         },
         {
           id: 'aurema',
+          featured: true,
           title: 'Aurema',
           brief:
             'Site modelo para clínica de estética: valores na tela, uma página por serviço, equipe e mapa. Todo botão de agendar abre o WhatsApp com a mensagem pronta, e um link personalizado vira a prévia do site de cada cliente.',
@@ -289,9 +311,9 @@ export const translations = {
       ],
     },
     footer: {
-      statement: 'Design UI/UX e dados. Estudante de Sistemas de Informação em Chapecó, SC.',
+      statement: 'Sites profissionais para negócios de Chapecó e região.',
       nav: 'Principal',
-      links: { home: 'Início', work: 'Trabalhos', about: 'Info' },
+      links: { home: 'Início', work: 'Trabalhos', offer: 'Seu site', about: 'Sobre' },
       contact: 'Contato',
       emailLabel: 'E-mail',
       social: 'Social',
@@ -330,13 +352,16 @@ export const translations = {
     navbar: {
       work: 'Work',
       offer: 'Your site',
-      about: 'Info',
+      about: 'About',
+      quote: 'Get a quote',
       contact: 'Contact',
     },
     hero: {
       tag: 'UI/UX Design & Data · Information Systems Student',
+      title: 'Professional websites for businesses in Chapecó and the region',
+      ctaClient: 'I want my site',
       intro:
-        'Information Systems student working with data and studying UI/UX design. I trained in architecture and urban planning, and that is where my eye for flow, space and detail comes from.',
+        'Ready within 7 business days, built for mobile and with direct contact on your WhatsApp. You work with me directly, no agency in between.',
       marker: 'Chapecó, Brazil',
       ctaWork: 'View work',
       ctaContact: 'Contact',
@@ -346,9 +371,10 @@ export const translations = {
     },
     cta: {
       section: 'Contact',
-      headline: 'Got a project in mind?',
-      sub: "I'm taking on new work. Message me on WhatsApp and let's talk.",
-      whatsappCta: 'Message me on WhatsApp',
+      headline: 'Need a website for your business?',
+      sub: 'Tell me what you do and who you serve. I will reply on WhatsApp with how your site would look and the price.',
+      whatsappCta: 'Ask for a quote on WhatsApp',
+      whatsappMessage: 'Hi Lucas! I found your portfolio and I would like to talk about a website for my business.',
       orEmail: 'or by email:',
       button: 'Start a Conversation',
       form: {
@@ -370,25 +396,36 @@ export const translations = {
     },
     offer: {
       section: 'For your business',
-      title: 'A website like Aurema, with your business name on it',
-      sub: 'For clinics, practices and local businesses that need a site that looks great on mobile and turns visits into WhatsApp messages.',
+      title: 'A professional website for your business, ready in 7 business days',
+      sub: 'For anyone selling a service or product who wants to be found and contacted on WhatsApp: service providers, shops, clinics, builders, offices and restaurants.',
       includedTitle: 'What you get',
       included: [
-        'A complete site based on the template: home page, services with prices, a page for each service, team, map and FAQ',
-        'Adapted with your name, copy, photos and colors',
-        'Every booking button opens your WhatsApp with the message ready',
+        'A complete site: home page, services or products, about, contact and map',
+        'With your own copy, photos, colors and identity',
+        'Buttons that go straight to your WhatsApp, with the message ready',
         'Built mobile-first and quick to load',
+        'Ready for Google: title, description and business details set up',
       ],
       stepsTitle: 'How it works',
       steps: [
-        { title: 'You tell me', text: 'Services, prices, address, photos and logo, over WhatsApp.' },
+        { title: 'You tell me', text: 'What you sell, to whom, photos and logo, over WhatsApp.' },
         { title: 'I build it', text: 'The site is live within 7 business days.' },
         { title: 'We fine-tune', text: 'For 30 days I change copy and photos at no cost.' },
       ],
-      previewTitle: 'See how yours would look',
-      previewSub: 'Type your business name and open the template with it.',
-      previewPlaceholder: 'E.g. Bem Viver Clinic',
-      previewCta: 'See preview',
+      examplesTitle: 'Examples',
+      caseReal: {
+        label: 'Real client · Chapecó',
+        title: 'MG Incorporações',
+        text: 'Website for a builder and real estate developer with over 20 years in the market: projects with large photos, clear information and direct WhatsApp contact.',
+        cta: 'See the live site ↗',
+        href: 'https://www.mgincorporacoes.com.br/',
+        image: 'imobiliaria-mg-thumbnail-640.webp',
+      },
+      examples: [
+        { title: 'Aurema', sub: 'Aesthetics clinic', href: 'aurema/index.html', image: 'projects/aurema-640.webp' },
+        { title: 'REFIT', sub: 'Home renovation', href: 'refit/index.html', image: 'refit-thumb-640.webp' },
+        { title: 'Artisanal Coffee', sub: 'Coffee shop', href: 'cafeteria/index.html', image: 'projects/cafeteria-640.webp' },
+      ],
       priceLabel: 'Launch price',
       price: 'R$ 500',
       priceNote: 'One-time payment',
@@ -396,22 +433,23 @@ export const translations = {
       priceIncludes: [
         'Domain and hosting for the first year',
         '30 days of adjustments after launch',
-        'Booking through WhatsApp',
+        'Direct contact through WhatsApp',
       ],
       cta: 'I want my site',
-      whatsappMessage: 'Hi Lucas! I saw the R$ 500 website offer on your portfolio and I would like one.',
-      modelLink: 'See the template site',
+      whatsappMessage: 'Hi Lucas! I saw the website offer on your portfolio and I would like one for my business.',
+      projectsLink: 'See all projects',
       maintenance:
         'Optional monthly maintenance for updates after the first 30 days. Price on request.',
     },
     about: {
       section: 'Profile',
       title: 'Who I am.',
-      bio: 'I trained in architecture and urban planning, designing houses and following construction sites, and chose to move into tech. I now study Information Systems, work with data and study UI/UX design. From architecture I kept the habit of caring about proportion, space and the details no one notices at first, and I bring that into how I think about interfaces and organize data.',
-      specialty: 'Specialty',
-      skills: ['UI/UX design', 'Data analysis', 'Web interfaces', 'Problem solving'],
-      stack: 'Tools',
-      tools: ['Figma', 'Python / MySQL', 'HTML / CSS / React'],
+      bio: "I'm from Chapecó, trained in architecture and urban planning and now study Information Systems. From architecture I kept the care for proportion and detail; from tech, websites that are fast and actually work. I build each site directly with the business owner, from the first sketch to the live site.",
+      specialty: 'What I do',
+      skills: ['Business websites', 'Service and product pages', 'Shops and catalogs', 'Interface design'],
+      stack: 'How I work',
+      tools: ['You work with me directly', 'Delivered within 7 business days', 'Built mobile-first', 'Adjustments after launch'],
+      designLink: 'See design portfolio',
       resume: 'View Resume',
     },
     resume: {
@@ -495,8 +533,10 @@ export const translations = {
       },
     },
     projects: {
-      section: 'Selected Works',
-      title: 'Projects.',
+      section: 'Work',
+      title: 'Websites I built.',
+      othersSection: 'Other projects',
+      othersTitle: 'Studies and personal projects',
       view: 'VIEW',
       reworked: 'See reworked version',
       original: 'See original',
@@ -512,6 +552,7 @@ export const translations = {
       items: [
         {
           id: 'mgincorporacoes',
+          featured: true,
           title: 'MG Incorporações',
           brief:
             'A site for a real estate developer in Chapecó with over 20 years in the market. A showcase of its commercial and residential projects, led by the Valley Business Center.',
@@ -525,6 +566,7 @@ export const translations = {
         },
         {
           id: 'cafeteria',
+          featured: true,
           title: 'Artisanal Coffee',
           brief:
             'An online store for a specialty coffee brand. The goal was to give the browsing the same care as the product, from the first scroll to the cart.',
@@ -538,6 +580,7 @@ export const translations = {
         },
         {
           id: 'refit',
+          featured: true,
           title: 'REFIT',
           brief:
             'A landing page for a high-end residential renovation studio, with a before-and-after gallery and a simple quote request.',
@@ -551,6 +594,7 @@ export const translations = {
         },
         {
           id: 'aurema',
+          featured: true,
           title: 'Aurema',
           brief:
             "Template site for an aesthetics clinic: prices on screen, a page per service, team and map. Every booking button opens WhatsApp with the message ready, and a personalized link turns it into a preview of each prospect's own site.",
@@ -612,9 +656,9 @@ export const translations = {
       ],
     },
     footer: {
-      statement: 'UI/UX design and data. Information Systems student based in Chapecó, Brazil.',
+      statement: 'Professional websites for businesses in Chapecó and the region.',
       nav: 'Main',
-      links: { home: 'Home', work: 'Work', about: 'Info' },
+      links: { home: 'Home', work: 'Work', offer: 'Your site', about: 'About' },
       contact: 'Contact',
       emailLabel: 'E-mail',
       social: 'Social',

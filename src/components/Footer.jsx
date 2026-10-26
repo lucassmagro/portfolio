@@ -37,6 +37,7 @@ export default function Footer({ t }) {
               {[
                 { label: t.links.home, target: 'home' },
                 { label: t.links.work, target: 'projects' },
+                { label: t.links.offer, target: 'offer' },
                 { label: t.links.about, target: 'about' },
               ].map((link) => (
                 <li key={link.target}>

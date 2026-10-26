@@ -1,14 +1,15 @@
 import ProjectCard from './ProjectCard.jsx'
-import ComingSoonCard from './ComingSoonCard.jsx'
 import { useInView } from '../hooks/useInView.js'
 
 /**
- * Gallery — grid editorial de projetos ("Editorial Zen").
+ * Gallery — sites feitos para negócios ("Editorial Zen").
  * - Cabeçalho com rótulo, título serif e divisor fino.
- * - Cards em grid responsivo de 2 colunas.
+ * - Só os projetos com `featured`: quem procura um site quer ver negócios
+ *   parecidos com o seu. Os estudos ficam em `OtherProjects`.
  */
 export default function Gallery({ t }) {
-  const { items: projects, title, section: sectionLabel } = t
+  const { title, section: sectionLabel } = t
+  const projects = t.items.filter((p) => p.featured)
   const [headRef, headIn] = useInView({ margin: '0px' })
   return (
     <section id="projects" data-scroll-section className="relative py-24 md:py-32">
@@ -33,9 +34,6 @@ export default function Gallery({ t }) {
               priority={i === 0}
             />
           ))}
-          {t.comingSoon && (
-            <ComingSoonCard copy={t.comingSoon} index={projects.length} />
-          )}
         </div>
       </div>
     </section>

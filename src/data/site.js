@@ -54,4 +54,8 @@ export const WEBSITE_URL = 'https://www.lucassmagro.com.br'
 
 // Link direto de WhatsApp reutilizável.
 export const WHATSAPP_URL = `https://wa.me/${CONTACT.whatsapp}`
+
+// WhatsApp com mensagem pronta (botões voltados a quem quer um site).
+export const whatsappComMensagem = (mensagem) =>
+  `${WHATSAPP_URL}?text=${encodeURIComponent(mensagem)}`
 export const MAILTO_URL = `mailto:${CONTACT.email}`

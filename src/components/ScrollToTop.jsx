@@ -20,7 +20,7 @@ export default function ScrollToTop() {
     <button
       onClick={scrollUp}
       aria-label="Voltar ao topo"
-      className={`fixed bottom-8 right-8 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-accent text-white shadow-lg shadow-black/25 transition-all duration-300 hover:scale-110 active:scale-90 ${
+      className={`fixed bottom-6 left-4 md:bottom-8 md:left-8 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-accent text-white shadow-lg shadow-black/25 transition-all duration-300 hover:scale-110 active:scale-90 ${
         visible ? 'opacity-100 translate-y-0' : 'pointer-events-none translate-y-5 opacity-0'
       }`}
     >

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { whatsappComMensagem } from '../data/site.js'
 
 /**
  * Navbar — editorial, thin (estilo "Editorial Zen").
@@ -6,7 +7,7 @@ import { useState, useEffect } from 'react'
  * - Wordmark serif (Fraunces), links uppercase pequenos com hover azul.
  * - Toggle de idioma (PT/EN) e de tema (sol/lua) minimalistas.
  */
-export default function Navbar({ isDark, onToggle, lang, onLangToggle, t }) {
+export default function Navbar({ isDark, onToggle, lang, onLangToggle, t, mensagem }) {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
@@ -59,6 +60,14 @@ export default function Navbar({ isDark, onToggle, lang, onLangToggle, t }) {
 
         {/* Controls */}
         <div className="flex items-center gap-4">
+          <a
+            href={whatsappComMensagem(mensagem)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full bg-accent px-4 py-2 text-[0.7rem] font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-edtext"
+          >
+            {t.quote}
+          </a>
           <button
             onClick={onLangToggle}
             aria-label={lang === 'pt' ? 'Switch to English' : 'Mudar para Português'}

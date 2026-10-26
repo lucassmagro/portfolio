@@ -10,7 +10,8 @@ import AboutSection from './components/AboutSection.jsx'
 import ContactSection from './components/ContactSection.jsx'
 import OfferSection from './components/OfferSection.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
-import DesignPortfolioButton from './components/DesignPortfolioButton.jsx'
+import OtherProjects from './components/OtherProjects.jsx'
+import WhatsAppButton from './components/WhatsAppButton.jsx'
 
 // Páginas secundárias carregadas sob demanda (reduz o bundle inicial).
 const LinkHub = lazy(() => import('./pages/LinkHub.jsx'))
@@ -91,17 +92,19 @@ export default function App() {
         lang={lang}
         onLangToggle={toggleLang}
         t={t.navbar}
+        mensagem={t.cta.whatsappMessage}
       />
 
       <main id="main-content">
-        <Hero t={t.hero} />
+        <Hero t={t.hero} mensagem={t.cta.whatsappMessage} />
         <Gallery t={t.projects} />
         <OfferSection t={t.offer} />
-        <AboutSection t={t.about} />
+        <OtherProjects t={t.projects} />
+        <AboutSection t={t.about} designLabel={t.designCta.label} />
         <ContactSection t={t.cta} />
       </main>
 
-      <DesignPortfolioButton t={t.designCta} />
+      <WhatsAppButton label={t.navbar.quote} mensagem={t.cta.whatsappMessage} />
       <ScrollToTop />
       <Footer t={t.footer} />
     </div>

@@ -7,7 +7,7 @@ import { useInView } from '../hooks/useInView.js'
  * - Blocos de Especialidade/Stack, prova social e CTA de currículo.
  * - Bio e detalhes via i18n; links sociais da fonte única (data/site.js).
  */
-export default function AboutSection({ t }) {
+export default function AboutSection({ t, designLabel }) {
   const [portraitRef, portraitIn] = useInView()
   return (
     <section id="about" data-scroll-section className="relative py-24 md:py-32 bg-cream">
@@ -47,6 +47,9 @@ export default function AboutSection({ t }) {
             <div className="mt-10 flex flex-wrap items-center gap-6">
               <a href="#/resume" className="btn-ed btn-ed--primary">
                 {t.resume}
+              </a>
+              <a href="portfolio-ui-ux/index.html" className="btn-ed btn-ed--outline">
+                {designLabel}
               </a>
               <div className="flex gap-5">
                 {SOCIAL_LINKS.map((social) => (

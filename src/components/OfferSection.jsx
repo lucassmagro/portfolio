@@ -1,9 +1,5 @@
-import { useState } from 'react'
 import { CONTACT } from '../data/site.js'
 import { useInView } from '../hooks/useInView.js'
-
-// Site modelo publicado neste mesmo domínio (pasta public/aurema).
-const MODELO_URL = 'aurema/'
 
 function Check() {
   return (
@@ -25,24 +21,16 @@ function Check() {
 }
 
 /**
- * OfferSection — o serviço de site para negócios locais, com preço.
+ * OfferSection — o serviço de site para qualquer negócio, com preço.
  * - Lista do que está incluído e passos de como funciona.
- * - Campo "nome do seu negócio" que abre o site modelo com esse nome
- *   (`?marca=`): a pessoa vê a prévia do próprio site antes de chamar.
+ * - Exemplos: o case real (MG Incorporações) em destaque e sites de ramos
+ *   diferentes, para quem visita se enxergar em algum deles.
  * - Cartão de preço com CTA para o WhatsApp, mensagem já pronta.
  */
 export default function OfferSection({ t }) {
   const [ref, inView] = useInView()
-  const [marca, setMarca] = useState('')
-
   const whatsapp = `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(t.whatsappMessage)}`
-
-  function abrirPrevia(e) {
-    e.preventDefault()
-    const nome = marca.trim()
-    const url = nome ? `${MODELO_URL}?marca=${encodeURIComponent(nome)}` : MODELO_URL
-    window.open(url, '_blank', 'noopener')
-  }
+  const { caseReal } = t
 
   return (
     <section id="offer" data-scroll-section className="relative py-24 md:py-32">
@@ -57,8 +45,9 @@ export default function OfferSection({ t }) {
         </div>
 
         <div className="mt-12 md:mt-16 grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-12 lg:gap-16 items-start">
-          {/* O que inclui + como funciona + prévia */}
-          <div>
+          {/* O que inclui + como funciona. No celular o preço vem logo depois,
+              antes dos exemplos; no desktop ele fica na coluna da direita. */}
+          <div className="lg:col-start-1 lg:row-start-1">
             <h3 className="section-label mb-5">{t.includedTitle}</h3>
             <ul className="space-y-3.5">
               {t.included.map((item) => (
@@ -81,38 +70,10 @@ export default function OfferSection({ t }) {
                 </li>
               ))}
             </ol>
-
-            <form
-              onSubmit={abrirPrevia}
-              className="mt-12 rounded-ed border border-edborder bg-cream p-5 md:p-6"
-            >
-              <label htmlFor="offer-marca" className="block font-medium text-edtext">
-                {t.previewTitle}
-              </label>
-              <p className="mt-1 text-[0.85rem] leading-[1.6] text-edsecondary">{t.previewSub}</p>
-              <div className="mt-4 flex flex-col sm:flex-row gap-3">
-                <input
-                  id="offer-marca"
-                  type="text"
-                  value={marca}
-                  onChange={(e) => setMarca(e.target.value)}
-                  placeholder={t.previewPlaceholder}
-                  maxLength={60}
-                  autoComplete="organization"
-                  className="flex-1 min-h-[48px] rounded-ed border border-edborder bg-paper px-4 text-[16px] text-edtext placeholder:text-edmuted focus:outline-none focus:border-accent"
-                />
-                <button
-                  type="submit"
-                  className="btn-ed btn-ed--primary justify-center min-h-[48px]"
-                >
-                  {t.previewCta}
-                </button>
-              </div>
-            </form>
           </div>
 
           {/* Cartão de preço */}
-          <aside className="lg:sticky lg:top-24 rounded-ed border border-edborder bg-cream p-7 md:p-9">
+          <aside className="lg:col-start-2 lg:row-start-1 lg:row-span-2 lg:sticky lg:top-24 rounded-ed border border-edborder bg-cream p-7 md:p-9">
             <span className="section-label">{t.priceLabel}</span>
             <p className="mt-3 font-display text-edtext text-[3.2rem] leading-none tracking-[-0.02em]">
               {t.price}
@@ -150,15 +111,72 @@ export default function OfferSection({ t }) {
               {t.cta}
             </a>
             <a
-              href={MODELO_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#projects"
               className="mt-4 block text-center text-[0.85rem] text-edtext underline underline-offset-4 hover:text-accent transition-colors"
             >
-              {t.modelLink}
+              {t.projectsLink}
             </a>
             <p className="mt-6 text-[0.8rem] leading-[1.6] text-edsecondary">{t.maintenance}</p>
           </aside>
+
+          <div className="lg:col-start-1 lg:row-start-2">
+            <h3 className="section-label mb-5">{t.examplesTitle}</h3>
+            <a
+              href={caseReal.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block overflow-hidden rounded-ed border border-edborder bg-cream transition-colors hover:border-accent"
+            >
+              <img
+                src={caseReal.image}
+                alt={`Site da ${caseReal.title}`}
+                width="640"
+                height="360"
+                loading="lazy"
+                decoding="async"
+                className="aspect-[16/9] w-full object-cover"
+              />
+              <div className="p-5 md:p-6">
+                <span className="text-[0.75rem] font-medium text-accent">{caseReal.label}</span>
+                <p className="mt-1 font-display text-xl text-edtext">{caseReal.title}</p>
+                <p className="mt-2 text-[0.88rem] leading-[1.6] text-edsecondary">
+                  {caseReal.text}
+                </p>
+                <span className="mt-3 inline-block text-[0.85rem] text-edtext underline underline-offset-4 group-hover:text-accent">
+                  {caseReal.cta}
+                </span>
+              </div>
+            </a>
+
+            <ul className="mt-4 grid grid-cols-3 gap-3 sm:gap-4">
+              {t.examples.map((ex) => (
+                <li key={ex.title}>
+                  <a
+                    href={ex.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block overflow-hidden rounded-ed border border-edborder bg-cream transition-colors hover:border-accent"
+                  >
+                    <img
+                      src={ex.image}
+                      alt={`Site ${ex.title}`}
+                      width="640"
+                      height="480"
+                      loading="lazy"
+                      decoding="async"
+                      className="aspect-[4/3] w-full object-cover"
+                    />
+                    <div className="p-3 sm:p-4">
+                      <p className="text-[0.85rem] sm:text-base font-medium text-edtext group-hover:text-accent">
+                        {ex.title}
+                      </p>
+                      <p className="text-[0.72rem] sm:text-[0.8rem] text-edsecondary">{ex.sub}</p>
+                    </div>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>
