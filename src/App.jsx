@@ -8,6 +8,7 @@ import Gallery from './components/Gallery.jsx'
 import Footer from './components/Footer.jsx'
 import AboutSection from './components/AboutSection.jsx'
 import ContactSection from './components/ContactSection.jsx'
+import OfferSection from './components/OfferSection.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
 import DesignPortfolioButton from './components/DesignPortfolioButton.jsx'
 
@@ -29,7 +30,7 @@ export default function App() {
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual'
     }
-    const sectionAnchors = ['#home', '#projects', '#about', '#contact', '#footer-connect']
+    const sectionAnchors = ['#home', '#projects', '#offer', '#about', '#contact', '#footer-connect']
     if (sectionAnchors.includes(window.location.hash)) {
       window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}#/`)
     }
@@ -95,6 +96,7 @@ export default function App() {
       <main id="main-content">
         <Hero t={t.hero} />
         <Gallery t={t.projects} />
+        <OfferSection t={t.offer} />
         <AboutSection t={t.about} />
         <ContactSection t={t.cta} />
       </main>

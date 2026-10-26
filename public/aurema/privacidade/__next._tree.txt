@@ -1,0 +1,5 @@
+:HL["/aurema/_next/static/chunks/0gteff2_cg3fd.css","style"]
+:HL["/aurema/_next/static/media/cb4b92673aedbbad-s.p.0-95eo-012xnf.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+2:[["children",{"s":"__PAGE__","h":160}]]
+1:[["children",{"s":"privacidade","h":96,"c":"$Q2"}]]
+0:{"b":"IAMLb5dq2KswE_DkhrSeV","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
