@@ -4,7 +4,8 @@ import { whatsappComMensagem } from '../data/site.js'
 /**
  * Hero — centralizado, voltado a quem procura um site.
  * - Assinatura com o nome (cor de acento) e título com a oferta.
- * - Dois CTAs: WhatsApp com mensagem pronta e "ver trabalhos".
+ * - Dois CTAs: WhatsApp com mensagem pronta e "ver trabalhos", e logo abaixo
+ *   a prova rápida (cliente real, prazo e preço).
  * - Campo de estrelas/cometas ao fundo, somente no modo escuro.
  */
 export default function Hero({ t, mensagem }) {
@@ -47,6 +48,29 @@ export default function Hero({ t, mensagem }) {
             {t.ctaWork}
           </a>
         </div>
+
+        {/* Prova rápida: cliente real, prazo e preço, antes de qualquer rolagem */}
+        <ul className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-[0.85rem] text-edsecondary">
+          {t.proof.map((item) => (
+            <li key={item} className="flex items-center gap-2">
+              <svg
+                viewBox="0 0 24 24"
+                width="16"
+                height="16"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+                className="shrink-0 text-accent"
+              >
+                <path d="m5 12.5 4.5 4.5L19 7" />
+              </svg>
+              {item}
+            </li>
+          ))}
+        </ul>
       </div>
 
       {/* Indicador de scroll */}

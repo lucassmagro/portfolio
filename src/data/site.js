@@ -41,12 +41,6 @@ export const SOCIAL_LINKS = [
     label: 'GH',
     url: 'https://github.com/lucassmagro',
   },
-  {
-    id: 'spotify',
-    name: 'Spotify',
-    label: 'SP',
-    url: 'https://open.spotify.com/user/22rnygwzowt7xufk4hvh7bzcy',
-  },
 ]
 
 // Domínio pessoal (marca/crédito).

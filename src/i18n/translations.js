@@ -13,9 +13,10 @@ export const translations = {
     },
     hero: {
       tag: 'Design UI/UX e Dados · Estudante de Sistemas de Informação',
-      title: 'Sites profissionais para negócios de Chapecó e região',
+      title: 'Sites profissionais que transformam visitas em clientes',
       intro:
-        'Prontos em até 7 dias úteis, feitos para o celular e com contato direto no seu WhatsApp. Você fala comigo, sem agência no meio.',
+        'Feitos sob medida para o seu negócio: bonitos no celular, rápidos de abrir e com contato direto no seu WhatsApp. Prontos em até 7 dias úteis, e você fala direto comigo, sem agência no meio.',
+      proof: ['Cliente real: MG Incorporações', 'Entrega em até 7 dias úteis', 'R$ 500 · preço de lançamento'],
       ctaClient: 'Quero meu site',
       marker: 'Chapecó, Brasil',
       ctaWork: 'Ver trabalhos',
@@ -51,7 +52,7 @@ export const translations = {
     },
     offer: {
       section: 'Para o seu negócio',
-      title: 'Um site profissional para o seu negócio, pronto em até 7 dias úteis',
+      title: 'Tudo o que o seu negócio precisa para ser encontrado e chamado',
       sub: 'Para quem vende serviço ou produto e quer ser encontrado e chamado no WhatsApp: prestadores de serviço, comércio, clínicas, construtoras, escritórios e restaurantes.',
       includedTitle: 'O que você recebe',
       included: [
@@ -95,6 +96,42 @@ export const translations = {
       projectsLink: 'Ver todos os projetos',
       maintenance:
         'Manutenção mensal opcional, para atualizações depois dos 30 dias. Valor sob consulta.',
+    },
+    testimonial: {
+      section: 'Quem já fez',
+      quote:
+        'O Lucas fez um trabalho muito profissional. O site superou as nossas expectativas, tanto na qualidade quanto no prazo, e ele esteve sempre disponível para conversar e ajustar o que a gente precisava. Recomendo sem pensar duas vezes.',
+      author: 'MG Incorporações',
+      role: 'Construtora e incorporadora · Chapecó, SC',
+      highlights: ['Superou as expectativas na qualidade', 'Entregue dentro do prazo', 'Comunicação direta do início ao fim'],
+      link: 'Ver o site da MG ↗',
+      href: 'https://www.mgincorporacoes.com.br/',
+    },
+    faq: {
+      section: 'Dúvidas',
+      title: 'Perguntas frequentes',
+      items: [
+        {
+          q: 'Quanto tempo leva para o meu site ficar pronto?',
+          a: 'Até 7 dias úteis, contados a partir do momento em que você me manda as informações do negócio: o que você faz, contatos, fotos e logo.',
+        },
+        {
+          q: 'O que está incluído nos R$ 500?',
+          a: 'O site completo com a identidade do seu negócio, botões para o seu WhatsApp, configuração para o Google, domínio e hospedagem no primeiro ano e 30 dias de ajustes depois de publicar.',
+        },
+        {
+          q: 'Preciso ter textos e fotos prontos?',
+          a: 'Não precisa estar tudo pronto. Você me conta o que faz e para quem, e eu ajudo a organizar os textos. As fotos podem ser suas ou de bancos de imagem até você ter as próprias.',
+        },
+        {
+          q: 'E se eu quiser mudar algo depois?',
+          a: 'Nos primeiros 30 dias, ajustes de texto e foto não têm custo. Depois disso, há a manutenção mensal opcional, com valor combinado antes.',
+        },
+        {
+          q: 'Você atende fora de Chapecó?',
+          a: 'Sim. Atendo Chapecó e região pessoalmente e qualquer cidade pelo WhatsApp: todo o processo pode ser feito a distância.',
+        },
+      ],
     },
     about: {
       section: 'Perfil',
@@ -276,17 +313,6 @@ export const translations = {
           customImage: 'projects/portfolio-ui-ux.webp',
         },
         {
-          id: 'catedra',
-          title: 'Cátedra Política',
-          brief:
-            'Portal de notícias e análise política. O foco foi leitura confortável em textos longos e páginas que abrem rápido.',
-          challenge: 'Texto político é denso e pede leitura confortável sem fazer o leitor esperar a página carregar.',
-          solution: 'Tipografia pensada para textos longos e páginas leves, que abrem rápido até no celular.',
-          tags: ['Portal', 'Editorial', 'Política'],
-          href: 'https://blog-maria.vercel.app/',
-          customImage: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&auto=format&q=70&fit=crop',
-        },
-        {
           id: 'wikiestudos',
           title: 'Wiki de Estudos',
           brief:
@@ -331,7 +357,6 @@ export const translations = {
         github: 'GitHub',
         linkedin: 'LinkedIn',
         instagram: 'Instagram',
-        spotify: 'Spotify',
         whatsapp: 'WhatsApp',
         email: 'E-mail',
       },
@@ -358,10 +383,11 @@ export const translations = {
     },
     hero: {
       tag: 'UI/UX Design & Data · Information Systems Student',
-      title: 'Professional websites for businesses in Chapecó and the region',
+      title: 'Professional websites that turn visitors into customers',
+      proof: ['Real client: MG Incorporações', 'Delivered within 7 business days', 'R$ 500 · launch price'],
       ctaClient: 'I want my site',
       intro:
-        'Ready within 7 business days, built for mobile and with direct contact on your WhatsApp. You work with me directly, no agency in between.',
+        'Tailored to your business: great on mobile, quick to load and with direct contact on your WhatsApp. Ready within 7 business days, and you work with me directly, no agency in between.',
       marker: 'Chapecó, Brazil',
       ctaWork: 'View work',
       ctaContact: 'Contact',
@@ -396,7 +422,7 @@ export const translations = {
     },
     offer: {
       section: 'For your business',
-      title: 'A professional website for your business, ready in 7 business days',
+      title: 'Everything your business needs to be found and contacted',
       sub: 'For anyone selling a service or product who wants to be found and contacted on WhatsApp: service providers, shops, clinics, builders, offices and restaurants.',
       includedTitle: 'What you get',
       included: [
@@ -440,6 +466,42 @@ export const translations = {
       projectsLink: 'See all projects',
       maintenance:
         'Optional monthly maintenance for updates after the first 30 days. Price on request.',
+    },
+    testimonial: {
+      section: 'Client feedback',
+      quote:
+        'Lucas did a truly professional job. The website exceeded our expectations in both quality and turnaround, and he was always available to talk and adjust whatever we needed. I recommend him without a second thought.',
+      author: 'MG Incorporações',
+      role: 'Builder and real estate developer · Chapecó, Brazil',
+      highlights: ['Exceeded expectations on quality', 'Delivered on time', 'Direct communication from start to finish'],
+      link: 'See the MG website ↗',
+      href: 'https://www.mgincorporacoes.com.br/',
+    },
+    faq: {
+      section: 'Questions',
+      title: 'Frequently asked questions',
+      items: [
+        {
+          q: 'How long until my website is ready?',
+          a: 'Up to 7 business days, counted from when you send me your business details: what you do, contacts, photos and logo.',
+        },
+        {
+          q: 'What does the R$ 500 include?',
+          a: 'The complete site with your business identity, buttons to your WhatsApp, Google setup, domain and hosting for the first year and 30 days of adjustments after launch.',
+        },
+        {
+          q: 'Do I need copy and photos ready?',
+          a: 'Not everything needs to be ready. Tell me what you do and who you serve, and I help organize the copy. Photos can be yours or from stock libraries until you have your own.',
+        },
+        {
+          q: 'What if I want to change something later?',
+          a: 'In the first 30 days, copy and photo adjustments are free. After that, there is optional monthly maintenance, priced upfront.',
+        },
+        {
+          q: 'Do you work outside Chapecó?',
+          a: 'Yes. I meet clients in Chapecó and the region in person and anywhere else over WhatsApp: the whole process can be done remotely.',
+        },
+      ],
     },
     about: {
       section: 'Profile',
@@ -621,17 +683,6 @@ export const translations = {
           customImage: 'projects/portfolio-ui-ux.webp',
         },
         {
-          id: 'catedra',
-          title: 'Cátedra Política',
-          brief:
-            'A news and political analysis portal. The focus was comfortable reading for long articles and pages that open fast.',
-          challenge: 'Political writing is dense and needs comfortable reading without making the reader wait for the page.',
-          solution: 'Typography built for long reads and light pages that open quickly, even on a phone.',
-          tags: ['Portal', 'Editorial', 'Politics'],
-          href: 'https://blog-maria.vercel.app/',
-          customImage: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&auto=format&q=70&fit=crop',
-        },
-        {
           id: 'wikiestudos',
           title: 'Wiki de Estudos',
           brief:
@@ -676,7 +727,6 @@ export const translations = {
         github: 'GitHub',
         linkedin: 'LinkedIn',
         instagram: 'Instagram',
-        spotify: 'Spotify',
         whatsapp: 'WhatsApp',
         email: 'E-mail',
       },

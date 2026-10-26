@@ -11,6 +11,8 @@ import ContactSection from './components/ContactSection.jsx'
 import OfferSection from './components/OfferSection.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
 import OtherProjects from './components/OtherProjects.jsx'
+import Testimonial from './components/Testimonial.jsx'
+import Faq from './components/Faq.jsx'
 import WhatsAppButton from './components/WhatsAppButton.jsx'
 
 // Páginas secundárias carregadas sob demanda (reduz o bundle inicial).
@@ -98,7 +100,9 @@ export default function App() {
       <main id="main-content">
         <Hero t={t.hero} mensagem={t.cta.whatsappMessage} />
         <Gallery t={t.projects} />
+        <Testimonial t={t.testimonial} />
         <OfferSection t={t.offer} />
+        <Faq t={t.faq} />
         <OtherProjects t={t.projects} />
         <AboutSection t={t.about} designLabel={t.designCta.label} />
         <ContactSection t={t.cta} />
