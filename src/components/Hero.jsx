@@ -16,12 +16,13 @@ export default function Hero({ t, mensagem }) {
     >
       <StarsCanvas />
 
-      <div className="relative z-10 max-w-3xl anim-fade-up">
+      <div className="relative z-10 max-w-5xl anim-fade-up">
         <p className="font-display text-lg md:text-xl text-edbody">
           {t.greeting} <span className="text-accent italic">Lucas Santos Magro</span>
         </p>
 
-        <h1 className="mt-5 font-display font-normal text-edtext tracking-[-0.02em] leading-[1.08] text-[clamp(2.1rem,7.5vw,3.9rem)]">
+        {/* Largura e balance para o título caber em duas linhas no desktop */}
+        <h1 className="mt-5 font-display font-normal text-edtext tracking-[-0.02em] leading-[1.08] text-balance text-[clamp(2.1rem,6vw,3.9rem)]">
           {t.title}
         </h1>
 
