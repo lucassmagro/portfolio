@@ -1,0 +1,6 @@
+:HL["/otica/_next/static/chunks/0f34pdzvx8j12.css","style"]
+:HL["/otica/_next/static/chunks/1k6mptnhur2bz.css","style"]
+:HC["/",""]
+:HL["/otica/_next/static/chunks/04lu0hhgie20t.css","style"]
+1:[["children",{"s":"__PAGE__","h":128}]]
+0:{"b":"8cto8J5dlVV7EbZsAHvA0","t":{"t":{"s":"","h":16,"c":"$Q1"}}}

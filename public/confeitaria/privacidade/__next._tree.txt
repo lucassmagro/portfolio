@@ -1,0 +1,7 @@
+:HL["/confeitaria/_next/static/chunks/0f34pdzvx8j12.css","style"]
+:HL["/confeitaria/_next/static/chunks/1k6mptnhur2bz.css","style"]
+:HC["/",""]
+:HL["/confeitaria/_next/static/chunks/002-e-_eki7wr.css","style"]
+2:[["children",{"s":"__PAGE__","h":160}]]
+1:[["children",{"s":"privacidade","h":64,"c":"$Q2"}]]
+0:{"b":"QcM93Hf8sGb1Xdb1G57AC","t":{"t":{"s":"","h":16,"c":"$Q1"}}}

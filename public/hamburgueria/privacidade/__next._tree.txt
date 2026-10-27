@@ -1,0 +1,7 @@
+:HL["/hamburgueria/_next/static/chunks/0f34pdzvx8j12.css","style"]
+:HL["/hamburgueria/_next/static/chunks/1k6mptnhur2bz.css","style"]
+:HC["/",""]
+:HL["/hamburgueria/_next/static/chunks/0njuk0dwzv3ba.css","style"]
+2:[["children",{"s":"__PAGE__","h":160}]]
+1:[["children",{"s":"privacidade","h":64,"c":"$Q2"}]]
+0:{"b":"J5OIMkHk4kYTxKFPKcvJ8","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
