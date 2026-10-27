@@ -1,5 +1,5 @@
-:HL["/veterinaria/_next/static/chunks/35w0f_sy-wzcx.css","style"]
-:HL["/veterinaria/_next/static/chunks/3_yj3sqw0j0lp.css","style"]
+:HL["/veterinaria/_next/static/chunks/1m9785mq_dd_i.css","style"]
+:HL["/veterinaria/_next/static/chunks/16buk_oeqclxv.css","style"]
 :HL["/veterinaria/_next/static/media/cb4b92673aedbbad-s.p.0-95eo-012xnf.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 1:[["children",{"s":"__PAGE__","h":160}]]
-0:{"b":"y8MqrH_ejl1xieVJGiCJu","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"GbKgclQ_qYAFLaMY8Wo6X","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
