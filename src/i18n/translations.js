@@ -474,6 +474,19 @@ export const translations = {
           concept: true,
         },
         {
+          id: 'limbo',
+          ramo: 'lojas',
+          sector: 'Loja de streetwear',
+          featured: true,
+          title: 'Limbo',
+          brief:
+            'Drop com contagem regressiva, varal de etiquetas com física, guia de caimento por medida e lookbook num cubo 3D.',
+          tags: ['UI/UX', 'Next.js', 'WhatsApp'],
+          href: 'streetwear/index.html',
+          customImage: 'projects/mockup-limbo.webp',
+          concept: true,
+        },
+        {
           id: 'alicerce',
           ramo: 'casa',
           sector: 'Material de construção',
@@ -1029,6 +1042,19 @@ export const translations = {
           tags: ['UI/UX', 'Next.js', 'WhatsApp'],
           href: 'otica/index.html',
           customImage: 'projects/mockup-prisma.webp',
+          concept: true,
+        },
+        {
+          id: 'limbo',
+          ramo: 'lojas',
+          sector: 'Streetwear store',
+          featured: true,
+          title: 'Limbo',
+          brief:
+            'A drop countdown, a clothesline of tags with physics, a fit guide by measurement and a 3D cube lookbook.',
+          tags: ['UI/UX', 'Next.js', 'WhatsApp'],
+          href: 'streetwear/index.html',
+          customImage: 'projects/mockup-limbo.webp',
           concept: true,
         },
         {
