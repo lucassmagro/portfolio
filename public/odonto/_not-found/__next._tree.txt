@@ -1,4 +1,5 @@
-:HL["/odonto/_next/static/chunks/1sov28qrmjbkg.css","style"]
+:HL["/odonto/_next/static/chunks/35w0f_sy-wzcx.css","style"]
+:HL["/odonto/_next/static/chunks/3mgo1o8ykdaud.css","style"]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"/_not-found","h":64,"c":"$Q2"}]]
-0:{"b":"2WKSlW2Ls67UawPSG5lsz","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
+0:{"b":"RsC6V1a5JoQ7jQnOu2z50","t":{"t":{"s":"","h":16,"c":"$Q1"}}}

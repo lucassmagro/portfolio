@@ -96,6 +96,18 @@ export const translations = {
           image: 'projects/clarim-640.webp',
         },
         {
+          title: 'Formobi',
+          sub: 'Móveis planejados',
+          href: 'planejados/index.html',
+          image: 'projects/formobi-640.webp',
+        },
+        {
+          title: 'Mimo Vet',
+          sub: 'Clínica veterinária',
+          href: 'veterinaria/index.html',
+          image: 'projects/mimo-640.webp',
+        },
+        {
           title: 'REFIT',
           sub: 'Reforma residencial',
           href: 'refit/index.html',
@@ -348,14 +360,44 @@ export const translations = {
           featured: true,
           title: 'Clarim',
           brief:
-            'Site modelo para consultório odontológico, com oito tratamentos, páginas individuais, equipe e contato pelo WhatsApp.',
+            'Site modelo odontológico com direção editorial, percursos por necessidade, oito tratamentos e comparador de clareamento simulado.',
           challenge:
             'Apresentar os tratamentos com clareza e transmitir acolhimento para quem adia a ida ao dentista.',
           solution:
-            'Identidade azul, fotografias próprias geradas para a demonstração e explicações de cada tratamento, com agendamento pelo WhatsApp.',
+            'Composição própria para a Clarim, equipe apresentada de perto, antes e depois interativo de boca e dentes e contato pelo WhatsApp.',
           tags: ['Odontologia', 'Next.js', 'WhatsApp'],
           href: 'odonto/index.html',
           customImage: 'projects/clarim.webp',
+          concept: true,
+        },
+        {
+          id: 'formobi',
+          featured: true,
+          title: 'Formobi',
+          brief:
+            'Site modelo para móveis planejados com direção de arquitetura, projetos em destaque e briefing de orçamento.',
+          challenge:
+            'Ajudar o visitante a imaginar seu ambiente e chegar à conversa com medidas e prazo.',
+          solution:
+            'Abertura fotográfica, galeria filtrável com ampliação acessível e mensagem de WhatsApp montada com os dados do projeto.',
+          tags: ['Móveis planejados', 'UI/UX', 'Next.js'],
+          href: 'planejados/index.html',
+          customImage: 'projects/formobi.webp',
+          concept: true,
+        },
+        {
+          id: 'mimo',
+          featured: true,
+          title: 'Mimo Vet',
+          brief:
+            'Clínica veterinária modelo com identidade acolhedora, cuidados para cães e gatos e acesso ao plantão 24h.',
+          challenge:
+            'Dar caminhos claros para uma consulta de rotina e para quem precisa falar com o plantão.',
+          solution:
+            'Interface própria em mel e azul, catálogo de cuidados filtrável e barra no celular com telefone e WhatsApp.',
+          tags: ['Veterinária', 'UI/UX', 'Next.js'],
+          href: 'veterinaria/index.html',
+          customImage: 'projects/mimo.webp',
           concept: true,
         },
         {
@@ -528,6 +570,18 @@ export const translations = {
           sub: 'Dentistry',
           href: 'odonto/index.html',
           image: 'projects/clarim-640.webp',
+        },
+        {
+          title: 'Formobi',
+          sub: 'Bespoke furniture',
+          href: 'planejados/index.html',
+          image: 'projects/formobi-640.webp',
+        },
+        {
+          title: 'Mimo Vet',
+          sub: 'Veterinary clinic',
+          href: 'veterinaria/index.html',
+          image: 'projects/mimo-640.webp',
         },
         {
           title: 'REFIT',
@@ -780,14 +834,43 @@ export const translations = {
           featured: true,
           title: 'Clarim',
           brief:
-            'A dental practice template with eight treatments, individual service pages, a team section and WhatsApp contact.',
+            'A dental demo with an editorial direction, need-based navigation, eight treatments and a simulated whitening comparison.',
           challenge:
             'Explain dental treatments clearly and help people who put off visiting the dentist feel welcome.',
           solution:
-            'A blue visual identity, photographs generated for this demo and clear treatment explanations, with WhatsApp booking.',
+            'A distinct Clarim layout, an approachable team section, an interactive mouth-and-teeth comparison and WhatsApp contact.',
           tags: ['Dentistry', 'Next.js', 'WhatsApp'],
           href: 'odonto/index.html',
           customImage: 'projects/clarim.webp',
+          concept: true,
+        },
+        {
+          id: 'formobi',
+          featured: true,
+          title: 'Formobi',
+          brief:
+            'A bespoke cabinetry demo with an architectural visual direction, featured projects and a quote brief.',
+          challenge:
+            'Help visitors picture their own space and start a conversation with measurements and a timeline.',
+          solution:
+            'A photographic opening, filterable project gallery with accessible enlargement and a WhatsApp message built from the project brief.',
+          tags: ['Bespoke furniture', 'UI/UX', 'Next.js'],
+          href: 'planejados/index.html',
+          customImage: 'projects/formobi.webp',
+          concept: true,
+        },
+        {
+          id: 'mimo',
+          featured: true,
+          title: 'Mimo Vet',
+          brief:
+            'A welcoming veterinary clinic demo with care for cats and dogs and direct access to a 24-hour service.',
+          challenge: 'Give routine appointments and urgent contact their own clear paths.',
+          solution:
+            'A distinct honey-and-blue interface, filterable care directory and a mobile bar with phone and WhatsApp actions.',
+          tags: ['Veterinary care', 'UI/UX', 'Next.js'],
+          href: 'veterinaria/index.html',
+          customImage: 'projects/mimo.webp',
           concept: true,
         },
         {

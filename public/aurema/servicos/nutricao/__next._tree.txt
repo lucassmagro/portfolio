@@ -1,6 +1,7 @@
-:HL["/aurema/_next/static/chunks/0av_xi8ea0g8v.css","style"]
+:HL["/aurema/_next/static/chunks/35w0f_sy-wzcx.css","style"]
+:HL["/aurema/_next/static/chunks/3mgo1o8ykdaud.css","style"]
 :HL["/aurema/_next/static/media/cb4b92673aedbbad-s.p.0-95eo-012xnf.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 3:[["children",{"s":"__PAGE__","h":160}]]
 2:[["children",{"s":{"n":"id","t":"d","k":"nutricao","s":[]},"h":65632,"c":"$Q3"}]]
 1:[["children",{"s":"servicos","h":131168,"c":"$Q2"}]]
-0:{"b":"r8LojZ0CxV_Sk_9zLqyMl","t":{"t":{"s":"","h":131152,"c":"$Q1"}}}
+0:{"b":"QgcrxxwVUe9bDkO5lekgb","t":{"t":{"s":"","h":131152,"c":"$Q1"}}}
