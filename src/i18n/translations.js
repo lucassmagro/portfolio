@@ -16,7 +16,11 @@ export const translations = {
       title: 'Sites profissionais que transformam visitas em clientes',
       intro:
         'Feitos sob medida para o seu negócio: bonitos no celular, rápidos de abrir e com contato direto no seu WhatsApp. Prontos em até 7 dias úteis, e você fala direto comigo, sem agência no meio.',
-      proof: ['Cliente real: MG Incorporações', 'Entrega em até 7 dias úteis', 'R$ 500 · preço de lançamento'],
+      proof: [
+        'Cliente real: MG Incorporações',
+        'Entrega em até 7 dias úteis',
+        'R$ 500 · preço de lançamento',
+      ],
       ctaClient: 'Quero meu site',
       marker: 'Chapecó, Brasil',
       ctaWork: 'Ver trabalhos',
@@ -30,7 +34,8 @@ export const translations = {
       headline: 'Quer um site para o seu negócio?',
       sub: 'Me conta o que você faz e para quem. Eu respondo pelo WhatsApp com como ficaria o seu site e o valor.',
       whatsappCta: 'Pedir orçamento no WhatsApp',
-      whatsappMessage: 'Olá, Lucas! Vim pelo seu portfólio e quero conversar sobre um site para o meu negócio.',
+      whatsappMessage:
+        'Olá, Lucas! Vim pelo seu portfólio e quero conversar sobre um site para o meu negócio.',
       orEmail: 'ou por e-mail:',
       button: 'Iniciar Conversa',
       form: {
@@ -78,9 +83,30 @@ export const translations = {
         image: 'imobiliaria-mg-thumbnail-640.webp',
       },
       examples: [
-        { title: 'Aurema', sub: 'Clínica de estética', href: 'aurema/index.html', image: 'projects/aurema-640.webp' },
-        { title: 'REFIT', sub: 'Reforma residencial', href: 'refit/index.html', image: 'refit-thumb-640.webp' },
-        { title: 'Artisanal Coffee', sub: 'Loja de café', href: 'cafeteria/index.html', image: 'projects/cafeteria-640.webp' },
+        {
+          title: 'Aurema',
+          sub: 'Clínica de estética',
+          href: 'aurema/index.html',
+          image: 'projects/aurema-640.webp',
+        },
+        {
+          title: 'Clarim',
+          sub: 'Odontologia',
+          href: 'odonto/index.html',
+          image: 'projects/clarim-640.webp',
+        },
+        {
+          title: 'REFIT',
+          sub: 'Reforma residencial',
+          href: 'refit/index.html',
+          image: 'refit-thumb-640.webp',
+        },
+        {
+          title: 'Artisanal Coffee',
+          sub: 'Loja de café',
+          href: 'cafeteria/index.html',
+          image: 'projects/cafeteria-640.webp',
+        },
       ],
       priceLabel: 'Preço de lançamento',
       price: 'R$ 500',
@@ -92,7 +118,8 @@ export const translations = {
         'Contato direto pelo WhatsApp',
       ],
       cta: 'Quero o meu site',
-      whatsappMessage: 'Olá, Lucas! Vi a oferta de site no seu portfólio e quero um para o meu negócio.',
+      whatsappMessage:
+        'Olá, Lucas! Vi a oferta de site no seu portfólio e quero um para o meu negócio.',
       projectsLink: 'Ver todos os projetos',
       maintenance:
         'Manutenção mensal opcional, para atualizações depois dos 30 dias. Valor sob consulta.',
@@ -103,7 +130,11 @@ export const translations = {
         'O Lucas fez um trabalho muito profissional. O site superou as nossas expectativas, tanto na qualidade quanto no prazo, e ele esteve sempre disponível para conversar e ajustar o que a gente precisava. Recomendo sem pensar duas vezes.',
       author: 'MG Incorporações',
       role: 'Construtora e incorporadora · Chapecó, SC',
-      highlights: ['Superou as expectativas na qualidade', 'Entregue dentro do prazo', 'Comunicação direta do início ao fim'],
+      highlights: [
+        'Superou as expectativas na qualidade',
+        'Entregue dentro do prazo',
+        'Comunicação direta do início ao fim',
+      ],
       link: 'Ver o site da MG ↗',
       href: 'https://www.mgincorporacoes.com.br/',
     },
@@ -138,9 +169,19 @@ export const translations = {
       title: 'Quem eu sou.',
       bio: 'Sou de Chapecó, me formei em Arquitetura e Urbanismo e hoje curso Sistemas de Informação. Da arquitetura trouxe o cuidado com proporção e detalhe; da tecnologia, sites rápidos e que funcionam de verdade. Faço cada site direto com o dono do negócio, do primeiro esboço até o site no ar.',
       specialty: 'O que eu faço',
-      skills: ['Sites institucionais', 'Páginas de serviço e produto', 'Lojas e catálogos', 'Design de interfaces'],
+      skills: [
+        'Sites institucionais',
+        'Páginas de serviço e produto',
+        'Lojas e catálogos',
+        'Design de interfaces',
+      ],
       stack: 'Como eu trabalho',
-      tools: ['Atendimento direto comigo', 'Entrega em até 7 dias úteis', 'Feito primeiro para o celular', 'Ajustes depois de publicar'],
+      tools: [
+        'Atendimento direto comigo',
+        'Entrega em até 7 dias úteis',
+        'Feito primeiro para o celular',
+        'Ajustes depois de publicar',
+      ],
       designLink: 'Ver portfólio de design',
       resume: 'Ver Currículo',
     },
@@ -263,7 +304,8 @@ export const translations = {
           title: 'Artisanal Coffee',
           brief:
             'Loja virtual para uma marca de café especial. A ideia foi dar à navegação o mesmo capricho do produto, do primeiro scroll até o carrinho.',
-          challenge: 'Café especial sendo vendido em lojas genéricas, sem nada que mostrasse o cuidado por trás do produto.',
+          challenge:
+            'Café especial sendo vendido em lojas genéricas, sem nada que mostrasse o cuidado por trás do produto.',
           solution:
             'Páginas com fotos grandes, textos curtos e um caminho de compra direto, sem etapas demais.',
           tags: ['E-commerce', 'Landing Page', 'Branding'],
@@ -277,8 +319,10 @@ export const translations = {
           title: 'REFIT',
           brief:
             'Landing page para um estúdio de reforma residencial de alto padrão, com galeria de antes e depois e um pedido de orçamento simples.',
-          challenge: 'O estúdio fazia obras caras, mas não tinha onde mostrar o resultado com qualidade.',
-          solution: 'Galeria que dá para filtrar por tipo de obra e blocos de antes e depois para o cliente entender o trabalho.',
+          challenge:
+            'O estúdio fazia obras caras, mas não tinha onde mostrar o resultado com qualidade.',
+          solution:
+            'Galeria que dá para filtrar por tipo de obra e blocos de antes e depois para o cliente entender o trabalho.',
           tags: ['Arquitetura', 'Reforma', 'Landing Page'],
           href: 'refit/index.html',
           customImage: 'refit-thumb.webp',
@@ -300,6 +344,21 @@ export const translations = {
           concept: true,
         },
         {
+          id: 'clarim',
+          featured: true,
+          title: 'Clarim',
+          brief:
+            'Site modelo para consultório odontológico, com oito tratamentos, páginas individuais, equipe e contato pelo WhatsApp.',
+          challenge:
+            'Apresentar os tratamentos com clareza e transmitir acolhimento para quem adia a ida ao dentista.',
+          solution:
+            'Identidade azul, fotografias próprias geradas para a demonstração e explicações de cada tratamento, com agendamento pelo WhatsApp.',
+          tags: ['Odontologia', 'Next.js', 'WhatsApp'],
+          href: 'odonto/index.html',
+          customImage: 'projects/clarim.webp',
+          concept: true,
+        },
+        {
           id: 'portfolio-ui-ux',
           title: 'Portfólio Interativo',
           brief:
@@ -317,11 +376,14 @@ export const translations = {
           title: 'Wiki de Estudos',
           brief:
             'Central de conhecimento pessoal que reúne matérias da faculdade, anotações no estilo Obsidian e projetos de estudo, tudo organizado e com busca.',
-          challenge: 'Anotações e materiais de estudo espalhados em vários lugares, difíceis de encontrar depois.',
-          solution: 'Uma wiki única com navegação lateral, busca e um painel que mostra tudo o que estou estudando em um só lugar.',
+          challenge:
+            'Anotações e materiais de estudo espalhados em vários lugares, difíceis de encontrar depois.',
+          solution:
+            'Uma wiki única com navegação lateral, busca e um painel que mostra tudo o que estou estudando em um só lugar.',
           tags: ['Documentação', 'Wiki', 'Pessoal'],
           href: 'https://www.lucasmagrodocs.com.br/',
-          customImage: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&auto=format&q=70&fit=crop',
+          customImage:
+            'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&auto=format&q=70&fit=crop',
         },
         {
           id: 'links',
@@ -329,10 +391,12 @@ export const translations = {
           brief:
             'Uma página única para reunir meus links de redes e contato, do tipo que se coloca na bio do Instagram.',
           challenge: 'Bio de rede social dispersa em vários links soltos, difícil de manter.',
-          solution: 'Uma página só, rápida, com tema claro e escuro, que centraliza tudo em um lugar.',
+          solution:
+            'Uma página só, rápida, com tema claro e escuro, que centraliza tudo em um lugar.',
           tags: ['Pessoal', 'Branding', 'Social'],
           href: '#/links',
-          customImage: 'https://images.unsplash.com/photo-1590381945249-b713d216adea?w=800&auto=format&q=70&fit=crop',
+          customImage:
+            'https://images.unsplash.com/photo-1590381945249-b713d216adea?w=800&auto=format&q=70&fit=crop',
         },
       ],
     },
@@ -384,7 +448,11 @@ export const translations = {
     hero: {
       tag: 'UI/UX Design & Data · Information Systems Student',
       title: 'Professional websites that turn visitors into customers',
-      proof: ['Real client: MG Incorporações', 'Delivered within 7 business days', 'R$ 500 · launch price'],
+      proof: [
+        'Real client: MG Incorporações',
+        'Delivered within 7 business days',
+        'R$ 500 · launch price',
+      ],
       ctaClient: 'I want my site',
       intro:
         'Tailored to your business: great on mobile, quick to load and with direct contact on your WhatsApp. Ready within 7 business days, and you work with me directly, no agency in between.',
@@ -400,7 +468,8 @@ export const translations = {
       headline: 'Need a website for your business?',
       sub: 'Tell me what you do and who you serve. I will reply on WhatsApp with how your site would look and the price.',
       whatsappCta: 'Ask for a quote on WhatsApp',
-      whatsappMessage: 'Hi Lucas! I found your portfolio and I would like to talk about a website for my business.',
+      whatsappMessage:
+        'Hi Lucas! I found your portfolio and I would like to talk about a website for my business.',
       orEmail: 'or by email:',
       button: 'Start a Conversation',
       form: {
@@ -448,9 +517,30 @@ export const translations = {
         image: 'imobiliaria-mg-thumbnail-640.webp',
       },
       examples: [
-        { title: 'Aurema', sub: 'Aesthetics clinic', href: 'aurema/index.html', image: 'projects/aurema-640.webp' },
-        { title: 'REFIT', sub: 'Home renovation', href: 'refit/index.html', image: 'refit-thumb-640.webp' },
-        { title: 'Artisanal Coffee', sub: 'Coffee shop', href: 'cafeteria/index.html', image: 'projects/cafeteria-640.webp' },
+        {
+          title: 'Aurema',
+          sub: 'Aesthetics clinic',
+          href: 'aurema/index.html',
+          image: 'projects/aurema-640.webp',
+        },
+        {
+          title: 'Clarim',
+          sub: 'Dentistry',
+          href: 'odonto/index.html',
+          image: 'projects/clarim-640.webp',
+        },
+        {
+          title: 'REFIT',
+          sub: 'Home renovation',
+          href: 'refit/index.html',
+          image: 'refit-thumb-640.webp',
+        },
+        {
+          title: 'Artisanal Coffee',
+          sub: 'Coffee shop',
+          href: 'cafeteria/index.html',
+          image: 'projects/cafeteria-640.webp',
+        },
       ],
       priceLabel: 'Launch price',
       price: 'R$ 500',
@@ -462,7 +552,8 @@ export const translations = {
         'Direct contact through WhatsApp',
       ],
       cta: 'I want my site',
-      whatsappMessage: 'Hi Lucas! I saw the website offer on your portfolio and I would like one for my business.',
+      whatsappMessage:
+        'Hi Lucas! I saw the website offer on your portfolio and I would like one for my business.',
       projectsLink: 'See all projects',
       maintenance:
         'Optional monthly maintenance for updates after the first 30 days. Price on request.',
@@ -473,7 +564,11 @@ export const translations = {
         'Lucas did a truly professional job. The website exceeded our expectations in both quality and turnaround, and he was always available to talk and adjust whatever we needed. I recommend him without a second thought.',
       author: 'MG Incorporações',
       role: 'Builder and real estate developer · Chapecó, Brazil',
-      highlights: ['Exceeded expectations on quality', 'Delivered on time', 'Direct communication from start to finish'],
+      highlights: [
+        'Exceeded expectations on quality',
+        'Delivered on time',
+        'Direct communication from start to finish',
+      ],
       link: 'See the MG website ↗',
       href: 'https://www.mgincorporacoes.com.br/',
     },
@@ -508,9 +603,19 @@ export const translations = {
       title: 'Who I am.',
       bio: "I'm from Chapecó, trained in architecture and urban planning and now study Information Systems. From architecture I kept the care for proportion and detail; from tech, websites that are fast and actually work. I build each site directly with the business owner, from the first sketch to the live site.",
       specialty: 'What I do',
-      skills: ['Business websites', 'Service and product pages', 'Shops and catalogs', 'Interface design'],
+      skills: [
+        'Business websites',
+        'Service and product pages',
+        'Shops and catalogs',
+        'Interface design',
+      ],
       stack: 'How I work',
-      tools: ['You work with me directly', 'Delivered within 7 business days', 'Built mobile-first', 'Adjustments after launch'],
+      tools: [
+        'You work with me directly',
+        'Delivered within 7 business days',
+        'Built mobile-first',
+        'Adjustments after launch',
+      ],
       designLink: 'See design portfolio',
       resume: 'View Resume',
     },
@@ -632,7 +737,8 @@ export const translations = {
           title: 'Artisanal Coffee',
           brief:
             'An online store for a specialty coffee brand. The goal was to give the browsing the same care as the product, from the first scroll to the cart.',
-          challenge: 'Specialty coffee sold through generic stores, with nothing to show the care behind it.',
+          challenge:
+            'Specialty coffee sold through generic stores, with nothing to show the care behind it.',
           solution:
             'Pages with large photos, short copy and a direct path to checkout, without extra steps.',
           tags: ['E-commerce', 'Landing Page', 'Branding'],
@@ -670,6 +776,21 @@ export const translations = {
           concept: true,
         },
         {
+          id: 'clarim',
+          featured: true,
+          title: 'Clarim',
+          brief:
+            'A dental practice template with eight treatments, individual service pages, a team section and WhatsApp contact.',
+          challenge:
+            'Explain dental treatments clearly and help people who put off visiting the dentist feel welcome.',
+          solution:
+            'A blue visual identity, photographs generated for this demo and clear treatment explanations, with WhatsApp booking.',
+          tags: ['Dentistry', 'Next.js', 'WhatsApp'],
+          href: 'odonto/index.html',
+          customImage: 'projects/clarim.webp',
+          concept: true,
+        },
+        {
           id: 'portfolio-ui-ux',
           title: 'Interactive Portfolio',
           brief:
@@ -688,10 +809,12 @@ export const translations = {
           brief:
             'A personal knowledge hub gathering university coursework, Obsidian-style notes and study projects, all organized and searchable.',
           challenge: 'Study notes and materials scattered across many places, hard to find later.',
-          solution: 'A single wiki with a sidebar, search and a dashboard that shows everything I am studying in one place.',
+          solution:
+            'A single wiki with a sidebar, search and a dashboard that shows everything I am studying in one place.',
           tags: ['Documentation', 'Wiki', 'Personal'],
           href: 'https://www.lucasmagrodocs.com.br/',
-          customImage: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&auto=format&q=70&fit=crop',
+          customImage:
+            'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&auto=format&q=70&fit=crop',
         },
         {
           id: 'links',
@@ -699,10 +822,12 @@ export const translations = {
           brief:
             'A single page to gather my social and contact links, the kind you put in an Instagram bio.',
           challenge: 'A social bio scattered across many loose links, hard to keep up to date.',
-          solution: 'One fast page, with light and dark themes, that pulls everything into one place.',
+          solution:
+            'One fast page, with light and dark themes, that pulls everything into one place.',
           tags: ['Personal', 'Branding', 'Social'],
           href: '#/links',
-          customImage: 'https://images.unsplash.com/photo-1590381945249-b713d216adea?w=800&auto=format&q=70&fit=crop',
+          customImage:
+            'https://images.unsplash.com/photo-1590381945249-b713d216adea?w=800&auto=format&q=70&fit=crop',
         },
       ],
     },

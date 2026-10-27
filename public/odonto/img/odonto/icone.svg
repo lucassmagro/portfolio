@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- "C" itálico da Clarim com o arco de sorriso, na paleta azul clínico. -->
+  <rect width="512" height="512" rx="112" fill="#0f2a4a"/>
+  <text x="250" y="352" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="300" fill="#f7fafd">C</text>
+  <path d="M132 392 Q256 452 380 392" fill="none" stroke="#7cc4e0" stroke-width="22" stroke-linecap="round"/>
+</svg>

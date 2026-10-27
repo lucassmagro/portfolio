@@ -1,0 +1,4 @@
+:HL["/odonto/_next/static/chunks/1sov28qrmjbkg.css","style"]
+2:[["children",{"s":"__PAGE__","h":160}]]
+1:[["children",{"s":"/_not-found","h":64,"c":"$Q2"}]]
+0:{"b":"2WKSlW2Ls67UawPSG5lsz","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
