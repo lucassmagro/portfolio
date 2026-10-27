@@ -28,7 +28,7 @@ export default function Testimonial({ t }) {
             </blockquote>
             <figcaption className="mt-8 flex items-center gap-4">
               <img
-                src="imobiliaria-mg-thumbnail-640.webp"
+                src="imobiliaria-mg-avatar-128.webp"
                 alt=""
                 width="64"
                 height="64"

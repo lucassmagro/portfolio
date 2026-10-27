@@ -30,9 +30,9 @@ export default function Footer({ t }) {
 
           {/* Navegação */}
           <div>
-            <h4 className="text-[0.7rem] font-medium uppercase tracking-[0.15em] text-ondark/55 mb-5">
+            <h2 className="text-[0.7rem] font-medium uppercase tracking-[0.15em] text-ondark/65 mb-5">
               {t.nav}
-            </h4>
+            </h2>
             <ul className="space-y-2">
               {[
                 { label: t.links.home, target: 'home' },
@@ -55,9 +55,9 @@ export default function Footer({ t }) {
 
           {/* Contato + Social */}
           <div>
-            <h4 className="text-[0.7rem] font-medium uppercase tracking-[0.15em] text-ondark/55 mb-5">
+            <h2 className="text-[0.7rem] font-medium uppercase tracking-[0.15em] text-ondark/65 mb-5">
               {t.contact}
-            </h4>
+            </h2>
             <ul className="space-y-2 mb-6">
               <li>
                 <a
@@ -76,17 +76,16 @@ export default function Footer({ t }) {
                 </a>
               </li>
             </ul>
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-x-4 gap-y-2">
               {SOCIAL_LINKS.map((social) => (
                 <a
                   key={social.id}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={social.name}
-                  className="text-[0.75rem] font-medium uppercase tracking-[0.1em] text-ondark/65 hover:text-ondark transition-colors"
+                  className="text-[0.8rem] text-ondark/70 hover:text-ondark transition-colors"
                 >
-                  {social.label}
+                  {social.name}
                 </a>
               ))}
             </div>
@@ -97,10 +96,11 @@ export default function Footer({ t }) {
         <div className="flex flex-col md:flex-row justify-between items-center gap-3 border-t border-ondark/10 pt-6">
           <p className="text-[0.7rem] uppercase tracking-[0.12em] text-ondark/55">{t.copyright}</p>
           <a
-            href={WEBSITE_URL}
-            className="text-[0.7rem] uppercase tracking-[0.12em] text-ondark/65 italic hover:text-ondark transition-colors"
+            href="#home"
+            data-scroll-to
+            className="text-[0.7rem] uppercase tracking-[0.12em] text-ondark/70 hover:text-ondark transition-colors"
           >
-            {t.madeBy}
+            {t.backTop} ↑
           </a>
         </div>
       </div>

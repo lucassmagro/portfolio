@@ -85,7 +85,9 @@
   --ed-muted: #6e6c64;
   --ed-border: #e0dcd5;
   --ed-border-faint: #eae6df;
-  --ed-accent: #e2571e;
+  /* Laranja com contraste AA: 5,1:1 com texto branco e 4,6:1 sobre o creme. */
+  --ed-accent: #c0451b;
+  --ed-on-accent: #ffffff;
 }
 
 .dark {
@@ -99,6 +101,8 @@
   --ed-border: #2e2c29;
   --ed-border-faint: #252320;
   --ed-accent: #ff6a37;
+  /* No escuro o laranja é claro: texto escuro por cima (6,1:1). */
+  --ed-on-accent: #1a1a1a;
 }
 
 /* Seleção de texto em laranja (claro e escuro) */
@@ -166,14 +170,14 @@ html {
   }
   .btn-ed--primary:hover {
     background: var(--ed-accent);
-    color: #fff;
+    color: var(--ed-on-accent);
   }
 
   /* Variante pílula (CTA do hero) */
   .btn-ed--pill {
     border-radius: 9999px;
     background: var(--ed-accent);
-    color: #fff;
+    color: var(--ed-on-accent);
     padding: 14px 32px;
   }
   .btn-ed--pill:hover {

@@ -7,7 +7,7 @@ import { useInView } from '../hooks/useInView.js'
  * - Blocos de Especialidade/Stack, prova social e CTA de currículo.
  * - Bio e detalhes via i18n; links sociais da fonte única (data/site.js).
  */
-export default function AboutSection({ t, designLabel }) {
+export default function AboutSection({ t }) {
   const [portraitRef, portraitIn] = useInView()
   return (
     <section id="about" data-scroll-section className="relative py-24 md:py-32 bg-cream">
@@ -26,7 +26,7 @@ export default function AboutSection({ t, designLabel }) {
             {/* Especialidade / Stack */}
             <div className="mt-10 grid grid-cols-2 gap-8">
               <div>
-                <h4 className="section-label mb-3">{t.specialty}</h4>
+                <h3 className="section-label mb-3">{t.specialty}</h3>
                 <ul className="space-y-1.5 text-[0.9rem] text-edbody">
                   {t.skills.map((skill, i) => (
                     <li key={i}>{skill}</li>
@@ -34,7 +34,7 @@ export default function AboutSection({ t, designLabel }) {
                 </ul>
               </div>
               <div>
-                <h4 className="section-label mb-3">{t.stack}</h4>
+                <h3 className="section-label mb-3">{t.stack}</h3>
                 <ul className="space-y-1.5 text-[0.9rem] text-edbody">
                   {t.tools.map((tool, i) => (
                     <li key={i}>{tool}</li>
@@ -47,9 +47,6 @@ export default function AboutSection({ t, designLabel }) {
             <div className="mt-10 flex flex-wrap items-center gap-6">
               <a href="#/resume" className="btn-ed btn-ed--primary">
                 {t.resume}
-              </a>
-              <a href="portfolio-ui-ux/index.html" className="btn-ed btn-ed--outline">
-                {designLabel}
               </a>
               <div className="flex gap-5">
                 {SOCIAL_LINKS.map((social) => (

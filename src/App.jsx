@@ -9,8 +9,6 @@ import Footer from './components/Footer.jsx'
 import AboutSection from './components/AboutSection.jsx'
 import ContactSection from './components/ContactSection.jsx'
 import OfferSection from './components/OfferSection.jsx'
-import ScrollToTop from './components/ScrollToTop.jsx'
-import OtherProjects from './components/OtherProjects.jsx'
 import Testimonial from './components/Testimonial.jsx'
 import Faq from './components/Faq.jsx'
 import WhatsAppButton from './components/WhatsAppButton.jsx'
@@ -107,13 +105,11 @@ export default function App() {
         <Testimonial t={t.testimonial} />
         <OfferSection t={t.offer} />
         <Faq t={t.faq} />
-        <OtherProjects t={t.projects} />
-        <AboutSection t={t.about} designLabel={t.designCta.label} />
+        <AboutSection t={t.about} />
         <ContactSection t={t.cta} />
       </main>
 
       <WhatsAppButton label={t.navbar.quote} mensagem={t.cta.whatsappMessage} />
-      <ScrollToTop />
       <Footer t={t.footer} />
     </div>
   )

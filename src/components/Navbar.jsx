@@ -64,16 +64,18 @@ export default function Navbar({ isDark, onToggle, lang, onLangToggle, t, mensag
             href={whatsappComMensagem(mensagem)}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-accent px-4 py-2 text-[0.7rem] font-medium uppercase tracking-[0.1em] text-white transition-colors hover:bg-edtext"
+            className="rounded-full bg-accent px-4 py-2 text-[0.7rem] font-medium uppercase tracking-[0.1em] text-onaccent transition-colors hover:bg-edtext hover:text-paper"
           >
             {t.quote}
           </a>
           <button
             onClick={onLangToggle}
-            aria-label={lang === 'pt' ? 'Switch to English' : 'Mudar para Português'}
-            className="text-[0.7rem] font-medium uppercase tracking-[0.15em] text-edsecondary hover:text-accent transition-colors"
+            className="min-h-[32px] text-[0.7rem] font-medium uppercase tracking-[0.15em] text-edsecondary hover:text-accent transition-colors"
           >
             {lang === 'pt' ? 'EN' : 'PT'}
+            <span className="sr-only">
+              {lang === 'pt' ? ' (switch to English)' : ' (mudar para português)'}
+            </span>
           </button>
 
           <button

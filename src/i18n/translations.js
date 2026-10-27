@@ -1,9 +1,5 @@
 export const translations = {
   pt: {
-    designCta: {
-      label: 'Ver portfólio de design',
-      short: 'Ver design',
-    },
     navbar: {
       work: 'Trabalhos',
       offer: 'Seu site',
@@ -72,65 +68,6 @@ export const translations = {
         { title: 'Você me conta', text: 'O que vende, para quem, fotos e logo, pelo WhatsApp.' },
         { title: 'Eu monto', text: 'O site fica pronto em até 7 dias úteis, já no ar.' },
         { title: 'A gente ajusta', text: 'Por 30 dias, mudo textos e fotos sem custo.' },
-      ],
-      examplesTitle: 'Exemplos',
-      caseReal: {
-        label: 'Cliente real · Chapecó',
-        title: 'MG Incorporações',
-        text: 'Site da construtora e incorporadora, com mais de 20 anos de mercado: empreendimentos com fotos grandes, informações claras e contato direto pelo WhatsApp.',
-        cta: 'Ver o site no ar ↗',
-        href: 'https://www.mgincorporacoes.com.br/',
-        image: 'imobiliaria-mg-thumbnail-640.webp',
-      },
-      examples: [
-        {
-          title: 'Aurema',
-          sub: 'Clínica de estética',
-          href: 'aurema/index.html',
-          image: 'projects/aurema-640.webp',
-        },
-        {
-          title: 'Clarim',
-          sub: 'Odontologia',
-          href: 'odonto/index.html',
-          image: 'projects/clarim-640.webp',
-        },
-        {
-          title: 'Formobi',
-          sub: 'Móveis planejados',
-          href: 'planejados/index.html',
-          image: 'projects/formobi-640.webp',
-        },
-        {
-          title: 'Mimo Vet',
-          sub: 'Clínica veterinária',
-          href: 'veterinaria/index.html',
-          image: 'projects/mimo-640.webp',
-        },
-        {
-          title: 'Turno',
-          sub: 'Academia de musculação',
-          href: 'academia/index.html',
-          image: 'projects/turno-640.webp',
-        },
-        {
-          title: 'Pouso',
-          sub: 'Estúdio de pilates',
-          href: 'pilates/index.html',
-          image: 'projects/pouso-640.webp',
-        },
-        {
-          title: 'REFIT',
-          sub: 'Reforma residencial',
-          href: 'refit/index.html',
-          image: 'refit-thumb-640.webp',
-        },
-        {
-          title: 'Artisanal Coffee',
-          sub: 'Loja de café',
-          href: 'cafeteria/index.html',
-          image: 'projects/cafeteria-640.webp',
-        },
       ],
       priceLabel: 'Preço de lançamento',
       price: 'R$ 500',
@@ -293,9 +230,21 @@ export const translations = {
     projects: {
       section: 'Trabalhos',
       title: 'Sites que eu fiz.',
-      othersSection: 'Outros projetos',
-      othersTitle: 'Estudos e projetos pessoais',
-      view: 'VER',
+      view: 'Ver site',
+      caseLabel: 'Cliente real · Chapecó',
+      caseCta: 'Ver o site no ar',
+      modelsTitle: 'Veja um site do seu ramo',
+      modelsSub:
+        'Sites modelo que criei para negócios de cada área. Abra um e navegue como se fosse o seu: o seu fica assim, com a sua marca.',
+      filterLabel: 'Filtrar por ramo',
+      filters: [
+        { id: 'todos', label: 'Todos' },
+        { id: 'saude', label: 'Saúde' },
+        { id: 'pets', label: 'Pets' },
+        { id: 'casa', label: 'Casa e reforma' },
+        { id: 'fitness', label: 'Academia e pilates' },
+        { id: 'comercio', label: 'Comércio' },
+      ],
       reworked: 'Ver versão reformulada',
       original: 'Ver original',
       soon: 'Estudo de caso em breve',
@@ -310,6 +259,8 @@ export const translations = {
       items: [
         {
           id: 'mgincorporacoes',
+          caseReal: true,
+          sector: 'Construtora e incorporadora',
           featured: true,
           title: 'MG Incorporações',
           brief:
@@ -320,10 +271,12 @@ export const translations = {
             'Páginas de empreendimento com fotos grandes, informações claras e contato direto por WhatsApp, passando a solidez de quem está há 20 anos no mercado.',
           tags: ['Imobiliária', 'Institucional', 'Cliente real'],
           href: 'https://www.mgincorporacoes.com.br/',
-          customImage: 'imobiliaria-mg-thumbnail.webp',
+          customImage: 'projects/mockup-mg.webp',
         },
         {
           id: 'cafeteria',
+          ramo: 'comercio',
+          sector: 'Loja de café especial',
           featured: true,
           title: 'Artisanal Coffee',
           brief:
@@ -334,11 +287,13 @@ export const translations = {
             'Páginas com fotos grandes, textos curtos e um caminho de compra direto, sem etapas demais.',
           tags: ['E-commerce', 'Landing Page', 'Branding'],
           href: 'cafeteria/index.html',
-          customImage: 'projects/cafeteria.webp',
+          customImage: 'projects/mockup-cafe.webp',
           concept: true,
         },
         {
           id: 'refit',
+          ramo: 'casa',
+          sector: 'Reforma residencial',
           featured: true,
           title: 'REFIT',
           brief:
@@ -349,11 +304,13 @@ export const translations = {
             'Galeria que dá para filtrar por tipo de obra e blocos de antes e depois para o cliente entender o trabalho.',
           tags: ['Arquitetura', 'Reforma', 'Landing Page'],
           href: 'refit/index.html',
-          customImage: 'refit-thumb.webp',
+          customImage: 'projects/mockup-refit.webp',
           concept: true,
         },
         {
           id: 'aurema',
+          ramo: 'saude',
+          sector: 'Clínica de estética',
           featured: true,
           title: 'Aurema',
           brief:
@@ -364,11 +321,13 @@ export const translations = {
             'Design pensado primeiro para o celular, agendamento pelo WhatsApp e uma base por nicho: trocar de negócio é trocar textos, serviços, fotos e cores, sem reescrever o site.',
           tags: ['Saúde & Estética', 'Next.js', 'WhatsApp'],
           href: 'aurema/index.html',
-          customImage: 'projects/aurema.webp',
+          customImage: 'projects/mockup-aurema.webp',
           concept: true,
         },
         {
           id: 'clarim',
+          ramo: 'saude',
+          sector: 'Odontologia',
           featured: true,
           title: 'Clarim',
           brief:
@@ -379,11 +338,13 @@ export const translations = {
             'Composição própria para a Clarim, equipe apresentada de perto, antes e depois interativo de boca e dentes e contato pelo WhatsApp.',
           tags: ['Odontologia', 'Next.js', 'WhatsApp'],
           href: 'odonto/index.html',
-          customImage: 'projects/clarim.webp',
+          customImage: 'projects/mockup-clarim.webp',
           concept: true,
         },
         {
           id: 'formobi',
+          ramo: 'casa',
+          sector: 'Móveis planejados',
           featured: true,
           title: 'Formobi',
           brief:
@@ -394,11 +355,13 @@ export const translations = {
             'Abertura fotográfica, galeria filtrável com ampliação acessível e mensagem de WhatsApp montada com os dados do projeto.',
           tags: ['Móveis planejados', 'UI/UX', 'Next.js'],
           href: 'planejados/index.html',
-          customImage: 'projects/formobi.webp',
+          customImage: 'projects/mockup-formobi.webp',
           concept: true,
         },
         {
           id: 'mimo',
+          ramo: 'pets',
+          sector: 'Clínica veterinária',
           featured: true,
           title: 'Mimo Vet',
           brief:
@@ -409,11 +372,13 @@ export const translations = {
             'Interface própria em mel e azul, catálogo de cuidados filtrável e barra no celular com telefone e WhatsApp.',
           tags: ['Veterinária', 'UI/UX', 'Next.js'],
           href: 'veterinaria/index.html',
-          customImage: 'projects/mimo.webp',
+          customImage: 'projects/mockup-mimo.webp',
           concept: true,
         },
         {
           id: 'turno',
+          ramo: 'fitness',
+          sector: 'Academia',
           featured: true,
           title: 'Turno',
           brief:
@@ -424,11 +389,13 @@ export const translations = {
             'Tipografia condensada, fotos próprias, horários filtráveis e formulário de aula experimental pelo WhatsApp.',
           tags: ['Academia', 'Next.js', 'WhatsApp'],
           href: 'academia/index.html',
-          customImage: 'projects/turno.webp',
+          customImage: 'projects/mockup-turno.webp',
           concept: true,
         },
         {
           id: 'pouso',
+          ramo: 'fitness',
+          sector: 'Estúdio de pilates',
           featured: true,
           title: 'Pouso',
           brief:
@@ -438,7 +405,7 @@ export const translations = {
             'Verde e areia, fotos próprias, horários por modalidade e planos consultados pelo WhatsApp.',
           tags: ['Pilates', 'UI/UX', 'Next.js'],
           href: 'pilates/index.html',
-          customImage: 'projects/pouso.webp',
+          customImage: 'projects/mockup-pouso.webp',
           concept: true,
         },
         {
@@ -493,6 +460,7 @@ export const translations = {
       availability: 'Aceitando novos projetos a partir de julho de 2026.',
       copyright: '© 2026 Lucas Santos Magro. Todos os direitos reservados.',
       madeBy: 'Feito por Lucas Santos Magro',
+      backTop: 'Voltar ao topo',
       resume: 'Baixar Currículo',
     },
     linkhub: {
@@ -517,10 +485,6 @@ export const translations = {
     },
   },
   en: {
-    designCta: {
-      label: 'See design portfolio',
-      short: 'See design',
-    },
     navbar: {
       work: 'Work',
       offer: 'Your site',
@@ -589,65 +553,6 @@ export const translations = {
         { title: 'You tell me', text: 'What you sell, to whom, photos and logo, over WhatsApp.' },
         { title: 'I build it', text: 'The site is live within 7 business days.' },
         { title: 'We fine-tune', text: 'For 30 days I change copy and photos at no cost.' },
-      ],
-      examplesTitle: 'Examples',
-      caseReal: {
-        label: 'Real client · Chapecó',
-        title: 'MG Incorporações',
-        text: 'Website for a builder and real estate developer with over 20 years in the market: projects with large photos, clear information and direct WhatsApp contact.',
-        cta: 'See the live site ↗',
-        href: 'https://www.mgincorporacoes.com.br/',
-        image: 'imobiliaria-mg-thumbnail-640.webp',
-      },
-      examples: [
-        {
-          title: 'Aurema',
-          sub: 'Aesthetics clinic',
-          href: 'aurema/index.html',
-          image: 'projects/aurema-640.webp',
-        },
-        {
-          title: 'Clarim',
-          sub: 'Dentistry',
-          href: 'odonto/index.html',
-          image: 'projects/clarim-640.webp',
-        },
-        {
-          title: 'Formobi',
-          sub: 'Bespoke furniture',
-          href: 'planejados/index.html',
-          image: 'projects/formobi-640.webp',
-        },
-        {
-          title: 'Mimo Vet',
-          sub: 'Veterinary clinic',
-          href: 'veterinaria/index.html',
-          image: 'projects/mimo-640.webp',
-        },
-        {
-          title: 'Turno',
-          sub: 'Gym',
-          href: 'academia/index.html',
-          image: 'projects/turno-640.webp',
-        },
-        {
-          title: 'Pouso',
-          sub: 'Pilates studio',
-          href: 'pilates/index.html',
-          image: 'projects/pouso-640.webp',
-        },
-        {
-          title: 'REFIT',
-          sub: 'Home renovation',
-          href: 'refit/index.html',
-          image: 'refit-thumb-640.webp',
-        },
-        {
-          title: 'Artisanal Coffee',
-          sub: 'Coffee shop',
-          href: 'cafeteria/index.html',
-          image: 'projects/cafeteria-640.webp',
-        },
       ],
       priceLabel: 'Launch price',
       price: 'R$ 500',
@@ -809,9 +714,21 @@ export const translations = {
     projects: {
       section: 'Work',
       title: 'Websites I built.',
-      othersSection: 'Other projects',
-      othersTitle: 'Studies and personal projects',
-      view: 'VIEW',
+      view: 'View site',
+      caseLabel: 'Real client · Chapecó, Brazil',
+      caseCta: 'See the live site',
+      modelsTitle: 'Find a site for your industry',
+      modelsSub:
+        'Sample sites I built for businesses in different industries. Open one and browse as if it were yours: yours looks like this, with your brand.',
+      filterLabel: 'Filter by industry',
+      filters: [
+        { id: 'todos', label: 'All' },
+        { id: 'saude', label: 'Health' },
+        { id: 'pets', label: 'Pets' },
+        { id: 'casa', label: 'Home and renovation' },
+        { id: 'fitness', label: 'Gym and pilates' },
+        { id: 'comercio', label: 'Retail' },
+      ],
       reworked: 'See reworked version',
       original: 'See original',
       soon: 'Case study coming soon',
@@ -826,6 +743,8 @@ export const translations = {
       items: [
         {
           id: 'mgincorporacoes',
+          caseReal: true,
+          sector: 'Builder and real estate developer',
           featured: true,
           title: 'MG Incorporações',
           brief:
@@ -836,10 +755,12 @@ export const translations = {
             'Project pages with large photos, clear information and direct WhatsApp contact, conveying the trust of a company with 20 years in the market.',
           tags: ['Real Estate', 'Corporate', 'Real client'],
           href: 'https://www.mgincorporacoes.com.br/',
-          customImage: 'imobiliaria-mg-thumbnail.webp',
+          customImage: 'projects/mockup-mg.webp',
         },
         {
           id: 'cafeteria',
+          ramo: 'comercio',
+          sector: 'Specialty coffee shop',
           featured: true,
           title: 'Artisanal Coffee',
           brief:
@@ -850,11 +771,13 @@ export const translations = {
             'Pages with large photos, short copy and a direct path to checkout, without extra steps.',
           tags: ['E-commerce', 'Landing Page', 'Branding'],
           href: 'cafeteria/index.html',
-          customImage: 'projects/cafeteria.webp',
+          customImage: 'projects/mockup-cafe.webp',
           concept: true,
         },
         {
           id: 'refit',
+          ramo: 'casa',
+          sector: 'Home renovation',
           featured: true,
           title: 'REFIT',
           brief:
@@ -864,11 +787,13 @@ export const translations = {
             'A gallery you can filter by type of work, plus before-and-after blocks so clients understand the job.',
           tags: ['Architecture', 'Renovation', 'Landing Page'],
           href: 'refit/index.html',
-          customImage: 'refit-thumb.webp',
+          customImage: 'projects/mockup-refit.webp',
           concept: true,
         },
         {
           id: 'aurema',
+          ramo: 'saude',
+          sector: 'Aesthetics clinic',
           featured: true,
           title: 'Aurema',
           brief:
@@ -879,11 +804,13 @@ export const translations = {
             'Mobile-first design, WhatsApp booking and a per-niche foundation: switching businesses means swapping copy, services, photos and colors, not rewriting the site.',
           tags: ['Health & Aesthetics', 'Next.js', 'WhatsApp'],
           href: 'aurema/index.html',
-          customImage: 'projects/aurema.webp',
+          customImage: 'projects/mockup-aurema.webp',
           concept: true,
         },
         {
           id: 'clarim',
+          ramo: 'saude',
+          sector: 'Dental clinic',
           featured: true,
           title: 'Clarim',
           brief:
@@ -894,11 +821,13 @@ export const translations = {
             'A distinct Clarim layout, an approachable team section, an interactive mouth-and-teeth comparison and WhatsApp contact.',
           tags: ['Dentistry', 'Next.js', 'WhatsApp'],
           href: 'odonto/index.html',
-          customImage: 'projects/clarim.webp',
+          customImage: 'projects/mockup-clarim.webp',
           concept: true,
         },
         {
           id: 'formobi',
+          ramo: 'casa',
+          sector: 'Custom furniture',
           featured: true,
           title: 'Formobi',
           brief:
@@ -909,11 +838,13 @@ export const translations = {
             'A photographic opening, filterable project gallery with accessible enlargement and a WhatsApp message built from the project brief.',
           tags: ['Bespoke furniture', 'UI/UX', 'Next.js'],
           href: 'planejados/index.html',
-          customImage: 'projects/formobi.webp',
+          customImage: 'projects/mockup-formobi.webp',
           concept: true,
         },
         {
           id: 'mimo',
+          ramo: 'pets',
+          sector: 'Veterinary clinic',
           featured: true,
           title: 'Mimo Vet',
           brief:
@@ -923,11 +854,13 @@ export const translations = {
             'A distinct honey-and-blue interface, filterable care directory and a mobile bar with phone and WhatsApp actions.',
           tags: ['Veterinary care', 'UI/UX', 'Next.js'],
           href: 'veterinaria/index.html',
-          customImage: 'projects/mimo.webp',
+          customImage: 'projects/mockup-mimo.webp',
           concept: true,
         },
         {
           id: 'turno',
+          ramo: 'fitness',
+          sector: 'Gym',
           featured: true,
           title: 'Turno',
           brief:
@@ -937,11 +870,13 @@ export const translations = {
             'Condensed typography, original photography, filterable schedules and a WhatsApp trial-class form.',
           tags: ['Fitness', 'Next.js', 'WhatsApp'],
           href: 'academia/index.html',
-          customImage: 'projects/turno.webp',
+          customImage: 'projects/mockup-turno.webp',
           concept: true,
         },
         {
           id: 'pouso',
+          ramo: 'fitness',
+          sector: 'Pilates studio',
           featured: true,
           title: 'Pouso',
           brief:
@@ -951,7 +886,7 @@ export const translations = {
             'Green and sand palette, original photography, schedules by practice and plans discussed through WhatsApp.',
           tags: ['Pilates', 'UI/UX', 'Next.js'],
           href: 'pilates/index.html',
-          customImage: 'projects/pouso.webp',
+          customImage: 'projects/mockup-pouso.webp',
           concept: true,
         },
         {
@@ -1005,6 +940,7 @@ export const translations = {
       availability: 'Taking on new projects from July 2026.',
       copyright: '© 2026 Lucas Santos Magro. All rights reserved.',
       madeBy: 'Made by Lucas Santos Magro',
+      backTop: 'Back to top',
       resume: 'Download Resume',
     },
     linkhub: {

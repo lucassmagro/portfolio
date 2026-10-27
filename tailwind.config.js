@@ -32,6 +32,7 @@ export default {
         ondark: '#e8e4dc',
         // Cor de acento (laranja editorial), tema-aware via CSS variable
         accent: 'var(--ed-accent)',
+        onaccent: 'var(--ed-on-accent)',
       },
       borderRadius: {
         ed: '4px',

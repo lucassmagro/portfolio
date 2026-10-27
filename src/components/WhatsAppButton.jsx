@@ -35,7 +35,7 @@ export default function WhatsAppButton({ label, mensagem }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className={`group fixed bottom-6 right-4 z-50 flex items-center gap-2 rounded-full bg-[#157a44] py-3 pl-3 pr-5 text-white shadow-lg shadow-black/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#106436] md:bottom-8 md:right-8 ${
+      className={`group fixed bottom-6 right-4 z-50 flex items-center gap-2 rounded-full bg-accent py-3 pl-3 pr-5 text-onaccent shadow-lg shadow-black/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-edtext hover:text-paper md:bottom-8 md:right-8 ${
         visible ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-5 opacity-0'
       }`}
     >
