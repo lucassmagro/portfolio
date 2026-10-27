@@ -35,7 +35,11 @@ export default function App() {
     }
     const sectionAnchors = ['#home', '#projects', '#offer', '#about', '#contact', '#footer-connect']
     if (sectionAnchors.includes(window.location.hash)) {
-      window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}#/`)
+      window.history.replaceState(
+        null,
+        '',
+        `${window.location.pathname}${window.location.search}#/`,
+      )
     }
     window.scrollTo(0, 0)
     requestAnimationFrame(() => window.scrollTo(0, 0))

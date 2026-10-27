@@ -84,10 +84,7 @@ export default function ProjectCard({ project, labels, index = 0, priority = fal
           {/* Tags */}
           <div className="mt-6 flex flex-wrap gap-x-4 gap-y-2">
             {project.tags.map((tag) => (
-              <span
-                key={tag}
-                className="text-[0.65rem] uppercase tracking-[0.16em] text-edmuted"
-              >
+              <span key={tag} className="text-[0.65rem] uppercase tracking-[0.16em] text-edmuted">
                 {tag}
               </span>
             ))}
