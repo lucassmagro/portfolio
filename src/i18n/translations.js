@@ -108,6 +108,18 @@ export const translations = {
           image: 'projects/mimo-640.webp',
         },
         {
+          title: 'Turno',
+          sub: 'Academia de musculação',
+          href: 'academia/index.html',
+          image: 'projects/turno-640.webp',
+        },
+        {
+          title: 'Pouso',
+          sub: 'Estúdio de pilates',
+          href: 'pilates/index.html',
+          image: 'projects/pouso-640.webp',
+        },
+        {
           title: 'REFIT',
           sub: 'Reforma residencial',
           href: 'refit/index.html',
@@ -401,6 +413,35 @@ export const translations = {
           concept: true,
         },
         {
+          id: 'turno',
+          featured: true,
+          title: 'Turno',
+          brief:
+            'Academia de bairro com identidade energética, grade de aulas e planos apresentados com clareza.',
+          challenge:
+            'Ajudar o visitante a encaixar o treino na rotina e combinar uma aula experimental.',
+          solution:
+            'Tipografia condensada, fotos próprias, horários filtráveis e formulário de aula experimental pelo WhatsApp.',
+          tags: ['Academia', 'Next.js', 'WhatsApp'],
+          href: 'academia/index.html',
+          customImage: 'projects/turno.webp',
+          concept: true,
+        },
+        {
+          id: 'pouso',
+          featured: true,
+          title: 'Pouso',
+          brief:
+            'Estúdio de pilates com identidade tranquila, pequenos grupos e primeiro contato acolhedor.',
+          challenge: 'Apresentar as práticas e facilitar a primeira visita ao estúdio.',
+          solution:
+            'Verde e areia, fotos próprias, horários por modalidade e planos consultados pelo WhatsApp.',
+          tags: ['Pilates', 'UI/UX', 'Next.js'],
+          href: 'pilates/index.html',
+          customImage: 'projects/pouso.webp',
+          concept: true,
+        },
+        {
           id: 'portfolio-ui-ux',
           title: 'Portfólio Interativo',
           brief:
@@ -582,6 +623,18 @@ export const translations = {
           sub: 'Veterinary clinic',
           href: 'veterinaria/index.html',
           image: 'projects/mimo-640.webp',
+        },
+        {
+          title: 'Turno',
+          sub: 'Gym',
+          href: 'academia/index.html',
+          image: 'projects/turno-640.webp',
+        },
+        {
+          title: 'Pouso',
+          sub: 'Pilates studio',
+          href: 'pilates/index.html',
+          image: 'projects/pouso-640.webp',
         },
         {
           title: 'REFIT',
@@ -871,6 +924,34 @@ export const translations = {
           tags: ['Veterinary care', 'UI/UX', 'Next.js'],
           href: 'veterinaria/index.html',
           customImage: 'projects/mimo.webp',
+          concept: true,
+        },
+        {
+          id: 'turno',
+          featured: true,
+          title: 'Turno',
+          brief:
+            'A neighborhood gym website with an energetic identity, class schedules and clear membership plans.',
+          challenge: 'Help people fit exercise into their routine and book a trial class.',
+          solution:
+            'Condensed typography, original photography, filterable schedules and a WhatsApp trial-class form.',
+          tags: ['Fitness', 'Next.js', 'WhatsApp'],
+          href: 'academia/index.html',
+          customImage: 'projects/turno.webp',
+          concept: true,
+        },
+        {
+          id: 'pouso',
+          featured: true,
+          title: 'Pouso',
+          brief:
+            'A Pilates studio with a calm visual identity, small groups and a welcoming first contact.',
+          challenge: 'Present different practices and make the first visit feel approachable.',
+          solution:
+            'Green and sand palette, original photography, schedules by practice and plans discussed through WhatsApp.',
+          tags: ['Pilates', 'UI/UX', 'Next.js'],
+          href: 'pilates/index.html',
+          customImage: 'projects/pouso.webp',
           concept: true,
         },
         {
