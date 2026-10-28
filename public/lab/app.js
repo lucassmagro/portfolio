@@ -149,7 +149,7 @@ const nosPalavra = $$(".palavra", manifesto);
 // ----------------------------------------------------------------- rolagem
 // Um só quadro por rolagem: cabeçalho, leitura do manifesto e fios.
 const fios = $$(".fio");
-const topoPainel = $(".topo__painel");
+const topoPainel = $(".topo__prancha");
 let pendente = false;
 function agendar() {
   if (pendente) return;
@@ -203,20 +203,20 @@ const revelar = [
   ".processo__cab",
   ".diagrama .no",
   ".diagrama__centro",
-  ".trabalho__fixo",
+  ".trabalho__cab",
   ".caso .tela",
   ".caso__texto",
   ".depoimento",
   ".modelos__cab",
   ".cartao",
-  ".preco__arte",
-  ".preco__corpo",
+  ".preco__cab",
+  ".orcamento",
   ".sobre__foto",
   ".sobre__texto",
   ".duvidas__cab",
   ".pergunta",
   ".contato__conteudo",
-  ".rodape__painel",
+  ".rodape__prancha",
 ];
 const observadorEntrada = new IntersectionObserver(
   (entradas) => {
@@ -241,35 +241,53 @@ for (const sel of revelar) {
 const diagrama = $("[data-diagrama]");
 new IntersectionObserver(([e]) => diagrama.classList.toggle("is-ativo", e.isIntersecting)).observe(diagrama);
 
-// ----------------------------------------------------------------- rastro
-// Um "seguidor" persegue o mouse com mola; por onde ele passa, células da
-// grade acendem com a cor que corre num degradê contínuo ao longo do
-// caminho. Cada célula nasce crescendo (com um leve passo além) e encolhe
-// ao sumir. Parado, o rastro se desfaz e a semente ao lado do título volta,
-// célula por célula. O desfoque vem do CSS (filter no canvas).
+// ----------------------------------------------------------------- marcações
+// Em volta de "7 dias", as marcações se revezam a cada 4 s. A primeira
+// se desenha 1,1 s depois de a página abrir; fora da tela, o revezamento
+// pausa.
+const formas = $$(".nuvem .forma");
+let formaAtual = 0;
+let marcandoVisivel = true;
+function proximaForma() {
+  if (reduzido.matches || !marcandoVisivel || document.hidden) return;
+  const sai = formas[formaAtual];
+  formaAtual = (formaAtual + 1) % formas.length;
+  const entra = formas[formaAtual];
+  sai.classList.remove("is-ativa");
+  sai.classList.add("is-saindo");
+  // Depois de sair, volta ao começo sem animar, pronta para a próxima vez.
+  setTimeout(() => {
+    sai.classList.add("sem-transicao");
+    sai.classList.remove("is-saindo");
+    void sai.getBoundingClientRect();
+    sai.classList.remove("sem-transicao");
+  }, 800);
+  setTimeout(() => entra.classList.add("is-ativa"), 350);
+}
+if (formas.length > 1) {
+  // A primeira entra com a página.
+  formas[0].classList.remove("is-ativa");
+  requestAnimationFrame(() => setTimeout(() => formas[0].classList.add("is-ativa"), 1100));
+  setInterval(proximaForma, 4000);
+  new IntersectionObserver(([e]) => (marcandoVisivel = e.isIntersecting)).observe($(".nuvem"));
+}
+
+// ----------------------------------------------------------------- mira
+// No topo, com mouse: uma mira de CAD segue o ponteiro com mola. As linhas
+// atravessam a prancha, a célula da grade sob a mira acende em vermelho e
+// as coordenadas (em múltiplos da grade de 12 px) aparecem ao lado.
 const canvas = $(".rastro");
 const ctx = canvas.getContext("2d");
-const titulo = $(".topo__titulo");
-const PALETA = ["#c58cff", "#4f7bff", "#3fd0ff", "#f5e64a", "#ff8a3d", "#ff5a4e", "#c58cff"].map((h) => [
-  parseInt(h.slice(1, 3), 16),
-  parseInt(h.slice(3, 5), 16),
-  parseInt(h.slice(5, 7), 16),
-]);
-const VIDA = 1400; // ms
-const NASCER = 160; // ms
-const ESPERA_SEMENTE = 900; // ms parado até a semente voltar
-let celula = 26;
+const GRADE = 12;
+const VERMELHO = [226, 65, 43];
 let largura = 0;
 let altura = 0;
 let quadro = 0;
 let visivel = true;
-const celulas = new Map(); // "gx,gy" → { t, d }
-let alvo = null; // posição do mouse
-let seguidor = null; // posição suavizada
-let percorrido = 0; // distância total, dá a cor
-let ultimaCelula = null;
-let ultimoMovimento = -Infinity;
-let semente = 1; // 0 desfeita, 1 inteira
+let alvo = null; // onde está o mouse
+let mira = null; // onde a mira está (suavizada)
+let presenca = 0; // 0 escondida, 1 visível
+let rastroCelulas = []; // células por onde a mira passou: { x, y, t }
 
 function ativo() {
   return !reduzido.matches && innerWidth > 700;
@@ -282,56 +300,9 @@ function dimensionar() {
   canvas.width = Math.round(largura * dpr);
   canvas.height = Math.round(altura * dpr);
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  celula = largura > 1200 ? 28 : 24;
   pedirQuadro();
 }
-// Cor contínua: interpola a paleta pela distância percorrida (em células).
-function cor(d, alfa) {
-  const n = PALETA.length - 1;
-  const x = (((d / 7) % n) + n) % n;
-  const i = Math.floor(x);
-  const f = x - i;
-  const [a, b] = [PALETA[i], PALETA[i + 1]];
-  return `rgb(${a.map((v, k) => Math.round(v + (b[k] - v) * f)).join(" ")} / ${alfa})`;
-}
-const suave = (x) => 1 - (1 - x) ** 3;
-// Escala de nascimento com passo além (1 → 1.12 → 1).
-function escalaNascer(x) {
-  const c = 2.2;
-  return 1 + (c + 1) * (x - 1) ** 3 + c * (x - 1) ** 2;
-}
-
-// Semente: gancho de células que sai do canto do título.
-const GANCHO = [
-  [0, 3], [0, 2], [0, 1], [1, 0], [2, 0], [3, -1], [4, -1], [5, 0], [6, 0], [6, 1],
-];
-const LARGURA_GANCHO = 7;
-const PINGOS = [
-  { c: [-1.2, -0.6], r: 0.28, i: 1 },
-  { c: [0, 4.6], r: 0.34, alto: 1.6, i: 3 },
-  { c: [0.1, 6.9], r: 0.3, i: 5 },
-];
-function origemSemente() {
-  const p = topoPainel.getBoundingClientRect();
-  const t = titulo.getBoundingClientRect();
-  const x = Math.min(t.right - p.left - celula * 0.6, p.width - celula * (LARGURA_GANCHO + 1.2));
-  return { x, y: t.top - p.top - celula * 1.1 };
-}
-function quadrado(x, y, lado, raio) {
-  if (lado <= 0.5) return;
-  ctx.beginPath();
-  ctx.roundRect(x - lado / 2, y - lado / 2, lado, lado, Math.max(0, raio));
-  ctx.fill();
-}
-
-function acender(gx, gy) {
-  const chave = `${gx},${gy}`;
-  const atual = celulas.get(chave);
-  const agora = performance.now();
-  // Repassar por uma célula viva só a reacende, sem piscar.
-  if (atual && agora - atual.t < VIDA * 0.5) atual.t = agora - Math.min(NASCER, agora - atual.t);
-  else celulas.set(chave, { t: agora, d: percorrido });
-}
+const rgba = (a) => `rgb(${VERMELHO.join(" ")} / ${a})`;
 
 function desenhar(agora) {
   quadro = 0;
@@ -339,83 +310,63 @@ function desenhar(agora) {
   if (!visivel || !ativo()) return;
   let continuar = false;
 
-  // O seguidor anda uma fração da distância até o mouse a cada quadro.
-  if (alvo && seguidor) {
-    const dx = alvo.x - seguidor.x;
-    const dy = alvo.y - seguidor.y;
-    const dist = Math.hypot(dx, dy);
-    if (dist > 0.5) {
-      const passos = Math.max(1, Math.ceil((dist * 0.28) / (celula * 0.45)));
-      for (let i = 0; i < passos; i++) {
-        seguidor.x += (dx * 0.28) / passos;
-        seguidor.y += (dy * 0.28) / passos;
-        const gx = Math.floor(seguidor.x / celula);
-        const gy = Math.floor(seguidor.y / celula);
-        if (!ultimaCelula || ultimaCelula[0] !== gx || ultimaCelula[1] !== gy) {
-          percorrido += 1;
-          // Pincel de 2 × 2: o traço sai cheio, mesmo na diagonal.
-          const ox = seguidor.x / celula - gx < 0.5 ? -1 : 1;
-          const oy = seguidor.y / celula - gy < 0.5 ? -1 : 1;
-          acender(gx, gy);
-          acender(gx + ox, gy);
-          acender(gx, gy + oy);
-          acender(gx + ox, gy + oy);
-          ultimaCelula = [gx, gy];
-        }
-      }
-      continuar = true;
-    }
+  presenca += ((alvo ? 1 : 0) - presenca) * 0.14;
+  if (Math.abs((alvo ? 1 : 0) - presenca) > 0.01) continuar = true;
+  if (alvo) {
+    if (!mira) mira = { ...alvo };
+    mira.x += (alvo.x - mira.x) * 0.22;
+    mira.y += (alvo.y - mira.y) * 0.22;
+    if (Math.hypot(alvo.x - mira.x, alvo.y - mira.y) > 0.3) continuar = true;
+    // Marca a célula sob a mira; elas se apagam em 900 ms.
+    const cx = Math.floor(mira.x / GRADE) * GRADE;
+    const cy = Math.floor(mira.y / GRADE) * GRADE;
+    const ultima = rastroCelulas[rastroCelulas.length - 1];
+    if (!ultima || ultima.x !== cx || ultima.y !== cy) rastroCelulas.push({ x: cx, y: cy, t: agora });
   }
+  rastroCelulas = rastroCelulas.filter((c) => agora - c.t < 900);
+  for (const c of rastroCelulas) {
+    const vida = 1 - (agora - c.t) / 900;
+    ctx.fillStyle = rgba(0.32 * vida * vida);
+    ctx.fillRect(c.x + 1, c.y + 1, GRADE - 1, GRADE - 1);
+  }
+  if (rastroCelulas.length) continuar = true;
 
-  // Semente: desmancha rápido ao mexer, volta devagar depois de parado.
-  const parado = agora - ultimoMovimento > ESPERA_SEMENTE;
-  semente = Math.min(1, Math.max(0, semente + (parado ? 0.028 : -0.09)));
-  if ((parado && semente < 1) || (!parado && semente > 0)) continuar = true;
-  if (semente > 0.001) {
-    const o = origemSemente();
-    const total = GANCHO.length;
-    GANCHO.forEach(([cx, cy], i) => {
-      // Cada célula tem a sua vez: a semente se monta da ponta para o fim.
-      const local = Math.min(1, Math.max(0, semente * (total + 4) / 4 - i / 4));
-      if (local <= 0) return;
-      const s = suave(local);
-      ctx.fillStyle = cor(i * 1.6 + agora / 900, s);
-      const lado = celula * (0.5 + 0.5 * s);
-      quadrado(o.x + (cx + 0.5) * celula, o.y + (cy + 0.5) * celula, lado, lado * 0.28);
-    });
-    ctx.globalAlpha = suave(semente);
-    for (const g of PINGOS) {
-      ctx.fillStyle = cor(g.i * 1.6 + agora / 900, 1);
-      const w = celula * g.r * 2;
-      const h = g.alto ? celula * g.alto : w;
-      // Os pingos boiam um pouco, como gotas.
-      const boia = Math.sin(agora / 700 + g.i) * celula * 0.12;
+  if (mira && presenca > 0.01) {
+    const a = presenca;
+    const x = Math.round(mira.x) + 0.5;
+    const y = Math.round(mira.y) + 0.5;
+    // Linhas que atravessam a prancha, mais fortes perto da mira.
+    const linha = (x0, y0, x1, y1) => {
+      const g = ctx.createLinearGradient(x0, y0, x1, y1);
+      g.addColorStop(0, rgba(0));
+      g.addColorStop(0.5, rgba(0.55 * a));
+      g.addColorStop(1, rgba(0));
+      ctx.strokeStyle = g;
       ctx.beginPath();
-      ctx.roundRect(o.x + g.c[0] * celula, o.y + g.c[1] * celula + boia, w, h, w / 2);
-      ctx.fill();
-    }
-    ctx.globalAlpha = 1;
-    if (semente === 1) continuar = true; // pingos boiando
+      ctx.moveTo(x0, y0);
+      ctx.lineTo(x1, y1);
+      ctx.stroke();
+    };
+    ctx.lineWidth = 1;
+    linha(x - 420, y, x + 420, y);
+    linha(x, y - 320, x, y + 320);
+    // Quadro da mira e o ponto.
+    ctx.strokeStyle = rgba(a);
+    ctx.lineWidth = 1.5;
+    ctx.strokeRect(x - 9, y - 9, 18, 18);
+    ctx.fillStyle = rgba(a);
+    ctx.fillRect(x - 1.5, y - 1.5, 3, 3);
+    // Coordenadas, em células da grade.
+    const texto = `X ${String(Math.round(mira.x / GRADE)).padStart(3, "0")}  Y ${String(Math.round(mira.y / GRADE)).padStart(3, "0")}`;
+    ctx.font = '500 10.5px "Plex Mono", monospace';
+    const w = ctx.measureText(texto).width + 12;
+    const tx = Math.min(x + 16, largura - w - 10);
+    const ty = y + 16;
+    ctx.fillStyle = `rgb(21 24 29 / ${0.92 * a})`;
+    ctx.fillRect(tx, ty, w, 20);
+    ctx.fillStyle = `rgb(255 255 255 / ${a})`;
+    ctx.fillText(texto, tx + 6, ty + 14);
   }
-
-  // Rastro: nasce crescendo, vive, encolhe e some. A cor continua correndo.
-  for (const [chave, c] of celulas) {
-    // O horário do quadro pode vir antes do nascimento da célula.
-    const idade = Math.max(0, agora - c.t);
-    if (idade > VIDA) {
-      celulas.delete(chave);
-      continue;
-    }
-    const [gx, gy] = chave.split(",").map(Number);
-    const nascer = Math.min(1, idade / NASCER);
-    const morrer = Math.max(0, (idade - VIDA * 0.45) / (VIDA * 0.55));
-    const escala = escalaNascer(nascer) * (1 - morrer * morrer * 0.8);
-    const alfa = Math.min(1, nascer * 1.6) * (1 - morrer ** 2.2);
-    ctx.fillStyle = cor(c.d + idade / 260, alfa);
-    const lado = celula * 1.04 * escala;
-    quadrado((gx + 0.5) * celula, (gy + 0.5) * celula, lado, lado * 0.26);
-  }
-  if (celulas.size) continuar = true;
   if (continuar) pedirQuadro();
 }
 function pedirQuadro() {
@@ -429,21 +380,21 @@ topoPainel.addEventListener(
   "pointermove",
   (e) => {
     if (!ativo() || e.pointerType === "touch") return;
+    // Sobre botões e links a mira some: o cursor normal basta.
+    if (e.target.closest("a, button, .ramo__lista")) {
+      alvo = null;
+      pedirQuadro();
+      return;
+    }
     const r = topoPainel.getBoundingClientRect();
     alvo = { x: e.clientX - r.left, y: e.clientY - r.top };
-    if (!seguidor) seguidor = { ...alvo };
-    ultimoMovimento = performance.now();
     pedirQuadro();
   },
   { passive: true },
 );
 topoPainel.addEventListener("pointerleave", () => {
-  // O seguidor termina o caminho até o último ponto e para.
-  setTimeout(() => {
-    alvo = null;
-    seguidor = null;
-    ultimaCelula = null;
-  }, 260);
+  alvo = null;
+  pedirQuadro();
 });
 new ResizeObserver(dimensionar).observe(topoPainel);
 new IntersectionObserver(([e]) => {
