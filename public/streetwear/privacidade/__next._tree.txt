@@ -3,7 +3,7 @@
 :HL["/streetwear/_next/static/media/0d3323de857e1fce-s.p.38hmww4cj4vme.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/streetwear/_next/static/media/2b81eeca71e9850c-s.p.3vm0tq4e-zz_5.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/streetwear/_next/static/media/86fd170c8543a779-s.p.2yee423r7ahpo.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/streetwear/_next/static/chunks/3ohobmgy1i9qp.css","style"]
+:HL["/streetwear/_next/static/chunks/2hsxp8-07w8h8.css","style"]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"privacidade","h":64,"c":"$Q2"}]]
-0:{"b":"3BALOhxZyHoTmSr-oyC6i","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
+0:{"b":"nVWmAP6DJjvaHV3tmmQBm","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
