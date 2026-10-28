@@ -12,7 +12,7 @@ export default function Hero({ t, mensagem }) {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden"
+      className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-24 pb-24 sm:pb-36 overflow-hidden"
     >
       <StarsCanvas />
 
@@ -78,7 +78,7 @@ export default function Hero({ t, mensagem }) {
       <a
         href="#projects"
         aria-label={t.scroll}
-        className="anim-fade-in absolute bottom-10 left-1/2 -translate-x-1/2 z-10 hidden sm:flex flex-col items-center gap-2 text-edmuted hover:text-accent transition-colors"
+        className="anim-fade-in absolute bottom-6 left-1/2 -translate-x-1/2 z-10 hidden sm:flex flex-col items-center gap-2 text-edmuted hover:text-accent transition-colors"
         style={{ animationDelay: '1s' }}
       >
         <span className="text-[0.7rem] uppercase tracking-[0.2em]">{t.scroll}</span>

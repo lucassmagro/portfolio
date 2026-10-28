@@ -541,7 +541,7 @@ export const translations = {
       ],
     },
     footer: {
-      statement: 'Sites sob medida para pequenos negócios, do primeiro esboço ao site no ar.',
+      statement: 'Sites sob medida, do primeiro esboço ao site no ar.',
       nav: 'Principal',
       links: { home: 'Início', work: 'Trabalhos', offer: 'Seu site', about: 'Sobre' },
       contact: 'Contato',
@@ -1110,7 +1110,7 @@ export const translations = {
       ],
     },
     footer: {
-      statement: 'Custom websites for small businesses, from the first sketch to launch.',
+      statement: 'Custom websites, from the first sketch to launch.',
       nav: 'Main',
       links: { home: 'Home', work: 'Work', offer: 'Your site', about: 'About' },
       contact: 'Contact',
