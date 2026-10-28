@@ -278,6 +278,114 @@ body {
   transform: none;
 }
 
+/* ── Grade de trabalhos (Gallery.jsx) ──
+   A captura do site numa moldura discreta. Com mouse, a página inteira
+   desce devagar dentro dela; ao sair, sobe com a mesma suavidade. *
+.tela {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  container-type: size;
+  border-radius: 10px;
+  background: var(--ed-cream);
+  box-shadow:
+    0 0 0 1px var(--ed-border-faint),
+    0 1px 2px rgb(26 25 23 / 0.04);
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+@media (max-width: 639px) {
+  .tela {
+    aspect-ratio: 4 / 5;
+  }
+}
+.tela__capa {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.tela__pagina {
+  position: absolute;
+  inset: 0 0 auto;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transform: translateY(0);
+  transition:
+    transform 1.8s cubic-bezier(0.45, 0, 0.35, 1),
+    opacity 0.2s ease;
+}
+.tela[data-rolando] .tela__pagina {
+  opacity: 1;
+}
+.cartao-site:hover .tela[data-rolando] .tela__pagina,
+.cartao-site:focus-visible .tela[data-rolando] .tela__pagina {
+  transform: translateY(calc(-100% + 100cqh));
+  transition:
+    transform 6s cubic-bezier(0.45, 0, 0.35, 1) 0.15s,
+    opacity 0.2s ease;
+}
+.cartao-site:hover .tela,
+.cartao-site:focus-visible .tela {
+  box-shadow:
+    0 0 0 1px var(--ed-border),
+    0 18px 40px -18px rgb(26 25 23 / 0.28);
+  transform: translateY(-3px);
+}
+.cartao-site:focus-visible {
+  outline: none;
+}
+.cartao-site:focus-visible .tela {
+  outline: 2px solid var(--ed-accent);
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tela,
+  .tela__pagina {
+    transition: none;
+  }
+}
+
+/* Filtro por ramo: texto, com a quantidade ao lado; o ativo ganha traço. */
+.filtro-ramo {
+  position: relative;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35em;
+  flex-shrink: 0;
+  min-height: 44px;
+  font-size: 0.875rem;
+  color: var(--ed-secondary);
+  transition: color 0.2s ease;
+}
+.filtro-ramo:hover,
+.filtro-ramo[aria-pressed='true'] {
+  color: var(--ed-text);
+}
+.filtro-ramo::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: var(--ed-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.filtro-ramo[aria-pressed='true']::after {
+  transform: scaleX(1);
+}
+.filtro-ramo__n {
+  font-size: 0.7rem;
+  color: var(--ed-muted);
+  font-variant-numeric: tabular-nums;
+}
+
 /* Realce de foco por teclado, consistente em todo o site */
 :focus-visible {
   outline: 2px solid var(--ed-accent);

@@ -58,7 +58,7 @@ describe('Gallery', () => {
   it('mostra o case real em destaque e os modelos, sem os projetos fora do destaque', () => {
     render(<Gallery t={t} />)
     expect(screen.getByRole('heading', { name: 'MG' })).toBeInTheDocument()
-    expect(screen.getByText('Desafio do caso.')).toBeInTheDocument()
+    expect(screen.getByText('Resumo.')).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Clarim' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Mimo' })).toBeInTheDocument()
     expect(screen.queryByText('Estudo')).not.toBeInTheDocument()

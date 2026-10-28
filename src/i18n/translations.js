@@ -234,8 +234,7 @@ export const translations = {
       caseLabel: 'Cliente real · Chapecó',
       caseCta: 'Ver o site no ar',
       modelsTitle: 'Veja um site do seu ramo',
-      modelsSub:
-        'Sites modelo que criei para negócios de cada área. Abra um e navegue como se fosse o seu: o seu fica assim, com a sua marca.',
+      modelsSub: 'Sites modelo por ramo. Abra um e navegue como se fosse o seu.',
       filterLabel: 'Filtrar por ramo',
       filters: [
         { id: 'todos', label: 'Todos' },
@@ -809,8 +808,7 @@ export const translations = {
       caseLabel: 'Real client · Chapecó, Brazil',
       caseCta: 'See the live site',
       modelsTitle: 'Find a site for your industry',
-      modelsSub:
-        'Sample sites I built for businesses in different industries. Open one and browse as if it were yours: yours looks like this, with your brand.',
+      modelsSub: 'Sample sites by industry. Open one and browse it as if it were yours.',
       filterLabel: 'Filter by industry',
       filters: [
         { id: 'todos', label: 'All' },
