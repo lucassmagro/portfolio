@@ -280,7 +280,7 @@ body {
 
 /* ── Grade de trabalhos (Gallery.jsx) ──
    A captura do site numa moldura discreta. Com mouse, a página inteira
-   desce devagar dentro dela; ao sair, sobe com a mesma suavidade. *
+   desce devagar dentro dela; ao sair, sobe com a mesma suavidade. */
 .tela {
   position: relative;
   aspect-ratio: 16 / 10;
