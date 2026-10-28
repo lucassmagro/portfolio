@@ -1,7 +1,7 @@
-:HL["/confeitaria/_next/static/chunks/1qfz97ma7zuf-.css","style"]
+:HL["/confeitaria/_next/static/chunks/3myzv8hssttr7.css","style"]
 :HL["/confeitaria/_next/static/chunks/2vidd0zfl1_uq.css","style"]
 :HC["/",""]
 :HL["/confeitaria/_next/static/chunks/2egnh1ldlg246.css","style"]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"privacidade","h":64,"c":"$Q2"}]]
-0:{"b":"CEWSTNjmU94vQkSjIIepX","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
+0:{"b":"Qte0TB5mVZgaUKdeYlkIL","t":{"t":{"s":"","h":16,"c":"$Q1"}}}

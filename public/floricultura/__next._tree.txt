@@ -1,6 +1,6 @@
-:HL["/floricultura/_next/static/chunks/0f34pdzvx8j12.css","style"]
-:HL["/floricultura/_next/static/chunks/1k6mptnhur2bz.css","style"]
+:HL["/floricultura/_next/static/chunks/1_uhe4lijlox3.css","style"]
+:HL["/floricultura/_next/static/chunks/298ma3pgj5x6h.css","style"]
 :HC["/",""]
 :HL["/floricultura/_next/static/chunks/10qurykl9na33.css","style"]
 1:[["children",{"s":"__PAGE__","h":128}]]
-0:{"b":"RwH-fYhKWXKO3p1NyV2ue","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
+0:{"b":"V1a7qbBEbV_pfHTP3hYBV","t":{"t":{"s":"","h":16,"c":"$Q1"}}}

@@ -1,7 +1,7 @@
-:HL["/veterinaria/_next/static/chunks/1m9785mq_dd_i.css","style"]
-:HL["/veterinaria/_next/static/chunks/16buk_oeqclxv.css","style"]
+:HL["/veterinaria/_next/static/chunks/0p8z5uddnlq2n.css","style"]
+:HL["/veterinaria/_next/static/chunks/2f22fay6k416y.css","style"]
 :HL["/veterinaria/_next/static/media/cb4b92673aedbbad-s.p.0-95eo-012xnf.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 3:[["children",{"s":"__PAGE__","h":160}]]
 2:[["children",{"s":{"n":"id","t":"d","k":"consultas","s":[]},"h":65632,"c":"$Q3"}]]
-1:[["children",{"s":"servicos","h":131168,"c":"$Q2"}]]
-0:{"b":"GbKgclQ_qYAFLaMY8Wo6X","t":{"t":{"s":"","h":131152,"c":"$Q1"}}}
+1:[["children",{"s":"servicos","h":131136,"c":"$Q2"}]]
+0:{"b":"FTIjDa81uZjTrEHb39fre","t":{"t":{"s":"","h":131088,"c":"$Q1"}}}

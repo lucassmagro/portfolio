@@ -1,7 +1,7 @@
-:HL["/boutique/_next/static/chunks/0f34pdzvx8j12.css","style"]
-:HL["/boutique/_next/static/chunks/1k6mptnhur2bz.css","style"]
+:HL["/boutique/_next/static/chunks/1_uhe4lijlox3.css","style"]
+:HL["/boutique/_next/static/chunks/298ma3pgj5x6h.css","style"]
 :HC["/",""]
 :HL["/boutique/_next/static/chunks/33gggw3zcfplm.css","style"]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"privacidade","h":64,"c":"$Q2"}]]
-0:{"b":"KcZfMnh51UQNaqU7h_Wwa","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
+0:{"b":"8eOfHJ8VIF9jOemgWn-08","t":{"t":{"s":"","h":16,"c":"$Q1"}}}

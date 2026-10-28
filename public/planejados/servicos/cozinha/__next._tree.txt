@@ -1,7 +1,7 @@
-:HL["/planejados/_next/static/chunks/35w0f_sy-wzcx.css","style"]
-:HL["/planejados/_next/static/chunks/3_yj3sqw0j0lp.css","style"]
+:HL["/planejados/_next/static/chunks/0p8z5uddnlq2n.css","style"]
+:HL["/planejados/_next/static/chunks/2f22fay6k416y.css","style"]
 :HL["/planejados/_next/static/media/cb4b92673aedbbad-s.p.0-95eo-012xnf.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 3:[["children",{"s":"__PAGE__","h":160}]]
 2:[["children",{"s":{"n":"id","t":"d","k":"cozinha","s":[]},"h":65632,"c":"$Q3"}]]
 1:[["children",{"s":"servicos","h":131168,"c":"$Q2"}]]
-0:{"b":"UU0VMZUwr9cPic3SvSLP3","t":{"t":{"s":"","h":131152,"c":"$Q1"}}}
+0:{"b":"i76hn7YYY5nzCd3SqF4oF","t":{"t":{"s":"","h":131152,"c":"$Q1"}}}

@@ -1,7 +1,7 @@
-:HL["/construcao/_next/static/chunks/3yj26d4tv0xib.css","style"]
+:HL["/construcao/_next/static/chunks/1_uhe4lijlox3.css","style"]
 :HL["/construcao/_next/static/chunks/298ma3pgj5x6h.css","style"]
 :HC["/",""]
 :HL["/construcao/_next/static/chunks/2rwx3ln6rw7l9.css","style"]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"privacidade","h":64,"c":"$Q2"}]]
-0:{"b":"P0KSSpCM4ohHM1lCdFu0s","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
+0:{"b":"AKzr0LWdn6y9Du6eVnH7J","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
