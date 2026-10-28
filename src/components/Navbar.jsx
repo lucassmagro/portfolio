@@ -79,9 +79,10 @@ export default function Navbar({ isDark, onToggle, lang, onLangToggle, t, mensag
           </button>
 
           <button
+            type="button"
             onClick={onToggle}
             aria-label={isDark ? 'Ativar modo claro' : 'Ativar modo escuro'}
-            className="flex items-center justify-center w-8 h-8 rounded-full border border-edborder text-edsecondary hover:border-edtext hover:text-edtext hover:scale-110 transition-all"
+            className="botao-tema flex items-center justify-center w-8 h-8 rounded-full border border-edborder text-edsecondary hover:border-edtext hover:text-edtext hover:scale-110 transition-all"
           >
             {isDark ? (
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">

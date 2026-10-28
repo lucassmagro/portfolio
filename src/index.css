@@ -278,6 +278,82 @@ body {
   transform: none;
 }
 
+/* ── Botão de tema (Navbar.jsx) ──
+   De tempos em tempos um anel laranja acende, dá uma volta e meia e apaga,
+   com um brilho junto: chama o olhar para o modo escuro. */
+.botao-tema {
+  position: relative;
+  isolation: isolate;
+}
+.botao-tema::before,
+.botao-tema::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+}
+.botao-tema::before {
+  padding: 2px;
+  background: conic-gradient(
+    transparent 0 50%,
+    color-mix(in srgb, var(--ed-accent) 40%, transparent) 70%,
+    var(--ed-accent) 88%,
+    #ffc4a3 96%,
+    transparent 100%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box exclude,
+    linear-gradient(#000 0 0);
+}
+.botao-tema::after {
+  z-index: -1;
+  box-shadow: 0 0 14px 2px color-mix(in srgb, var(--ed-accent) 45%, transparent);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .botao-tema::before {
+    animation: tema-anel 8s cubic-bezier(0.45, 0, 0.35, 1) 2.5s infinite;
+  }
+  .botao-tema::after {
+    animation: tema-brilho 8s ease-in-out 2.5s infinite;
+  }
+}
+@keyframes tema-anel {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  8%,
+  30% {
+    opacity: 1;
+  }
+  40%,
+  100% {
+    opacity: 0;
+    transform: rotate(540deg);
+  }
+}
+@keyframes tema-brilho {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  14% {
+    opacity: 0.9;
+  }
+  30% {
+    opacity: 0.5;
+  }
+  40% {
+    opacity: 0;
+  }
+}
+
 /* ── Grade de trabalhos (Gallery.jsx) ──
    A captura do site numa moldura discreta. Com mouse, a página inteira
    desce devagar dentro dela; ao sair, sobe com a mesma suavidade. */
