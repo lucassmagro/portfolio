@@ -551,6 +551,7 @@ export const translations = {
       copyright: '© 2026 Lucas Santos Magro. Todos os direitos reservados.',
       madeBy: 'Feito por Lucas Santos Magro',
       backTop: 'Voltar ao topo',
+      lab: 'Versão experimental',
       resume: 'Baixar Currículo',
     },
     linkhub: {
@@ -1120,6 +1121,7 @@ export const translations = {
       copyright: '© 2026 Lucas Santos Magro. All rights reserved.',
       madeBy: 'Made by Lucas Santos Magro',
       backTop: 'Back to top',
+      lab: 'Experimental version',
       resume: 'Download Resume',
     },
     linkhub: {

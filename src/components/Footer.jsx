@@ -95,6 +95,13 @@ export default function Footer({ t }) {
         {/* Barra inferior */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-3 border-t border-ondark/10 pt-6">
           <p className="text-[0.7rem] uppercase tracking-[0.12em] text-ondark/55">{t.copyright}</p>
+          {/* Discreto: a mesma oferta numa direção visual experimental. */}
+          <a
+            href="/lab/"
+            className="text-[0.7rem] uppercase tracking-[0.12em] text-ondark/70 hover:text-ondark transition-colors"
+          >
+            {t.lab} ↗
+          </a>
           <a
             href="#home"
             data-scroll-to
