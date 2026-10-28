@@ -279,7 +279,7 @@ body {
 }
 
 /* ── Botão de tema (Navbar.jsx) ──
-   De tempos em tempos um anel laranja acende, dá uma volta e meia e apaga,
+   A cada 5 s um anel laranja acende, dá uma volta e meia e apaga,
    com um brilho junto: chama o olhar para o modo escuro. */
 .botao-tema {
   position: relative;
@@ -317,10 +317,10 @@ body {
 }
 @media (prefers-reduced-motion: no-preference) {
   .botao-tema::before {
-    animation: tema-anel 8s cubic-bezier(0.45, 0, 0.35, 1) 2.5s infinite;
+    animation: tema-anel 5s cubic-bezier(0.45, 0, 0.35, 1) 2.5s infinite;
   }
   .botao-tema::after {
-    animation: tema-brilho 8s ease-in-out 2.5s infinite;
+    animation: tema-brilho 5s ease-in-out 2.5s infinite;
   }
 }
 @keyframes tema-anel {
@@ -328,11 +328,11 @@ body {
     opacity: 0;
     transform: rotate(0deg);
   }
-  8%,
-  30% {
+  13%,
+  48% {
     opacity: 1;
   }
-  40%,
+  64%,
   100% {
     opacity: 0;
     transform: rotate(540deg);
@@ -343,14 +343,39 @@ body {
   100% {
     opacity: 0;
   }
-  14% {
+  22% {
     opacity: 0.9;
   }
-  30% {
+  48% {
     opacity: 0.5;
   }
-  40% {
+  64% {
     opacity: 0;
+  }
+}
+
+/* Troca de tema (ThemeContext.jsx): o tema novo cresce num círculo a partir
+   do botão. As transições de cor ficam desligadas durante a troca para a
+   foto do tema novo já sair pronta. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+.trocando-tema,
+.trocando-tema * {
+  transition: none !important;
+}
+/* O ícone novo (sol ou lua) entra girando de leve. */
+@media (prefers-reduced-motion: no-preference) {
+  .botao-tema svg {
+    animation: tema-icone 0.6s cubic-bezier(0.34, 1.4, 0.64, 1) 0.2s both;
+  }
+}
+@keyframes tema-icone {
+  from {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.5);
   }
 }
 

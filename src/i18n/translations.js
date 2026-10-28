@@ -18,7 +18,7 @@ export const translations = {
         'R$ 500 · preço de lançamento',
       ],
       ctaClient: 'Quero meu site',
-      marker: 'Chapecó, Brasil',
+      marker: 'Brasil',
       ctaWork: 'Ver trabalhos',
       ctaContact: 'Contato',
       status: 'Disponível',
@@ -90,7 +90,7 @@ export const translations = {
       quote:
         'O Lucas fez um trabalho muito profissional. O site superou as nossas expectativas, tanto na qualidade quanto no prazo, e ele esteve sempre disponível para conversar e ajustar o que a gente precisava. Recomendo sem pensar duas vezes.',
       author: 'MG Incorporações',
-      role: 'Construtora e incorporadora · Chapecó, SC',
+      role: 'Construtora e incorporadora',
       highlights: [
         'Superou as expectativas na qualidade',
         'Entregue dentro do prazo',
@@ -120,15 +120,15 @@ export const translations = {
           a: 'Nos primeiros 30 dias, ajustes de texto e foto não têm custo. Depois disso, há a manutenção mensal opcional, com valor combinado antes.',
         },
         {
-          q: 'Você atende fora de Chapecó?',
-          a: 'Sim. Atendo Chapecó e região pessoalmente e qualquer cidade pelo WhatsApp: todo o processo pode ser feito a distância.',
+          q: 'Você atende negócios de qualquer cidade?',
+          a: 'Sim. Todo o processo é feito a distância, pelo WhatsApp: do primeiro esboço até o site no ar, sem você precisar sair do seu negócio.',
         },
       ],
     },
     about: {
       section: 'Perfil',
       title: 'Quem eu sou.',
-      bio: 'Sou de Chapecó, me formei em Arquitetura e Urbanismo e hoje curso Sistemas de Informação. Da arquitetura trouxe o cuidado com proporção e detalhe; da tecnologia, sites rápidos e que funcionam de verdade. Faço cada site direto com o dono do negócio, do primeiro esboço até o site no ar.',
+      bio: 'Me formei em Arquitetura e Urbanismo e hoje curso Sistemas de Informação. Da arquitetura trouxe o cuidado com proporção e detalhe; da tecnologia, sites rápidos e que funcionam de verdade. Faço cada site direto com o dono do negócio, do primeiro esboço até o site no ar.',
       specialty: 'O que eu faço',
       skills: [
         'Sites institucionais',
@@ -231,7 +231,7 @@ export const translations = {
       section: 'Trabalhos',
       title: 'Sites que eu fiz.',
       view: 'Ver site',
-      caseLabel: 'Cliente real · Chapecó',
+      caseLabel: 'Cliente real',
       caseCta: 'Ver o site no ar',
       modelsTitle: 'Veja um site do seu ramo',
       modelsSub: 'Sites modelo por ramo. Abra um e navegue como se fosse o seu.',
@@ -264,7 +264,7 @@ export const translations = {
           featured: true,
           title: 'MG Incorporações',
           brief:
-            'Site para uma construtora e incorporadora de Chapecó, com mais de 20 anos de mercado. Vitrine dos empreendimentos comerciais e residenciais, com destaque para o Valley Business Center.',
+            'Site para uma construtora e incorporadora com mais de 20 anos de mercado. Vitrine dos empreendimentos comerciais e residenciais, com destaque para o Valley Business Center.',
           challenge:
             'Apresentar empreendimentos de alto padrão e gerar contato qualificado, sem o site parecer um classificado genérico.',
           solution:
@@ -541,7 +541,7 @@ export const translations = {
       ],
     },
     footer: {
-      statement: 'Sites profissionais para negócios de Chapecó e região.',
+      statement: 'Sites sob medida para pequenos negócios, do primeiro esboço ao site no ar.',
       nav: 'Principal',
       links: { home: 'Início', work: 'Trabalhos', offer: 'Seu site', about: 'Sobre' },
       contact: 'Contato',
@@ -593,7 +593,7 @@ export const translations = {
       ctaClient: 'I want my site',
       intro:
         'Tailored to your business: great on mobile, quick to load and with direct contact on your WhatsApp. Ready within 7 business days, and you work with me directly, no agency in between.',
-      marker: 'Chapecó, Brazil',
+      marker: 'Brazil',
       ctaWork: 'View work',
       ctaContact: 'Contact',
       status: 'Available',
@@ -665,7 +665,7 @@ export const translations = {
       quote:
         'Lucas did a truly professional job. The website exceeded our expectations in both quality and turnaround, and he was always available to talk and adjust whatever we needed. I recommend him without a second thought.',
       author: 'MG Incorporações',
-      role: 'Builder and real estate developer · Chapecó, Brazil',
+      role: 'Builder and real estate developer',
       highlights: [
         'Exceeded expectations on quality',
         'Delivered on time',
@@ -695,15 +695,15 @@ export const translations = {
           a: 'In the first 30 days, copy and photo adjustments are free. After that, there is optional monthly maintenance, priced upfront.',
         },
         {
-          q: 'Do you work outside Chapecó?',
-          a: 'Yes. I meet clients in Chapecó and the region in person and anywhere else over WhatsApp: the whole process can be done remotely.',
+          q: 'Do you work with businesses in any city?',
+          a: 'Yes. The whole process happens remotely over WhatsApp, from the first sketch to the live site, without you having to leave your business.',
         },
       ],
     },
     about: {
       section: 'Profile',
       title: 'Who I am.',
-      bio: "I'm from Chapecó, trained in architecture and urban planning and now study Information Systems. From architecture I kept the care for proportion and detail; from tech, websites that are fast and actually work. I build each site directly with the business owner, from the first sketch to the live site.",
+      bio: 'I trained in architecture and urban planning and now study Information Systems. From architecture I kept the care for proportion and detail; from tech, websites that are fast and actually work. I build each site directly with the business owner, from the first sketch to the live site.',
       specialty: 'What I do',
       skills: [
         'Business websites',
@@ -805,7 +805,7 @@ export const translations = {
       section: 'Work',
       title: 'Websites I built.',
       view: 'View site',
-      caseLabel: 'Real client · Chapecó, Brazil',
+      caseLabel: 'Real client',
       caseCta: 'See the live site',
       modelsTitle: 'Find a site for your industry',
       modelsSub: 'Sample sites by industry. Open one and browse it as if it were yours.',
@@ -838,7 +838,7 @@ export const translations = {
           featured: true,
           title: 'MG Incorporações',
           brief:
-            'A site for a real estate developer in Chapecó with over 20 years in the market. A showcase of its commercial and residential projects, led by the Valley Business Center.',
+            'A site for a builder and real estate developer with over 20 years in the market. A showcase of its commercial and residential projects, led by the Valley Business Center.',
           challenge:
             'Present high-end developments and bring in qualified leads without the site feeling like a generic listing.',
           solution:
@@ -1110,7 +1110,7 @@ export const translations = {
       ],
     },
     footer: {
-      statement: 'Professional websites for businesses in Chapecó and the region.',
+      statement: 'Custom websites for small businesses, from the first sketch to launch.',
       nav: 'Main',
       links: { home: 'Home', work: 'Work', offer: 'Your site', about: 'About' },
       contact: 'Contact',
