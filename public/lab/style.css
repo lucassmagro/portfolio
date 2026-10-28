@@ -439,20 +439,39 @@ mark {
  * No topo, a barra mora dentro do painel do início. Ao rolar, vira uma
  * pílula branca flutuante, centralizada (classe .is-compacto, app.js). */
 .cabecalho {
-  position: absolute;
+  position: fixed;
   z-index: 50;
-  left: var(--margem);
-  right: var(--margem);
+  left: 0;
+  right: 0;
   top: calc(var(--altura-aviso, 0px) + var(--margem));
+  pointer-events: none;
+  transition: top 0.75s var(--curva);
 }
+/* Uma barra só, que muda de forma: da largura do painel, transparente, para
+   a pílula branca flutuante. Largura, altura, cantos, fundo e sombra
+   andam juntos, sem fade. */
 .cabecalho__barra {
   display: flex;
   align-items: center;
   gap: 24px;
+  width: calc(100% - 2 * var(--margem));
   height: 76px;
-  padding-inline: clamp(16px, 2.2vw, 30px);
+  padding: 0 clamp(16px, 2.2vw, 30px);
   margin-inline: auto;
   border-radius: var(--raio);
+  background: rgb(255 255 255 / 0);
+  box-shadow:
+    0 0 0 1px rgb(0 0 0 / 0),
+    0 14px 34px -16px rgb(0 0 0 / 0);
+  pointer-events: auto;
+  transition:
+    width 0.75s var(--curva),
+    height 0.75s var(--curva),
+    padding 0.75s var(--curva),
+    border-radius 0.75s var(--curva),
+    background-color 0.5s ease,
+    box-shadow 0.6s ease,
+    backdrop-filter 0.6s ease;
 }
 .marca {
   display: inline-flex;
@@ -510,24 +529,28 @@ mark {
   display: none;
 }
 .cabecalho.is-compacto {
-  position: fixed;
   top: 12px;
-  left: 0;
-  right: 0;
-  pointer-events: none;
 }
 .cabecalho.is-compacto .cabecalho__barra {
-  pointer-events: auto;
   width: min(940px, calc(100% - 24px));
   height: 58px;
   padding: 0 8px 0 20px;
-  border-radius: 999px;
+  border-radius: 29px;
   background: rgb(255 255 255 / 0.92);
   backdrop-filter: blur(14px);
   box-shadow:
     0 0 0 1px rgb(0 0 0 / 0.06),
     0 14px 34px -16px rgb(0 0 0 / 0.35);
-  animation: desce 0.5s var(--curva) both;
+}
+.marca__nome,
+.cabecalho__nav a,
+.cabecalho__cta {
+  transition:
+    font-size 0.75s var(--curva),
+    padding 0.75s var(--curva),
+    min-height 0.75s var(--curva),
+    color 0.2s,
+    background-color 0.2s;
 }
 .cabecalho.is-compacto .marca__nome {
   font-size: 13px;
@@ -535,12 +558,6 @@ mark {
 .cabecalho.is-compacto .cabecalho__nav a {
   padding: 0 10px;
   font-size: 14px;
-}
-@keyframes desce {
-  from {
-    opacity: 0;
-    transform: translateY(-14px) scale(0.98);
-  }
 }
 
 /* ------------------------------------------------------------- início */
@@ -1665,6 +1682,9 @@ mark {
   .cabecalho.is-compacto .cabecalho__barra {
     width: calc(100% - 20px);
     padding: 0 7px 0 18px;
+  }
+  .cabecalho__barra {
+    position: relative;
   }
   .trabalho__abertura,
   .modelos__cab,

@@ -159,7 +159,8 @@ function agendar() {
 function atualizar() {
   pendente = false;
   const vh = innerHeight;
-  cabecalho.classList.toggle("is-compacto", topoPainel.getBoundingClientRect().top < -60);
+  // Vira pílula logo no começo da rolagem: a barra não passa por cima do título.
+  cabecalho.classList.toggle("is-compacto", scrollY > 24);
 
   // Manifesto: a leitura avança entre 85% e 35% da altura da tela.
   const r = manifesto.getBoundingClientRect();
