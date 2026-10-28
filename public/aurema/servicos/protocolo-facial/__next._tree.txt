@@ -1,7 +1,7 @@
-:HL["/aurema/_next/static/chunks/0p8z5uddnlq2n.css","style"]
-:HL["/aurema/_next/static/chunks/2f22fay6k416y.css","style"]
+:HL["/aurema/_next/static/chunks/2fyr1u-hug4qt.css","style"]
+:HL["/aurema/_next/static/chunks/0foc1_l9ah1_n.css","style"]
 :HL["/aurema/_next/static/media/cb4b92673aedbbad-s.p.0-95eo-012xnf.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 3:[["children",{"s":"__PAGE__","h":160}]]
 2:[["children",{"s":{"n":"id","t":"d","k":"protocolo-facial","s":[]},"h":65632,"c":"$Q3"}]]
-1:[["children",{"s":"servicos","h":131168,"c":"$Q2"}]]
-0:{"b":"_AFln0EaGhREWxRNa-TGR","t":{"t":{"s":"","h":131152,"c":"$Q1"}}}
+1:[["children",{"s":"servicos","h":131136,"c":"$Q2"}]]
+0:{"b":"biX673EW9yXE3wT1vuJ7q","t":{"t":{"s":"","h":131088,"c":"$Q1"}}}
